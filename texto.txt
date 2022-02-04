@@ -1,7 +1,13 @@
 //////////////////////////////////////////
+archivo: Package-lock.js
+      "version": "2.0.2",
+      "resolved": "https://registry.npmjs.org/@ampproject/remapping/-/remapping-2.0.2.tgz",
+      "integrity": "sha512-sE8Gx+qSDMLoJvb3QarJJlDQK7SSY4rK3hxp4XsiANeFOmjU46ZI7Y9adAQRJrmbz8zbtZkp3mJTT+rGxtF0XA==",
+      "requires": {
+///////////////////////////////////////////
 DESCRIPCIÓN DE KARMA MINI BURGER
 //////////////////////////////////////////
-Karma es una hambuerguesería, cuya temática es vender solo mini hamburguesas. Esta páginca web se centra en brindar información general de la empresa y habrá una sección de solo empleados(Mesero, Jefe de Cocina y Admin); donde se mostrará información en tiempo real de sus actividades con los pedidos.
+Karma es una hamburguesería, cuya temática es vender solo mini hamburguesas. Esta página web se centra en brindar información general de la empresa y, en especial, habrá una sección de solo empleados(Mesero, Jefe de Cocina y Admin); donde se mostrará información en tiempo real de sus actividades con los pedidos.
 
 //////////////////////////////////////////
 MENU
