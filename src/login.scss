@@ -4,7 +4,7 @@
 body,
 html {
   height: 100%;
-  /* background-image: url('./Fondo-InicioSesion.png'); */
+  background-image: url('../src/img/extra/Fondo-Login.png');
 }
 body {
   font-family: "Open Sans";
@@ -21,7 +21,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-image: url('./Fondo-InicioSesion.png');
+  background-image: url('../src/img/extra/Fondo-Login.png');
   background-repeat: no-repeat;
   background-size:100% 70%;
   background-position: bottom;
@@ -30,6 +30,29 @@ body {
 .App{
   display: flex;
   height: 100%;
+}
+.logo-principal{
+  display: flex;
+  width: 100%;
+  height: 130px;
+  justify-content: center;
+  img{
+    width: 143px;
+    height: 100%;
+    z-index: 6;
+  }
+}
+.firma{
+  display: flex;
+  width: 100%;
+  height: 130px;
+  justify-content: left;
+  margin: 0 0 40px 70px;
+  img{
+    width: 143px;
+    height: 100%;
+    z-index: 6;
+  }
 }
 input {
   ::-webkit-input-placeholder {
@@ -55,11 +78,17 @@ input {
   }
 }
 .login-form {
+  display: flex;
+  height: 100%;
   min-height: 10rem;
-  margin: auto;
-  max-width: 50%;
+  margin: 63px auto 63px auto;
+  max-width: 70%;
   padding: 0.5rem;
   z-index: 5;
+  bottom: 100px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .login-text {
   color: white;
@@ -80,6 +109,7 @@ input {
   border-bottom: 1px solid rgba(white, 0.5);
   color: white;
   display: block;
+  font-size: 20px;
   margin: 1rem;
   padding: 0.5rem;
   transition: 250ms background ease-in;
@@ -92,6 +122,7 @@ input {
 }
 .login-forgot-pass {
   bottom: 0;
+  font-size: 12px;
   color: white;
   cursor: pointer;
   display: block;
@@ -109,7 +140,9 @@ input {
   background: transparent;
   color: white;
   display: block;
-  margin: 1rem auto;
+  margin: 0.5rem auto;
+  width: 150px;
+  height: 40px;
   min-width: 1px;
   padding: 0.25rem;
   transition: 250ms background ease-in;
@@ -129,7 +162,7 @@ input {
 }
 .underlay-photo {
   animation: hue-rotate 6s infinite;
-  background: url('./Fondo-InicioSesion.png');
+  background: url('../src/img/extra/Fondo-Login.png');
   background-size: cover;
   -webkit-filter: grayscale(30%);
   z-index: -1;
