@@ -24,6 +24,7 @@ import './login.scss';
 function Login() {
     return (
         <div className="renderLogin">
+            <div><img src="./Logo-Circular.png"></img></div>
             <form class="login-form">
                 <p class="login-text">
                     <span class="fa-stack fa-lg">
