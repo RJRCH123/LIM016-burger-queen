@@ -10,7 +10,7 @@ function Login() {
             <div className="logo-principal">
                 <img src={Logo} alt= "logo"/>
             </div>
-            <FormAdmin/>
+            <FormEmploy/>
             <div className="underlay-photo"></div>
             <div className="underlay-black"></div> 
             <div className="firma">
