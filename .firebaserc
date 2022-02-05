@@ -1,6 +1,6 @@
 {
   "projects": {
-    "staging": "burger-queen-karma"
+    "production": "burger-queen-karma"
   },
   "targets": {}
 }
