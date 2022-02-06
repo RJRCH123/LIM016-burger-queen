@@ -1,3 +1,6 @@
+import { Link } from "react-router-dom";
+import './login.scss';
+
 function FormAdmin() {
     return (
         <form className="login-form">
@@ -10,7 +13,7 @@ function FormAdmin() {
             <input type="email" className="login-username" autofocus="true" required="true" placeholder="Usuario" />
             <input type="password" className="login-password" required="true" placeholder="Contraseña" />
             <a href="google.com" className="login-forgot-pass"> ¿Olvidaste tu contraseña? </a>
-            <input type="submit" name="Iniciar Sesión" value="Iniciar Sesión" class="login-submit" />
+            <Link to='/admin/registro/'><input type="submit" name="Iniciar Sesión" value="Iniciar Sesión" class="login-submit"/></Link> 
         </form>            
     );
 }
