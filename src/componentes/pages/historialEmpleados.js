@@ -5,7 +5,7 @@ const HistorialEmpleados = () => {
     return  ( 
         <div>
             <div className='datosEmpresa'>
-                <h3>HISTORIAL DE EMPLEADOS</h3>
+                <h2>HISTORIAL DE EMPLEADOS</h2>
                 <div className='descripcion'>
                     <img src={Logo} alt= "logo"/>
                     <div>

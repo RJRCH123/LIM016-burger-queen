@@ -4,7 +4,7 @@ const HistorialCocinero = () => {
     return  ( 
         <div>
             <div className='datosEmpresa'>
-                <h3>HISTORIAL DE VENTAS</h3>
+                <h2>HISTORIAL DE VENTAS</h2>
                 <div className='descripcion'>
                     <img src={Logo} alt= "logo"/>
                     <div>
