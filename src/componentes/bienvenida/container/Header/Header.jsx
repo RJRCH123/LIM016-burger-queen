@@ -7,10 +7,10 @@ import './Header.css';
 const Header = () => (
   <div className="app__header bienvenida__wrapper section__padding" id="home">
     <div className="bienvenida__wrapper_info">
-      <SubHeading title="Chase the new flavour" />
-      <h1 className="app__header-h1">The Key To Fine Dining</h1>
-      <p className="p__opensans" style={{ margin: '2rem 0' }}>Sit tellus lobortis sed senectus vivamus molestie. Condimentum volutpat morbi facilisis quam scelerisque sapien. Et, penatibus aliquam amet tellus </p>
-      <button type="button" className="custom__button">Explore Menu</button>
+      <SubHeading title="Página exclusiva para el personal" />
+      <h1 className="app__header-h1">¡Bienvenidos a Karma!</h1>
+      <p className="p__opensans" style={{ margin: '2rem 0' }}>Somos un restaurante dedicado a la preparación de mini hamburguesas y a la atención personalizada para el comensal. Ofrecemos un ambiente agadable y una receta especial que harán una explosión de sabores en tu paladar.  </p>
+      {/* <button type="button" className="custom__button">Explore Menu</button> */}
     </div>
 
     <div className="bienvenida__wrapper_img">
