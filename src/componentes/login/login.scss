@@ -4,7 +4,7 @@
 body,
 html {
   height: 100%;
-  background-image: url('../src/img/extra/Fondo-Login.png');
+  background-image: url('../../img/extra/Fondo-Login.png');
 }
 body {
   font-family: "Open Sans";
@@ -18,10 +18,11 @@ body {
 }
 .renderLogin {
   height: 100vh;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-image: url('../src/img/extra/Fondo-Login.png');
+  background-image: url('../../img/extra/Fondo-Login.png');
   background-repeat: no-repeat;
   background-size:100% 70%;
   background-position: bottom;
@@ -162,7 +163,7 @@ input {
 }
 .underlay-photo {
   animation: hue-rotate 6s infinite;
-  background: url('../src/img/extra/Fondo-Login.png');
+  background: url('../../img/extra/Fondo-Login.png');
   background-size: cover;
   -webkit-filter: grayscale(30%);
   z-index: -1;

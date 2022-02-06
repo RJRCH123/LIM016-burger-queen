@@ -1,16 +1,14 @@
-import Logo from './img/logos/Logo-Circular.png';
-import Firma from './img/logos/Logo-MR-Blanco.png';
-import FormAdmin from './loginFormAdm';
-import FormEmploy from './loginFormEmploy';
+import Logo from '../../img/logos/Logo-Circular.png';
+import Firma from '../../img/logos/Logo-MR-Blanco.png';
 import './login.scss';
 
-function Login() {
+function Login(props) {
     return (
         <div className="renderLogin">
             <div className="logo-principal">
                 <img src={Logo} alt= "logo"/>
             </div>
-            <FormEmploy/>
+            {props.form}  
             <div className="underlay-photo"></div>
             <div className="underlay-black"></div> 
             <div className="firma">
@@ -21,5 +19,3 @@ function Login() {
 }
 
 export default Login;
-
-
