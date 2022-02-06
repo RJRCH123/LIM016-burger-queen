@@ -1,5 +1,3 @@
-import './login.scss';
-
 function FormAdmin() {
     return (
         <form className="login-form">
