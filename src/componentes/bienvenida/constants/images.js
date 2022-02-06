@@ -1,6 +1,5 @@
 import bg from '../assets/bg.png';
 import G from '../assets/G.png';
-import knife from '../assets/knife.png';
 import logo from '../assets/logo.png';
 import menu from '../assets/menu.png';
 import overlaybg from '../assets/overlaybg.png';
@@ -17,7 +16,6 @@ import gericht from '../assets/gericht.png';
 export default {
   bg,
   G,
-  knife,
   logo,
   menu,
   overlaybg,

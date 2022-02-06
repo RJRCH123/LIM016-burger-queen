@@ -2,80 +2,80 @@ import images from './images';
 
 const wines = [
   {
-    title: 'Chapel Hill Shiraz',
-    price: '$56',
-    tags: 'AU | Bottle',
+    title: 'KARMA DOBLE',
+    price: 'S/. 16.90',
+    tags: 'Hambueguesas de Carne Doble | Blend de Quesos | Huevo | Papas| Ensalada | Salsas Clásicas ', 
   },
   {
-    title: 'Catena Malbee',
-    price: '$59',
-    tags: 'AU | Bottle',
+    title: 'LA INFLAMABLE',
+    price: 'S/. 17.90',
+    tags: 'Hambueguesas de Carne bañadas con salsa picante Cajú| Jamón | Papas| Ensalada | Salsas Clásicas',
   },
   {
-    title: 'La Vieillw Rose',
-    price: '$44',
-    tags: 'FR | 750 ml',
+    title: 'DULCE VENGANZA',
+    price: 'S/. 17.90',
+    tags: 'Hambueguesas de Carne bañadas con salsa BBQ | Blend de Quesos | Jamón | Papas| Ensalada | Salsas Clásicas',
   },
   {
-    title: 'Rhino Pale Ale',
-    price: '$31',
-    tags: 'CA | 750 ml',
+    title: 'SIN KARMA',
+    price: ' S/. 17.90',
+    tags: 'Hamburguesas Vegetarianas a base de Lenteja y Quinoa | Queso Mozarela a base de leche de Almendras | Papas| Ensalada | Salsas Clásicas', 
   },
   {
-    title: 'Irish Guinness',
-    price: '$26',
-    tags: 'IE | 750 ml',
+    title: 'EL CULPABLE',
+    price: 'S/. 18.90',
+    tags: 'Hambueguesas de Carne | Jamón | Blend de Quesos | Tocino | Huevo | Papas| Ensalada | Salsas Clásicas',
   },
 ];
 
 const cocktails = [
   {
-    title: 'Aperol Sprtiz',
-    price: '$20',
-    tags: 'Aperol | Villa Marchesi prosecco | soda | 30 ml',
+    title: 'MANGO FROZEN',
+    price: 'S/. 9.90',
+    tags: ' Mango Rapoza| 500 ml',
   },
   {
-    title: "Dark 'N' Stormy",
-    price: '$16',
-    tags: 'Dark rum | Ginger beer | Slice of lime',
+    title: "MARACUYÁ FROZEN",
+    price: ' S/. 8.90',
+    tags: 'Maracuyá Peroba | 500 ml',
   },
   {
-    title: 'Daiquiri',
-    price: '$10',
-    tags: 'Rum | Citrus juice | Sugar',
+    title: 'LIMONADA FROZEN',
+    price: ' S/. 8.90',
+    tags: 'Limón Verna| 500 ml',
   },
   {
-    title: 'Old Fashioned',
-    price: '$31',
-    tags: 'Bourbon | Brown sugar | Angostura Bitters',
+    title: 'EMOLIENTE',
+    price: 'S/. 6.90',
+    tags: '500 ml',
   },
   {
-    title: 'Negroni',
-    price: '$26',
-    tags: 'Gin | Sweet Vermouth | Campari | Orange garnish',
+    title: 'EXPRESO',
+    price: 'S/. 5.90',
+    tags: 'Café Borbón | 300 ml',
   },
 ];
 
 const awards = [
   {
     imgUrl: images.award02,
-    title: 'Bib Gourmond',
-    subtitle: 'Lorem ipsum dolor sit amet, consectetur.',
+    title: 'Isabel Rodriguez',
+    subtitle: 'Destacada por su admirable desempeño junto a los comensales.',
   },
   {
     imgUrl: images.award01,
-    title: 'Rising Star',
-    subtitle: 'Lorem ipsum dolor sit amet, consectetur.',
+    title: 'Enrique Diaz',
+    subtitle: 'Destacado por sus innovadores propuestas en la cocina.',
   },
   {
     imgUrl: images.award05,
-    title: 'AA Hospitality',
-    subtitle: 'Lorem ipsum dolor sit amet, consectetur.',
+    title: 'Mónica Hernandez',
+    subtitle: 'Destacada por sus grandes resultados en las encuestas hechas a los comensales.',
   },
   {
     imgUrl: images.award03,
-    title: 'Outstanding Chef',
-    subtitle: 'Lorem ipsum dolor sit amet, consectetur.',
+    title: 'Paolo Córdova',
+    subtitle: 'Destacado por su increíble rapidez en la cocina.',
   },
 ];
 

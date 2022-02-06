@@ -148,6 +148,8 @@ a {
   line-height: 83.2px;
   letter-spacing: 0.04em;
   text-transform: capitalize;
+  padding-right: 20%;
+  padding-left: 20%;
 }
 
 .spoon__img {
