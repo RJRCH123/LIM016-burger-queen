@@ -1,4 +1,3 @@
-import './pages.scss';
 
 const PedidosPreparados = () => {
     return  ( 

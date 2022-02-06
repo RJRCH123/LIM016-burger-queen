@@ -1,11 +1,21 @@
-import './pages.scss';
-
-const HistorialVentas = () => {
+import Logo from '../../img/logos/Logo-Circular.png';
+import './historialVentas.scss';
+const HistorialCocinero = () => {
     return  ( 
         <div>
-            <p>Esto es Historial de Ventas</p>
+            <div className='datosEmpresa'>
+                <h3>HISTORIAL DE VENTAS</h3>
+                <div className='descripcion'>
+                    <img src={Logo} alt= "logo"/>
+                    <div>
+                        <p>EMPRESA: Karma Burger</p>
+                        <p>RUC: 0212124863342</p>
+                    </div>
+                    <p>FECHA: 20 / 04 / 21</p>
+                </div>
+            </div>
         </div>
     )
 } 
 
-export default HistorialVentas
+export default HistorialCocinero

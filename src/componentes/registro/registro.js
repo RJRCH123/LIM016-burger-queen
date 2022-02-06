@@ -1,4 +1,3 @@
-import './registro.scss';
 import Logo from '../../img/logos/Logo-nav.png';
 import LogoAdmin from '../../img/iconos/trajeAdmin.png';
 import HM from '../../img/iconos/HM.png';
@@ -11,6 +10,7 @@ import RP from '../../img/iconos/RP.png';
 import BH from '../../img/iconos/botton-home.png';
 import BS from '../../img/iconos/botton-salir.png';
 import { Link } from "react-router-dom";
+import './registro.scss';
 
 const Navbar = () => {
     return (
