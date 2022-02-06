@@ -1,6 +1,6 @@
 import './login.scss';
 
-function FormEmploy() {
+function FormEmploye() {
     return (
         <form className="login-form">
             <p className="login-text">
@@ -15,4 +15,4 @@ function FormEmploy() {
         </form>            
     );
 }
-export default FormEmploy;
+export default FormEmploye;
