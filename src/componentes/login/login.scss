@@ -39,8 +39,8 @@
   height: 130px;
   justify-content: center;
   img{
-    width: 143px;
-    height: 100%;
+    width: 194px;
+    height: 150%;
     z-index: 6;
   }
 }
@@ -162,14 +162,14 @@ input {
   position: fixed;
   top: 0;
 }
-// ****************Animacion Revisar ***************
-.underlay-photo {
-  animation: hue-rotate 6s infinite;
-  background: url('../../img/extra/Fondo-Login.png');
-  background-size: cover;
-  -webkit-filter: grayscale(30%);
-  z-index: 1;
-}
+// **************** Animacion Revisar ***************
+// .underlay-photo {
+//   animation: hue-rotate 6s infinite;
+//   background: url('../../img/extra/Fondo-Login.png');
+//   background-size: cover;
+//   -webkit-filter: grayscale(30%);
+//   z-index: 1;
+// }
 .underlay-black {
   background: rgba(0, 0, 0, 0.5);
   z-index: 3;

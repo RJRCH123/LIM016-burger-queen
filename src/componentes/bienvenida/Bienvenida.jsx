@@ -14,7 +14,6 @@ const Bienvenida = () => (
   <div>
     <Navbar />
     <Header />
-    {/* Comentar para el martes */}
     <AboutUs />
     <SpecialMenu />
     <Laurels />
