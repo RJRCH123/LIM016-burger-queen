@@ -3,19 +3,21 @@ import {
   Routes, 
   Route
 } from "react-router-dom";
+import Bienvenida from "./componentes/bienvenida/Bienvenida";
 import Login from './componentes/login/login';
 import FormAdmin from "./componentes/login/loginFormAdm";
-import FormEmploy from "./componentes/login/loginFormEmploy";
+import FormEmploy from "./componentes/login/loginFormEmploy"
+
 
 function App() {
   return (
-    <div className="App">      
+    <div className="App">
       <Routes>
         <Route path='/admin' element={<Login form={<FormAdmin/>} />}/>
         <Route path='/employe' element={<Login form={<FormEmploy/>}/>}/>
-        <Route path='/' element={<Login/>}/>
-      </Routes>
-    </div>      
+        <Route path='/' element={<Bienvenida/>}/>
+      </Routes> 
+    </div>
   );
 }
 
