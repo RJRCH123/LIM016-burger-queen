@@ -1,5 +1,3 @@
-import './login.scss';
-
 function FormEmploy() {
     return (
         <form className="login-form">
