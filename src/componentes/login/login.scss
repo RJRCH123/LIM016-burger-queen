@@ -104,6 +104,7 @@ input {
   text-shadow: 1px -1px 0 rgba(0,0,0,0.3);
   .fa-stack-1x {
     color: black;
+    z-index: 1;
   }
 }
 .login-username,
@@ -185,6 +186,18 @@ input {
   }
 }
 @media (max-height: 600px) {
+  .login-text {
+    height: 50%;
+    width: 50%;
+  }
+  .logo-principal{
+    img{
+      height: 100px;
+      width: 20%;
+    }
+  }
+}
+@media (max-height: 650px) {
   .login-text {
     height: 50%;
     width: 50%;
