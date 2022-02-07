@@ -82,6 +82,7 @@ input {
   }
 }
 .login-form {
+  width: 400px;
   display: flex;
   height: 100%;
   min-height: 10rem;
@@ -104,6 +105,12 @@ input {
   text-shadow: 1px -1px 0 rgba(0,0,0,0.3);
   .fa-stack-1x {
     color: black;
+    width: 50px;
+    height: 50px;
+  }
+  i {
+    width: 50px;
+    height: 50px;
   }
 }
 .login-username,

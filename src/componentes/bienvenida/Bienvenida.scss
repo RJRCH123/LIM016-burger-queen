@@ -11,10 +11,6 @@
   --color-white: #FFFFFF;
 }
 
-::-webkit-scrollbar {
-  width: 0px;
-}
-
 * {
   box-sizing: border-box;
   padding: 0;
@@ -61,7 +57,7 @@ a {
 .flex__center {
   display: flex;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
 }
 
 .bienvenida__bg {
@@ -149,8 +145,8 @@ a {
   line-height: 83.2px;
   letter-spacing: 0.04em;
   text-transform: capitalize;
-  /* padding-right: 20%;
-  padding-left: 20%; */
+  padding-right: 20%;
+  padding-left: 20%;
 }
 
 .spoon__img {
