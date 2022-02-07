@@ -18,6 +18,10 @@
   scroll-behavior: smooth;
 }
 
+body::-webkit-scrollbar {
+  width: 0px;
+}
+
 a {
   color: unset;
   text-decoration: none;
@@ -57,7 +61,7 @@ a {
 .flex__center {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: end;
 }
 
 .bienvenida__bg {
@@ -135,7 +139,7 @@ a {
   letter-spacing: 0.04em;
   text-transform: capitalize;
   line-height: 28px;
-  font-size: 16px;
+  font-size: small;
 }
 
 .headtext__cormorant {
@@ -145,8 +149,6 @@ a {
   line-height: 83.2px;
   letter-spacing: 0.04em;
   text-transform: capitalize;
-  padding-right: 20%;
-  padding-left: 20%;
 }
 
 .spoon__img {
