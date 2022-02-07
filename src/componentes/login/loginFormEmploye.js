@@ -1,4 +1,3 @@
-function FormEmploy() {
 import './login.scss';
 
 function FormEmploye() {

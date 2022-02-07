@@ -1,24 +1,15 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,700);
 @import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
 
-// body,
-// html {
-//   height: 100%;
-//   background-image: url('../../img/extra/Fondo-Login.png');
-// }
 .body-login {
   font-family: "Open Sans";
   font-weight: 100;
   display: flex;
   overflow: hidden;
 }
-// #root{
-//   height: 100vh;
-//   width: 100%;
-// }
 .renderLogin {
   height: 100vh;
-  width:100vmax ;
+  width:100% ;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -28,21 +19,32 @@
   background-size:100% 100%;
   background-position: bottom;
   object-fit: cover;
+  padding-top: 2rem;
+  button{
+    width: 80px;
+    height: 80px;
+    z-index: 10;
+    border-radius: 100%;
+    justify-self: flex-start;
+    background-color: transparent;
+    border: transparent;
+    color:aliceblue;
+    img {
+      width: 20px;
+      height: 20px;
+    }
+  }
 }
-// .App-Login{
-//   display: flex;
-//   height: 100%;
-// }
 .logo-principal{
   display: flex;
   width: 100%;
   height: 130px;
   justify-content: center;
   img{
-    width: 194px;
-    height: 150%;
-    z-index: 6;
-  }
+    width: 170px;
+    height: 118%;
+    z-index: 10;
+  }  
 }
 .firma{
   display: flex;
@@ -84,7 +86,7 @@ input {
   height: 100%;
   min-height: 10rem;
   margin: 63px auto 63px auto;
-  max-width: 70%;
+  max-width: 50%;
   padding: 0.5rem;
   z-index: 5;
   bottom: 100px;

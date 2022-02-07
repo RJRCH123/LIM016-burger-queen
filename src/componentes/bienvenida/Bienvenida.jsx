@@ -8,7 +8,7 @@ import {
   SpecialMenu
 } from './container'
 import { Navbar } from './components'
-import './Bienvenida.css';
+import './Bienvenida.scss';
 
 const Bienvenida = () => (
   <div>

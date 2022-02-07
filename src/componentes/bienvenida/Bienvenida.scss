@@ -3,7 +3,6 @@
 :root {
   --font-base: 'Cormorant Upright', serif;
   --font-alt: 'Open Sans', sans-serif;
-  
   --color-golden: #DCCA87;
   --color-black: #0C0C0C;
   --color-gray: #545454;
@@ -73,7 +72,6 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   min-height: 100vh;
 }
 
@@ -92,7 +90,6 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-
   margin-left: 2rem;
 }
 
@@ -107,17 +104,17 @@ a {
 
 .custom__button {
   background-color: var(--color-crimson);
-    color: var(--color-black);
-    font-family: var(--font-base);
-    font-weight: 700;
-    letter-spacing: 0.04em;
-    line-height: 28px;
-    font-size: 16px;
-    padding: 0.5rem 1.5rem;
-    border-radius: 1px;
-    border: none;
-    outline: none;
-    cursor: pointer;
+  color: var(--color-black);
+  font-family: var(--font-base);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 28px;
+  font-size: 16px;
+  padding: 0.5rem 1.5rem;
+  border-radius: 1px;
+  border: none;
+  outline: none;
+  cursor: pointer;
 }
 
 .p__cormorant {
