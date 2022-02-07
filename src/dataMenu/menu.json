@@ -1,0 +1,301 @@
+
+{
+  "karma": "Hamburguesería",
+  "carta": [
+    {
+      "hamburguesas": [
+        {
+          "id": "",
+          "codigo": "H001" ,
+          "name": "Karma Clásico",
+          "tipo": "Carnívora",
+          "img": "",
+          "unidades": "4",
+          "descripcion": "Hamburguesas de Carne + Papas + Ensalada +  Salsas Clásicas",
+          "precio": "12.90"
+        },
+        {
+          "id": "",
+          "codigo": "H002" ,
+          "name": "Extra Karma",
+          "tipo": "Carnívora",
+          "img": "../img/menu/Extra-Karma.png",
+          "unidades": "4",
+          "descripcion": "Hamburguesas de Carne + Blend de Quesos + Papas + Ensalada  +  Salsas Clásicas",
+          "precio": "14.90"
+        },
+        {
+          "id": "",
+          "codigo": "H003" ,
+          "name": "Karma Doble",
+          "tipo": "Carnívora",
+          "img": "../img/menu/Karma-Doble.png",
+          "unidades": "4",
+          "descripcion": "Hamburguesas de Carne Doble + Blend de Quesos + Huevo + Papas + Ensalada + Salsas Clásicas",
+          "precio": "16.90"
+        },
+        {
+          "id": "",
+          "codigo": "H004" ,
+          "name": "La Inflamable",
+          "tipo": "Carnívora",
+          "img": "",
+          "unidades": "3",
+          "descripcion": "Hamburguesas de Carne bañadas con salsa picante Cajú  + Jamón  + Blend de Quesos + Papas + Ensalada + Salsas Clásicas",
+          "precio": "17.90"
+        },
+        {
+          "id": "",
+          "codigo": "H005" ,
+          "name": "Dulce Venganza",
+          "tipo": "Carnívora",
+          "img": "",
+          "unidades": "4",
+          "descripcion": "Hamburguesas de Carne BAÑADAS CON SALSA BBQ  + Jamón +  Blend de Quesos + Papas + Ensalada + Salsas Clásicas",
+          "precio": "17.90"
+        },
+        {
+          "id": "",
+          "codigo": "H006" ,
+          "name": "Sin Karma",
+          "tipo": "Vegetariana",
+          "img": "",
+          "unidades": "3",
+          "descripcion": "Hamburguesas a base de Lenteja y Quinoa + Queso Mozarela a base de Almendras + Papas + Ensalada + Salsas Clásicas",
+          "precio": "12.90"
+        },
+        {
+          "id": "",
+          "codigo": "H007" ,
+          "name": "La Inocente",
+          "tipo": "Carnívora",
+          "img": "",
+          "unidades": "4",
+          "descripcion": "Hamburguesas de Carne + Cebolla Caramelizada + PIÑA + Jamón  + Papas + Ensalada + Salsas Clásicas ",
+          "precio": "18.90"
+        },
+        {
+          "id": "",
+          "codigo": "H008" ,
+          "name": "El Culpable",
+          "tipo": "Carnívora",
+          "img": "",
+          "unidades": "4",
+          "descripcion": "Hamburguesas de Carne + Jamón + Blend de Quesos + Tocino + Huevo  + Papas + Ensalada + Salsas Clásicas",
+          "precio": "18.90"
+        }
+      ],
+      "bebidas": [ 
+        {"frias": [ 
+          {
+            "id": "",
+            "codigo": "BF001" ,
+            "name": "Mango Frozen",
+            "tipo":"Frozen",
+            "img": "../img/menu/Mango.png",
+            "unidades": "1",
+            "descripcion": "500ml",
+            "precio": "9.90" 
+          },
+          {
+            "id": "",
+            "codigo": "BF002" ,
+            "name": "Maracuyá Frozen",
+            "tipo":"Frozen",
+            "img": "../img/menu/Maracuya.png",
+            "unidades": "1",
+            "descripcion": "500ml",
+            "precio": "8.90" 
+          },
+          {
+            "id": "",
+            "codigo": "BF003" ,
+            "name": "Limonada Frozen",
+            "tipo":"Frozen",
+            "img": "../img/menu/Limonada.png",
+            "unidades": "1",
+            "descripcion": "500ml",
+            "precio": "8.90" 
+          },
+          {
+            "id": "",
+            "codigo": "BF004" ,
+            "name": "Emoliente",
+            "tipo":"Otros",
+            "img": "../img/menu/Emoliente.png",
+            "unidades": "4",
+            "descripcion": "500ml",
+            "precio": "6.90" 
+          },
+          {
+            "id": "",
+            "codigo": "BF005" ,
+            "name": "Chicha",
+            "tipo":"Otros",
+            "img": "../img/menu/Chicha.png",
+            "unidades": "1",
+            "descripcion": "500ml",
+            "precio": "7.90" 
+          },
+          {
+            "id": "",
+            "codigo": "BF006" ,
+            "name": "Agua Mineral",
+            "tipo":"Otros",
+            "img": "../img/menu/Agua.png",
+            "unidades": "1",
+            "descripcion": "500ml",
+            "precio": "4.90" 
+          }
+        ]
+        },
+        {"calentes": [ 
+          {
+            "id": "",
+            "codigo": "BC001" ,
+            "name": "Manzanilla",
+            "tipo":"Infusión",
+            "img": "../img/menu/Manzanilla.png",
+            "unidades": "1",
+            "descripcion": "500ml",
+            "precio": "5.90" 
+          },
+          {
+            "id": "",
+            "codigo": "BC002" ,
+            "name": "Hierba Luisa",
+            "tipo":"Infusión",
+            "img": "../img/menu/Luisa.png",
+            "unidades": "1",
+            "descripcion": "500ml",
+            "precio": "5.90" 
+          },
+          {
+            "id": "",
+            "codigo": "BC003" ,
+            "name": "Anís",
+            "tipo":"Infusión",
+            "img": "../img/menu/Anis.png",
+            "unidades": "1",
+            "descripcion": "500ml",
+            "precio": "5.90" 
+          },
+          {
+            "id": "",
+            "codigo": "BC004" ,
+            "name": "Té",
+            "tipo":"Infusión",
+            "img": "../img/menu/Te.png",
+            "unidades": "1",
+            "descripcion": "500ml",
+            "precio": "5.90" 
+          },
+          {
+            "id": "",
+            "codigo": "BC005" ,
+            "name": "Expreso",
+            "tipo":"Café",
+            "img": "../img/menu/Expreso.png",
+            "unidades": "1",
+            "descripcion": "500ml",
+            "precio": "5.90" 
+          },
+          {
+            "id": "",
+            "codigo": "BC006" ,
+            "name": "Americano",
+            "tipo":"Café",
+            "img": "../img/menu/Americano.png",
+            "unidades": "1",
+            "descripcion": "500ml",
+            "precio": "5.90" 
+          },
+          {
+            "id": "",
+            "codigo": "BC007" ,
+            "name": "Capuchino",
+            "tipo":"Café",
+            "img": "../img/menu/Capuchino.png",
+            "unidades": "1",
+            "descripcion": "500ml",
+            "precio": "7.90" 
+          },
+          {
+            "id": "",
+            "codigo": "BC008" ,
+            "name": "Mocca",
+            "tipo":"Café",
+            "img": "../img/menu/Mocca.png",
+            "unidades": "1",
+            "descripcion": "500ml",
+            "precio": "7.90" 
+          },
+          {
+            "id": "",
+            "codigo": "BC009" ,
+            "name": "Emoliente",
+            "tipo":"Otros",
+            "img": "../img/menu/Emoliente.png",
+            "unidades": "1",
+            "descripcion": "500ml",
+            "precio": "6.90" 
+          }
+        ]
+        }
+      ],
+      "complementos": [ 
+        {
+          "id": "",
+          "codigo": "C001" ,
+          "name": "Porción de Papas",
+          "tipo": "-",
+          "img": "../img/menu/Papas.png",
+          "unidades": "-",
+          "descripcion": "Papas nativas + Orégano + Pizca de sal.",
+          "precio": "5.90"
+        },
+        {
+          "id": "",
+          "codigo": "C002" ,
+          "name": "Porción de Ensalada",
+          "tipo": "-",
+          "img": "../img/menu/Ensalada.png",
+          "unidades": "1",
+          "descripcion": "Palta + Lechuga + Tomate + Queso + Rábano + Vinagreta",
+          "precio": "5.90"
+        },
+        {
+          "id": "",
+          "codigo": "C001" ,
+          "name": "Aros de Cebolla",
+          "tipo": "-",
+          "img": "../img/menu/Aros.png",
+          "unidades": "10",
+          "descripcion": "Aros de Cebolla crocantes + Guacamole",
+          "precio": "6.90"
+        },
+        {
+          "id": "",
+          "codigo": "C001" ,
+          "name": "Nuggets",
+          "tipo": "-",
+          "img": "../img/menu/Nuggets.png",
+          "unidades": "6",
+          "descripcion": "Nuggets de pollo",
+          "precio": "8.90"
+        },
+        {
+          "id": "",
+          "codigo": "C001" ,
+          "name": "Tequeños de Queso ",
+          "tipo": "-",
+          "img": "../img/menu/Tequenos.png",
+          "unidades": "6",
+          "descripcion": "Tequeños con relleno de queso + Guacamole",
+          "precio": "6.90"
+        }
+      ]
+    }        
+  ]      
+}        
+        

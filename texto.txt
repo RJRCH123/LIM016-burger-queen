@@ -51,7 +51,7 @@ MENU
     -Unds: 3
     -Precio: S/. 17.90
 
-  ♦ EL CULPABLE
+  ♦ LA INOCENTE
     -Descripción:     
       HAMBURGUESAS DE CARNE + CEBOLLA CARAMELIZADA + PIÑA + JAMÓN  + PAPAS + ENSALADA + SALSAS CLÁSICAS 
     -Unds: 4
