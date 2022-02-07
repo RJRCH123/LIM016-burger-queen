@@ -1,37 +1,38 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,700);
 @import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
 
-body,
-html {
-  height: 100%;
-  background-image: url('../../img/extra/Fondo-Login.png');
-}
-body {
+// body,
+// html {
+//   height: 100%;
+//   background-image: url('../../img/extra/Fondo-Login.png');
+// }
+.body-login {
   font-family: "Open Sans";
   font-weight: 100;
   display: flex;
   overflow: hidden;
 }
-#root{
-  height: 100vh;
-  width: 100%;
-}
+// #root{
+//   height: 100vh;
+//   width: 100%;
+// }
 .renderLogin {
   height: 100vh;
-  width: 100%;
+  width:100vmax ;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  background-color: black;
   background-image: url('../../img/extra/Fondo-Login.png');
   background-repeat: no-repeat;
-  background-size:100% 70%;
+  background-size:100% 100%;
   background-position: bottom;
   object-fit: cover;
 }
-.App{
-  display: flex;
-  height: 100%;
-}
+// .App-Login{
+//   display: flex;
+//   height: 100%;
+// }
 .logo-principal{
   display: flex;
   width: 100%;
@@ -161,13 +162,14 @@ input {
   position: fixed;
   top: 0;
 }
-.underlay-photo {
-  animation: hue-rotate 6s infinite;
-  background: url('../../img/extra/Fondo-Login.png');
-  background-size: cover;
-  -webkit-filter: grayscale(30%);
-  z-index: -1;
-}
+// **************** Animacion Revisar ***************
+// .underlay-photo {
+//   animation: hue-rotate 6s infinite;
+//   background: url('../../img/extra/Fondo-Login.png');
+//   background-size: cover;
+//   -webkit-filter: grayscale(30%);
+//   z-index: 1;
+// }
 .underlay-black {
   background: rgba(0, 0, 0, 0.5);
   z-index: 3;
