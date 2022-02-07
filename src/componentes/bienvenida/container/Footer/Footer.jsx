@@ -28,15 +28,18 @@ const Footer = () => (
         <h1 className="app__footer-headtext">Creadoras del Proyecto</h1>
         <p className="p__opensans">Marielena Aizaga</p>
         <div className="app__footer-links_icons">
-          <FiGithub />
-          <FiMessageSquare />
-          <FiLinkedin />
+          <a type="button" target="_blank" rel="noreferrer" href="https://github.com/PandArtist93"> <FiGithub /> </a>
+          <a type="button" target="blank" rel="noreferrer" href="mailto:maizaga01@gmail.com"> <FiMessageSquare /> </a>
+          <a type="button" target="blank" rel="noreferrer" href="https://www.linkedin.com/in/rosamaria-rodriguez-6904a1191/"> <FiLinkedin /> </a>
         </div>
         <p className="p__opensans">Rosamaria Rodriguez</p>
         <div className="app__footer-links_icons">
-          <FiGithub />
-          <FiMessageSquare />
-          <FiLinkedin />
+        <a type="button" target="_blank" rel="noreferrer" href="https://github.com/RJRCH123"> <FiGithub /> </a>
+        <a type="button" target="blank" rel="noreferrer" href="mailto:rous9716@gmail.com"> <FiMessageSquare /> </a>
+        <a type="button" target="blank" rel="noreferrer" href="https://www.linkedin.com/in/rosamaria-rodriguez-6904a1191/"> <FiLinkedin /> </a>
+          
+          
+          
         </div>
       </div>
     </div>
