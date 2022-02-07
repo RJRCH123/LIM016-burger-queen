@@ -1,8 +1,8 @@
 import React from 'react';
-
+import { Link } from "react-router-dom";
 import { SubHeading, MenuItem } from '../../components';
 import { data, images } from '../../constants';
-import './SpecialMenu.css';
+import './SpecialMenu.scss';
 
 const SpecialMenu = () => (
   <div className="app__specialMenu flex__center section__padding" id="menu">
@@ -36,7 +36,12 @@ const SpecialMenu = () => (
     </div>
 
     <div style={{ marginTop: 15 }}>
-      <button type="button" className="custom__button">Carta completa</button>
+     {/*  <button type="button" className="custom__button">Carta completa</button> */}
+      <button type="button" className="custom__button">
+        <Link to='/carta'>
+          Carta completa
+        </Link>
+      </button>
     </div>
   </div>
 );

@@ -11,6 +11,7 @@ $gray: #BA973C;
     display: flex;
 }
 .content{
+   
     width: 100%;
     background-color: #E5E5E5;
     padding: 16px;;
@@ -38,14 +39,14 @@ $gray: #BA973C;
 }
 .sideBar{
     background-color: $light;
-    padding: 1rem;
+    padding: 0.7rem;
     color: #fff;
     width: 19rem;
     height: calc(100vh - 40px);
     border-right: 2px solid $light;
     ul {
         list-style: none;
-        padding: 1rem ;
+        padding: 0.5rem ;
         li {
             display: flex;
             align-items: center;
@@ -73,7 +74,6 @@ $gray: #BA973C;
         justify-content: center;
         margin-right: 20px;
         width: 35px;
-        /* height: 35px; */
     }
     p {
         text-align:start;
@@ -98,4 +98,19 @@ $gray: #BA973C;
         border-color: transparent;
         cursor: pointer;
     }
+}
+-------------------------------
+.datosRegistro{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+    width: 100%;
+    height: auto;
+    h3{
+        display: flex;
+        justify-content:center;
+        margin-bottom: 20px;
+    }
+  
 }
