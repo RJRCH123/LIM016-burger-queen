@@ -16,7 +16,7 @@
   background-color: black;
   background-image: url('../../img/extra/Fondo-Login.png');
   background-repeat: no-repeat;
-  background-size:100% 100%;
+  background-size:130% 65%;
   background-position: bottom;
   object-fit: cover;
   padding-top: 2rem;
@@ -38,7 +38,7 @@
 .logo-principal{
   display: flex;
   width: 100%;
-  height: 130px;
+  height: 120px;
   justify-content: center;
   img{
     width: 170px;
@@ -82,6 +82,7 @@ input {
   }
 }
 .login-form {
+  width: 400px;
   display: flex;
   height: 100%;
   min-height: 10rem;
@@ -104,6 +105,7 @@ input {
   text-shadow: 1px -1px 0 rgba(0,0,0,0.3);
   .fa-stack-1x {
     color: black;
+    z-index: 1;
   }
 }
 .login-username,
@@ -182,5 +184,29 @@ input {
   }
   to {
     -webkit-filter: grayscale(30%) hue-rotate(360deg);
+  }
+}
+@media (max-height: 600px) {
+  .login-text {
+    height: 50%;
+    width: 50%;
+  }
+  .logo-principal{
+    img{
+      height: 100px;
+      width: 20%;
+    }
+  }
+}
+@media (max-height: 650px) {
+  .login-text {
+    height: 50%;
+    width: 50%;
+  }
+  .logo-principal{
+    img{
+      height: 100px;
+      width: 20%;
+    }
   }
 }

@@ -7,11 +7,6 @@ const wines = [
     tags: 'Hambueguesas de Carne Doble | Blend de Quesos | Huevo | Papas| Ensalada | Salsas Clásicas ', 
   },
   {
-    title: 'LA INFLAMABLE',
-    price: 'S/. 17.90',
-    tags: 'Hambueguesas de Carne bañadas con salsa picante Cajú| Jamón | Papas| Ensalada | Salsas Clásicas',
-  },
-  {
     title: 'DULCE VENGANZA',
     price: 'S/. 17.90',
     tags: 'Hambueguesas de Carne bañadas con salsa BBQ | Blend de Quesos | Jamón | Papas| Ensalada | Salsas Clásicas',
@@ -20,11 +15,6 @@ const wines = [
     title: 'SIN KARMA',
     price: ' S/. 17.90',
     tags: 'Hamburguesas Vegetarianas a base de Lenteja y Quinoa | Queso Mozarela a base de leche de Almendras | Papas| Ensalada | Salsas Clásicas', 
-  },
-  {
-    title: 'EL CULPABLE',
-    price: 'S/. 18.90',
-    tags: 'Hambueguesas de Carne | Jamón | Blend de Quesos | Tocino | Huevo | Papas| Ensalada | Salsas Clásicas',
   },
 ];
 
