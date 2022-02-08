@@ -92,10 +92,10 @@ const SideBar = () => {
             </ul>
             <div className='containerBotones'>
                 <div className='bottons'>
-                    <button><img src={BH} alt= "BH"/></button>
+                    <button><Link to='/admin/registro/'><img src={BH} alt= "BH"/></Link></button>
                 </div>
                 <div className='bottons1'>
-                    <button><img src={BS} alt= "BS"/></button>               
+                    <button><Link to='/'><img src={BS} alt= "BS"/></Link></button>          
                 </div>
             </div>
         </div>
