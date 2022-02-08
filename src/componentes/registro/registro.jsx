@@ -90,9 +90,13 @@ const SideBar = () => {
                     </Link>
                 </li>
             </ul>
-            <div className='bottons'>
-                <button><img src={BH} alt= "BH"/></button>
-                <button><img src={BS} alt= "BS"/></button>               
+            <div className='containerBotones'>
+                <div className='bottons'>
+                    <button><img src={BH} alt= "BH"/></button>
+                </div>
+                <div className='bottons1'>
+                    <button><img src={BS} alt= "BS"/></button>               
+                </div>
             </div>
         </div>
     )

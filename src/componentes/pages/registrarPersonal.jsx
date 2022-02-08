@@ -1,10 +1,15 @@
 import './registrarPersonal.scss';
 const RegistroPersonal = () => {
+
+    const onSubmit = (e) => {
+		e.preventDefault();
+    }
+
     return  ( 
         <div>
             <div className="datosRegistro">
                 <h2>FORMULARIO DE REGISTRO</h2>
-                <form>
+                <form id='formRegistro' action='' onSubmit={onSubmit} >
                     <div className='subTitle'>
                         <h3>Datos personales del Empleado</h3>
                     </div>
@@ -21,8 +26,8 @@ const RegistroPersonal = () => {
                     </div>  
                     <div className='flexForm'>
                         <label>
-                            <p>Género</p>
-                            <input id="genero" name="genero" type="genero"/>
+                            <p>DNI</p>
+                            <input id="DNI" name="DNI" type="DNI"/>
                         </label>
                         
                         <label>
@@ -32,13 +37,13 @@ const RegistroPersonal = () => {
                     </div>
                     <div className='flexForm'>
                         <label >
-                            <p>DNI</p>
-                            <input id="DNI" name="DNI" type="DNI"/>
+                            <p>Celular</p>
+                            <input id="celular" name="celular" type="celular"/>
                         </label>
                         
                         <label>
-                            <p>Celular</p>
-                            <input id="celular" name="celular" type="celular"/>
+                            <p>Cargo</p>
+                            <input id="cargo" name="cargo" type="cargo"/>
                         </label>
                     </div>
                     <div className='subTitle'>
@@ -46,8 +51,8 @@ const RegistroPersonal = () => {
                     </div> 
                     <div className='flexForm'>
                         <label>
-                            <p>Cargo</p>
-                            <input id="rol" name="rol" type="rol" />
+                            <p>Usuario</p>
+                            <input id="usuario" name="usuario" type="usuario" />
                         </label>
                         
                         <label>
@@ -57,13 +62,13 @@ const RegistroPersonal = () => {
                     </div>
                     <div className='flexForm'>
                         <label>
-                            <p>Usuario</p>
-                            <input id="usuario" name="usuario" type="usuario"/>
+                            <p>Contraseña</p>
+                            <input id="contraseña1" name="contraseña1" type="contraseña1"/>
                         </label>
                         
                         <label>
                             <p>Contraseña</p>
-                            <input id="contraseña" name="contraseña" type="contraseña"/>
+                            <input id="contraseña2" name="contraseña" type="contraseña"/>
                         </label>
                     </div>                 
                     <button type="submit">Registrar Personal</button>

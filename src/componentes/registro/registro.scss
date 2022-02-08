@@ -9,12 +9,13 @@ $gray: #BA973C;
 }
 .flex{
     display: flex;
+    height: 100vh
 }
 .content{
-   
     width: 100%;
     background-color: #E5E5E5;
-    padding: 16px;;
+    padding: 16px;
+    padding-top: 3rem;
     p {
         color: #000;
     }
@@ -42,7 +43,7 @@ $gray: #BA973C;
     padding: 0.7rem;
     color: #fff;
     width: 19rem;
-    height: calc(100vh - 40px);
+    /* height: calc(100vh - 40px); */
     border-right: 2px solid $light;
     ul {
         list-style: none;
@@ -88,12 +89,30 @@ $gray: #BA973C;
     height: auto;
     margin-bottom: 20px;
 }
+.containerBotones{
+    width: 13rem;
+    display: flex;
+    position: relative;
+    bottom: 0;
+    justify-content: space-between;
+    padding: 0.5rem;
+}
 .bottons{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     button {
-        position:relative;
-        bottom: 0px;    
+        margin-bottom: 10%;
+        background-color: transparent;
+        border-color: transparent;
+        cursor: pointer;
+    }
+}
+.bottons1{
+    display: flex;
+    justify-content: center;
+    button {
+        margin-bottom: 10%;
+        right: 50px;
         background-color: transparent;
         border-color: transparent;
         cursor: pointer;
@@ -112,5 +131,4 @@ $gray: #BA973C;
         justify-content:center;
         margin-bottom: 20px;
     }
-  
 }
