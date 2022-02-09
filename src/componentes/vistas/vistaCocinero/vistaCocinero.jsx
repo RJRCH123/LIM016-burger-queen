@@ -20,7 +20,7 @@ const SideBar = () => {
             </div>
             <ul>
                 <li>
-                    <Link to='/cocinero/registro/pedidos-por-preparar'>
+                    <Link to='/cocinero/pedidos-por-preparar'>
                         <div className='SideBar-bottons'>
                             <img src={pp} alt= "pp"/>
                             <p>Pedidos por preparar</p>
@@ -28,7 +28,7 @@ const SideBar = () => {
                     </Link>
                 </li>
                 <li>
-                    <Link to='/cocinero/registro/pedidos-preparados'>
+                    <Link to='/cocinero/pedidos-preparados'>
                         <div className='SideBar-bottons'>
                             <img src={PP} alt= "PP"/>
                             <p>Pedidos preparados</p>
@@ -36,7 +36,7 @@ const SideBar = () => {
                     </Link>
                 </li>
                 <li>
-                    <Link to='/cocinero/registro/historial-pedidos'>
+                    <Link to='/cocinero/historial-pedidos'>
                         <div className='SideBar-bottons'>
                             <img src={HP} alt= "HP"/>
                             <p>Historial de pedidos</p>

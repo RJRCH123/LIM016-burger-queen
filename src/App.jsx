@@ -29,24 +29,24 @@ function App() {
     <div className="App">
       <Routes>
                 
-        <Route path='/admin/registro/registro-personal' element={<VistaAdmin content={<RegistroEmpleado/>}/>}/>
-        <Route path='/admin/registro/pedidos-preparados' element={<VistaAdmin content={<PedidosPreparados/>}/>}/>
-        <Route path='/admin/registro/historial-ventas' element={<VistaAdmin content={<HistorialVentas/>}/>}/>
-        <Route path='/admin/registro/historial-empleados' element={<VistaAdmin content={<HistorialEmpleados/>}/>}/>
-        <Route path='/admin/registro/historial-cocinero' element={<VistaAdmin content={<HistorialCocinero/>}/>}/>
-        <Route path='/admin/registro/historial-mesero' element={<VistaAdmin content={<HistorialMesero/>}/>}/>
-        <Route path='/admin/registro/pedidos-entregar' element={<VistaAdmin content={<PedidosEntregar/>}/>}/>
-        <Route path='/admin/registro/*' element={<VistaAdmin content={<Inicio/>}/>}/>
+        <Route path='/admin/registro-personal' element={<VistaAdmin content={<RegistroEmpleado/>}/>}/>
+        <Route path='/admin/pedidos-preparados' element={<VistaAdmin content={<PedidosPreparados/>}/>}/>
+        <Route path='/admin/historial-ventas' element={<VistaAdmin content={<HistorialVentas/>}/>}/>
+        <Route path='/admin/historial-empleados' element={<VistaAdmin content={<HistorialEmpleados/>}/>}/>
+        {/* <Route path='/admin/historial-cocinero' element={<VistaAdmin content={<HistorialCocinero/>}/>}/> */}
+        {/* <Route path='/admin/historial-mesero' element={<VistaAdmin content={<HistorialMesero/>}/>}/> */}
+        <Route path='/admin/pedidos-entregar' element={<VistaAdmin content={<PedidosEntregar/>}/>}/>
+        <Route path='/admin/*' element={<VistaAdmin content={<Inicio/>}/>}/>
 
-        <Route path='/cocinero/registro/pedidos-por-preparar' element={<VistaCocinero content={<PedidosPorPreparar content={<Pedido/>}/>} />}/>
-        <Route path='/cocinero/registro/pedidos-preparados' element={<VistaCocinero content={<PedidosPreparados content={<Pedido/>}/>} /> }/>
-        <Route path='/cocinero/registro/historial-pedidos' element={<VistaCocinero content={<HistorialCocinero/>}/>}/>
-        <Route path='/cocinero/registro/*' element={<VistaCocinero content={<Inicio/>}/>}/>
+        <Route path='/cocinero/pedidos-por-preparar' element={<VistaCocinero content={<PedidosPorPreparar content={<Pedido/>}/>} />}/>
+        <Route path='/cocinero/pedidos-preparados' element={<VistaCocinero content={<PedidosPreparados content={<Pedido/>}/>} /> }/>
+        <Route path='/cocinero/historial-pedidos' element={<VistaCocinero content={<HistorialCocinero/>}/>}/>
+        <Route path='/cocinero/*' element={<VistaCocinero content={<Inicio/>}/>}/>
 
-        <Route path='/mesero/registro/realizar-pedido' element={<VistaMesero content={<RealizarPedido />} />}/>
-        <Route path='/mesero/registro/pedidos-preparados' element={<VistaMesero content={<PedidosPreparados/>}/>}/>
-        <Route path='/mesero/registro/historial-pedidos' element={<VistaMesero content={<HistorialMesero/>} />}/>
-        <Route path='/mesero/registro/*' element={<VistaMesero content={<Inicio/>}/>}/>
+        <Route path='/mesero/realizar-pedido' element={<VistaMesero content={<RealizarPedido />} />}/>
+        <Route path='/mesero/pedidos-preparados' element={<VistaMesero content={<PedidosPreparados/>}/>}/>
+        <Route path='/mesero/historial-pedidos' element={<VistaMesero content={<HistorialMesero/>} />}/>
+        <Route path='/mesero/*' element={<VistaMesero content={<Inicio/>}/>}/>
 
         <Route path='/bienvenida' element={<Bienvenida/>}/> 
         <Route path='/employe' element={<Login form={<FormEmploye/>}/>}/>

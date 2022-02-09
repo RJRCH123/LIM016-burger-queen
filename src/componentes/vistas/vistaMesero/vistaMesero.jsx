@@ -22,7 +22,7 @@ const SideBar = () => {
             </div>
             <ul>
                 <li>
-                    <Link to='/mesero/registro/realizar-pedido'>
+                    <Link to='/mesero/realizar-pedido'>
                         <div className='SideBar-bottons'>
                             <img src={RP} alt= "RP"/>
                             <p>Realizar Pedido</p>
@@ -30,7 +30,7 @@ const SideBar = () => {
                     </Link>
                 </li>
                 <li>
-                    <Link to='/mesero/registro/pedidos-preparados'>
+                    <Link to='/mesero/pedidos-preparados'>
                         <div className='SideBar-bottons'>
                             <img src={PP} alt= "PP"/>
                             <p>Pedidos preparados</p>
@@ -38,7 +38,7 @@ const SideBar = () => {
                     </Link>
                 </li>
                 <li>
-                    <Link to='/mesero/registro/historial-pedidos'>
+                    <Link to='/mesero/historial-pedidos'>
                         <div className='SideBar-bottons'>
                             <img src={HP} alt= "HP"/>
                             <p>Historial de pedidos</p>

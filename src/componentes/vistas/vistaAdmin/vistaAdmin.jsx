@@ -1,6 +1,4 @@
 import LogoAdmin from '../../../img/iconos/trajeAdmin.png';
-import HM from '../../../img/iconos/HM.png';
-import HC from '../../../img/iconos/HC.png';
 import PE from '../../../img/iconos/PE.png';
 import PP from '../../../img/iconos/PP.png';
 import HV from '../../../img/iconos/HV.png';
@@ -24,7 +22,7 @@ const SideBar = () => {
             </div>
             <ul>
                 <li>
-                    <Link to='/admin/registro/registro-personal'>
+                    <Link to='/admin/registro-personal'>
                         <div className='SideBar-bottons'>
                             <img src={RP} alt= "RP"/>
                             <p>Registrar Personal</p>
@@ -32,7 +30,7 @@ const SideBar = () => {
                     </Link>
                 </li>
                 <li>
-                    <Link to='/admin/registro/historial-empleados'>
+                    <Link to='/admin/historial-empleados'>
                         <div className='SideBar-bottons'>
                             <img src={HE} alt= "HE"/>
                             <p>Historial de Empleados</p>
@@ -40,7 +38,7 @@ const SideBar = () => {
                     </Link>
                 </li>
                 <li>
-                    <Link to='/admin/registro/historial-ventas'>
+                    <Link to='/admin/historial-ventas'>
                         <div className='SideBar-bottons'>
                             <img src={HV} alt= "HV"/>
                             <p>Historial de Ventas</p>
@@ -48,7 +46,7 @@ const SideBar = () => {
                     </Link>
                 </li>
                 <li>
-                    <Link to='/admin/registro/pedidos-preparados'>
+                    <Link to='/admin/pedidos-preparados'>
                         <div className='SideBar-bottons'>
                             <img src={PP} alt= "PP"/>
                             <p>Pedidos Preparados</p>
@@ -56,29 +54,13 @@ const SideBar = () => {
                     ></Link>
                 </li>
                 <li>
-                    <Link to='/admin/registro/pedidos-entregar'>
+                    <Link to='/admin/pedidos-entregar'>
                         <div className='SideBar-bottons'>
                             <img src={PE} alt= "PE"/>
                             <p>Pedidos para Entregar</p>
                         </div>
                     </Link>
-                </li>
-                <li>
-                    <Link to='/admin/registro/historial-cocinero'>
-                        <div className='SideBar-bottons'>
-                            <img src={HC} alt= "HC"/>
-                            <p>Historial Pedidos Cocinero</p>
-                        </div>
-                    </Link>
-                </li>
-                <li>
-                    <Link to='/admin/registro/historial-mesero'>
-                        <div className='SideBar-bottons'>
-                            <img src={HM} alt= "HM"/>
-                            <p>Historial Pedidos Mesero</p>
-                        </div>
-                    </Link>
-                </li>
+                </li>               
             </ul>
             <div className='containerBotones'>
                 <div className='bottons'>
