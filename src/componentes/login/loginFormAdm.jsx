@@ -13,7 +13,7 @@ function FormAdmin() {
             <input type="email" className="login-username" autofocus="true" required="true" placeholder="Usuario" />
             <input type="password" className="login-password" required="true" placeholder="Contraseña" />
             <a href="google.com" className="login-forgot-pass"> ¿Olvidaste tu contraseña? </a>
-            <Link to='/admin/registro/'><input type="submit" name="Iniciar Sesión" value="Iniciar Sesión" class="login-submit"/></Link> 
+            <Link to='/admin/'><input type="submit" name="Iniciar Sesión" value="Iniciar Sesión" class="login-submit"/></Link> 
         </form>            
     );
 }

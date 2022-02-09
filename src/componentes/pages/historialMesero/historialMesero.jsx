@@ -1,10 +1,10 @@
-import Logo from '../../img/logos/Logo-Circular.png';
-import './historialVentas.scss';
+import Logo from '../../../img/logos/Logo-Circular.png';
+import './historialMesero.scss';
 const HistorialCocinero = () => {
     return  ( 
         <div>
             <div className='datosEmpresa'>
-                <h2>HISTORIAL DE VENTAS</h2>
+                <h2>HISTORIAL PEDIDOS MESERO</h2>
                 <div className='descripcion'>
                     <img src={Logo} alt= "logo"/>
                     <div>

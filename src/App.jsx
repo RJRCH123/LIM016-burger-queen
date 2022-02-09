@@ -5,37 +5,55 @@ import {
 } from "react-router-dom";
 
 import Bienvenida from "./componentes/bienvenida/Bienvenida";
-import Registro from './componentes/registro/registro';
+import VistaAdmin from './componentes/vistas/vistaAdmin/vistaAdmin';
+import VistaCocinero from './componentes/vistas/vistaCocinero/vistaCocinero';
+import VistaMesero from './componentes/vistas/vistaMesero/vistaMesero';
 import Login from './componentes/login/login';
+import Inicio from './componentes/Inicio/inicio';
 import FormAdmin from "./componentes/login/loginFormAdm";
 import FormEmploye from "./componentes/login/loginFormEmploye";
 import RegistroEmpleado from './componentes/pages/registroUsuario/registrarEmpleado';
-import PedidosPreparados from './componentes/pages/pedidosPreparados';
-import PedidosEntregar from './componentes/pages/pedidosEntregar';
-import HistorialVentas from './componentes/pages/historialVentas';
-import HistorialEmpleados from './componentes/pages/historialEmpleados';
-import HistorialCocinero from './componentes/pages/historialCocinero';
-import HistorialMesero from './componentes/pages/historialMesero';
+import PedidosPorPreparar from './componentes/pages/pedidosPorPreparar/pedidosPorPreparar';
+import PedidosPreparados from './componentes/pages/pedidosPreparados/pedidosPreparados';
+import PedidosEntregar from './componentes/pages/pedidosEntregar/pedidosEntregar';
+import HistorialVentas from './componentes/pages/historialVentas/historialVentas';
+import HistorialEmpleados from './componentes/pages/historialEmpleados/historialEmpleados';
+import HistorialCocinero from './componentes/pages/historialCocinero/historialCocinero';
+import HistorialMesero from './componentes/pages/historialMesero/historialMesero';
+import RealizarPedido from './componentes/pages/realizarPedido/RealizarPedido'
 import Carta from './componentes/bienvenida/container/Menu/carta';
-
+import Pedido from './componentes/utils/pedido/pedido'
 
 function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path='/carta' element={<Carta/>}/>
-        <Route path='/login' element={<Login form={<FormAdmin/>} />}/>
+                
+        <Route path='/admin/registro-personal' element={<VistaAdmin content={<RegistroEmpleado/>}/>}/>
+        <Route path='/admin/pedidos-preparados' element={<VistaAdmin content={<PedidosPreparados/>}/>}/>
+        <Route path='/admin/historial-ventas' element={<VistaAdmin content={<HistorialVentas/>}/>}/>
+        <Route path='/admin/historial-empleados' element={<VistaAdmin content={<HistorialEmpleados/>}/>}/>
+        {/* <Route path='/admin/historial-cocinero' element={<VistaAdmin content={<HistorialCocinero/>}/>}/> */}
+        {/* <Route path='/admin/historial-mesero' element={<VistaAdmin content={<HistorialMesero/>}/>}/> */}
+        <Route path='/admin/pedidos-entregar' element={<VistaAdmin content={<PedidosEntregar/>}/>}/>
+        <Route path='/admin/*' element={<VistaAdmin content={<Inicio/>}/>}/>
+
+        <Route path='/cocinero/pedidos-por-preparar' element={<VistaCocinero content={<PedidosPorPreparar content={<Pedido/>}/>} />}/>
+        <Route path='/cocinero/pedidos-preparados' element={<VistaCocinero content={<PedidosPreparados content={<Pedido/>}/>} /> }/>
+        <Route path='/cocinero/historial-pedidos' element={<VistaCocinero content={<HistorialCocinero/>}/>}/>
+        <Route path='/cocinero/*' element={<VistaCocinero content={<Inicio/>}/>}/>
+
+        <Route path='/mesero/realizar-pedido' element={<VistaMesero content={<RealizarPedido />} />}/>
+        <Route path='/mesero/pedidos-preparados' element={<VistaMesero content={<PedidosPreparados/>}/>}/>
+        <Route path='/mesero/historial-pedidos' element={<VistaMesero content={<HistorialMesero/>} />}/>
+        <Route path='/mesero/*' element={<VistaMesero content={<Inicio/>}/>}/>
+
+        <Route path='/bienvenida' element={<Bienvenida/>}/> 
         <Route path='/employe' element={<Login form={<FormEmploye/>}/>}/>
-        <Route path='/admin/registro/*' element={<Registro/>}/>
-        <Route path='/admin/registro/registro-personal' element={<Registro content={<RegistroEmpleado/>}/>}/>
-        <Route path='/admin/registro/pedidos-preparados' element={<Registro content={<PedidosPreparados/>}/>}/>
-        <Route path='/admin/registro/historial-ventas' element={<Registro content={<HistorialVentas/>}/>}/>
-        <Route path='/admin/registro/historial-empleados' element={<Registro content={<HistorialEmpleados/>}/>}/>
-        <Route path='/admin/registro/pedidos-entregar' element={<Registro content={<PedidosEntregar/>}/>}/>
-        <Route path='/admin/registro/historial-cocinero' element={<Registro content={<HistorialCocinero/>}/>}/>
-        <Route path='/admin/registro/historial-mesero' element={<Registro content={<HistorialMesero/>}/>}/>
-        <Route path='/bienvenida' element={<Bienvenida/>}/>        
+        <Route path='/login' element={<Login form={<FormAdmin/>} />}/> 
+        <Route path='/carta' element={<Carta/>}/>      
         <Route path='/' element={<Bienvenida/>}/>
+
       </Routes>
     </div>      
   );

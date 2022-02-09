@@ -2,40 +2,19 @@
     display: flex;
     height: 100%;
     width: 100%;
+    padding: 2rem 0;
 }
 .gif{
-    height: 100vh;
+    height: 100%;
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     background-repeat: no-repeat;
     background-size:100% 70%;
     background-position: bottom;
-    object-fit: cover;    
-}
-.selecLogin{
-    height: auto;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content:space-around;
-    input{
-        border: 1px solid white;
-        background: transparent;
-        color: white;
-        display: block;
-        margin: 0.5rem auto;
-        width: 150px;
-        height: 40px;
-        min-width: 1px;
-        padding: 0.25rem;
-        transition: 250ms background ease-in;
-        &:hover,
-        &:focus {
-            background: white;
-            color: black;
-            transition: 250ms background ease-in;
-        }
-    }
+    justify-content: flex-start;
+    object-fit: cover; 
+    img {
+        width: 100%;
+    }   
 }
