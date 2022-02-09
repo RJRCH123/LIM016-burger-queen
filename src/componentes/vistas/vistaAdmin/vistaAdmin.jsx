@@ -1,26 +1,16 @@
-import Logo from '../../img/logos/Logo-nav.png';
-import LogoAdmin from '../../img/iconos/trajeAdmin.png';
-import HM from '../../img/iconos/HM.png';
-import HC from '../../img/iconos/HC.png';
-import PE from '../../img/iconos/PE.png';
-import PP from '../../img/iconos/PP.png';
-import HV from '../../img/iconos/HV.png';
-import HE from '../../img/iconos/HE.png';
-import RP from '../../img/iconos/RP.png';
-import BH from '../../img/iconos/botton-home.png';
-import BS from '../../img/iconos/botton-salir.png';
+import LogoAdmin from '../../../img/iconos/trajeAdmin.png';
+import HM from '../../../img/iconos/HM.png';
+import HC from '../../../img/iconos/HC.png';
+import PE from '../../../img/iconos/PE.png';
+import PP from '../../../img/iconos/PP.png';
+import HV from '../../../img/iconos/HV.png';
+import HE from '../../../img/iconos/HE.png';
+import RP from '../../../img/iconos/RP.png';
+import BH from '../../../img/iconos/botton-home.png';
+import BS from '../../../img/iconos/botton-salir.png';
 import { Link } from "react-router-dom";
-import './registro.scss';
-
-const Navbar = () => {
-    return (
-        <div className="navbar">
-             <div className="logo-registro">
-                <img src={Logo} alt= "logo"/>
-            </div>
-        </div>
-    )
-}
+import './vistaAdmin.scss';
+import Navbar from '../../utils/navBar/navBar'
 
 const SideBar = () => {
     return (
@@ -102,7 +92,7 @@ const SideBar = () => {
     )
 }
 
-function Registro(props) {
+function VistaAdmin(props) {
     return (       
         <div className="container">
             <Navbar/> 
@@ -117,4 +107,4 @@ function Registro(props) {
     );
 }
 
-export default  Registro;
+export default  VistaAdmin;
