@@ -1,4 +1,4 @@
-import Logo from '../../img/logos/Logo-Circular.png';
+import Logo from '../../../img/logos/Logo-Circular.png';
 import './historialCocinero.scss';
 const HistorialCocinero = () => {
     return  ( 

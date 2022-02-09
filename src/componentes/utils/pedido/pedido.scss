@@ -1,0 +1,17 @@
+.boxPedido{
+    width: 100%;
+    display: flex;
+    background-color: orange;
+}
+.pedido {
+    width: auto;
+    display: flex;
+    align-self: center;
+    
+    height: 70%;
+    background-color: aliceblue;
+    img {
+        width: 10%;
+        height: 10%;
+    }
+}

@@ -1,26 +1,14 @@
-import Logo from '../../img/logos/Logo-nav.png';
-import LogoAdmin from '../../img/iconos/trajeAdmin.png';
-import HM from '../../img/iconos/HM.png';
-import HC from '../../img/iconos/HC.png';
-import PE from '../../img/iconos/PE.png';
-import PP from '../../img/iconos/PP.png';
-import HV from '../../img/iconos/HV.png';
-import HE from '../../img/iconos/HE.png';
-import RP from '../../img/iconos/RP.png';
-import BH from '../../img/iconos/botton-home.png';
-import BS from '../../img/iconos/botton-salir.png';
+import LogoAdmin from '../../../img/iconos/trajeAdmin.png';
+import PE from '../../../img/iconos/PE.png';
+import PP from '../../../img/iconos/PP.png';
+import HV from '../../../img/iconos/HV.png';
+import HE from '../../../img/iconos/HE.png';
+import RP from '../../../img/iconos/RP.png';
+import BH from '../../../img/iconos/botton-home.png';
+import BS from '../../../img/iconos/botton-salir.png';
 import { Link } from "react-router-dom";
-import './registro.scss';
-
-const Navbar = () => {
-    return (
-        <div className="navbar">
-             <div className="logo-registro">
-                <img src={Logo} alt= "logo"/>
-            </div>
-        </div>
-    )
-}
+import './vistaAdmin.scss';
+import Navbar from '../../utils/navBar/navBar'
 
 const SideBar = () => {
     return (
@@ -34,7 +22,7 @@ const SideBar = () => {
             </div>
             <ul>
                 <li>
-                    <Link to='/admin/registro/registro-personal'>
+                    <Link to='/admin/registro-personal'>
                         <div className='SideBar-bottons'>
                             <img src={RP} alt= "RP"/>
                             <p>Registrar Personal</p>
@@ -42,7 +30,7 @@ const SideBar = () => {
                     </Link>
                 </li>
                 <li>
-                    <Link to='/admin/registro/historial-empleados'>
+                    <Link to='/admin/historial-empleados'>
                         <div className='SideBar-bottons'>
                             <img src={HE} alt= "HE"/>
                             <p>Historial de Empleados</p>
@@ -50,7 +38,7 @@ const SideBar = () => {
                     </Link>
                 </li>
                 <li>
-                    <Link to='/admin/registro/historial-ventas'>
+                    <Link to='/admin/historial-ventas'>
                         <div className='SideBar-bottons'>
                             <img src={HV} alt= "HV"/>
                             <p>Historial de Ventas</p>
@@ -58,7 +46,7 @@ const SideBar = () => {
                     </Link>
                 </li>
                 <li>
-                    <Link to='/admin/registro/pedidos-preparados'>
+                    <Link to='/admin/pedidos-preparados'>
                         <div className='SideBar-bottons'>
                             <img src={PP} alt= "PP"/>
                             <p>Pedidos Preparados</p>
@@ -66,39 +54,27 @@ const SideBar = () => {
                     ></Link>
                 </li>
                 <li>
-                    <Link to='/admin/registro/pedidos-entregar'>
+                    <Link to='/admin/pedidos-entregar'>
                         <div className='SideBar-bottons'>
                             <img src={PE} alt= "PE"/>
                             <p>Pedidos para Entregar</p>
                         </div>
                     </Link>
-                </li>
-                <li>
-                    <Link to='/admin/registro/historial-cocinero'>
-                        <div className='SideBar-bottons'>
-                            <img src={HC} alt= "HC"/>
-                            <p>Historial Pedidos Cocinero</p>
-                        </div>
-                    </Link>
-                </li>
-                <li>
-                    <Link to='/admin/registro/historial-mesero'>
-                        <div className='SideBar-bottons'>
-                            <img src={HM} alt= "HM"/>
-                            <p>Historial Pedidos Mesero</p>
-                        </div>
-                    </Link>
-                </li>
+                </li>               
             </ul>
-            <div className='bottons'>
-                <button><img src={BH} alt= "BH"/></button>
-                <button><img src={BS} alt= "BS"/></button>               
+            <div className='containerBotones'>
+                <div className='bottons'>
+                    <button><Link to='/admin/registro/'><img src={BH} alt= "BH"/></Link></button>
+                </div>
+                <div className='bottons1'>
+                    <button><Link to='/'><img src={BS} alt= "BS"/></Link></button>          
+                </div>
             </div>
         </div>
     )
 }
 
-function Registro(props) {
+function VistaAdmin(props) {
     return (       
         <div className="container">
             <Navbar/> 
@@ -113,4 +89,4 @@ function Registro(props) {
     );
 }
 
-export default  Registro;
+export default  VistaAdmin;
