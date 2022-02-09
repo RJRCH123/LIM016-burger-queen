@@ -4,6 +4,7 @@ import './pedidosEntregar.scss';
 const PedidosEntregar = (props) => {
     return  ( 
         <div className="contenedorPedidosEntregar">
+            <h2>PEDIDOS POR ENTREGAR</h2>
             {props.content}
         </div>
     )
