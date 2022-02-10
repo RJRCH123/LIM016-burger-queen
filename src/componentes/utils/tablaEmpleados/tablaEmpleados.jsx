@@ -1,7 +1,6 @@
 import React, { useState, useMemo} from "react";
-import './tablaPedidos.scss';
-
-
+import botones from './botonesCRUD';
+import './tablaEmpleados.scss';
 
 const useSortableData = ((items, config = null) => {
    const [sortConfig, setSortConfig] = useState(config);
@@ -33,8 +32,8 @@ const useSortableData = ((items, config = null) => {
     return { items, requestSort };
 });
 
-const ProductsTable = props => {
-    
+const ProductsTable = props => {    
+   
     const { items, requestSort, sortConfig } = useSortableData(props.products);
     const getClassNamesFor = name => {
         if (!sortConfig) {
@@ -51,21 +50,21 @@ const ProductsTable = props => {
                         <button type="button" onClick={() => requestSort("id")} className={getClassNamesFor("id")}>N°</button>
                     </th>
                     <th>
-                        <button type="button" onClick={() => requestSort("codigo")} className={getClassNamesFor("codigo")}>CODIGO</button>
+                        <button type="button" onClick={() => requestSort("name")} className={getClassNamesFor("codigo")}>Código</button>
                         
                     </th>
                     <th>
-                        <button type="button" onClick={() => requestSort("mesero")} className={getClassNamesFor("mesero")}>MESERO</button>
+                        <button type="button" onClick={() => requestSort("dni")} className={getClassNamesFor("dni")}>DNI</button>
                         
                     </th>
                     <th>
-                        <button type="button" onClick={() => requestSort("cocinero")} className={getClassNamesFor("cocinero")}>COCINERO</button>
+                        <button type="button" onClick={() => requestSort("name")} className={getClassNamesFor("name")}>Mesero</button>
                     </th>
                     <th>
-                        <button type="button" onClick={() => requestSort("pedido")} className={getClassNamesFor("pedido")}>PEDIDO</button>
+                        <button type="button" onClick={() => requestSort("usuario")} className={getClassNamesFor("usuario")}>Usuario</button>
                     </th>
                     <th>
-                        <button type="button" onClick={() => requestSort("monto")} className={getClassNamesFor("monto")}>MONTO</button>
+                        <button type="button" onClick={() => requestSort("contraseña")} className={getClassNamesFor("contraseña")}>Contraseña</button>
                     </th>
                 </tr>               
             </thead>
@@ -75,10 +74,11 @@ const ProductsTable = props => {
                     <tr key={item.id}>
                         <td>{item.id}</td>
                         <td>{item.codigo}</td>
-                        <td>{item.mesero}</td>
-                        <td>{item.cocinero}</td>
-                        <td>{item.pedido}</td>
-                        <td>{item.monto}</td>
+                        <td>{item.dni}</td>
+                        <td>{item.name}</td>
+                        <td>{item.usuario}</td>
+                        <td>{item.contraseña}</td>
+                        <td>{<botones/>}</td>
                     </tr>
                 ))}
             </tbody>

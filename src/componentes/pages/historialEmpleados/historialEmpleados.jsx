@@ -1,80 +1,23 @@
 import Encabezado from '../../utils/encabezado/encabezado';
-import './historialEmpleados.scss';
 import DescargarPdf from '../../utils/botonDescarga/botonDescarga'
+import ProductsTable from '../../utils/tablaEmpleados/tablaEmpleados';
+import './historialEmpleados.scss';
+
+const empleados = [ 
+    {id:1, codigo: "M001", dni:"2456315", name:"Quispe Pereza, Juan Alberto", usuario:"JuaM001", contraseña:"2456315"}, 
+    {id:2, codigo: "M002", dni:"2456315", name:"Rodriguez Diaz, Martha", usuario:"MarM002", contraseña:"2456315"}, 
+    {id:3, codigo: "M003", dni:"2456315", name:"Córdova Ramirez, Pablo Elias", usuario:"PabM003", contraseña:"2456315"},
+    {id:4, codigo: "M004", dni:"2456315", name:"Chumbes Gutierrez, Hernán", usuario:"HerM004", contraseña:"2456315"},
+    {id:5, codigo: "M005", dni:"2456315", name:"Reyes Echevarría, Sthepñany", usuario:"SthM005", contraseña:"2456315"}
+    
+];
 
 const HistorialEmpleados = () => {
     return  ( 
         <div className='Historial'>
             <h2>HISTORIAL EMPLEADOS</h2>
             <Encabezado/>
-           
-            {/* <div className='tablaEmpleados'>               
-                <div className='leyenda'>
-                    <div className='tituloTable'>
-                        <table>
-                            <tr>
-                                <th>N°</th>
-                                <th>DATOS PERSONALES</th>
-                                <th>DATOS OTORGADOS</th>
-                            </tr>
-                        </table>
-                        <div className='vacio'></div>
-                    </div>                   
-                    <div className='tablaIndividual'>
-                        <table>
-                            <tr>
-                                <th>1</th>
-                                <td>Data</td>  
-                                <td>Data</td>                              
-                            </tr>
-                        </table>
-                        <div className='botonesCRUD'>
-                            <button type="onclick" className='botonEditar'>Editar</button>
-                            <button type="onclick" className='botonEliminar'>Eliminar</button>
-                        </div>
-                    </div>
-                    <div className='tablaIndividual'>
-                        <table>
-                            <tr>
-                                <th>2</th>
-                                <td>Data</td>
-                                <td>Data</td>
-                            </tr>
-                        </table>
-                        <div className='botonesCRUD'>
-                            <button type="onclick" className='botonEditar'>Editar</button>
-                            <button type="onclick" className='botonEliminar'>Eliminar</button>
-                        </div>
-                    </div> 
-                    <div className='tablaIndividual'>
-                        <table>
-                            <tr>
-                                <th>3</th>
-                                <td>Data</td>
-                                <td>Data</td>
-                            </tr>
-                        </table>
-                        <div className='botonesCRUD'>
-                            <button type="onclick" className='botonEditar'>Editar</button>
-                            <button type="onclick" className='botonEliminar'>Eliminar</button>
-                        </div>
-                    </div> 
-                    <div className='tablaIndividual'>
-                        <table>
-                            <tr>
-                                <th>4</th>
-                                <td>Data</td>
-                                <td>Data</td>
-                            </tr>
-                        </table>
-                        <div className='botonesCRUD'>
-                            <button type="onclick" className='botonEditar'>Editar</button>
-                            <button type="onclick" className='botonEliminar'>Eliminar</button>
-                        </div>
-                    </div>                                             
-                </div>               
-            </div> */}
-            
+            <ProductsTable products={ empleados } />
             <DescargarPdf/>
         </div>
     )
