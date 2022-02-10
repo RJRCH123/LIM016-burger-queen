@@ -1,0 +1,42 @@
+.navRP {  display: grid;
+  grid-template-columns: 1.5fr 1.1fr 0.4fr;
+  grid-template-rows: 1fr;
+  grid-auto-columns: 1fr;
+  gap: 0% 0%;
+  grid-auto-flow: row;
+  justify-content: space-between;
+  align-content: space-evenly;
+  justify-items: stretch;
+  align-items: start;
+  grid-template-areas:
+    "fechaYhora inputCliente inputMesa";
+}
+
+.fechaYhora {
+  align-self: stretch;
+  grid-area: fechaYhora;
+  overflow-y: overlay;
+  img {
+    width: 10%;
+  }
+}
+
+.inputMesa {
+  justify-self: stretch;
+  align-self: stretch;
+  grid-area: inputMesa;
+  overflow-y: overlay;
+    .input {
+      width: 10%;
+    }
+}
+
+.inputCliente {
+  justify-self: stretch;
+  align-self: stretch;
+  grid-area: inputCliente;
+  overflow-y: overlay;
+    .input {
+      width: 10%;
+    }
+}

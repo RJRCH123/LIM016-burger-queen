@@ -65,11 +65,10 @@ function VistaMesero(props) {
             <div className='flex'>                
                 <SideBar/>
                 <div className='content'>
-                    {props.content}                            
+                    {props.content}                           
                 </div>                
             </div>       
         </div>
-              
     );
 }
 

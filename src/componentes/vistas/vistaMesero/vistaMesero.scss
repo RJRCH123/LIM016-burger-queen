@@ -1,5 +1,6 @@
 $light: rgb(0, 0, 0);
 $gray: #BA973C;
+
 *{
     margin: 0;
     padding: 0;
@@ -15,7 +16,6 @@ $gray: #BA973C;
     width: 100%;
     background-color: #E5E5E5;
     padding: 16px;
-    padding-top: 3rem;
     p {
         color: #000;
     }
@@ -34,8 +34,8 @@ $gray: #BA973C;
     height: 100%;
     justify-content: center;
     img{
-      width: 106px;
-      height:100%;
+       width: 106px;
+       height:100%;
     }
 }
 .sideBar{
