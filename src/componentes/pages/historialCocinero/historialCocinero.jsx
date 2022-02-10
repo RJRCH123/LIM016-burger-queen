@@ -9,7 +9,7 @@ const products = [
     {id: 3, codigo: "P00003", mesero: "M001", cocinero:"C001", pedido:"Ver detalle", monto:"S./ 25.00"}, 
     {id: 4, codigo: "P00004", mesero: "M002", cocinero:"C001", pedido:"Ver detalle", monto:"S./ 25.00"}, 
     {id: 5, codigo: "P00005", mesero: "M001", cocinero:"C002", pedido:"Ver detalle", monto:"S./ 70.00"}, 
-    {id: 6, codigo: "P00006", mesero: "M001/", cocinero:"C001", pedido:"Ver detalle", monto:"S./ 105.05"}, 
+    {id: 6, codigo: "P00006", mesero: "M001", cocinero:"C001", pedido:"Ver detalle", monto:"S./ 105.05"}, 
     {id: 7, codigo: "P00007", mesero: "M003", cocinero:"C002", pedido:"Ver detalle", monto:"S./ 200.00"}, 
     {id: 8, codigo: "P00008", mesero: "M002", cocinero:"C001", pedido:"Ver detalle", monto:"S./ 80.00"}, 
     {id: 9, codigo: "P00009", mesero: "M003", cocinero:"C002", pedido:"Ver detalle", monto:"S./ 50.50"}, 
@@ -17,6 +17,9 @@ const products = [
 ];
 
 const HistorialCocinero = () => {
+
+    // usamos firestore para traer la data! 
+
     return  ( 
         <div >
             <h2>HISTORIAL PEDIDOS</h2>

@@ -1,4 +1,4 @@
-import React, { useState, useMemo} from "react";
+import React, { useState, useEffect} from "react";
 import './tablaPedidos.scss';
 
 
@@ -6,7 +6,7 @@ import './tablaPedidos.scss';
 const useSortableData = ((items, config = null) => {
    const [sortConfig, setSortConfig] = useState(config);
 
-    const sortedItems = useMemo(() => {
+    const sortedItems = useEffect(() => {
         let sortableItems = [...items];
         if (sortConfig !== null) {
             sortableItems.sort((a, b) => {
@@ -25,6 +25,7 @@ const useSortableData = ((items, config = null) => {
     const requestSort = key => {
         let direction = "descending";       
         if ( sortConfig !== null && sortConfig.key === key && sortConfig.direction === "descending" ) {
+            sortedItems(key);
             direction = "ascending";
         }        
         setSortConfig({ key, direction });
@@ -32,6 +33,8 @@ const useSortableData = ((items, config = null) => {
     };
     return { items, requestSort };
 });
+
+
 
 const ProductsTable = props => {
     
@@ -42,6 +45,7 @@ const ProductsTable = props => {
         }
         return sortConfig.key === name ? sortConfig.direction : undefined;
     };
+   
     
     return (
         <table>

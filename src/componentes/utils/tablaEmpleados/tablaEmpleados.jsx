@@ -1,5 +1,5 @@
 import React, { useState, useMemo} from "react";
-import botones from './botonesCRUD';
+import Botones from './botonesCRUD';
 import './tablaEmpleados.scss';
 
 const useSortableData = ((items, config = null) => {
@@ -78,7 +78,7 @@ const ProductsTable = props => {
                         <td>{item.name}</td>
                         <td>{item.usuario}</td>
                         <td>{item.contraseña}</td>
-                        <td>{<botones/>}</td>
+                        <td>{<Botones/>}</td>
                     </tr>
                 ))}
             </tbody>

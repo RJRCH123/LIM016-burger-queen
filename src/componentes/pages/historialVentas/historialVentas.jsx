@@ -9,7 +9,7 @@ const products = [
     {id: 3, name: "cheddar", price: "4 s/", stock:"12"}
 ];
 
-const HistorialCocinero = () => {
+const HistorialVentas = () => {
     return  ( 
         <div>
             <h2>HISTORIAL VENTAS</h2>
@@ -20,4 +20,4 @@ const HistorialCocinero = () => {
     )
 } 
 
-export default HistorialCocinero
+export default HistorialVentas
