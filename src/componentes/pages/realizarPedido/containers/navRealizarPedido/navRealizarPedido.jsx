@@ -26,8 +26,8 @@ const   NavRealizarPedido = () => (
     </div>
     
     <div class="inputCliente">
-    <label >
-      <p>Nombre de Cliente:</p>
+      <label >
+        <p>Nombre de Cliente:</p>
         <input 
         id="nombreCliente" 
         name="nombreCliente" 

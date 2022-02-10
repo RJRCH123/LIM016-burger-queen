@@ -1,0 +1,69 @@
+
+.navTablaResumenPedido {  
+  display: grid;
+  grid-template-columns: 2.7fr 0.4fr 0.6fr 0.3fr;
+  grid-template-rows: 1fr;
+  grid-auto-columns: 1fr;
+  gap: 0% 0%;
+  margin: 0 2% 5% 2%;
+  grid-auto-flow: row;
+  justify-content: space-between;
+  align-content: space-evenly;
+  justify-items: stretch;
+  align-items: start;
+  grid-template-areas:
+    "productoRP undsRP precioRP eliminarRP";
+  p {
+    font-weight: bolder;
+    font-family: var(--font-base);
+  }
+}
+
+.productoRP {
+  align-self: stretch;
+  justify-self: stretch;
+  grid-area: productoRP;
+  border-bottom: 2px solid var(--color-black) ;
+}
+
+.undsRP {
+  justify-self: stretch;
+  align-self: stretch;
+  grid-area: undsRP;
+  border-bottom: 2px solid var(--color-black) ;
+}
+
+.precioRP {
+  justify-self: stretch;
+  align-self: stretch;
+  grid-area: precioRP;
+  border-bottom: 2px solid var(--color-black) ;
+}
+
+.eliminarRP {
+  align-self: stretch;
+  grid-area: eliminarRP;
+}
+
+.tablaResumenPedido{
+  background: var(--color-white);
+  border-radius: 3px;
+  padding-top: 10px;
+  -webkit-transition: .3s ease all;
+  transition: .3s ease all;
+  border: 3px solid transparent;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.TotalRP {
+  background: var(--color-black);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  margin: 5% 0;
+  padding: 2% 5%;
+  display: flex;
+  justify-content: space-between;
+  p {
+    color: var(--color-beige);
+    font-family: var(--font-base);
+  }
+}

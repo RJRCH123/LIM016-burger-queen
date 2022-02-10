@@ -5,7 +5,7 @@ div::-webkit-scrollbar {
 
 .containerRP {  
   display: grid;
-  grid-template-rows: 12vh 84vh;
+  grid-template-rows: 8vh 88vh;
   grid-auto-columns: 1fr;
   gap: 0% 0%;
   grid-auto-flow: row;
@@ -22,14 +22,12 @@ div::-webkit-scrollbar {
   justify-self: stretch;
   align-self: stretch;
   grid-area: navRealizarPedido;
-  background-color: rgb(17, 0, 255);
 }
   
 .listadoProductosPorPedir {
   justify-self: stretch;
   align-self: stretch;
   grid-area: listadoProductosPorPedir;
-  background-color: rgb(255, 0, 0);
   overflow-x: overlay;
   }
   
@@ -37,7 +35,6 @@ div::-webkit-scrollbar {
   justify-self: stretch;
   align-self: stretch;
   grid-area: resumenPedidosPorComprar;
-  background-color: yellow;
   overflow-x: overlay;
 }
   

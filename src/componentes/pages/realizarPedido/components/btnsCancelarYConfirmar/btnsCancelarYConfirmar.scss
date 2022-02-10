@@ -8,6 +8,8 @@
   display: flex;
   justify-content: center;
   width: 100%;
+  margin-top: 5%;
+  justify-content: space-evenly;
 }
 
 .confirm__button,
@@ -15,15 +17,15 @@
   color: var(--color-beige);
   font-family: var(--font-base);
   font-weight: 700;
-  width: 42%;
+  // width: 42%;
   letter-spacing: 0.04em;
-  line-height: 28px;
+  // line-height: 28px;
   font-size: 16px;
   padding: 0.5rem 1.5rem;
-  margin: 2%;
   border-radius: 1px;
   border: none;
   outline: none;
+  text-align: center;
 }
 
 .confirm__button {
