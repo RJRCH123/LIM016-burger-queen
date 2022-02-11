@@ -25,6 +25,10 @@ const ResumenPedidoPorComprar = () => (
       <ProductoPorComprar />
       <ProductoPorComprar />
       <ProductoPorComprar />
+      <ProductoPorComprar />      <ProductoPorComprar />
+      <ProductoPorComprar />
+      <ProductoPorComprar />
+      <ProductoPorComprar />
       <ProductoPorComprar />
     </div>
     <div class="TotalRP">

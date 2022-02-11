@@ -2,6 +2,7 @@
   --color-green: #62c25e;
   --color-red: #d15656;
   --color-beige: beige;
+  --color-blue: rgb(74, 93, 197);
 }
 
 .btnsContainer {
@@ -11,7 +12,11 @@
   margin-top: 5%;
   justify-content: space-evenly;
 }
-
+.gridResponsiveBtns{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 1rem;
+}
 .confirm__button,
 .cancel__button {
   color: var(--color-beige);
@@ -20,12 +25,29 @@
   // width: 42%;
   letter-spacing: 0.04em;
   // line-height: 28px;
-  font-size: 16px;
+  font-size: medium;
   padding: 0.5rem 1.5rem;
   border-radius: 1px;
   border: none;
   outline: none;
   text-align: center;
+}
+.limpiar__button {
+  color: var(--color-beige);
+  font-family: var(--font-base);
+  background-color: var(--color-blue);
+  font-weight: 700;
+  width: 100%;
+  letter-spacing: 0.04em;
+  // line-height: 28px;
+  font-size: medium;
+  margin-top: 5%;
+  padding: 0.5rem 1.5rem;
+  border-radius: 1px;
+  border: none;
+  outline: none;
+  text-align: center;
+  
 }
 
 .confirm__button {
