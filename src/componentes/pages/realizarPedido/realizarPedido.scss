@@ -5,7 +5,8 @@ div::-webkit-scrollbar {
 
 .containerRP {  display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 7vh 8vh 60vh 7vh 13vh;
+  // grid-template-rows: 7vh 17vh 51vh 7vh 13vh;
+  grid-template-rows: 7vh 8vh 51vh 7vh 13vh;
   grid-auto-columns: 1fr;
   gap: 0% 5%;
   grid-auto-flow: row;
@@ -55,7 +56,7 @@ div::-webkit-scrollbar {
 
 .navRealizarPedido {
   justify-self: stretch;
-  align-self: stretch;
+  align-self: center;
   grid-area: navRealizarPedido;
 }
 
@@ -72,3 +73,6 @@ div::-webkit-scrollbar {
   grid-area: btnsCancelarYConfirmar;
 }
 
+// {
+//   grid-template-rows: 7vh 8vh 51vh 7vh 13vh;
+// }

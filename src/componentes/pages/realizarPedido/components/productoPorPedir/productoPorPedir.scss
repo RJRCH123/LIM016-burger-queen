@@ -27,12 +27,13 @@
 
 .imagenProducto {
   justify-self: stretch;
-  align-self: stretch;
+  align-self: center;
   grid-area: imagenProducto;
   text-align: center;
   align-items: center;
   img {
     width: 100%;
+    filter: drop-shadow(10px 10px 5px rgba(0, 0, 0, 0.253));
   }
 }
 
@@ -69,4 +70,24 @@
   outline: none;
   text-align: center;
   align-items: center;
+}
+
+.contador {
+  display: flex;
+  align-items: center;
+  margin: 5%;
+  justify-content: center;
+  p {
+    width: 30%;
+    margin: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: var(--color-white);
+  }
 }
