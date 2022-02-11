@@ -30,21 +30,21 @@ function App() {
       <Routes>
                 
         <Route path='/admin/registro-personal' element={<VistaAdmin content={<RegistroEmpleado/>}/>}/>
-        <Route path='/admin/pedidos-preparados' element={<VistaAdmin content={<PedidosPreparados content={<Pedido/>}/>}/>}/>
+        <Route path='/admin/pedidos-preparados' element={<VistaAdmin content={<PedidosPreparados/>}/>}/>
         <Route path='/admin/historial-ventas' element={<VistaAdmin content={<HistorialVentas/>}/>}/>
         <Route path='/admin/historial-empleados' element={<VistaAdmin content={<HistorialEmpleados/>}/>}/>
         {/* <Route path='/admin/historial-cocinero' element={<VistaAdmin content={<HistorialCocinero/>}/>}/> */}
         {/* <Route path='/admin/historial-mesero' element={<VistaAdmin content={<HistorialMesero/>}/>}/> */}
-        <Route path='/admin/pedidos-entregar' element={<VistaAdmin content={<PedidosEntregar content={<Pedido/>}/>}/>}/>
+        <Route path='/admin/pedidos-entregar' element={<VistaAdmin content={<PedidosEntregar />}/>}/>
         <Route path='/admin/*' element={<VistaAdmin content={<Inicio/>}/>}/>
 
-        <Route path='/cocinero/pedidos-por-preparar' element={<VistaCocinero content={<PedidosPorPreparar content={<Pedido/>}/>} />}/>
-        <Route path='/cocinero/pedidos-preparados' element={<VistaCocinero content={<PedidosPreparados content={<Pedido/>}/>} /> }/>
+        <Route path='/cocinero/pedidos-por-preparar' element={<VistaCocinero content={<PedidosPorPreparar/>} />}/>
+        <Route path='/cocinero/pedidos-preparados' element={<VistaCocinero content={<PedidosPreparados/>} /> }/>
         <Route path='/cocinero/historial-pedidos' element={<VistaCocinero content={<HistorialCocinero/>}/>}/>
         <Route path='/cocinero/*' element={<VistaCocinero content={<Inicio/>}/>}/>
 
         <Route path='/mesero/realizar-pedido' element={<VistaMesero content={<RealizarPedido />} />}/>
-        <Route path='/mesero/pedidos-preparados' element={<VistaMesero content={<PedidosPreparados content={<Pedido/>}/>}/>}/>
+        <Route path='/mesero/pedidos-entregar' element={<VistaMesero content={<PedidosEntregar/>}/>}/>
         <Route path='/mesero/historial-pedidos' element={<VistaMesero content={<HistorialMesero/>} />}/>
         <Route path='/mesero/*' element={<VistaMesero content={<Inicio/>}/>}/>
 

@@ -1,6 +1,9 @@
+//import { useState } from 'react';
 import './pedido.scss';
 
-function Pedido() {
+const Pedido = ({orden}) =>{
+    //console.log(orden);
+    
     return (
         <div className="boxPedido">
             <div className='headerPedido'>
@@ -8,16 +11,16 @@ function Pedido() {
                     <div className='dataCliente'>
                         <div className='dato1'>
                             <h5>Cliente:</h5>
-                            <p>Lupita Diaz</p>
+                            <p>{orden.cliente}</p>
                         </div>
                         <div className='dato1'>
                             <h5>Entrada:</h5>
-                            <p>12:20 PM</p>
+                            <p>{orden.hora}</p>
                         </div>
                     </div>
                     <div className='dato2'>
                         <h5>N° Mesa:</h5>
-                        <p>3</p>
+                        <p>{orden.mesa}</p>
                     </div>
                 </div>
                 <table>
@@ -52,7 +55,7 @@ function Pedido() {
                     <p>S./ 17.00</p>
                 </div>
             </div>
-            {/* <botonEstado/> */}
+            
         </div>
     )
 }

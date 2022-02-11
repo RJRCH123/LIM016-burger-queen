@@ -58,7 +58,10 @@ const ProductsTable = props => {
                         
                     </th>
                     <th>
-                        <button type="button" onClick={() => requestSort("name")} className={getClassNamesFor("name")}>Mesero</button>
+                        <button type="button" onClick={() => requestSort("name")} className={getClassNamesFor("rol")}>Cargo</button>
+                    </th>
+                    <th>
+                        <button type="button" onClick={() => requestSort("name")} className={getClassNamesFor("name")}>Empleado</button>
                     </th>
                     <th>
                         <button type="button" onClick={() => requestSort("usuario")} className={getClassNamesFor("usuario")}>Usuario</button>
@@ -75,6 +78,7 @@ const ProductsTable = props => {
                         <td>{item.id}</td>
                         <td>{item.codigo}</td>
                         <td>{item.dni}</td>
+                        <td>{item.rol}</td>
                         <td>{item.name}</td>
                         <td>{item.usuario}</td>
                         <td>{item.contraseña}</td>

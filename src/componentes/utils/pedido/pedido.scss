@@ -3,7 +3,7 @@
     display: flex;
     justify-content: space-around;
     min-width: 330px;
-    max-width: 60%;
+    max-width: 100%;
     width: 100%;
 }
 table {
@@ -45,7 +45,7 @@ thead button {
 .detallePedido{
     display: flex;
     background-color: #BA973C;
-    margin-bottom: 10px;   
+    margin-bottom: 8px;   
     min-width: 400px;
     width: 100%;
     padding: 0.5rem 1rem;
@@ -56,10 +56,11 @@ thead button {
 .totalPedido{
     display: flex;
     justify-content: space-between;
-    margin-top: 10px;    
+    margin-top: 8px;    
     padding: 0.3rem 3rem 0.3rem 3rem;
     background-color: black;
     min-width: 400px;
+    margin-bottom: 1.5rem;
     width: 100%;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.40);
     p {
