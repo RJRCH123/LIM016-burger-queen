@@ -6,12 +6,10 @@ const   NavRealizarPedido = () => (
   <div class="navRP">
     <div class="fechaYhora">
       <label>
-        <p><img src={images.reloj} alt="reloj" />Hora:</p>
-        <p>15:36pm</p>
+        <p><img src={images.reloj} alt="reloj" />Hora: 15:36pm</p>
       </label>
       <label>
-        <p><img src={images.calendario} alt="calendario" />Fecha:</p>
-        <p>22 Abril 2021</p>
+        <p><img src={images.calendario} alt="calendario" />Fecha: 22 Abril 2021</p>
       </label>
     </div>
 
@@ -27,7 +25,7 @@ const   NavRealizarPedido = () => (
     
     <div class="inputCliente">
       <label >
-        <p>Nombre de Cliente:</p>
+        <p>Cliente:</p>
         <input 
         id="nombreCliente" 
         name="nombreCliente" 

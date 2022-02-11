@@ -30,9 +30,11 @@
 .fechaYhora {
   align-self: stretch;
   grid-area: fechaYhora;
-  overflow-y: overlay;
+  p {
+    font-size: small;
+  }
   img {
-    width: 20%;
+    width: 10%;
     margin-right: 5%;
   }
   label {
