@@ -1,4 +1,8 @@
 import React from 'react';
+import { BtnsCancelarYConfirmar } from './components';
+import NavListadoProductosPorPedir from './components/navListadoProductosPorPedir/navListadoProductosPorPedir';
+import NavTablaResumenPedido from './components/navTablaResumenPedido/navTablaPedido';
+import PrecioTotal from './components/precioTotal/precioTotal';
 
 import {
   NavRealizarPedido,
@@ -13,16 +17,28 @@ const RealizarPedido = () => {
   return  ( 
     <section>
       <div class="containerRP">
-        <nav class="navRealizarPedido">
+        <div class="navRealizarPedido">
           <NavRealizarPedido />
-        </nav>
-          <article class="listadoProductosPorPedir">
-          <ListadoProductosPorPedir />
-          </article>
-          <article class="resumenPedidosPorComprar">
-          <ResumenPedidoPorComprar />
-          </article>
         </div>
+        <div class="navListadoProductosPorPedir">
+          <NavListadoProductosPorPedir />
+        </div>
+        <div class="navTablaResumenPedido">
+          <NavTablaResumenPedido />
+        </div>
+        <div class="listadoProductosPorPedir">
+          <ListadoProductosPorPedir />
+        </div>
+        <div class="resumenPedidosPorComprar">
+          <ResumenPedidoPorComprar />
+        </div>
+        <div class="precioTotal">
+          <PrecioTotal />
+        </div>
+        <div class="btnsCancelarYConfirmar">
+          <BtnsCancelarYConfirmar />
+        </div>
+      </div>
     </section>
   )
 } 
