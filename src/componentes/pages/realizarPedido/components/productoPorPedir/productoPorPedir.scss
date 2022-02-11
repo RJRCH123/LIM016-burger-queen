@@ -1,0 +1,72 @@
+:root {
+  --color-mostazaClaro: #C59826;
+  --color-mostazaOscuro: #BA973C;
+}
+
+.DataPorProductoMenu {        display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-auto-columns: 1fr;
+  gap: 0% 0%;
+  grid-auto-flow: row;
+  justify-content: space-between;
+  align-content: space-evenly;
+  justify-items: stretch;
+  align-items: start;
+  grid-template-areas:
+    "imagenProducto nombrePrecio"
+    "imagenProducto agregarYaumentar";
+  background: var(--color-white);
+  border-radius: 3px;
+  -webkit-transition: .3s ease all;
+  transition: .3s ease all;
+  border: 3px solid transparent;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  margin-top: 5%;
+}
+
+.imagenProducto {
+  justify-self: stretch;
+  align-self: stretch;
+  grid-area: imagenProducto;
+  text-align: center;
+  align-items: center;
+  img {
+    width: 100%;
+  }
+}
+
+.nombrePrecio {
+  justify-self: stretch;
+  align-self: start;
+  grid-area: nombrePrecio;
+  align-items: flex-start;
+  h1 {
+    font-size: small;
+  }
+}
+
+.agregarYaumentar {
+  justify-self: stretch;
+  align-self: end;
+  grid-area: agregarYaumentar;
+  align-items: flex-end;
+  font-size: small;
+}
+
+.Agregar__button {
+  color: var(--color-beige);
+  font-family: var(--font-base);
+  font-weight: 700;
+  // width: 42%;
+  letter-spacing: 0.04em;
+  // line-height: 28px;
+  background-color: var(--color-mostazaClaro);
+  font-size: small;
+  padding: 0.1rem 1.5rem;
+  border-radius: 30px;
+  border: none;
+  outline: none;
+  text-align: center;
+  align-items: center;
+}

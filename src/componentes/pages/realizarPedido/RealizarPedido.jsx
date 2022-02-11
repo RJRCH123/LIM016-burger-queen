@@ -8,21 +8,22 @@ import {
 
 import './realizarPedido.scss';
 
+
 const RealizarPedido = () => {
   return  ( 
-    <div>
+    <section>
       <div class="containerRP">
-        <div class="navRealizarPedido">
+        <nav class="navRealizarPedido">
           <NavRealizarPedido />
-        </div>
-        <div class="listadoProductosPorPedir">
+        </nav>
+        <article class="listadoProductosPorPedir">
           <ListadoProductosPorPedir />
-        </div>
-        <div class="resumenPedidosPorComprar">
+        </article>
+        <article class="resumenPedidosPorComprar">
           <ResumenPedidoPorComprar />
-        </div>
+        </article>
       </div>
-    </div>
+    </section>
   )
 } 
 

@@ -17,7 +17,7 @@ const   NavRealizarPedido = () => (
 
     <div class="inputMesa">
       <label >
-        <p>N° Mesa:</p>
+        <p>Mesa:</p>
         <input 
         id="nMesa" 
         name="nMesa" 
