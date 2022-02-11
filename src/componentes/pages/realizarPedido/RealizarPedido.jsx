@@ -16,13 +16,13 @@ const RealizarPedido = () => {
         <nav class="navRealizarPedido">
           <NavRealizarPedido />
         </nav>
-        <article class="listadoProductosPorPedir">
+          <article class="listadoProductosPorPedir">
           <ListadoProductosPorPedir />
-        </article>
-        <article class="resumenPedidosPorComprar">
+          </article>
+          <article class="resumenPedidosPorComprar">
           <ResumenPedidoPorComprar />
-        </article>
-      </div>
+          </article>
+        </div>
     </section>
   )
 } 

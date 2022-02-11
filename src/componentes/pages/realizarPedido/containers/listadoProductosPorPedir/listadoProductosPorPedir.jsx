@@ -40,8 +40,9 @@ const ListadoProductosPorPedir = () => {
           <img src={images.complementos} alt="eliminar" />
         </button>
       </div>
-    
-      {products.map((product) => <ProductoPorPedir key={product.codigo} data={product} addToCart={addToCart} />)}
+      <div className='gridResponsive'>
+        {products.map((product) => <ProductoPorPedir key={product.codigo} data={product} addToCart={addToCart} />)}
+      </div>
     </div>
   );
 };
