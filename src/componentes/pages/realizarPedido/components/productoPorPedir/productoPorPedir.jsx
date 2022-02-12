@@ -18,7 +18,7 @@ const ProductoPorPedir = ({data, addToCart}) => {
 
   return <div className="DataPorProductoMenu">
     <div className="imagenProducto">
-      <button type="button" ><img src={images.informacion} alt="" /> 
+      <button className="btnInfo" type="button" ><img src={images.informacion} alt="" /> 
       </button>
       <img src={imagen} alt="" />
     </div>
