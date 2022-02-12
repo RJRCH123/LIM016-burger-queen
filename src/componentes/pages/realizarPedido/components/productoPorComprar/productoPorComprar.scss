@@ -32,4 +32,7 @@
   img {
     width: 20px;
   }
+  & :hover {
+    transform: scala(1.02);
+  }
 }

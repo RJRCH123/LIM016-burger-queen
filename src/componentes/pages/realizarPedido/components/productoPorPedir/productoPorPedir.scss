@@ -22,18 +22,26 @@
   border: 3px solid transparent;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   // margin-top: 5%;
-  
 }
 
 .imagenProducto {
   justify-self: stretch;
   align-self: center;
   grid-area: imagenProducto;
-  text-align: center;
   align-items: center;
   img {
     width: 100%;
     filter: drop-shadow(10px 10px 5px rgba(0, 0, 0, 0.253));
+  }
+  button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: var(--color-white);
+    text-align: start;
+    img {
+      width: 25%;
+    }
   }
 }
 
@@ -42,8 +50,9 @@
   align-self: start;
   grid-area: nombrePrecio;
   align-items: flex-start;
-  h1 {
-    font-size: small;
+  p {
+    font-size: medium;
+    font-weight: 600;
   }
 }
 

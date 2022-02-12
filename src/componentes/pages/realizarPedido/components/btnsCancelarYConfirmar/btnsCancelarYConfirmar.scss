@@ -1,8 +1,9 @@
 :root {
   --color-green: #62c25e;
   --color-red: #d15656;
+  --color-greenOscuro: #2c7a29;
+  --color-redOscuro: #9e2222;
   --color-beige: beige;
-  --color-blue: rgb(74, 93, 197);
 }
 
 .btnsContainer {
@@ -37,6 +38,16 @@
   background-color: var(--color-green);
 }
 
+.confirm__button:hover {
+  background-color: var(--color-greenOscuro);
+  transform: scale(1.02);
+}
+
 .cancel__button {
   background-color: var(--color-red);
+}
+
+.cancel__button:hover {
+  background-color: var(--color-redOscuro);
+  transform: scale(1.02);
 }

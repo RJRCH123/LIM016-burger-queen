@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { AiOutlinePlus, AiOutlineLine } from 'react-icons/ai'
+import { AiOutlinePlus, AiOutlineLine} from 'react-icons/ai'
 import './productoPorPedir.scss';
+import { images } from '../../constans/index';
 
 const ProductoPorPedir = ({data, addToCart}) => { 
 
@@ -17,11 +18,13 @@ const ProductoPorPedir = ({data, addToCart}) => {
 
   return <div className="DataPorProductoMenu">
     <div className="imagenProducto">
-      <img src={imagen} alt="karma Clasica" />
+      <button type="button" ><img src={images.informacion} alt="" /> 
+      </button>
+      <img src={imagen} alt="" />
     </div>
     <div className="nombrePrecio">
-      <h1> {name} </h1>
-      <h1>s/. {precio}0</h1>
+      <p> {name} </p>
+      <p>S/. {precio}0</p>
     </div>
     <div className="agregarYaumentar">
       <div className="contador">

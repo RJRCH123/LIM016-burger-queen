@@ -7,6 +7,12 @@ import './resumenPedidoPorComprar.scss';
 const ResumenPedidoPorComprar = () => (
   <div class="boxResumenPedido">
       <ProductoPorComprar />
+      <ProductoPorComprar />
+      <ProductoPorComprar />
+      <ProductoPorComprar />
+      <ProductoPorComprar />
+      <ProductoPorComprar />
+      <ProductoPorComprar />
   </div>
 );
 

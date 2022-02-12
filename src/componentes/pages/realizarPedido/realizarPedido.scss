@@ -1,12 +1,7 @@
 
-div::-webkit-scrollbar {
-  width: 0px;
-}
-
 .containerRP {  display: grid;
   grid-template-columns: 1fr 1fr;
-  // grid-template-rows: 7vh 17vh 51vh 7vh 13vh;
-  grid-template-rows: 7vh 8vh 51vh 7vh 13vh;
+  grid-template-rows: 7vh 8vh 62vh 7vh 5vh;
   grid-auto-columns: 1fr;
   gap: 0% 5%;
   grid-auto-flow: row;
@@ -38,20 +33,20 @@ div::-webkit-scrollbar {
 
 .precioTotal {
   justify-self: stretch;
-  align-self: stretch;
+  align-self: start;
   grid-area: precioTotal;
 }
 
 .navListadoProductosPorPedir {
   justify-self: stretch;
-  align-self: stretch;
+  align-self: center;
   grid-area: navListadoProductosPorPedir;
 }
 
 .navTablaResumenPedido {
   justify-self: stretch;
   grid-area: navTablaResumenPedido;
-  align-self: end;
+  align-self: center;
 }
 
 .navRealizarPedido {
@@ -65,6 +60,16 @@ div::-webkit-scrollbar {
   align-self: stretch;
   grid-area: listadoProductosPorPedir;
   overflow-x: overlay
+}
+
+.listadoProductosPorPedir::-webkit-scrollbar,
+.resumenPedidosPorComprar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.listadoProductosPorPedir::-webkit-scrollbar-thumb,
+.resumenPedidosPorComprar::-webkit-scrollbar {
+  background: gray;
 }
 
 .btnsCancelarYConfirmar {
