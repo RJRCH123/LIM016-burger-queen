@@ -22,7 +22,6 @@ import HistorialCocinero from './componentes/pages/historialCocinero/historialCo
 import HistorialMesero from './componentes/pages/historialMesero/historialMesero';
 import RealizarPedido from './componentes/pages/realizarPedido/RealizarPedido'
 import Carta from './componentes/bienvenida/container/Menu/carta';
-import Pedido from './componentes/utils/pedido/pedido'
 
 function App() {
   return (
@@ -33,8 +32,6 @@ function App() {
         <Route path='/admin/pedidos-preparados' element={<VistaAdmin content={<PedidosPreparados/>}/>}/>
         <Route path='/admin/historial-ventas' element={<VistaAdmin content={<HistorialVentas/>}/>}/>
         <Route path='/admin/historial-empleados' element={<VistaAdmin content={<HistorialEmpleados/>}/>}/>
-        {/* <Route path='/admin/historial-cocinero' element={<VistaAdmin content={<HistorialCocinero/>}/>}/> */}
-        {/* <Route path='/admin/historial-mesero' element={<VistaAdmin content={<HistorialMesero/>}/>}/> */}
         <Route path='/admin/pedidos-entregar' element={<VistaAdmin content={<PedidosEntregar />}/>}/>
         <Route path='/admin/*' element={<VistaAdmin content={<Inicio/>}/>}/>
 
