@@ -30,10 +30,10 @@ const SideBar = () => {
                     </Link>
                 </li>
                 <li>
-                    <Link to='/mesero/pedidos-preparados'>
+                    <Link to='/mesero/pedidos-entregar'>
                         <div className='SideBar-bottons'>
                             <img src={PP} alt= "PP"/>
-                            <p>Pedidos preparados</p>
+                            <p>Pedidos por Entregar</p>
                         </div>
                     </Link>
                 </li>
