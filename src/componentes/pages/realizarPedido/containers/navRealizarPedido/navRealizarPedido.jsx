@@ -6,7 +6,7 @@ const   NavRealizarPedido = () => (
   <div class="navRP">
     <div class="fechaYhora">
       <label>
-        <p><img src={images.reloj} alt="reloj" />Hora: 15:36pm</p>
+        <p><img src={images.reloj} alt="reloj" /> Hora: 15:36pm</p>
       </label>
       <label>
         <p><img src={images.calendario} alt="calendario" />Fecha: 22 Abril 2021</p>

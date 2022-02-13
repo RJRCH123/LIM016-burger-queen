@@ -3,8 +3,6 @@ import { useReducer } from 'react';
 import {
   ProductoPorPedir
 } from '../../components/index';
-
-
 import './listadoProductosPorPedir.scss';
 import { shoppingInitialState, shoppingReducer } from '../../reducers/shoppinReducer';
 
