@@ -109,3 +109,66 @@
     background-color: var(--color-white);
   }
 }
+
+.modalDescripcion {  
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* grid-template-rows: 0.6fr 1.1fr 1.2fr 1.1fr; */
+  gap: 0px 0px;
+  margin: 5%;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "tittleInfo tittleInfo"
+    "imgInfo nameInfo"
+    "imgInfo detailsInfo"
+    "precioInfo detailsInfo";
+    img {
+      width: 100%;
+    }
+    h3 {
+      background-color: var(--color-mostazaClaro);
+      padding: 2%;
+      color: var(--color-beige);
+      text-align: center;
+      border-radius: 50px;
+    }
+    h6 {
+      background-color: black;
+      padding: 4%;
+      color: var(--color-beige);
+      text-align: center;
+      border-radius: 50px;
+      width: 50%;
+      font-size: medium;
+    }
+    h5 {
+      text-align: start;
+      width: 100%;
+      font-size: x-large;
+      border-bottom: 2px solid black;
+      margin-top: 10%;
+    }
+    p {
+      font-size: small;
+    }
+
+}
+
+.imgInfo { grid-area: imgInfo; }
+
+.tittleInfo { grid-area: tittleInfo; }
+
+.nameInfo { grid-area: nameInfo; }
+
+.precioInfo { 
+  grid-area: precioInfo; 
+  display: flex;
+  justify-content: center;
+}
+
+.detailsInfo { 
+  grid-area: detailsInfo; 
+  text-align: justify;
+  align-self: flex-start;
+  margin-top: 5%;
+}
