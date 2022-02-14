@@ -1,12 +1,38 @@
 import './botonDescarga.scss';
 import Descargar from '../../../img/iconos/descargarPDF.png'
+import Swal from 'sweetalert2';
 
 const Descarga = () => {
-    return  ( 
+
+    const modalDescarga = () => {
+        let timerInterval
+        Swal.fire({
+            html: 'Descargando archivo PDF en <b></b> milliseconds.',
+            timer: 2000,
+            timerProgressBar: true,
+        didOpen: () => {
+            Swal.showLoading()
+            const b = Swal.getHtmlContainer().querySelector('b')
+            timerInterval = setInterval(() => {
+            b.textContent = Swal.getTimerLeft()
+            }, 100)
+        },
+        willClose: () => {
+            clearInterval(timerInterval)
+        }
+    }).then((result) => {
+        /* Read more about handling dismissals below */
+      if (result.dismiss === Swal.DismissReason.timer) {
+        console.log('I was closed by the timer')
+      }
+    })
+    }
+
+    return  (     
         
         <div className='botonDescarga'>
             <div className='boton'>
-                <button type="onClick">Descargar PDF<img src={Descargar} alt= "descargar"/></button>                        
+                <button type="onClick" onClick={() => modalDescarga()} >Descargar PDF<img src={Descargar} alt= "descargar"/></button>                        
             </div>
         </div>
         
