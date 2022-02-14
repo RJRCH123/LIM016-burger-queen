@@ -1,42 +1,58 @@
-import React from 'react';
-
-import { BtnsCancelarYConfirmar } from './components';
+import React, { useEffect, useState } from 'react';
+import { db } from '../../../firebase/firebase-config'
+import { getDocs, collection, query, where} from 'firebase/firestore'
+import { BtnsCancelarYConfirmar, NavRealizarPedido, ProductoPorComprar, ProductoPorPedir } from './components';
 import NavListadoProductosPorPedir from './components/navListadoProductosPorPedir/navListadoProductosPorPedir';
 import NavTablaResumenPedido from './components/navTablaResumenPedido/navTablaPedido';
 import PrecioTotal from './components/precioTotal/precioTotal';
 
-import {
-  NavRealizarPedido,
-  ListadoProductosPorPedir,
-  ResumenPedidoPorComprar
-} from './containers';
 
 import './realizarPedido.scss';
 
-
 const RealizarPedido = () => {
+
+  const [productData, setProductData] = useState([]);
+  const [tipo, setTipo] = useState("hamburguesas");
+
+  const getProduct = async(tipo) => {
+    const getDataProduct = []
+    const getData = await getDocs(query(collection(db, "productos"), where("tipo", "==", tipo)))
+    getData.forEach((doc) => {
+        getDataProduct.push({...doc.data(), id:doc.id})
+      })
+      return getDataProduct
+  }
+
+  useEffect(() => {
+    async function fetchList() {
+      const listMenu = await getProduct(tipo);
+      setProductData(listMenu)
+    }
+    fetchList();
+  }, [tipo]);
+
   return  ( 
     <section>
-      <div class="containerRP">
-        <div class="navRealizarPedido">
+      <div className="containerRP">
+        <div className="navRealizarPedido">
           <NavRealizarPedido />
         </div>
-        <div class="navListadoProductosPorPedir">
-          <NavListadoProductosPorPedir />
+        <div className="navListadoProductosPorPedir">
+          <NavListadoProductosPorPedir setTipo={setTipo} />
         </div>
-        <div class="navTablaResumenPedido">
+        <div className="navTablaResumenPedido">
           <NavTablaResumenPedido />
         </div>
-        <div class="listadoProductosPorPedir">
-          <ListadoProductosPorPedir />
+        <div className="listadoProductosPorPedir">
+          <ProductoPorPedir productData={productData} />
         </div>
-        <div class="resumenPedidosPorComprar">
-          <ResumenPedidoPorComprar />
+        <div className="resumenPedidosPorComprar">
+          <ProductoPorComprar />
         </div>
-        <div class="precioTotal">
+        <div className="precioTotal">
           <PrecioTotal />
         </div>
-        <div class="btnsCancelarYConfirmar">
+        <div className="btnsCancelarYConfirmar">
           <BtnsCancelarYConfirmar />
         </div>
       </div>

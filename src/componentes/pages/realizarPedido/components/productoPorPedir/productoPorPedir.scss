@@ -3,25 +3,29 @@
   --color-mostazaOscuro: #BA973C;
 }
 
-.DataPorProductoMenu {        
+.gridResponsivePPM {
   display:grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1rem;
-  padding: 3% 5%;
-  justify-content: space-between;
-  align-content: space-evenly;
-  justify-items: stretch;
-  align-items: start;
+}
+
+.DataPorProductoMenu { 
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr 1fr));
+  /* gap: 1rem; */
+  padding: 2% 5%;
+  /* justify-content: space-between; */
+  /* align-content: space-evenly; */
+  /* justify-items: stretch; */
+  /* align-items: start; */
   grid-template-areas:
-    "imagenProducto nombrePrecio"
-    "imagenProducto agregarYaumentar";
+      "imagenProducto nombrePrecio"
+      "imagenProducto agregarYaumentar";
   background: var(--color-white);
   border-radius: 3px;
-  -webkit-transition: .3s ease all;
-  transition: .3s ease all;
+  transition: 0.3s ease all;
   border: 3px solid transparent;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  // margin-top: 5%;
+  box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
 }
 
 .imagenProducto {
@@ -45,7 +49,7 @@
   position: relative;
   z-index: 15;
   img {
-    width: 30px;
+    width: 20px;
     min-width: 15px;
   }
 }
@@ -56,7 +60,7 @@
   grid-area: nombrePrecio;
   align-items: flex-start;
   p {
-    font-size: medium;
+    font-size: small;
     font-weight: 600;
   }
 }
