@@ -2,17 +2,17 @@ import React from 'react';
 import './navTablaPedido.scss';
 
 const NavTablaResumenPedido = () => (
-  <div class="navTablaPedido">
-    <div class="productoRP">
+  <div className="navTablaPedido">
+    <div className="productoRP">
       <p>Producto</p>
     </div>
-    <div class="undsRP">
+    <div className="undsRP">
       <p>Unds</p>
     </div>
-    <div class="precioRP">
+    <div className="precioRP">
       <p>S/.</p>
     </div>
-    <div class="eliminarRP"></div>
+    <div className="eliminarRP"></div>
   </div>
 );
 

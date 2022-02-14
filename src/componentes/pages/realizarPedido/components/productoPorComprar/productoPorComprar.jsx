@@ -2,23 +2,25 @@ import React from 'react';
 import { images } from '../../constans/index';
 import './productoPorComprar.scss';
 
-const ProductoPorComprar = () => (
+function ProductoPorComprar({orderList}) { 
+
+  return (
   <div>
-    <div class="dataTablaResumenPedido">
-      <div class="dataProductoRP">
+    <div className="dataTablaResumenPedido">
+      <div className="dataProductoRP">
         <p>Karma clásico</p>
       </div>
-      <div class="dataUndsRP">
+      <div className="dataUndsRP">
         <p>3</p>
       </div>
-      <div class="dataPrecioRP">
+      <div className="dataPrecioRP">
         <p>38.4</p>
       </div>
-      <div class="dataEliminarRP">
+      <div className="dataEliminarRP">
         <img src={images.eliminar} alt="eliminar" />
       </div>
     </div>
-  </div>
-);
+  </div>)
+}
 
 export default ProductoPorComprar;
