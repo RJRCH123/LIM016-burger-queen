@@ -21,7 +21,9 @@ const PedidosPorPreparar = () => {
     return  ( 
         <div className="contenedorPedidosPorPreparar">
             <h2>PEDIDOS POR PREPARAR</h2>
-            { cardList }
+            <div className='gridResponsivePP'>
+                { cardList }
+            </div>
         </div>
     )
 } 

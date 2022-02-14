@@ -4,7 +4,7 @@
     width: 30%;
     align-items: center;
     justify-items:end;
-    margin: 2rem 0 2rem 7% ;
+    // margin: 2rem 0 2rem 7% ;
     button {
         display: flex;
         cursor: pointer;
@@ -21,7 +21,8 @@
 }
 .botonSecPreparar{
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
+    gap: 5%;
     justify-content: center;
 }
 .contenedorPedido{
