@@ -7,8 +7,10 @@ const Descarga = () => {
     const modalDescarga = () => {
         let timerInterval
         Swal.fire({
-            html: 'Descargando archivo PDF en <b></b> milliseconds.',
+            html: 'Descargando archivo en <b></b> milliseconds.',
             timer: 2000,
+            allowOutsideClick: false,
+            stopKeydownPropagation: false,
             timerProgressBar: true,
         didOpen: () => {
             Swal.showLoading()

@@ -12,7 +12,12 @@ const BtnsCancelarYConfirmar = () => {
       showCancelButton: true,
       confirmButtonColor: '#57a057',
       cancelButtonColor: '#d33',
-      confirmButtonText: 'Confirmar'
+      cancelButtonText: 'Cancelar',
+      confirmButtonText: 'Confirmar',
+      allowOutsideClick: false,
+      stopKeydownPropagation: false,
+      showCloseButton: true,
+      closeButtonAriaLabel: 'cerrar alerta'
     }).then((result) => {
       if (result.isConfirmed) {
         Swal.fire({
@@ -32,7 +37,12 @@ const BtnsCancelarYConfirmar = () => {
       showCancelButton: true,
       confirmButtonColor: '#57a057',
       cancelButtonColor: '#d33',
-      confirmButtonText: 'Confirmar'
+      confirmButtonText: 'Confirmar',
+      cancelButtonText: 'Cancelar',
+      allowOutsideClick: false,
+      stopKeydownPropagation: false,
+      showCloseButton: true,
+      closeButtonAriaLabel: 'cerrar alerta'
     }).then((result) => {
       if (result.isConfirmed) {
         Swal.fire({
