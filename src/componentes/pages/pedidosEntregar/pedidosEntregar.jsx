@@ -4,6 +4,10 @@ import BotonEntegar from '../../utils/botonEntregar/botonEntregar'
 
 const detallePedidos = [ 
     {id: 2, cliente: "Maria Camacho", hora: "3:15 PM", mesa:"1"},
+    {id: 3, cliente: "Cristhian Hernandez", hora: "4:02 PM", mesa:"2"},
+    {id: 2, cliente: "Maria Camacho", hora: "3:15 PM", mesa:"1"},
+    {id: 3, cliente: "Cristhian Hernandez", hora: "4:02 PM", mesa:"2"},
+    {id: 2, cliente: "Maria Camacho", hora: "3:15 PM", mesa:"1"},
     {id: 3, cliente: "Cristhian Hernandez", hora: "4:02 PM", mesa:"2"}
 ];
 
@@ -24,7 +28,9 @@ const PedidosEntregar = () => {
     return  ( 
         <div className="contenedorPedidosEntregar">
             <h2>PEDIDOS POR ENTREGAR</h2>
-            { cardList }
+            <div className='gridResponsivePE'>
+                { cardList }
+            </div>
         </div>
     )
 } 

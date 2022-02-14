@@ -5,6 +5,21 @@ $gray: #BA973C;
   margin: 0;
   padding: 0;
 }
+
+.content::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+.content::-webkit-scrollbar-thumb{
+  background: gray;
+  border-radius: 10px;
+}
+
+.content::-webkit-scrollbar {
+  background: rgba(128, 128, 128, 0);
+}
+
 .container{
   width: 100%;
 }
@@ -16,6 +31,8 @@ $gray: #BA973C;
   width: 100%;
   background-color: #E5E5E5;
   padding: 16px;
+  overflow-x: overlay;
+  overflow-y: overlay;
   p {
     color: #000;
     display: flex;

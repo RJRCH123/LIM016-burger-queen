@@ -65,11 +65,18 @@
 .listadoProductosPorPedir::-webkit-scrollbar,
 .resumenPedidosPorComprar::-webkit-scrollbar {
   width: 5px;
+  height: 5px;
 }
 
 .listadoProductosPorPedir::-webkit-scrollbar-thumb,
-.resumenPedidosPorComprar::-webkit-scrollbar {
+.resumenPedidosPorComprar::-webkit-scrollbar-thumb{
   background: gray;
+  border-radius: 10px;
+}
+
+.listadoProductosPorPedir::-webkit-scrollbar,
+.resumenPedidosPorComprar::-webkit-scrollbar{
+  background: rgba(128, 128, 128, 0);
 }
 
 .btnsCancelarYConfirmar {
