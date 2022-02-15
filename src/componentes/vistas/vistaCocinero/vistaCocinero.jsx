@@ -23,7 +23,7 @@ const SideBar = () => {
                     <Link to='/cocinero/pedidos-por-preparar'>
                         <div className='SideBar-bottons'>
                             <img src={pp} alt= "pp"/>
-                            <p>Pedidos por preparar</p>
+                            <p>Nuevos pedidos</p>
                         </div>
                     </Link>
                 </li>

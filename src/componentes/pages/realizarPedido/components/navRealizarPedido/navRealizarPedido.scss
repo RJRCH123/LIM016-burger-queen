@@ -31,10 +31,12 @@
   align-self: stretch;
   grid-area: fechaYhora;
   p {
-    font-size: small;
+    font-size: 15px;
   }
   img {
     width: 10%;
+    min-width: 25px;
+    max-width: 35px;
     margin-right: 5%;
   }
   label {

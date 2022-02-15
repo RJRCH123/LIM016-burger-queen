@@ -42,6 +42,7 @@
   justify-self: stretch;
   align-self: center;
   grid-area: navListadoProductosPorPedir;
+  max-height: 57px;
 }
 
 .navTablaResumenPedido {
@@ -60,7 +61,8 @@
   justify-self: stretch;
   align-self: stretch;
   grid-area: listadoProductosPorPedir;
-  overflow-x: overlay
+  overflow-x: overlay;
+  /* margin-top: 10px; */
 }
 
 .listadoProductosPorPedir::-webkit-scrollbar,
