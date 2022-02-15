@@ -23,6 +23,25 @@ const UserProvider = () => {
     const [productData, setProductData] = useState([]);
     const [tipo, setTipo] = useState("hamburguesas");
 
+  // Obtener datos de Firebase por tipo
+    const getProduct = async(tipo) => {
+      const getDataProduct = []
+      const getData = await getDocs(query(collection(db, "productos"), where("tipo", "==", tipo)))
+      getData.forEach((doc) => {
+          getDataProduct.push({...doc.data(), id:doc.id})
+        })
+        return getDataProduct
+    }
+  
+    useEffect(() => {
+      async function fetchList() {
+        const listMenu = await getProduct(tipo);
+        setProductData(listMenu)
+      }
+      fetchList();
+    }, [tipo]);
+
+    
   // boton agregar y quitar
   const plus = (id) => {
     const arrayPlus = pedido.map((item) => item.id === id ? {...item, count:item.count + 1}:item)
@@ -40,8 +59,7 @@ const UserProvider = () => {
   const totalOrder = precioTotal.reduce(reducer, 0)
   const total = totalOrder.toFixed(2)
 
-  //boton agregar envia data a resumen de pedido
-
+  // boton agregar envia data a resumen de pedido
   const agregarPedido = (order) => {
     const orderList = {
       id: order.id,
@@ -59,7 +77,7 @@ const UserProvider = () => {
 
   // limpiar orden con boton cancelar
    const limpiarOrden = () => {
-    setPedido([]); 
+    setPedido([]);
     setCliente(clientes)
   }
 
@@ -80,7 +98,7 @@ const UserProvider = () => {
       total: total
     }).then(() => {
       setPedido([]);
-      setCliente('');
+      setCliente(clientes);
     });
     return collectionOrder
   }
@@ -96,23 +114,7 @@ const UserProvider = () => {
     )
   }, []);
 
-  const getProduct = async(tipo) => {
-    const getDataProduct = []
-    const getData = await getDocs(query(collection(db, "productos"), where("tipo", "==", tipo)))
-    getData.forEach((doc) => {
-        getDataProduct.push({...doc.data(), id:doc.id})
-      })
-      return getDataProduct
-  }
-
-  useEffect(() => {
-    async function fetchList() {
-      const listMenu = await getProduct(tipo);
-      setProductData(listMenu)
-    }
-    fetchList();
-  }, [tipo]);
-
+  
   const totalProps = {
     cliente, setCliente, pedido, setPedido, datos,
     plus, less, total, agregarPedido, confirmarOrdenesF, eliminar, 

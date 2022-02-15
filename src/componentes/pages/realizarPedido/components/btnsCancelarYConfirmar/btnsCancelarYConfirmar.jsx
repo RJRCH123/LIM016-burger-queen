@@ -21,14 +21,15 @@ const BtnsCancelarYConfirmar = () => {
       closeButtonAriaLabel: 'cerrar alerta'
     }).then((result) => {
       if (result.isConfirmed) {
+        confirmarOrdenesF()
         Swal.fire({
           title:'¡Pedido Confirmado!',
           text: 'El pedido fue enviado a cocina con éxito',
           icon: 'success',
           showConfirmButton: false,
-          timer: 1500}
-        )
-      }
+          timer: 1500
+        })  
+      } limpiarOrden()
     })
   }
 
@@ -52,15 +53,16 @@ const BtnsCancelarYConfirmar = () => {
           icon: 'success',
           showConfirmButton: false,
           timer: 1500}
-        )
+        ); 
+        limpiarOrden()
       }
     })
   }
 
   return <div>
     <section className="btnsContainer gridResponsiveBtns">
-      <button type="button" onClick={() => modalConfirmarOrden(confirmarOrdenesF())}  className="confirm__button">Confirmar</button>
-      <button type="button" onClick={() => modalCancelarOrden(limpiarOrden())}  className="cancel__button">Cancelar</button>
+      <button type="button" onClick={() => modalConfirmarOrden()}  className="confirm__button">Confirmar</button>
+      <button type="button" onClick={() => modalCancelarOrden()}  className="cancel__button">Cancelar</button>
     </section>
   </div>;
 };
