@@ -32,10 +32,7 @@ function FormAdmin() {
         else if(user.cargo === "cocinero" ){
             console.log("entro en cocinero!");
             navigate("/cocinero/")
-        }
-        else{
-            alert("usuario no registrado")
-        }
+        }  
     }
 
     return (

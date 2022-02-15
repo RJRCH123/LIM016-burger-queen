@@ -11,7 +11,7 @@ import VistaMesero from './componentes/vistas/vistaMesero/vistaMesero';
 import Login from './componentes/login/login';
 import Inicio from './componentes/Inicio/inicio';
 import FormAdmin from "./componentes/login/loginFormAdm";
-import FormEmploye from "./componentes/login/loginFormEmploye";
+/* import FormEmploye from "./componentes/login/loginFormEmploye"; */
 import RegistroEmpleado from './componentes/pages/registroUsuario/registrarEmpleado';
 import PedidosPorPreparar from './componentes/pages/pedidosPorPreparar/pedidosPorPreparar';
 import PedidosPreparados from './componentes/pages/pedidosPreparados/pedidosPreparados';
