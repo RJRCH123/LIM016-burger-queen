@@ -8,9 +8,10 @@
   display: flex;
   justify-content: space-between;
   gap: 2%;
+  max-height: 55px;
   // margin: 5% 0 5% 0;
   img {
-    width: 50%;
+    width: 40%;
     margin: 10%;
   }
   button {
