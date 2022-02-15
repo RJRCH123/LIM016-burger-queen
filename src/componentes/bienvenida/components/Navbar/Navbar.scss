@@ -25,6 +25,8 @@
 .app__navbar-links li {
     margin: 0 1rem;
     cursor: pointer;
+    width: 111px;
+    text-align: center;
 }
 .app__navbar-links li:hover {
     color: var(--color-grey);
@@ -97,6 +99,8 @@
 
     .app__navbar-smallscreen {
         display: flex;
+        justify-content: flex-end;
+        width: auto;
     }
 }
 @media screen and (max-width: 650px) {

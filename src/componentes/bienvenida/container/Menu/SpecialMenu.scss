@@ -53,6 +53,12 @@
     width: 100%;
 }
 
+.btnCarta{
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+}
+
 @media screen and (min-width: 2000px) {
     .app__specialMenu-menu_img {
         width: 650px;
