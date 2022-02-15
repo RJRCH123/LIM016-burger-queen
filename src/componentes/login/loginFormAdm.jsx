@@ -1,15 +1,14 @@
 import { Link } from "react-router-dom";
 import { db } from '../../firebase/firebase-config'
-import { collection, doc, getDocs, query, where} from 'firebase/firestore'; 
+import { collection, getDocs, query, where} from 'firebase/firestore'; 
 import { useState } from "react";
-import { Route } from "react-router-dom";
-import VistaAdmin from "../vistas/vistaAdmin/vistaAdmin";
-import Inicio from "../Inicio/inicio"
+import { useNavigate } from "react-router-dom";
 import './login.scss';
 
 function FormAdmin() {
     const [userName, setUserName] = useState("")
     const [userPassword, setUserPassword] = useState("")
+    const navigate = useNavigate();
 
     const loginUser = (e) => {
         e.preventDefault();
@@ -21,20 +20,18 @@ function FormAdmin() {
     const getUsers = async (userName, userPassword) => {
         const userCollectionRef = query(collection(db, "usuarios"), where("usuario", "==", userName), where("contraseña", "==", userPassword));
         const data = await getDocs(userCollectionRef);
-        console.log(data.docs);
-        console.log(data.docs[0].data());
         const user = data.docs[0].data();
         if(user.cargo === "admin" ){
             console.log("entro en admin!");
-            <Route path='/admin/' element={<VistaAdmin content={<Inicio/>}/>}/>
+            navigate("/admin/")
         }
         else if(user.cargo === "mesero" ){
             console.log("entro en mesero!");
-            <Route path='/admin/' element={<VistaAdmin content={<Inicio/>}/>}/>
+            navigate("/mesero/")
         }
         else if(user.cargo === "cocinero" ){
             console.log("entro en cocinero!");
-            <Route path='/admin/' element={<VistaAdmin content={<Inicio/>}/>}/>
+            navigate("/cocinero/")
         }
         else{
             alert("usuario no registrado")
