@@ -4,7 +4,7 @@
     width: 30%;
     align-items: center;
     justify-items:end;
-    margin: 2rem 0 2rem 7% ;
+    // margin: 2rem 0 2rem 7% ;
     button {
         display: flex;
         cursor: pointer;
@@ -21,7 +21,8 @@
 }
 .botonSecPreparar{
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
+    gap: 5%;
     justify-content: center;
 }
 .contenedorPedido{
@@ -38,4 +39,19 @@
 }
 .btnCancelar{
     background-color: #D92A2A;
+}
+
+.btnCancelar:hover {
+    background-color: var(--color-redOscuro);
+    transform: scale(1.02);
+}
+
+.btnPreparado:hover {
+    background-color: var(--color-greenOscuro);
+    transform: scale(1.02);
+}
+
+.btnPreparando:hover {
+    background-color: #0d537c;
+    transform: scale(1.02);
 }

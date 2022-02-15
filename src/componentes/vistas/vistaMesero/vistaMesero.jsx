@@ -69,7 +69,6 @@ function VistaMesero(props) {
                 </div>                
             </div>       
         </div>
-              
     );
 }
 

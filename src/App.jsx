@@ -20,8 +20,10 @@ import HistorialVentas from './componentes/pages/historialVentas/historialVentas
 import HistorialEmpleados from './componentes/pages/historialEmpleados/historialEmpleados';
 import HistorialCocinero from './componentes/pages/historialCocinero/historialCocinero';
 import HistorialMesero from './componentes/pages/historialMesero/historialMesero';
-import RealizarPedido from './componentes/pages/realizarPedido/RealizarPedido'
+/* import RealizarPedido from './componentes/pages/realizarPedido/RealizarPedido' */
 import Carta from './componentes/bienvenida/container/Menu/carta';
+/* import Pedido from './componentes/utils/pedido/pedido' */
+import UserProvider from "./componentes/pages/realizarPedido/context/UserContext";
 
 function App() {
   return (
@@ -40,7 +42,8 @@ function App() {
         <Route path='/cocinero/historial-pedidos' element={<VistaCocinero content={<HistorialCocinero/>}/>}/>
         <Route path='/cocinero/*' element={<VistaCocinero content={<Inicio/>}/>}/>
 
-        <Route path='/mesero/realizar-pedido' element={<VistaMesero content={<RealizarPedido />} />}/>
+        {/* <Route path='/mesero/realizar-pedido' element={<VistaMesero content={<RealizarPedido />} />}/> */}
+        <Route path='/mesero/realizar-pedido' element={<VistaMesero content={<UserProvider />} />}/>
         <Route path='/mesero/pedidos-entregar' element={<VistaMesero content={<PedidosEntregar/>}/>}/>
         <Route path='/mesero/historial-pedidos' element={<VistaMesero content={<HistorialMesero/>} />}/>
         <Route path='/mesero/*' element={<VistaMesero content={<Inicio/>}/>}/>
