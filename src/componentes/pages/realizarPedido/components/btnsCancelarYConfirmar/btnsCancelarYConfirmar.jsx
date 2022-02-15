@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Swal from 'sweetalert2';
+import { UserContext } from '../../context/UserContext';
 import './btnsCancelarYConfirmar.scss';
 
 const BtnsCancelarYConfirmar = () => {
-
+  const {confirmarOrdenesF, limpiarOrden} = useContext(UserContext)
   
   const modalConfirmarOrden = () => {
     Swal.fire({
@@ -56,11 +57,10 @@ const BtnsCancelarYConfirmar = () => {
     })
   }
 
-
   return <div>
     <section className="btnsContainer gridResponsiveBtns">
-      <button type="button" onClick={() => modalConfirmarOrden()}  className="confirm__button">Confirmar</button>
-      <button type="button" onClick={() => modalCancelarOrden()}  className="cancel__button">Cancelar</button>
+      <button type="button" onClick={() => modalConfirmarOrden(confirmarOrdenesF())}  className="confirm__button">Confirmar</button>
+      <button type="button" onClick={() => modalCancelarOrden(limpiarOrden())}  className="cancel__button">Cancelar</button>
     </section>
   </div>;
 };

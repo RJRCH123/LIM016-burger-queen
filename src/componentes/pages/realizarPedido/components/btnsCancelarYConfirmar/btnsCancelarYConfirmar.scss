@@ -36,6 +36,8 @@
 
 .confirm__button {
   background-color: var(--color-green);
+  display: flex;
+  justify-content: center;
 }
 
 .confirm__button:hover {
@@ -45,6 +47,8 @@
 
 .cancel__button {
   background-color: var(--color-red);
+  display: flex;
+  justify-content: center;
 }
 
 .cancel__button:hover {

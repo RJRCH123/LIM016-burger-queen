@@ -1,25 +1,32 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AiOutlineLine, AiOutlinePlus } from 'react-icons/ai';
 import { images } from '../../constans/index';
+import { UserContext } from '../../context/UserContext';
 import './productoPorComprar.scss';
 
-function ProductoPorComprar({orderList}) { 
-
+function ProductoPorComprar() { 
+  const { pedido, eliminar, less, plus } = useContext(UserContext)
   return (
   <div>
-    <div className="dataTablaResumenPedido">
+    {pedido.map((item, id) => (
+    <div className="dataTablaResumenPedido" key={id}>
       <div className="dataProductoRP">
-        <p>Karma clásico</p>
+        <p> {item.name} </p>
       </div>
       <div className="dataUndsRP">
-        <p>3</p>
+        <p> {item.count} </p>
       </div>
       <div className="dataPrecioRP">
-        <p>38.4</p>
+        <p> {item.precio} </p>
       </div>
-      <div className="dataEliminarRP">
+      <button  onClick={() => { less(item.id) }} type="button" > <AiOutlineLine /> </button>
+      <button  onClick={() => { plus(item.id) }} type="button" > <AiOutlinePlus /> </button>
+
+      <button onClick={() => eliminar(item.id)} type="button" className="dataEliminarRP">
         <img src={images.eliminar} alt="eliminar" />
-      </div>
+      </button>
     </div>
+  ))}               
   </div>)
 }
 

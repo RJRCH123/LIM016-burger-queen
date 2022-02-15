@@ -1,19 +1,21 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { images } from '../../constans/index';
+import { UserContext } from '../../context/UserContext';
 import './navRealizarPedido.scss';
 
 function  NavRealizarPedido() {
-  const [name, setName] = useState('');
-  const [mesa, setMesa] = useState('');
+  const { cliente, setCliente } = useContext(UserContext)
 
+  let date = new Date();
+  
   return ( 
     <div className="navRP">
       <div className="fechaYhora">
         <label>
-          <p><img src={images.reloj} alt="reloj" /> Hora: 15:36pm</p>
+          <img src={images.reloj} alt="reloj" /> <p> Hora: {date.toLocaleTimeString()} </p>
         </label>
         <label>
-          <p><img src={images.calendario} alt="calendario" />Fecha: 22 Abril 2021</p>
+          <img src={images.calendario} alt="calendario" /><p>Fecha: {date.toLocaleDateString()}</p>
         </label>
       </div>
   
@@ -24,8 +26,8 @@ function  NavRealizarPedido() {
           id="nMesa" 
           name="nMesa" 
           type="nMesa" 
-          value={mesa}
-          onChange={(e) => setMesa(e.target.value)}/>
+          value={cliente.mesa}
+          onChange={(e) => setCliente({...cliente, mesa: e.target.value})}/>
         </label>
       </div>
       
@@ -36,8 +38,8 @@ function  NavRealizarPedido() {
           id="nombreCliente" 
           name="nombreCliente" 
           type="nombreCliente"
-          value={name}
-          onChange={(e) => setName(e.target.value)}/>
+          value={cliente.cliente}
+          onChange={(e) => setCliente({...cliente, cliente: e.target.value})}/>
         </label>
       </div>
     </div>
