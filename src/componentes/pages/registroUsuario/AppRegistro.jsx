@@ -1,34 +1,37 @@
-import React, {useState} from 'react';
+import React from 'react';
+import { useState } from 'react';
+import { db } from '../../../firebase/firebase-config'
+import { addDoc, collection } from 'firebase/firestore'; 
 import {Formulario, ContenedorBotonCentrado, Boton, MensajeExito, MensajeError} from './elementos';
 import Input from './input';
 
 const AppRegistro = () => {
-    // se estan estableciendo los valores iniciales para cada uno de nuestros inputs
-    const [usuario, cambiarUsuario] = useState({campo: '', valido: null});
+  // se estan estableciendo los valores iniciales para cada uno de nuestros inputs
+  const [usuario, cambiarUsuario] = useState({campo: '', valido: null});
 	const [nombre, cambiarNombre] = useState({campo: '', valido: null});
-    const [apellido, cambiarApellido] = useState({campo: '', valido: null});
-    const [edad, cambiarEdad] = useState({campo: '', valido: null});
+  const [apellido, cambiarApellido] = useState({campo: '', valido: null});
+	const [codigo, cambiarCodigo] = useState({campo: '', valido: null});
 	const [contraseña, cambiarContraseña] = useState({campo: '', valido: null});
 	const [contraseña2, cambiarContraseña2] = useState({campo: '', valido: null});
 	const [correo, cambiarCorreo] = useState({campo: '', valido: null});
 	const [celular, cambiarCelular] = useState({campo: '', valido: null});
 	const [dni, cambiarDni] = useState({campo: '', valido: null});
-    const [cargo, cambiarCargo] = useState({campo: '', valido: null});
+  const [cargo, cambiarCargo] = useState({campo: '', valido: null});
 	const [formularioValido, cambiarFormularioValido] = useState(null);
 
-    // se utilizan expresiones regulares para limitar al usuario a ingresar 
-    // valores en los input que no correspondan con lo solicitado
+  // se utilizan expresiones regulares para limitar al usuario a ingresar 
+  // valores en los input que no correspondan con lo solicitado
 
     const expresiones = {
 		usuario: /^[a-zA-Z0-9_-]{4,16}$/, // Letras, numeros, guion y guion_bajo
 		nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
-        apellido: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
+    apellido: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
 		contraseña: /^.{4,12}$/, // 4 a 12 digitos.
 		correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
 		celular: /^\d{7,9}$/, // 7 a 9 numeros,
-        edad: /^\d{1,2}$/, // 2 numeros.
-        dni: /^\d{6,8}$/, // 6 a 8 numeros,
-        cargo: /^[a-zA-ÿ\s]{1,40}$/, // Letras y espacios.
+    codigo: /^[a-zA-Z0-9]{4,6}$/, // Letras, numeros.
+    dni: /^\d{6,8}$/, // 6 a 8 numeros,
+    cargo: /^[a-zA-ÿ\s]{1,40}$/, // Letras y espacios.
 	}
 
     //se esta validando que la contraseña se ingreso de manera correcta 
@@ -47,6 +50,23 @@ const AppRegistro = () => {
 		}
 	}
 
+	// se establece la comunicación con db de firebase para crear la colección con los datos del usuario 
+
+    const userCollectionRef = collection(db, 'usuarios')
+	    const createUser = async () => {
+        await addDoc(userCollectionRef, {
+			    usuario: usuario.campo,
+			    nombres: nombre.campo, 
+			    apellidos: apellido.campo,
+			    cargo: cargo.campo,
+			    correo: correo.campo,
+			    dni: dni.campo,
+			    celular: celular.campo,
+			    contraseña: contraseña.campo,
+			    codigo: codigo.campo
+	    })
+    }
+
     // se define la estructura del formulario 
 
     const onSubmit = (e) => {
@@ -55,26 +75,26 @@ const AppRegistro = () => {
 		if(
 			usuario.valido === 'true' &&
 			nombre.valido === 'true' &&
-            apellido.valido === 'true' &&
-            edad.valido === 'true' &&
+      apellido.valido === 'true' &&
+      codigo.valido === 'true' &&
 			contraseña.valido === 'true' &&
 			contraseña2.valido === 'true' &&
 			correo.valido === 'true' &&
 			celular.valido === 'true' &&
-            dni.valido === 'true' &&
-            cargo.valido === 'true'
+      dni.valido === 'true' &&
+      cargo.valido === 'true'
 		){
 			cambiarFormularioValido(true);
 			cambiarUsuario({campo: '', valido: null});
 			cambiarNombre({campo: '', valido: null});
-            cambiarApellido({campo: '', valido: null});
-            cambiarEdad({campo: '', valido: null});
+      cambiarApellido({campo: '', valido: null});
+      cambiarCodigo({campo: '', valido: null});
 			cambiarContraseña({campo: '', valido: null});
 			cambiarContraseña2({campo: '', valido: null});
 			cambiarCorreo({campo: '', valido: null});
 			cambiarCelular({campo: '', valido: null});
-            cambiarDni({campo: '', valido: null});
-            cambiarCargo({campo: '', valido: null});
+      cambiarDni({campo: '', valido: null});
+      cambiarCargo({campo: '', valido: null});
 
 			// ... 
 		} else {
@@ -84,7 +104,7 @@ const AppRegistro = () => {
 
     return (
 		<main>
-            <h2>FORMULARIO DE REGISTRO</h2>
+      <h2>FORMULARIO DE REGISTRO</h2>
 			<Formulario action="" onSubmit={onSubmit}>
                 
 				<Input
@@ -107,7 +127,7 @@ const AppRegistro = () => {
 					leyendaError="El nombre solo puede contener letras y espacios."
 					expresionRegular={expresiones.nombre}
 				/>
-                <Input
+        <Input
 					estado={apellido}
 					cambiarEstado={cambiarApellido}
 					tipo="text"
@@ -117,22 +137,22 @@ const AppRegistro = () => {
 					leyendaError="El Apellido solo puede contener letras y espacios."
 					expresionRegular={expresiones.apellido}
 				/>
-                <Input
-					estado={edad}
-					cambiarEstado={cambiarEdad}
+        <Input
+					estado={codigo}
+					cambiarEstado={cambiarCodigo}
 					tipo="text"
-					label="Edad"
-					placeholder="Edad"
-					name="edad"
-					leyendaError="LaEDAD solo puede contener números"
-					expresionRegular={expresiones.edad}
+					label="Codigo"
+					placeholder="codigo"
+					name="codigo"
+					leyendaError="El codigo debe tener la primera letra de su cargo y el número de usuario Ej: M001"
+					expresionRegular={expresiones.codigo}
 				/>
 				<Input
 					estado={contraseña}
 					cambiarEstado={cambiarContraseña}
 					tipo="password"
 					label="Contraseña"
-                    placeholder="**********"
+          placeholder="**********"
 					name="contraseña1"
 					leyendaError="La contraseña tiene que ser de 4 a 12 dígitos."
 					expresionRegular={expresiones.contraseña}
@@ -142,7 +162,7 @@ const AppRegistro = () => {
 					cambiarEstado={cambiarContraseña2}
 					tipo="password"
 					label="Repetir Contraseña"
-                    placeholder="**********"
+          placeholder="**********"
 					name="contraseña2"
 					leyendaError="Ambas contraseñas deben ser iguales."
 					funcion={validarPassword2}
@@ -167,7 +187,7 @@ const AppRegistro = () => {
 					leyendaError="El telefono solo puede contener numeros y el maximo son 14 dígitos."
 					expresionRegular={expresiones.celular}
 				/>
-                <Input
+        <Input
 					estado={dni}
 					cambiarEstado={cambiarDni}
 					tipo="text"
@@ -177,7 +197,7 @@ const AppRegistro = () => {
 					leyendaError="El DNI solo puede contener maximo de 6 a 8 dígitos"
 					expresionRegular={expresiones.dni}
 				/>
-                <Input
+        <Input
 					estado={cargo}
 					cambiarEstado={cambiarCargo}
 					tipo="text"
@@ -190,28 +210,27 @@ const AppRegistro = () => {
 
 
 				{formularioValido === false && 
-                    <MensajeError>
-                        <p>
-                            <b>Error:</b> Por favor rellena el formulario correctamente.
-			            </p>
+            <MensajeError>
+              <p>
+                <b>Error:</b> Por favor rellena el formulario correctamente.
+			        </p>
 				    </MensajeError>
-                }
+        }
 
 				<ContenedorBotonCentrado>
-					<Boton type="submit">Registrar Personal</Boton>
+					<Boton type="submit" onClick={createUser}>Registrar Personal</Boton>
 					{formularioValido === true && 
-                        <MensajeExito>
-                            <p>
-                                <b>¡Formulario enviado exitosamente! ✔️</b>
-                            </p>
-                        </MensajeExito>
-                }   
+            <MensajeExito>
+              <p>
+                <b>¡Formulario enviado exitosamente! ✔️</b>
+              </p>
+            </MensajeExito>
+          }   
 				</ContenedorBotonCentrado>
 
 			</Formulario>
 		</main>
 	);
-
 }
 
 export default AppRegistro

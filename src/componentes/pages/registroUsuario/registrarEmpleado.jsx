@@ -1,6 +1,6 @@
 import React from 'react';
 /* import ReactDOM from 'react-dom'; */
-// import './registrarEmpleado.scss';
+import './registrarEmpleado.scss';
 import AppRegistro from './AppRegistro';
 
 
@@ -9,7 +9,7 @@ const RegistroEmpleado = () => {
         <div>
             <AppRegistro/>
         </div>
-    );
+    )
 } 
 
 export default RegistroEmpleado

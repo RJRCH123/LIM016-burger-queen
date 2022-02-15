@@ -11,7 +11,7 @@ import VistaMesero from './componentes/vistas/vistaMesero/vistaMesero';
 import Login from './componentes/login/login';
 import Inicio from './componentes/Inicio/inicio';
 import FormAdmin from "./componentes/login/loginFormAdm";
-import FormEmploye from "./componentes/login/loginFormEmploye";
+/* import FormEmploye from "./componentes/login/loginFormEmploye"; */
 import RegistroEmpleado from './componentes/pages/registroUsuario/registrarEmpleado';
 import PedidosPorPreparar from './componentes/pages/pedidosPorPreparar/pedidosPorPreparar';
 import PedidosPreparados from './componentes/pages/pedidosPreparados/pedidosPreparados';
@@ -20,9 +20,9 @@ import HistorialVentas from './componentes/pages/historialVentas/historialVentas
 import HistorialEmpleados from './componentes/pages/historialEmpleados/historialEmpleados';
 import HistorialCocinero from './componentes/pages/historialCocinero/historialCocinero';
 import HistorialMesero from './componentes/pages/historialMesero/historialMesero';
-import RealizarPedido from './componentes/pages/realizarPedido/RealizarPedido'
+/* import RealizarPedido from './componentes/pages/realizarPedido/RealizarPedido' */
 import Carta from './componentes/bienvenida/container/Menu/carta';
-import Pedido from './componentes/utils/pedido/pedido'
+/* import Pedido from './componentes/utils/pedido/pedido' */
 import UserProvider from "./componentes/pages/realizarPedido/context/UserContext";
 
 function App() {
@@ -34,8 +34,6 @@ function App() {
         <Route path='/admin/pedidos-preparados' element={<VistaAdmin content={<PedidosPreparados/>}/>}/>
         <Route path='/admin/historial-ventas' element={<VistaAdmin content={<HistorialVentas/>}/>}/>
         <Route path='/admin/historial-empleados' element={<VistaAdmin content={<HistorialEmpleados/>}/>}/>
-        {/* <Route path='/admin/historial-cocinero' element={<VistaAdmin content={<HistorialCocinero/>}/>}/> */}
-        {/* <Route path='/admin/historial-mesero' element={<VistaAdmin content={<HistorialMesero/>}/>}/> */}
         <Route path='/admin/pedidos-entregar' element={<VistaAdmin content={<PedidosEntregar />}/>}/>
         <Route path='/admin/*' element={<VistaAdmin content={<Inicio/>}/>}/>
 
@@ -51,7 +49,7 @@ function App() {
         <Route path='/mesero/*' element={<VistaMesero content={<Inicio/>}/>}/>
 
         <Route path='/bienvenida' element={<Bienvenida/>}/> 
-        <Route path='/employe' element={<Login form={<FormEmploye/>}/>}/>
+        {/* <Route path='/employe' element={<Login form={<FormEmploye/>}/>}/> */}
         <Route path='/login' element={<Login form={<FormAdmin/>} />}/> 
         <Route path='/carta' element={<Carta/>}/>      
         <Route path='/' element={<Bienvenida/>}/>
