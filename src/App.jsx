@@ -46,7 +46,7 @@ function App() {
         <Route path='/mesero/*' element={<VistaMesero content={<Inicio/>}/>}/>
 
         <Route path='/bienvenida' element={<Bienvenida/>}/> 
-        <Route path='/employe' element={<Login form={<FormEmploye/>}/>}/>
+        {/* <Route path='/employe' element={<Login form={<FormEmploye/>}/>}/> */}
         <Route path='/login' element={<Login form={<FormAdmin/>} />}/> 
         <Route path='/carta' element={<Carta/>}/>      
         <Route path='/' element={<Bienvenida/>}/>
