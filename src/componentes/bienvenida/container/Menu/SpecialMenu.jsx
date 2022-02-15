@@ -35,7 +35,7 @@ const SpecialMenu = () => (
       </div>
     </div>
 
-    <div style={{ marginTop: 15 }}>
+    <div className='btnCarta' >
      {/*  <button type="button" className="custom__button">Carta completa</button> */}
       <button type="button" className="custom__button">
         <Link to='/carta'>
