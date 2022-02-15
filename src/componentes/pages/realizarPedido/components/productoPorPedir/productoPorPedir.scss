@@ -12,12 +12,7 @@
 .DataPorProductoMenu { 
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr 1fr));
-  /* gap: 1rem; */
   padding: 2% 5%;
-  /* justify-content: space-between; */
-  /* align-content: space-evenly; */
-  /* justify-items: stretch; */
-  /* align-items: start; */
   grid-template-areas:
       "imagenProducto nombrePrecio"
       "imagenProducto agregarYaumentar";
@@ -75,11 +70,8 @@
 
 .Agregar__button {
   color: var(--color-beige);
-  // font-family: var(--font-base);
   font-weight: 700;
-  // width: 42%;
   letter-spacing: 0.04em;
-  // line-height: 28px;
   background-color: var(--color-mostazaClaro);
   font-size: small;
   padding: 0.1rem 1.5rem;
@@ -113,7 +105,6 @@
 .modalDescripcion {  
   display: grid;
   grid-template-columns: 1fr 1fr;
-  /* grid-template-rows: 0.6fr 1.1fr 1.2fr 1.1fr; */
   gap: 0px 0px;
   margin: 5%;
   grid-auto-flow: row;
