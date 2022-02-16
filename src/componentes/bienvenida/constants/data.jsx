@@ -48,22 +48,22 @@ const cocktails = [
 
 const awards = [
   {
-    imgUrl: images.award02,
+    imgUrl: images.awards,
     title: 'Isabel Rodriguez',
-    subtitle: 'Destacada por su admirable desempeño junto a los comensales.',
+    subtitle: 'Destacada por su desempeño junto a los comensales.',
   },
   {
-    imgUrl: images.award01,
+    imgUrl: images.awards,
     title: 'Enrique Diaz',
-    subtitle: 'Destacado por sus innovadores propuestas en la cocina.',
+    subtitle: 'Destacado por sus innovadoras propuestas en la cocina.',
   },
   {
-    imgUrl: images.award05,
+    imgUrl: images.awards,
     title: 'Mónica Hernandez',
-    subtitle: 'Destacada por sus grandes resultados en las encuestas hechas a los comensales.',
+    subtitle: 'Destacada por sus grandes resultados en las encuestas.',
   },
   {
-    imgUrl: images.award03,
+    imgUrl: images.awards,
     title: 'Paolo Córdova',
     subtitle: 'Destacado por su increíble rapidez en la cocina.',
   },

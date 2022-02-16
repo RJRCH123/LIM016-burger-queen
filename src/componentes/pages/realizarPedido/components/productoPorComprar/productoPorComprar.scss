@@ -2,14 +2,14 @@
 .dataTablaResumenPedido {  
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 0.3fr;
-  margin: 5% 2% 0 2%;
+ /*  margin: 5% 2% 0 2%; */
   gap: 2%;
   align-items: center;
   grid-template-areas: "productoRP undsRP precioRP eliminarRP";
 }
 
 .dataProductoRP {
-  align-self: stretch;
+  align-self: center;
   grid-area: productoRP;
   font-weight: 500;
 }

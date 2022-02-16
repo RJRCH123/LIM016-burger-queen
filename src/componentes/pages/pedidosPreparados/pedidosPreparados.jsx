@@ -12,27 +12,24 @@ const detallePedidos = [
 ];
 
 const getCardOrder = (detallePedidos) => {
-    return detallePedidos.map(detallePedido => {
-        return <div className='contenedorPedido'> 
-                    <Pedido key={detallePedido.id} orden={ detallePedido }/>
-                    <BotonPreparado key={detallePedido.id}/>
-                </div>
-    })
-    
+  return detallePedidos.map(detallePedido => {
+    return <div className='contenedorPedido'> 
+      <Pedido key={detallePedido.id} orden={ detallePedido }/>
+      <BotonPreparado key={detallePedido.id}/>
+    </div>
+  })   
 }
 
 const PedidosPreparados = () => {
-
-    const cardList = getCardOrder(detallePedidos);
-
-    return  ( 
-        <div className="contenedorPedidos">
-            <h2>PEDIDOS PREPARADOS</h2>
-            <div className='gridResponsivePP'>
-                { cardList }
-            </div>
-        </div>
-    )
+  const cardList = getCardOrder(detallePedidos);
+  return  ( 
+    <div className="contenedorPedidos">
+      <h2>PEDIDOS PREPARADOS</h2>
+      <div className='gridResponsivePP'>
+        { cardList }
+      </div>
+    </div>
+  )
 } 
 
 export default PedidosPreparados

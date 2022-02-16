@@ -5,11 +5,11 @@ import AppRegistro from './AppRegistro';
 
 
 const RegistroEmpleado = () => {   
-    return  ( 
-        <div>
-            <AppRegistro/>
-        </div>
-    )
+  return  ( 
+    <div>
+      <AppRegistro/>
+    </div>
+  )
 } 
 
 export default RegistroEmpleado
