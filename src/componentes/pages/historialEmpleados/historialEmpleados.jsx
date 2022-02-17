@@ -1,25 +1,48 @@
 import Encabezado from '../../utils/encabezado/encabezado';
 import DescargarPdf from '../../utils/botonDescarga/botonDescarga'
 import EmployeesTable from '../../utils/tablaEmpleados/tablaEmpleados';
+import { db } from '../../../firebase/firebase-config';
 import './historialEmpleados.scss';
-
-const empleados = [ 
-  {id:1, codigo: "M001", dni:"2456315",rol:"mesero", name:"Quispe Pereza, Juan Alberto", usuario:"JuaM001", contraseña:"2456315"}, 
-  {id:2, codigo: "M002", dni:"2456315",rol:"mesero", name:"Rodriguez Diaz, Martha", usuario:"MarM002", contraseña:"2456315"}, 
-  {id:3, codigo: "M003", dni:"2456315",rol:"mesero", name:"Córdova Ramirez, Pablo Elias", usuario:"PabM003", contraseña:"2456315"},
-  {id:4, codigo: "M004", dni:"2456315",rol:"mesero", name:"Chumbes Gutierrez, Hernán", usuario:"HerM004", contraseña:"2456315"},
-  {id:5, codigo: "M005", dni:"2456315",rol:"mesero", name:"Reyes Echevarría, Sthepñany", usuario:"SthM005", contraseña:"2456315"}   
-];
-
+import { collection, getDocs } from 'firebase/firestore';
+import { useState, useEffect } from 'react';
 
 
 const HistorialEmpleados = () => {
+
+  const [employees, setEmployees] = useState([]);
+   
+  const getEmployees = async () =>  {
+    const allEmployees = [];
+    const employeesRef = collection(db, 'usuarios');
+    const data = await getDocs(employeesRef);
+    data.docs.forEach(doc => {
+      const values = doc.data();
+      allEmployees.push({
+        id: doc.id,
+        name: `${values.nombres}, ${values.apellidos}`, 
+        codigo: values.codigo ,
+        dni: values.dni,
+        cargo: values.cargo,
+        usuario: values.usuario,
+        /* correo: values.correo, */
+        celular: values.celular
+      })
+    });
+    setEmployees(allEmployees);
+  }
+
+  useEffect(() => {
+    getEmployees();
+  },  []);
+
   return  ( 
     <div className='Historial'>
       <h2>HISTORIAL EMPLEADOS</h2>
       <Encabezado/>
-      <EmployeesTable employees={ empleados } />
+      <EmployeesTable employees={ employees } />
       <DescargarPdf/>
+      {/* <button type="onClick" onClick={() => getEmployees()} >Prueba</button> */}   
+      
     </div>
   )
 } 

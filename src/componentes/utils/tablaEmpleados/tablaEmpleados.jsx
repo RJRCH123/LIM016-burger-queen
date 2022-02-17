@@ -57,7 +57,7 @@ const EmployeesTable = props => {
               
           </th>
           <th>
-            <button type="button" onClick={() => requestSort("name")} className={getClassNamesFor("rol")}>Cargo</button>
+            <button type="button" onClick={() => requestSort("cargo")} className={getClassNamesFor("cargo")}>Cargo</button>
           </th>
           <th>
             <button type="button" onClick={() => requestSort("name")} className={getClassNamesFor("name")}>Empleado</button>
@@ -65,21 +65,25 @@ const EmployeesTable = props => {
           <th>
             <button type="button" onClick={() => requestSort("usuario")} className={getClassNamesFor("usuario")}>Usuario</button>
           </th>
+          {/* <th>
+            <button type="button" onClick={() => requestSort("correo")} className={getClassNamesFor("correo")}>Correo</button>
+          </th> */}
           <th>
-            <button type="button" onClick={() => requestSort("contraseña")} className={getClassNamesFor("contraseña")}>Contraseña</button>
+            <button type="button" onClick={() => requestSort("celular")} className={getClassNamesFor("celular")}>celular</button>
           </th>
         </tr>               
       </thead>
       <tbody>
-        {items.map(item => (
+        {items.map((item, index) => (
           <tr key={item.id}>
-            <td>{item.id}</td>
+            <td>{index+1}</td>
             <td>{item.codigo}</td>
             <td>{item.dni}</td>
-            <td>{item.rol}</td>
+            <td>{item.cargo}</td>
             <td>{item.name}</td>
             <td>{item.usuario}</td>
-            <td>{item.contraseña}</td>
+            {/* <td>{item.correo}</td> */}
+            <td>{item.celular}</td>
             <td>{<Botones/>}</td>
           </tr>
         ))}
