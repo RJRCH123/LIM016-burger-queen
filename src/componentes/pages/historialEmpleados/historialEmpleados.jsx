@@ -39,7 +39,7 @@ const HistorialEmpleados = () => {
     <div className='Historial'>
       <h2>HISTORIAL EMPLEADOS</h2>
       <Encabezado/>
-      <EmployeesTable employees={ employees } />
+      <EmployeesTable employees={ employees } estado={setEmployees} />
       <DescargarPdf/>      
     </div>
   )
