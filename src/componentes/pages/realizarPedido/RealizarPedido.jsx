@@ -1,4 +1,4 @@
-/* import { BtnsCancelarYConfirmar, NavRealizarPedido, ProductoPorComprar, ProductoPorPedir } from './components';
+import { BtnsCancelarYConfirmar, NavRealizarPedido, ProductoPorComprar, ProductoPorPedir } from './components';
 import NavListadoProductosPorPedir from './components/navListadoProductosPorPedir/navListadoProductosPorPedir';
 import NavTablaResumenPedido from './components/navTablaResumenPedido/navTablaPedido';
 import PrecioTotal from './components/precioTotal/precioTotal';
@@ -36,4 +36,4 @@ const RealizarPedido = () => {
   )
 } 
 
-export default RealizarPedido */
+export default RealizarPedido
