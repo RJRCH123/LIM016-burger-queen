@@ -49,6 +49,15 @@ const UserProvider = () => {
   } 
 
   const less = (id) => {
+    
+    /* const arrayLess = pedido.forEach(item => {
+      if(item.count > 0){
+        item.count=item.count - 1;
+      }
+      else if (item.count === 0){
+        eliminar(item.id)
+      }
+    }); */
     const arrayLess = pedido.map((item) => item.id === id ? {...item, count:item.count - 1}:item)
     setPedido(arrayLess)
   } 

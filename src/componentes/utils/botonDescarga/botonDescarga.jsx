@@ -32,7 +32,7 @@ const Descarga = () => {
   return  (           
   	<div className='botonDescarga'>
   	  <div className='boton'>
-  	    <button type="onClick" onClick={() => modalDescarga()} >Descargar PDF<img src={Descargar} alt= "descargar"/></button>                        
+  	    <button type="onClick" onClick={() => modalDescarga()} >Descargar PDF<img src={Descargar} alt= "descargar"/></button>                             
   	  </div>
   	</div>
 	)

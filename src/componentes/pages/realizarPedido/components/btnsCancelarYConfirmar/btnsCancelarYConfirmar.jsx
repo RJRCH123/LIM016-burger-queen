@@ -27,9 +27,10 @@ const BtnsCancelarYConfirmar = () => {
           text: 'El pedido fue enviado a cocina con éxito',
           icon: 'success',
           showConfirmButton: false,
-          timer: 1500
-        })  
-      } limpiarOrden()
+          timer: 1500}
+        ); 
+        limpiarOrden() 
+      } 
     })
   }
 
