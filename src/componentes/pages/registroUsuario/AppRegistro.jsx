@@ -96,7 +96,6 @@ const AppRegistro = () => {
       cambiarDni({campo: '', valido: null});
       cambiarCargo({campo: '', valido: null});
 
-			// ... 
 		} else {
 			cambiarFormularioValido(false);
 		}
@@ -112,7 +111,7 @@ const AppRegistro = () => {
 					cambiarEstado={cambiarUsuario}
 					tipo="text"
 					label="Usuario"
-					placeholder="Usuario"
+					placeholder="Usuario"					
 					name="usuario"
 					leyendaError="El usuario tiene que ser de 4 a 16 dígitos y solo puede contener numeros, letras y guion bajo."
 					expresionRegular={expresiones.usuario}
@@ -152,7 +151,7 @@ const AppRegistro = () => {
 					cambiarEstado={cambiarContraseña}
 					tipo="password"
 					label="Contraseña"
-          placeholder="**********"
+                    placeholder="**********"
 					name="contraseña1"
 					leyendaError="La contraseña tiene que ser de 4 a 12 dígitos."
 					expresionRegular={expresiones.contraseña}
@@ -162,7 +161,7 @@ const AppRegistro = () => {
 					cambiarEstado={cambiarContraseña2}
 					tipo="password"
 					label="Repetir Contraseña"
-          placeholder="**********"
+                    placeholder="**********"
 					name="contraseña2"
 					leyendaError="Ambas contraseñas deben ser iguales."
 					funcion={validarPassword2}
