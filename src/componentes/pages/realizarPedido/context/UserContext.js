@@ -6,6 +6,8 @@ import NavListadoProductosPorPedir from '../components/navListadoProductosPorPed
 import NavTablaResumenPedido from '../components/navTablaResumenPedido/navTablaPedido';
 import PrecioTotal from '../components/precioTotal/precioTotal';
 import '../realizarPedido.scss';
+import { Children } from 'react/cjs/react.production.min';
+import RealizarPedido from '../RealizarPedido';
 
 export const UserContext = createContext();
 
@@ -118,7 +120,7 @@ const UserProvider = () => {
       const ordenes = snapshot.docs.map((orden)=> {
         return {...orden.data(), id: orden.id}; 
       })
-      setDatos(ordenes)
+      setDatos(ordenes) 
     }
     )
   }, []);
@@ -133,29 +135,7 @@ const UserProvider = () => {
 
   return (
     <UserContext.Provider value={totalProps} >
-      <div className="containerRP">
-        <div className="navRealizarPedido">
-          <NavRealizarPedido />
-        </div>
-        <div className="navListadoProductosPorPedir">
-          <NavListadoProductosPorPedir />
-        </div>
-        <div className="navTablaResumenPedido">
-          <NavTablaResumenPedido />
-        </div>
-        <div className="listadoProductosPorPedir">
-          <ProductoPorPedir />
-        </div>
-        <div className="resumenPedidosPorComprar">
-          <ProductoPorComprar />
-        </div>
-        <div className="precioTotal">
-          <PrecioTotal />
-        </div>
-        <div className="btnsCancelarYConfirmar">
-          <BtnsCancelarYConfirmar />
-        </div>
-      </div>
+      <RealizarPedido>{Children}</RealizarPedido>
     </UserContext.Provider>
   )
 }

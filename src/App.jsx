@@ -42,8 +42,8 @@ function App() {
         <Route path='/cocinero/historial-pedidos' element={<VistaCocinero content={<HistorialCocinero/>}/>}/>
         <Route path='/cocinero/*' element={<VistaCocinero content={<Inicio/>}/>}/>
 
-        {/* <Route path='/mesero/realizar-pedido' element={<VistaMesero content={<RealizarPedido />} />}/> */}
-        <Route path='/mesero/realizar-pedido' element={<VistaMesero content={<UserProvider />} />}/>
+        <Route path='/mesero/realizar-pedido' element={<VistaMesero content={<RealizarPedido />} />}/>
+        {/* <Route path='/mesero/realizar-pedido' element={<VistaMesero content={<UserProvider />} />}/> */}
         <Route path='/mesero/pedidos-entregar' element={<VistaMesero content={<PedidosEntregar/>}/>}/>
         <Route path='/mesero/historial-pedidos' element={<VistaMesero content={<HistorialMesero/>} />}/>
         <Route path='/mesero/*' element={<VistaMesero content={<Inicio/>}/>}/>
@@ -53,7 +53,6 @@ function App() {
         <Route path='/login' element={<Login form={<FormAdmin/>} />}/> 
         <Route path='/carta' element={<Carta/>}/>      
         <Route path='/' element={<Bienvenida/>}/>
-
       </Routes>
     </div>      
   );
