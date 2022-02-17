@@ -135,7 +135,8 @@ const UserProvider = () => {
 
   return (
     <UserContext.Provider value={totalProps} >
-      <RealizarPedido>{Children}</RealizarPedido>
+      <RealizarPedido element={Children}/>
+      {/* <RealizarPedido>{Children}</RealizarPedido> */}
     </UserContext.Provider>
   )
 }
