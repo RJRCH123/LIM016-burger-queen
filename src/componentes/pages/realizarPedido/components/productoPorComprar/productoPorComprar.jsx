@@ -14,13 +14,9 @@ function ProductoPorComprar() {
         <p> {item.name.toUpperCase()} </p>
       </div>
       <div className="dataUndsRP">
-        <button className="btnLessRP" onClick={() => { less(item.id) }} type="button" > <AiOutlineLine fontSize="1.2em"
- color="white" 
-/> </button>
+        <button className="btnLessRP" onClick={() => { less(item.id) }} type="button" > <AiOutlineLine fontSize="1.2em" color="white"/> </button>
           <p> {item.count} </p>
-        <button className="btnPlusRP" onClick={() => { plus(item.id) }} type="button" > <AiOutlinePlus fontSize="1.2em"
- color="white" 
- /> </button>
+        <button className="btnPlusRP" onClick={() => { plus(item.id) }} type="button" > <AiOutlinePlus fontSize="1.2em" color="white"/> </button>
       </div>
       <div className="dataPrecioRP">
         <p> {item.precio} </p>

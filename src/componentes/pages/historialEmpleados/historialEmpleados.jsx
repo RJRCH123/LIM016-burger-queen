@@ -1,6 +1,6 @@
 import Encabezado from '../../utils/encabezado/encabezado';
 import DescargarPdf from '../../utils/botonDescarga/botonDescarga'
-import ProductsTable from '../../utils/tablaEmpleados/tablaEmpleados';
+import EmployeesTable from '../../utils/tablaEmpleados/tablaEmpleados';
 import './historialEmpleados.scss';
 
 const empleados = [ 
@@ -11,12 +11,14 @@ const empleados = [
   {id:5, codigo: "M005", dni:"2456315",rol:"mesero", name:"Reyes Echevarría, Sthepñany", usuario:"SthM005", contraseña:"2456315"}   
 ];
 
+
+
 const HistorialEmpleados = () => {
   return  ( 
     <div className='Historial'>
       <h2>HISTORIAL EMPLEADOS</h2>
       <Encabezado/>
-      <ProductsTable products={ empleados } />
+      <EmployeesTable employees={ empleados } />
       <DescargarPdf/>
     </div>
   )

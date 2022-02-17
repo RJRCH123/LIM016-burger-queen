@@ -31,9 +31,9 @@ const useSortableData = ((items, config = null) => {
   return { items, requestSort };
 });
 
-const ProductsTable = props => {    
+const EmployeesTable = props => {    
    
-  const { items, requestSort, sortConfig } = useSortableData(props.products);
+  const { items, requestSort, sortConfig } = useSortableData(props.employees);
   const getClassNamesFor = name => {
     if (!sortConfig) {
       return;
@@ -88,4 +88,4 @@ const ProductsTable = props => {
   );
 }
 
-export default ProductsTable
+export default EmployeesTable
