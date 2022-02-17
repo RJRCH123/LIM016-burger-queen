@@ -44,6 +44,7 @@ const botones = props => {
   }
 
   const ModalConfirmacionCancelar = () => {
+    console.log('vamos a borrar esto');
     Swal.fire({
       text: '¿Está seguro que desea cancelar el proceso?',
       showCancelButton: true,
@@ -64,6 +65,7 @@ const botones = props => {
           showConfirmButton: false,
           timer: 1500}
         ); 
+        console.log(props.id);
         eliminarEmploye(props);
       }
       else{
@@ -77,9 +79,11 @@ const botones = props => {
     })
   }
 
-  const eliminarEmploye = async (props) => {  
+  const eliminarEmploye = async (props) => {
+    console.log('aca es cuando eliminamos la colección y el usuario en la tabla');    
     await deleteDoc(doc(db, 'usuarios', props.id));
     obtenerUsuarios();   
+    /* props.estado(obtenerUsuarios()); */
   }
 
   const editarEmploye = () => {
@@ -104,6 +108,7 @@ const botones = props => {
     );
     console.log(allEmployees);
     props.estado(allEmployees);
+    /* return allEmployees */
   });
 }
     

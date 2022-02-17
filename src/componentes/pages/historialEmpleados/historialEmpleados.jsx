@@ -24,7 +24,6 @@ const HistorialEmpleados = () => {
         dni: values.dni,
         cargo: values.cargo.toUpperCase(),
         usuario: values.usuario.toUpperCase(),
-        /* correo: values.correo, */
         celular: values.celular
       })
     });
@@ -33,7 +32,7 @@ const HistorialEmpleados = () => {
 
   useEffect(() => {
     getEmployees();
-  },  []);
+  },  [employees]);
 
   return  ( 
     <div className='Historial'>
