@@ -84,7 +84,7 @@ const EmployeesTable = props => {
             <td>{item.usuario}</td>
             {/* <td>{item.correo}</td> */}
             <td>{item.celular}</td>
-            <td>{<Botones/>}</td>
+            <td>{<Botones id={item.id} estado={props.estado}/>}</td>
           </tr>
         ))}
       </tbody>

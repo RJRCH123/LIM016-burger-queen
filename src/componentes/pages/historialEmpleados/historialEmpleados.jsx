@@ -24,7 +24,6 @@ const HistorialEmpleados = () => {
         dni: values.dni,
         cargo: values.cargo.toUpperCase(),
         usuario: values.usuario.toUpperCase(),
-        /* correo: values.correo, */
         celular: values.celular
       })
     });
@@ -33,16 +32,14 @@ const HistorialEmpleados = () => {
 
   useEffect(() => {
     getEmployees();
-  },  []);
+  },  [employees]);
 
   return  ( 
     <div className='Historial'>
       <h2>HISTORIAL EMPLEADOS</h2>
       <Encabezado/>
-      <EmployeesTable employees={ employees } />
-      <DescargarPdf/>
-      {/* <button type="onClick" onClick={() => getEmployees()} >Prueba</button> */}   
-      
+      <EmployeesTable employees={ employees } estado={setEmployees} />
+      <DescargarPdf/>      
     </div>
   )
 } 
