@@ -40,9 +40,7 @@ const HistorialEmpleados = () => {
       <h2>HISTORIAL EMPLEADOS</h2>
       <Encabezado/>
       <EmployeesTable employees={ employees } />
-      <DescargarPdf/>
-      {/* <button type="onClick" onClick={() => getEmployees()} >Prueba</button> */}   
-      
+      <DescargarPdf/>      
     </div>
   )
 } 
