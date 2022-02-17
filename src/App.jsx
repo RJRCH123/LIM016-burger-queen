@@ -53,7 +53,6 @@ function App() {
         <Route path='/login' element={<Login form={<FormAdmin/>} />}/> 
         <Route path='/carta' element={<Carta/>}/>      
         <Route path='/' element={<Bienvenida/>}/>
-
       </Routes>
     </div>      
   );
