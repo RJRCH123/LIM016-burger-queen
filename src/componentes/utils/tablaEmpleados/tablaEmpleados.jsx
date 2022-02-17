@@ -45,7 +45,7 @@ const EmployeesTable = props => {
     <table>
       <thead>
         <tr>
-          <th>
+          <th width= '5%' >
             <button type="button" onClick={() => requestSort("id")} className={getClassNamesFor("id")}>N°</button>
           </th>
           <th>
