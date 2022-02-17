@@ -57,11 +57,6 @@ const ProductoPorPedir = () => {
             <p>S/. {item.precio}0</p>
           </div>
           <div className="agregarYaumentar">
-            {/* <div className="contador" >
-              <button  onClick={() => { less(item.id) }} type="button" > <AiOutlineLine /> </button>
-                <p> {item.count} </p>
-              <button onClick={() =>{ plus(item.id) }} type="button"> <AiOutlinePlus  /> </button>
-            </div>       */}
             <button onClick={() => agregarPedido(item)} type="button" className="Agregar__button">Agregar</button>
           </div>
         </div>
