@@ -45,11 +45,11 @@ const EmployeesTable = props => {
     <table>
       <thead>
         <tr>
-          <th>
+          <th width= '5%' >
             <button type="button" onClick={() => requestSort("id")} className={getClassNamesFor("id")}>N°</button>
           </th>
           <th>
-            <button type="button" onClick={() => requestSort("name")} className={getClassNamesFor("codigo")}>Código</button>
+            <button type="button" onClick={() => requestSort("name")} className={getClassNamesFor("codigo")}>CÓDIGO</button>
               
           </th>
           <th>
@@ -57,19 +57,19 @@ const EmployeesTable = props => {
               
           </th>
           <th>
-            <button type="button" onClick={() => requestSort("cargo")} className={getClassNamesFor("cargo")}>Cargo</button>
+            <button type="button" onClick={() => requestSort("cargo")} className={getClassNamesFor("cargo")}>CARGO</button>
           </th>
           <th>
-            <button type="button" onClick={() => requestSort("name")} className={getClassNamesFor("name")}>Empleado</button>
+            <button type="button" onClick={() => requestSort("name")} className={getClassNamesFor("name")}>EMPLEADO</button>
           </th>
           <th>
-            <button type="button" onClick={() => requestSort("usuario")} className={getClassNamesFor("usuario")}>Usuario</button>
+            <button type="button" onClick={() => requestSort("usuario")} className={getClassNamesFor("usuario")}>USUARIO</button>
           </th>
           {/* <th>
             <button type="button" onClick={() => requestSort("correo")} className={getClassNamesFor("correo")}>Correo</button>
           </th> */}
           <th>
-            <button type="button" onClick={() => requestSort("celular")} className={getClassNamesFor("celular")}>celular</button>
+            <button type="button" onClick={() => requestSort("celular")} className={getClassNamesFor("celular")}>CELULAR</button>
           </th>
         </tr>               
       </thead>

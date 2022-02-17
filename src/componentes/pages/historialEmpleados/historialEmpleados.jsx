@@ -19,11 +19,11 @@ const HistorialEmpleados = () => {
       const values = doc.data();
       allEmployees.push({
         id: doc.id,
-        name: `${values.nombres}, ${values.apellidos}`, 
-        codigo: values.codigo ,
+        name: `${values.nombres.toUpperCase()}, ${values.apellidos.toUpperCase()}`, 
+        codigo: values.codigo.toUpperCase() ,
         dni: values.dni,
-        cargo: values.cargo,
-        usuario: values.usuario,
+        cargo: values.cargo.toUpperCase(),
+        usuario: values.usuario.toUpperCase(),
         /* correo: values.correo, */
         celular: values.celular
       })
