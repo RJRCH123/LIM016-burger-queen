@@ -16,7 +16,9 @@ function FormAdmin() {
 		console.log('usuario: ' + userName)
 		console.log('clave: ' + userPassword)   
 		getUsers(userName, userPassword).then((user) => {
+			console.log(user);
 			if (user){
+				console.log(user.cargo)
 				if(user.cargo === "admin" ){
 					console.log("entro en admin!");
 					navigate("/admin/")
@@ -27,9 +29,10 @@ function FormAdmin() {
 				}
 				else if(user.cargo === "cocinero" ){
 					console.log("entro en cocinero!");
-					navigate("/cocinero/")			}
+					navigate("/cocinero/")			
+				}
 			}		
-			else{
+			else if(user === undefined){
 				Swal.fire({
 					text: 'Usuario Inválido por favor Ingrese Usuario y contraseña correctamente',
 					showCancelButton: true,
@@ -49,9 +52,11 @@ function FormAdmin() {
 	const getUsers = async (userName, userPassword) => {
 		const userCollectionRef = query(collection(db, "usuarios"), where("usuario", "==", userName), where("contraseña", "==", userPassword));
 		const data = await getDocs(userCollectionRef);
+		/* console.log(data); */
 		const user = data.docs[0].data();
+		/* console.log(user); */		
 		return user		
-  }
+  	}
 
 	return (
 		<form className="login-form" >

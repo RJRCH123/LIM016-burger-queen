@@ -4,7 +4,7 @@ import Swal from 'sweetalert2';
 import BtnBorrar from '../../../img/iconos/eliminar.png'
 import Editar from '../../../img/iconos/editar.png'
 import { db } from "../../../firebase/firebase-config";
-import { doc, deleteDoc, collection, getDocs } from "firebase/firestore";
+import { doc, deleteDoc, collection, getDocs, updateDoc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
 
 
@@ -12,8 +12,11 @@ const Botones = props => {
 
   const navigate = useNavigate();
 
-  const handleClick = () => {
-    navigate("/admin/registro-personal");
+  const handleClick = (props) => {
+    console.log(props);
+    console.log(props.id);
+    console.log('aca debemos ir al formulario de registro');
+    navigate(`/admin/historial-empleados/actualizar-datos/${props.id}`);
   }
   
   const ModalConfirmacionEditar = () => {
@@ -38,8 +41,7 @@ const Botones = props => {
           showConfirmButton: false,
           timer: 1500}
         ); 
-        handleClick();
-        editarEmploye();
+        handleClick(props);
       }
       else{
         Swal.fire({
@@ -88,14 +90,11 @@ const Botones = props => {
     })
   }
 
+  // método que elimina de la colección usuarios
   const eliminarEmploye = async (props) => {
     console.log('aca es cuando eliminamos la colección y el usuario en la tabla');    
     await deleteDoc(doc(db, 'usuarios', props.id));
     obtenerUsuarios();       
-  }
-
-  const editarEmploye = () => {
-    console.log('aca debemos ir al formulario de registro');
   }
 
   const obtenerUsuarios = async() => {
