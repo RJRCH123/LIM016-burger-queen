@@ -43,7 +43,7 @@ function  NavRealizarPedido() {
           id="nombreCliente" 
           name="nombreCliente" 
           type="text"
-          maxlength="25"
+          maxLength="25"
           value={cliente.cliente}
           onChange={(e) => setCliente({...cliente, cliente: e.target.value.replace(/^\d$/g,'')})}
           />

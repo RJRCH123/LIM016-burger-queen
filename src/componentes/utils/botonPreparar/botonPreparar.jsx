@@ -7,16 +7,17 @@ const listOptions = [
   { text: "Cancelar", className: "btnCancelar" },  
 ];
 
-const BotonPreparar = () => {
-
+const BotonPreparar = (props) => {
+  
   const [activeLink, setActiveLink] = useState(null);
 
   return listOptions.map((option, index) => {
+    
     return  ( 
-      <div className='botonPreparar'>
+      <div className='botonPreparar' key={index}>
         <div className='botonSecPreparar'>
-          <button 
-            key={index}
+          <button            
+            key={`${index}botonPreparar${props.info.id}`}
             className={option.className}          
             type="onClick"
             onClick={() => setActiveLink(index)           
