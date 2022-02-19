@@ -17,7 +17,7 @@ function FormAdmin() {
 		console.log('clave: ' + userPassword)   
 		getUsers(userName, userPassword).then((user) => {
 			console.log(user);
-			if (user){
+			if (user.cargo){
 				console.log(user.cargo)
 				if(user.cargo === "admin" ){
 					console.log("entro en admin!");
@@ -32,29 +32,28 @@ function FormAdmin() {
 					navigate("/cocinero/")			
 				}
 			}		
-			else if(user === undefined){
-				Swal.fire({
-					text: 'Usuario Inválido por favor Ingrese Usuario y contraseña correctamente',
-					showCancelButton: true,
-					confirmButtonColor: '#57a057',
-					cancelButtonColor: '#d33',
-					confirmButtonText: 'Confirmar',
-					cancelButtonText: 'Cancelar',
-					allowOutsideClick: false,
-					stopKeydownPropagation: false,
-					showCloseButton: true,
-					closeButtonAriaLabel: 'cerrar alerta'
-				});
-			} 
-		}); 
+		}).catch(() => {
+			Swal.fire({
+				text: 'Usuario Inválido por favor Ingrese Usuario y contraseña correctamente',
+				showCancelButton: true,
+				confirmButtonColor: '#57a057',
+				cancelButtonColor: '#d33',
+				confirmButtonText: 'Confirmar',
+				cancelButtonText: 'Cancelar',
+				allowOutsideClick: false,
+				stopKeydownPropagation: false,
+				showCloseButton: true,
+				closeButtonAriaLabel: 'cerrar alerta'
+			});
+		});
 	}
 
 	const getUsers = async (userName, userPassword) => {
 		const userCollectionRef = query(collection(db, "usuarios"), where("usuario", "==", userName), where("contraseña", "==", userPassword));
-		const data = await getDocs(userCollectionRef);
-		/* console.log(data); */
-		const user = data.docs[0].data();
-		/* console.log(user); */		
+		const dataDocs = await getDocs(userCollectionRef);
+		//console.log(dataDocs);
+		const user = dataDocs.docs[0].data();
+		//console.log(user);		
 		return user		
   	}
 
