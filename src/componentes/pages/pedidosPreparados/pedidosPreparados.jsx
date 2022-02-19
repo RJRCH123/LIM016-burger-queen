@@ -27,10 +27,9 @@ const PedidosPreparados = () => {
     <div className="contenedorPedidos">
       <h2>PEDIDOS PREPARADOS</h2>
       <div className='gridResponsivePP'>
-        {orders.map(order => {
-          //console.log(order.id);
+        {orders.map((order, index) => {
             return (
-              <div className='contenedorPedido'> 
+              <div className='contenedorPedido' key={index}> 
                 <Pedido key={order.id} orden={ order }/>
               </div>
             )          

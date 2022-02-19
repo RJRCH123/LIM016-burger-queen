@@ -8,7 +8,7 @@ import { useState, useEffect } from 'react';
 
 
 const HistorialEmpleados = () => {
-
+  const [isLoading, setIsLoading] = useState(true)
   const [employees, setEmployees] = useState([]);
    
   const getEmployees = async () =>  {
@@ -27,18 +27,28 @@ const HistorialEmpleados = () => {
         celular: values.celular
       })
     });
-    setEmployees(allEmployees);
+    return allEmployees;
   }
 
   useEffect(() => {
-    getEmployees();
-  },  []);
+    getEmployees().then((allEmployees) => {
+      setIsLoading(false);
+      setEmployees(allEmployees);
+    })
+  },  [isLoading]);
+
+
+  if(isLoading){
+    return(
+      <div></div>
+    )
+  } 
 
   return  ( 
     <div className='Historial'>
       <h2>HISTORIAL EMPLEADOS</h2>
       <Encabezado/>
-      <EmployeesTable employees={ employees } estado={setEmployees} />
+      <EmployeesTable employees={ employees } estado={setEmployees} loading={setIsLoading} />
       <DescargarPdf/>      
     </div>
   )

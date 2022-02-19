@@ -80,7 +80,7 @@ const EmployeesTable = props => {
             <td>{item.name}</td>
             <td>{item.usuario}</td>            
             <td>{item.celular}</td>
-            <td>{<Botones id={item.id} estado={props.estado}/>}</td>
+            <td>{<Botones id={item.id} estado={props.estado} loading={props.loading}/>}</td>
           </tr>
         ))}
       </tbody>

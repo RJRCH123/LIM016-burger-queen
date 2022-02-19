@@ -4,7 +4,7 @@ import Swal from 'sweetalert2';
 import BtnBorrar from '../../../img/iconos/eliminar.png'
 import Editar from '../../../img/iconos/editar.png'
 import { db } from "../../../firebase/firebase-config";
-import { doc, deleteDoc, collection, getDocs } from "firebase/firestore";
+import { doc, deleteDoc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
 
 const Botones = props => {
@@ -66,30 +66,10 @@ const Botones = props => {
   // método que elimina de la colección usuarios
   const eliminarEmploye = async (props) => {    
     await deleteDoc(doc(db, 'usuarios', props.id));
-    obtenerUsuarios();   
+    props.loading(true); // setIsLoading state on the grandfather
+      
   }
-
-  const obtenerUsuarios = async() => {
-    const allEmployees = [];
-    const employeesRef = collection(db, 'usuarios');
-    const data = await getDocs(employeesRef);
-    data.docs.forEach(doc => {
-      const values = doc.data();
-      allEmployees.push({
-        id: doc.id,
-        name: `${values.nombres.toUpperCase()}, ${values.apellidos.toUpperCase()}`, 
-        codigo: values.codigo.toUpperCase() ,
-        dni: values.dni,
-        cargo: values.cargo.toUpperCase(),
-        usuario: values.usuario.toUpperCase(),
-        celular: values.celular
-      }
-    );
-    props.estado(allEmployees);
-    //return allEmployees
-  });
-}
-    
+ 
   return  ( 
     <div className='botonesCRUD' id={props}>
       <button type="onclick" className='botonEditar' onClick={ModalConfirmacionEditar}><img src={Editar} alt= "Editar"/></button>

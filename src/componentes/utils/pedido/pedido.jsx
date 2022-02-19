@@ -1,9 +1,14 @@
 import './pedido.scss';
 import ProductosPedido from './productosPedido';
 
+
+const dateParser = (date) => {
+  return date.toLocaleTimeString(); // solo la hora
+  //return `${date.toLocaleDateString()}  ${date.toLocaleTimeString()}`
+  //return date.toLocaleString(); // fecha y hora local
+}
 const Pedido = ({orden}) =>{
-  //console.log(orden)
-       
+         
   return (
     <div className="boxPedido" id={orden.id}>
       <div className='headerPedido'>
@@ -15,7 +20,7 @@ const Pedido = ({orden}) =>{
             </div>
             <div className='dato1'>
               <h5>Entrada:</h5>
-              <p>{orden.mesa}</p>
+              <p>{dateParser(orden.timestamp.toDate())}</p>
             </div>
           </div>
           <div className='dato2'>
@@ -26,7 +31,7 @@ const Pedido = ({orden}) =>{
         <ProductosPedido key={orden.id} orden={ orden.orden }/>
         <div className='totalPedido'>
           <p>Total</p>
-          <p>{orden.total}</p>
+          <p>{`S/. `}{orden.total}</p>
         </div>
       </div>        
     </div>

@@ -89,7 +89,7 @@ const AppActualizarRegistro = () => {
 		const docRef = doc(db, "usuarios", id);
 		const docSnap = await getDoc(docRef);
 		if (docSnap.exists()) {
-			console.log("data:", docSnap.data());
+			//console.log("data:", docSnap.data());
 		} else {	  
 			console.log("No existe el documento");
 		}
@@ -266,9 +266,9 @@ const AppActualizarRegistro = () => {
 					<Boton type="submit" onClick={actualizarUser}>Actualizar Personal</Boton>
 					{formularioValido === true && 
 						<MensajeExito>
-							<p>
-								<b>¡Usuario Actualizado Exitosamente! ✔️</b>
-							</p>
+							
+							<b>¡Usuario Actualizado Exitosamente! ✔️</b>
+							
 						</MensajeExito>
 					}   
 				</ContenedorBotonCentrado>

@@ -19,10 +19,10 @@ const ProductosPedido = ({orden}) =>{
                 </tr>
             </thead>
             <tbody>
-                {orden.map(orden => {
+                {orden.map((orden, index) => {
                     //console.log(orden.id);
                     return (
-                        <tr productoId={orden.codigoProducto}>
+                        <tr key={index}>
                             <td>{orden.name}</td>
                             <td>{orden.count}</td>
                             <td>{orden.precio}</td>                                
