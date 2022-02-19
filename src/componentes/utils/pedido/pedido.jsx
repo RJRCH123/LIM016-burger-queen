@@ -1,10 +1,11 @@
-//import { useState } from 'react';
 import './pedido.scss';
+import ProductosPedido from './productosPedido';
 
 const Pedido = ({orden}) =>{
-    //console.log(orden);    
+  //console.log(orden)
+       
   return (
-    <div className="boxPedido">
+    <div className="boxPedido" id={orden.id}>
       <div className='headerPedido'>
         <div className='detallePedido'>
           <div className='dataCliente'>
@@ -14,7 +15,7 @@ const Pedido = ({orden}) =>{
             </div>
             <div className='dato1'>
               <h5>Entrada:</h5>
-              <p>{orden.hora}</p>
+              <p>{orden.mesa}</p>
             </div>
           </div>
           <div className='dato2'>
@@ -22,36 +23,10 @@ const Pedido = ({orden}) =>{
             <p>{orden.mesa}</p>
           </div>
         </div>
-        <table>
-          <thead>
-            <tr>
-              <th>
-                <button type="button">Pedido</button>
-              </th>
-              <th>
-                <button type="button">Cantidad</button>
-              </th>
-              <th>
-                <button type="button">Precio</button>
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Hamburguesa</td>
-              <td>1</td>
-              <td>S./ 12.00</td>                                
-            </tr>
-            <tr>
-              <td>Agua</td>
-              <td>1</td>
-              <td>S./ 5.00</td>                                
-            </tr>
-          </tbody>
-        </table>
+        <ProductosPedido key={orden.id} orden={ orden.orden }/>
         <div className='totalPedido'>
           <p>Total</p>
-          <p>S./ 17.00</p>
+          <p>{orden.total}</p>
         </div>
       </div>        
     </div>

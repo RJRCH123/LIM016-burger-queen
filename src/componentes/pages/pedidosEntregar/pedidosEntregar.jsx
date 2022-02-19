@@ -5,55 +5,41 @@ import './pedidosEntregar.scss';
 import Pedido from '../../utils/pedido/pedido'
 import BotonEntegar from '../../utils/botonEntregar/botonEntregar'
 
-const detallePedidos = [ 
-  {id: 2, cliente: "Maria Camacho", hora: "3:15 PM", mesa:"1"},
-  {id: 3, cliente: "Cristhian Hernandez", hora: "4:02 PM", mesa:"2"},
-  {id: 2, cliente: "Maria Camacho", hora: "3:15 PM", mesa:"1"},
-  {id: 3, cliente: "Cristhian Hernandez", hora: "4:02 PM", mesa:"2"},
-  {id: 2, cliente: "Maria Camacho", hora: "3:15 PM", mesa:"1"},
-  {id: 3, cliente: "Cristhian Hernandez", hora: "4:02 PM", mesa:"2"}
-];
 
-
-const getCardOrder = () => {
-/*   const [getOrderData, setGetOrderData] = useState([]);
-
-  const getProduct = async() => {
-    const getDataProduct = []
-    const getData = await getDocs(query(collection(db, "pedidos")))
-    getData.forEach((doc) => {
-        getDataProduct.push({...doc.data(), id:doc.id})
-      })
-      return getDataProduct
-  }
-
-  useEffect(() => {
-    async function fetchList() {
-      const listMenu = await getProduct();
-      setGetOrderData(listMenu)
-    }
-    fetchList();
-  }, []); */
-
-    return (
-      <div className='gridResponsivePE' >
-        {detallePedidos.map(detallePedido => {
-        return <div className='contenedorPedido'> 
-            <Pedido key={detallePedido.id} orden={ detallePedido }/>
-            <BotonEntegar key={detallePedido.id}/>
-          </div>
-        })}
-      </div>
-    )
-};
 
 const PedidosEntregar = () => {  
-  const cardList = getCardOrder(detallePedidos);
+
+  const [orders, setOrders] = useState([]);
+
+  const getOrders = async () => {
+		const ordersCollectionRef = query(collection(db, "pedidos"), where("estado", "==", "preparado"));
+		const dataDocs = await getDocs(ordersCollectionRef);
+		const pedidos = dataDocs.docs;	
+    const allOrders = []
+    pedidos.forEach(pedido => {      
+      allOrders.push({...pedido.data(), id:pedido.id});
+    })    
+		setOrders(allOrders);	
+  }
+  
+  useEffect(() => {
+    getOrders()
+  }, []);
+  
   return  ( 
     <div className="contenedorPedidosEntregar">
       <h2>PEDIDOS POR ENTREGAR</h2>
-      <div /* className='gridResponsivePE' */>
-        { cardList }
+      <div className='gridResponsivePE' >
+        {orders.map(order => {
+          console.log(order.id);
+            return (
+              <div className='contenedorPedido'> 
+                <Pedido key={order.id} orden={ order }/>
+                <BotonEntegar key={order.id}/>
+              </div>
+            )          
+          })
+        }
       </div>
     </div>
   )

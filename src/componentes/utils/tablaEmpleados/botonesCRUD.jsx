@@ -4,23 +4,20 @@ import Swal from 'sweetalert2';
 import BtnBorrar from '../../../img/iconos/eliminar.png'
 import Editar from '../../../img/iconos/editar.png'
 import { db } from "../../../firebase/firebase-config";
-import { doc, deleteDoc, collection, getDocs, updateDoc } from "firebase/firestore";
+import { doc, deleteDoc, collection, getDocs } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
-
 
 const Botones = props => {
 
   const navigate = useNavigate();
 
-  const handleClick = (props) => {
-    console.log(props);
-    console.log(props.id);
-    console.log('aca debemos ir al formulario de registro');
+  // me redirige al formulario para actualizar los datos del usuario
+  const handleClick = (props) => {    
     navigate(`/admin/historial-empleados/actualizar-datos/${props.id}`);
   }
-  
+ 
+  // modal de confirmarión para editar un empleado registrado 
   const ModalConfirmacionEditar = () => {
-    console.log('vamos a editar esto');
     Swal.fire({
       text: '¿Está seguro que editar este usuario?',
       showCancelButton: true,
@@ -33,29 +30,14 @@ const Botones = props => {
       showCloseButton: true,
       closeButtonAriaLabel: 'cerrar alerta'
     }).then((result) => {
-      if (result.isConfirmed) {
-        Swal.fire({
-          title:'¡Procederemos a editar al usuario!',
-          icon: 'success',
-          text: 'Se redireccionará al formulario para realizar la modificaión',
-          showConfirmButton: false,
-          timer: 1500}
-        ); 
+      if (result.isConfirmed) {        
         handleClick(props);
-      }
-      else{
-        Swal.fire({
-          title:'¡operación cancelada!',
-          icon: 'error',
-          showConfirmButton: false,
-          timer: 1500}
-        ); 
-      }
+      }      
     })
   }
 
+  // modal de confirmarión para eliminar un empleado registrado 
   const ModalConfirmacionCancelar = () => {
-    console.log('vamos a borrar esto');
     Swal.fire({
       text: '¿Está seguro que desea cancelar el proceso?',
       showCancelButton: true,
@@ -76,25 +58,15 @@ const Botones = props => {
           showConfirmButton: false,
           timer: 1500}
         ); 
-        console.log(props.id);
         eliminarEmploye(props);
-      }
-      else{
-        Swal.fire({
-          title:'¡operación cancelada!',
-          icon: 'error',
-          showConfirmButton: false,
-          timer: 1500}
-        ); 
       }
     })
   }
 
   // método que elimina de la colección usuarios
-  const eliminarEmploye = async (props) => {
-    console.log('aca es cuando eliminamos la colección y el usuario en la tabla');    
+  const eliminarEmploye = async (props) => {    
     await deleteDoc(doc(db, 'usuarios', props.id));
-    obtenerUsuarios();       
+    obtenerUsuarios();   
   }
 
   const obtenerUsuarios = async() => {
@@ -113,9 +85,8 @@ const Botones = props => {
         celular: values.celular
       }
     );
-    console.log(allEmployees);
     props.estado(allEmployees);
-    /* return allEmployees */
+    //return allEmployees
   });
 }
     

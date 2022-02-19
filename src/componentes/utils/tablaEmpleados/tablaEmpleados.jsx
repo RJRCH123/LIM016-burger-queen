@@ -64,10 +64,7 @@ const EmployeesTable = props => {
           </th>
           <th>
             <button type="button" onClick={() => requestSort("usuario")} className={getClassNamesFor("usuario")}>USUARIO</button>
-          </th>
-          {/* <th>
-            <button type="button" onClick={() => requestSort("correo")} className={getClassNamesFor("correo")}>Correo</button>
-          </th> */}
+          </th>          
           <th>
             <button type="button" onClick={() => requestSort("celular")} className={getClassNamesFor("celular")}>CELULAR</button>
           </th>
@@ -81,8 +78,7 @@ const EmployeesTable = props => {
             <td>{item.dni}</td>
             <td>{item.cargo}</td>
             <td>{item.name}</td>
-            <td>{item.usuario}</td>
-            {/* <td>{item.correo}</td> */}
+            <td>{item.usuario}</td>            
             <td>{item.celular}</td>
             <td>{<Botones id={item.id} estado={props.estado}/>}</td>
           </tr>
