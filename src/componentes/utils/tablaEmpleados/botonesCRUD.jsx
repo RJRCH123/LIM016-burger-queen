@@ -1,13 +1,24 @@
-import React from "react";
+import React from 'react';
 import './botonesCRUD.scss';
 import Swal from 'sweetalert2';
 import BtnBorrar from '../../../img/iconos/eliminar.png'
 import Editar from '../../../img/iconos/editar.png'
 import { db } from "../../../firebase/firebase-config";
-import { doc, deleteDoc, collection, getDocs } from "firebase/firestore";
+import { doc, deleteDoc, collection, getDocs, updateDoc } from "firebase/firestore";
+import { useNavigate } from "react-router-dom";
 
-const botones = props => {
 
+const Botones = props => {
+
+  const navigate = useNavigate();
+
+  const handleClick = (props) => {
+    console.log(props);
+    console.log(props.id);
+    console.log('aca debemos ir al formulario de registro');
+    navigate(`/admin/historial-empleados/actualizar-datos/${props.id}`);
+  }
+  
   const ModalConfirmacionEditar = () => {
     console.log('vamos a editar esto');
     Swal.fire({
@@ -25,12 +36,12 @@ const botones = props => {
       if (result.isConfirmed) {
         Swal.fire({
           title:'¡Procederemos a editar al usuario!',
-          icon: 'info',
+          icon: 'success',
           text: 'Se redireccionará al formulario para realizar la modificaión',
           showConfirmButton: false,
           timer: 1500}
         ); 
-        editarEmploye();
+        handleClick(props);
       }
       else{
         Swal.fire({
@@ -79,15 +90,11 @@ const botones = props => {
     })
   }
 
+  // método que elimina de la colección usuarios
   const eliminarEmploye = async (props) => {
     console.log('aca es cuando eliminamos la colección y el usuario en la tabla');    
     await deleteDoc(doc(db, 'usuarios', props.id));
-    obtenerUsuarios();   
-    /* props.estado(obtenerUsuarios()); */
-  }
-
-  const editarEmploye = () => {
-  console.log('aca debemos ir al formulario de registro');
+    obtenerUsuarios();       
   }
 
   const obtenerUsuarios = async() => {
@@ -120,4 +127,4 @@ const botones = props => {
   )
 } 
 
-export default botones
+export default Botones

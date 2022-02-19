@@ -32,7 +32,7 @@ const HistorialEmpleados = () => {
 
   useEffect(() => {
     getEmployees();
-  },  [employees]);
+  },  []);
 
   return  ( 
     <div className='Historial'>
