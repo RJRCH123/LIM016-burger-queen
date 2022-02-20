@@ -7,10 +7,11 @@ import BS from '../../../img/iconos/botton-salir.png';
 import { Link } from "react-router-dom";
 import './vistaMesero.scss';
 import Navbar from '../../utils/navBar/navBar';
+import HeaderMesero from '../../headers/mesero/headerMesero';
 //import SideBar from '../../utils/sideBar/sideBar';
 //import btnSideBarAdminMesero from '../../utils/sideBar/sideBar';
 
-const SideBar = () => {
+/* const SideBar = () => {
   return (
     <div className="sideBar">
       <div className='logoSideBar'>
@@ -56,15 +57,16 @@ const SideBar = () => {
       </div>
     </div>
   )
-}
+} */
 
 function VistaMesero(props) {
   return (       
     <div className="container">
-      <Navbar/> 
+      {/* <Navbar/>  */}
       <div className='flex'>                
-        <SideBar/>
+        <HeaderMesero />
         <div className='content'>
+          <Navbar/> 
           {props.content}                            
         </div>                
       </div>       

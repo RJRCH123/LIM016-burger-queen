@@ -18,7 +18,7 @@ const products = [
 
 const HistorialCocinero = () => {
   return  ( 
-    <div>
+    <div className='paddingFlex'>
     <h2>HISTORIAL PEDIDOS</h2>
       <Encabezado/>
       <ProductsTable products={ products } />

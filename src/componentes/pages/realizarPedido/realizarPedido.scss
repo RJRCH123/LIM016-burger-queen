@@ -1,8 +1,12 @@
 
+.marginFlex {
+  margin: 20px 20px 0 20px;
+}
+
 .containerRP {  
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 7vh 8vh 62vh 5vh 5vh;
+  grid-template-rows: 7vh 8vh 60vh 5vh 5vh;
   grid-auto-columns: 1fr;
   gap: 0% 5%;
   grid-auto-flow: row;

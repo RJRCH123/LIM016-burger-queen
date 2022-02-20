@@ -12,7 +12,7 @@ import Navbar from '../../utils/navBar/navBar'
 
 const SideBar = () => {
   return (
-    <div className="sideBar">
+    <section className="sideBar">
       <div className='logoSideBar'>
         <img src={LogoAdmin} alt= "logoAdmin"/>
       </div>
@@ -70,21 +70,21 @@ const SideBar = () => {
           <button><Link to='/'><img src={BS} alt= "BS"/></Link></button>          
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 
 function VistaAdmin(props) {
   return (       
-    <div className="container">
-      <Navbar/> 
+    <section className="container">
+      {/* <Navbar/>  */}
       <div className='flex'>                
         <SideBar/>
         <div className='content'>
           {props.content}                            
         </div>                
       </div>       
-    </div>          
+    </section>          
   );
 }
 

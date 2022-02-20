@@ -10,7 +10,7 @@ import Navbar from '../../utils/navBar/navBar'
 
 const SideBar = () => {
   return (
-    <div className="sideBar">
+    <section className="sideBar">
       <div className='logoSideBar'>
         <img src={LogoCocinero} alt= "logoCocinero"/>
       </div>
@@ -52,21 +52,21 @@ const SideBar = () => {
               <button><Link to='/'><img src={BS} alt= "BS"/></Link></button>          
           </div>
       </div>
-    </div>
+    </section>
   )
 }
 
 function vistaCocinero(props) {
   return (       
-    <div className="container">
-      <Navbar/> 
+    <section className="container">
+      {/* <Navbar/>  */}
       <div className='flex'>                
         <SideBar/>
         <div className='content'>
             {props.content}                            
         </div>                
       </div>       
-    </div>            
+    </section>            
   );
 }
 

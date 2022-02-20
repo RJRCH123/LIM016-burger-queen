@@ -1,4 +1,4 @@
-import React from "react";
+/* import React from "react";
 import { Link } from "react-router-dom";
 import LogoAdmin from '../../../img/iconos/trajeAdmin.png';
 import LogoCocinero from '../../../img/iconos/chefCocinero.png';
@@ -127,4 +127,4 @@ const SideBar = (props) => {
     )
 }
 
-export default  SideBar;
+export default  SideBar; */
