@@ -20,6 +20,7 @@ import HistorialVentas from './componentes/pages/historialVentas/historialVentas
 import HistorialEmpleados from './componentes/pages/historialEmpleados/historialEmpleados';
 import HistorialCocinero from './componentes/pages/historialCocinero/historialCocinero';
 import HistorialMesero from './componentes/pages/historialMesero/historialMesero';
+import ActualizarDatosEmpleado from './componentes/pages/registroUsuario/ActualizarEmpleado'
 /* import RealizarPedido from './componentes/pages/realizarPedido/RealizarPedido' */
 import Carta from './componentes/bienvenida/container/Menu/carta';
 /* import Pedido from './componentes/utils/pedido/pedido' */
@@ -34,6 +35,7 @@ function App() {
         <Route path='/admin/pedidos-preparados' element={<VistaAdmin content={<PedidosPreparados/>}/>}/>
         <Route path='/admin/historial-ventas' element={<VistaAdmin content={<HistorialVentas/>}/>}/>
         <Route path='/admin/historial-empleados' element={<VistaAdmin content={<HistorialEmpleados/>}/>}/>
+        <Route path='/admin/historial-empleados/actualizar-datos/:id' element={<VistaAdmin content={<ActualizarDatosEmpleado/>}/>}/>
         <Route path='/admin/pedidos-entregar' element={<VistaAdmin content={<PedidosEntregar />}/>}/>
         <Route path='/admin/*' element={<VistaAdmin content={<Inicio/>}/>}/>
 

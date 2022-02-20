@@ -1,22 +1,28 @@
 import React from 'react';
-import { useState } from 'react';
-import { db } from '../../../firebase/firebase-config'
-import { addDoc, collection } from 'firebase/firestore'; 
+import { useState, useEffect } from 'react';
+import { useParams } from "react-router-dom";
+import { db } from '../../../firebase/firebase-config';
+import { doc, getDoc, updateDoc } from "firebase/firestore";
 import {Formulario, ContenedorBotonCentrado, Boton, MensajeExito, MensajeError} from './elementos';
 import Input from './input';
 
-const AppRegistro = () => {
+
+
+const AppActualizarRegistro = () => {
+	
+	let { id }  = useParams();
+
   // se estan estableciendo los valores iniciales para cada uno de nuestros inputs
-  const [usuario, cambiarUsuario] = useState({campo: '', valido: null});
+  	const [usuario, cambiarUsuario] = useState({campo: '', valido: null});
 	const [nombre, cambiarNombre] = useState({campo: '', valido: null});
-  const [apellido, cambiarApellido] = useState({campo: '', valido: null});
+  	const [apellido, cambiarApellido] = useState({campo: '', valido: null});
 	const [codigo, cambiarCodigo] = useState({campo: '', valido: null});
 	const [contraseña, cambiarContraseña] = useState({campo: '', valido: null});
 	const [contraseña2, cambiarContraseña2] = useState({campo: '', valido: null});
 	const [correo, cambiarCorreo] = useState({campo: '', valido: null});
 	const [celular, cambiarCelular] = useState({campo: '', valido: null});
 	const [dni, cambiarDni] = useState({campo: '', valido: null});
-  const [cargo, cambiarCargo] = useState({campo: '', valido: null});
+  	const [cargo, cambiarCargo] = useState({campo: '', valido: null});
 	const [formularioValido, cambiarFormularioValido] = useState(null);
 
   // se utilizan expresiones regulares para limitar al usuario a ingresar 
@@ -25,13 +31,13 @@ const AppRegistro = () => {
     const expresiones = {
 		usuario: /^[a-zA-Z0-9_-]{4,16}$/, // Letras, numeros, guion y guion_bajo
 		nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
-    apellido: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
+    	apellido: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
 		contraseña: /^.{4,12}$/, // 4 a 12 digitos.
 		correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
 		celular: /^\d{7,9}$/, // 7 a 9 numeros,
-    codigo: /^[a-zA-Z0-9]{4,6}$/, // Letras, numeros.
-    dni: /^\d{6,8}$/, // 6 a 8 numeros,
-    cargo: /^[a-zA-ÿ\s]{1,40}$/, // Letras y espacios.
+		codigo: /^[a-zA-Z0-9]{4,6}$/, // Letras, numeros.
+		dni: /^\d{6,8}$/, // 6 a 8 numeros,
+		cargo: /^[a-zA-ÿ\s]{1,40}$/, // Letras y espacios.
 	}
 
     //se esta validando que la contraseña se ingreso de manera correcta 
@@ -50,22 +56,54 @@ const AppRegistro = () => {
 		}
 	}
 
-	// se establece la comunicación con db de firebase para crear la colección con los datos del usuario 
+	// método que actualiza los datos de la colección usuarios  
 
-    const userCollectionRef = collection(db, 'usuarios')
-	    const createUser = async () => {
-        await addDoc(userCollectionRef, {
-			    usuario: usuario.campo,
-			    nombres: nombre.campo, 
-			    apellidos: apellido.campo,
-			    cargo: cargo.campo,
-			    correo: correo.campo,
-			    dni: dni.campo,
-			    celular: celular.campo,
-			    contraseña: contraseña.campo,
-			    codigo: codigo.campo
-	    })
-    }
+    const userDocRef = doc(db, 'usuarios', id)	
+	const actualizarUser = async () => {
+		await updateDoc(userDocRef, {
+			usuario: usuario.campo,
+			nombres: nombre.campo, 
+			apellidos: apellido.campo,
+			cargo: cargo.campo,
+			correo: correo.campo,
+			dni: dni.campo,
+			celular: celular.campo,
+			contraseña: contraseña.campo,
+			codigo: codigo.campo
+		})
+	}
+
+	// método que busca los datos de del documento seleccionado
+
+	const getUser = async() => {
+		const docRef = doc(db, "usuarios", id);
+		const docSnap = await getDoc(docRef);
+		if (docSnap.exists()) {
+			console.log("data:", docSnap.data());
+		} else {	  
+			console.log("No existe el documento");
+		}
+		return docSnap.data()
+	}
+	
+	useEffect(() => {
+		getUser().then((result) => {
+			console.log(result)
+			cambiarFormularioValido(null);
+			cambiarUsuario({campo: result.usuario, valido: null});
+			cambiarNombre({campo: result.nombres, valido: null});
+			cambiarApellido({campo: result.apellidos, valido: null});
+			cambiarCodigo({campo: result.codigo, valido: null});
+			cambiarContraseña({campo: result.contraseña, valido: null});
+			cambiarContraseña2({campo: result.contraseña, valido: null});
+			cambiarCorreo({campo: result.correo, valido: null});
+			cambiarCelular({campo: result.celular, valido: null});
+			cambiarDni({campo: result.dni, valido: null});
+			cambiarCargo({campo: result.cargo, valido: null});
+
+	 	})
+	 
+	}, []);
 
     // se define la estructura del formulario 
 
@@ -97,15 +135,14 @@ const AppRegistro = () => {
 			cambiarCargo({campo: '', valido: null});
 
 		} else {
-			cambiarFormularioValido(false);
+			cambiarFormularioValido(true);
 		}
 	}
 
     return (
 		<main>
-      <h2>FORMULARIO DE REGISTRO</h2>
-			<Formulario action="" onSubmit={onSubmit}>
-                
+			<h2>ACTUALIZAR USUARIO</h2>
+			<Formulario action="" onSubmit={onSubmit} id={id}>				
 				<Input
 					estado={usuario}
 					cambiarEstado={cambiarUsuario}
@@ -126,7 +163,7 @@ const AppRegistro = () => {
 					leyendaError="El nombre solo puede contener letras y espacios."
 					expresionRegular={expresiones.nombre}
 				/>
-        		<Input
+				<Input
 					estado={apellido}
 					cambiarEstado={cambiarApellido}
 					tipo="text"
@@ -136,7 +173,7 @@ const AppRegistro = () => {
 					leyendaError="El Apellido solo puede contener letras y espacios."
 					expresionRegular={expresiones.apellido}
 				/>
-        		<Input
+				<Input
 					estado={codigo}
 					cambiarEstado={cambiarCodigo}
 					tipo="text"
@@ -151,7 +188,7 @@ const AppRegistro = () => {
 					cambiarEstado={cambiarContraseña}
 					tipo="password"
 					label="Contraseña"
-                    placeholder="**********"
+					placeholder="**********"
 					name="contraseña1"
 					leyendaError="La contraseña tiene que ser de 4 a 12 dígitos."
 					expresionRegular={expresiones.contraseña}
@@ -161,7 +198,7 @@ const AppRegistro = () => {
 					cambiarEstado={cambiarContraseña2}
 					tipo="password"
 					label="Repetir Contraseña"
-                    placeholder="**********"
+					placeholder="**********"
 					name="contraseña2"
 					leyendaError="Ambas contraseñas deben ser iguales."
 					funcion={validarPassword2}
@@ -186,7 +223,7 @@ const AppRegistro = () => {
 					leyendaError="El telefono solo puede contener numeros y el maximo son 14 dígitos."
 					expresionRegular={expresiones.celular}
 				/>
-        		<Input
+				<Input
 					estado={dni}
 					cambiarEstado={cambiarDni}
 					tipo="text"
@@ -196,7 +233,7 @@ const AppRegistro = () => {
 					leyendaError="El DNI solo puede contener maximo de 6 a 8 dígitos"
 					expresionRegular={expresiones.dni}
 				/>
-        		<Input
+				<Input
 					estado={cargo}
 					cambiarEstado={cambiarCargo}
 					tipo="text"
@@ -209,22 +246,22 @@ const AppRegistro = () => {
 
 
 				{formularioValido === false && 
-            		<MensajeError>
-              			<p>
-                			<b>Error:</b> Por favor rellena el formulario correctamente.
-			        	</p>
-				    </MensajeError>
-        		}
+					<MensajeError>
+						<p>
+							<b>Error:</b> Por favor rellena el formulario correctamente.
+						</p>
+					</MensajeError>
+				}
 
 				<ContenedorBotonCentrado>
-					<Boton type="submit" onClick={createUser}>Registrar Personal</Boton>
+					<Boton type="submit" onClick={actualizarUser}>Actualizar Personal</Boton>
 					{formularioValido === true && 
 						<MensajeExito>
-						<p>
-							<b>¡Formulario enviado exitosamente! ✔️</b>
-						</p>
+							<p>
+								<b>¡Usuario Actualizado Exitosamente! ✔️</b>
+							</p>
 						</MensajeExito>
-          			}   
+					}   
 				</ContenedorBotonCentrado>
 
 			</Formulario>
@@ -232,4 +269,4 @@ const AppRegistro = () => {
 	);
 }
 
-export default AppRegistro
+export default AppActualizarRegistro
