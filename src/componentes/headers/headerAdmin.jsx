@@ -1,5 +1,3 @@
-
-
 //import useState hook to create menu collapse state
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
@@ -17,17 +15,17 @@ import {
 //import icons from react icons
 import { FiArrowLeftCircle, FiArrowRightCircle } from "react-icons/fi";
 
-import LogoMesero from '../../../img/iconos/mesero.png';
-import BH from '../../../img/iconos/botton-home.png';
-import BS from '../../../img/iconos/botton-salir.png';
-import PuntoNegro from '../../../img/iconos/puntoNegro.png';
+import LogoAdmin from '../../img/iconos/trajeAdmin.png';
+import BH from '../../img/iconos/botton-home.png';
+import BS from '../../img/iconos/botton-salir.png';
+import PuntoNegro from '../../img/iconos/puntoNegro.png';
 
 //import sidebar css from react-pro-sidebar module and our custom css 
 import "react-pro-sidebar/dist/css/styles.css";
-import "./headerMesero.scss";
+import "./headers.scss";
 
 
-const HeaderMesero = () => {
+const HeaderAdmin = () => {
   
     //create initial menuCollapse state using useState hook
     const [menuCollapse, setMenuCollapse] = useState(false)
@@ -60,33 +58,41 @@ const HeaderMesero = () => {
           <SidebarContent>
             <Menu iconShape="square">
               <div className='dataUser'>
-                <img className="logoRol" src={LogoMesero} alt= "logoMesero"/>
+                <img className="logoRol" src={LogoAdmin} alt= "Logo Admin"/>
               </div>
               <MenuItem  icon={<img src={PuntoNegro} alt= "Nada"/>}>
                 <div className='dataUser'>
                   <h4>NOMBRE</h4>
-                  <p>MESERO</p>
+                  <p>ADMIN</p>
                 </div>
               </MenuItem>
               <MenuItem icon={
-                <Link to='/mesero/realizar-pedido'><h1 className="logoNames">RP</h1></Link>}>
-                  <Link to='/mesero/realizar-pedido'>Realizar Pedido</Link>
+                <Link to='/admin/registro-personal'><h1 className="logoNames">RP</h1></Link>}>
+                  <Link to='/admin/registro-personal'>Registrar Personal</Link>
               </MenuItem>
               <MenuItem icon={
-                <Link to='/mesero/pedidos-entregar'><h1 className="logoNames">PE</h1></Link>}>
-                  <Link to='/mesero/pedidos-entregar'>Pedidos por Entregar</Link>
+                <Link to='/admin/historial-empleados'><h1 className="logoNames">HE</h1></Link>}>
+                  <Link to='/admin/historial-empleados'>Historial de Empleados</Link>
               </MenuItem>
               <MenuItem icon={
-                <Link to='/mesero/historial-pedidos'><h1 className="logoNames">HP</h1></Link>}>
-                  <Link to='/mesero/historial-pedidos'>Historial de pedidos</Link>
+                <Link to='/admin/historial-ventas'><h1 className="logoNames">HV</h1></Link>}>
+                  <Link to='/admin/historial-ventas'>Historial de Ventas</Link>
+              </MenuItem>
+              <MenuItem icon={
+                <Link to='/admin/pedidos-preparados'><h1 className="logoNames">PP</h1></Link>}>
+                  <Link to='/admin/pedidos-preparados'>Pedidos Preparados</Link>
+              </MenuItem>
+              <MenuItem icon={
+                <Link to='/admin/pedidos-entregar'><h1 className="logoNames">PE</h1></Link>}>
+                  <Link to='/admin/pedidos-entregar'>Pedidos para Entregar</Link>
               </MenuItem>
             </Menu>
           </SidebarContent>
           <SidebarFooter>
             <Menu iconShape="square">
               <MenuItem active={true} icon={
-                <Link to='/mesero/registro/'><img src={BH} alt= "BH"/></Link>}>
-                  <Link to='/mesero/registro/'>Inicio</Link>
+                <Link to='/admin/registro/'><img src={BH} alt= "BH"/></Link>}>
+                  <Link to='/admin/registro/'>Inicio</Link>
               </MenuItem>
               <MenuItem icon={
                 <Link to='/'><img src={BS} alt= "BS"/></Link>}>
@@ -100,53 +106,5 @@ const HeaderMesero = () => {
   );
 };
 
-export default HeaderMesero;
+export default HeaderAdmin;
 
-
-/* const SideBar = () => {
-  return (
-    <div className="sideBar">
-      <div className='logoSideBar'>
-        <img src={LogoMesero} alt= "logoMesero"/>
-      </div>
-      <div className='dataUser'>
-        <h4>NOMBRE</h4>
-        <p>MESERO</p>
-      </div>
-      <ul>
-        <li>
-          <Link to='/mesero/realizar-pedido'>
-            <div className='SideBar-bottons'>
-              <img src={RP} alt= "RP"/>
-              <p>Realizar Pedido</p>
-            </div>
-          </Link>
-        </li>
-        <li>
-          <Link to='/mesero/pedidos-entregar'>
-            <div className='SideBar-bottons'>
-              <img src={PP} alt= "PP"/>
-              <p>Pedidos por Entregar</p>
-            </div>
-          </Link>
-        </li>
-        <li>
-          <Link to='/mesero/historial-pedidos'>
-            <div className='SideBar-bottons'>
-              <img src={HP} alt= "HP"/>
-              <p>Historial de pedidos</p>
-            </div>
-          </Link>
-        </li>
-      </ul>
-      <div className='containerBotones'>
-        <div className='bottons'>
-          <button><Link to='/mesero/registro/'><img src={BH} alt= "BH"/></Link></button>
-        </div>
-        <div className='bottons1'>
-          <button><Link to='/'><img src={BS} alt= "BS"/></Link></button>          
-        </div>
-      </div>
-    </div>
-  )
-} */

@@ -11,32 +11,30 @@
 }
 .inicio{
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  height: 100%;
-  width: 100%;
+  /* flex-direction: column; */
+  /* height: 86vh; */
+  width: 90%;
   text-align: center;
   /* padding: 2rem 0; */
   border: 3px solid var(--color-mostazaOscuro);
-  padding: 5%;
+  padding: 20px;
   box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  padding: 2% 5%;
+  /* padding: 2% 5%; */
+  /* margin: 0 0 20px 80px; */
+  align-items: center;
+  align-content: center;
 }
+
 .gif{
   width: 100%;
   display: flex;
   flex-direction: column;
-  background-repeat: no-repeat;
-  background-size:100% 70%;
-  background-position: bottom;
-  justify-content: flex-start;
-  object-fit: cover;
+  align-items: center;
 
   img {
-    width: 100%;
+    width: 80%;
     border: 3px solid var(--color-mostazaOscuro);
     box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
   }   
