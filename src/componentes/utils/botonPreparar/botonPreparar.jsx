@@ -1,4 +1,5 @@
 import React from "react";
+import Swal from 'sweetalert2';
 import { db } from "../../../firebase/firebase-config";
 import { deleteDoc, doc, updateDoc} from 'firebase/firestore';
 import './botonPreparar.scss';
@@ -20,11 +21,31 @@ const BotonPreparar = (props) => {
     });    
     props.loading(true); 
   }
+
+  // modal de confirmarión para editar un empleado registrado 
+  const ModalCancelar = (id) => {
+    Swal.fire({
+      text: '¿Está seguro que desea eliminar el pedido?',
+      showCancelButton: true,
+      confirmButtonColor: '#57a057',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Confirmar',
+      cancelButtonText: 'Cancelar',
+      allowOutsideClick: false,
+      stopKeydownPropagation: false,
+      showCloseButton: true,
+      closeButtonAriaLabel: 'cerrar alerta'
+    }).then((result) => {
+      if (result.isConfirmed) {        
+        eliminarPedido(id);
+      }      
+    })
+  }
 	
   const listOptions = [
     { text: "Preparando", className: "btnPreparando" },
     { text: "Preparado", className: "btnPreparado", operacion: actualizarEstado},
-    { text: "Cancelar", className: "btnCancelar", operacion: eliminarPedido },  
+    { text: "Cancelar", className: "btnCancelar", operacion: ModalCancelar }
   ];
   
   return listOptions.map((option, index) => {
