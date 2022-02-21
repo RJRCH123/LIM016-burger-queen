@@ -60,12 +60,10 @@ const HeaderAdmin = () => {
               <div className='dataUser'>
                 <img className="logoRol" src={LogoAdmin} alt= "Logo Admin"/>
               </div>
-              <MenuItem  icon={<img src={PuntoNegro} alt= "Nada"/>}>
-                <div className='dataUser'>
-                  <h4>NOMBRE</h4>
-                  <p>ADMIN</p>
-                </div>
-              </MenuItem>
+              <div className='dataUser'>
+                <h4>NOMBRE</h4>
+                <p>ADMIN</p>
+              </div>
               <MenuItem icon={
                 <Link to='/admin/registro-personal'><h1 className="logoNames">RP</h1></Link>}>
                   <Link to='/admin/registro-personal'>Registrar Personal</Link>

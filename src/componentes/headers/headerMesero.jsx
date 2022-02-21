@@ -38,7 +38,7 @@ const HeaderMesero = () => {
 
   return (
     <>
-      <div id="header">
+      <section id="header">
           {/* collapsed props to change menu size using menucollapse state */}
         <ProSidebar collapsed={menuCollapse}>
           <SidebarHeader>
@@ -60,12 +60,10 @@ const HeaderMesero = () => {
               <div className='dataUser'>
                 <img className="logoRol" src={LogoMesero} alt= "logoMesero"/>
               </div>
-              <MenuItem  icon={<img src={PuntoNegro} alt= "Nada"/>}>
-                <div className='dataUser'>
-                  <h4>NOMBRE</h4>
-                  <p>MESERO</p>
-                </div>
-              </MenuItem>
+              <div className='dataUser'>
+                <h4>NOMBRE</h4>
+                <p>MESERO</p>
+              </div>
               <MenuItem icon={
                 <Link to='/mesero/realizar-pedido'><h1 className="logoNames">RP</h1></Link>}>
                   <Link to='/mesero/realizar-pedido'>Realizar Pedido</Link>
@@ -93,7 +91,7 @@ const HeaderMesero = () => {
             </Menu>
           </SidebarFooter>
         </ProSidebar>
-      </div>
+      </section>
     </>
   );
 };

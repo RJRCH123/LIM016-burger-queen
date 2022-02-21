@@ -60,12 +60,10 @@ const HeaderCocinero = () => {
               <div className='dataUser'>
                 <img className="logoRol" src={LogoCocinero} alt= "logoCocinero"/>
               </div>
-              <MenuItem  icon={<img src={PuntoNegro} alt= "Nada"/>}>
-                <div className='dataUser'>
-                  <h4>NOMBRE</h4>
-                  <p>JEFE DE COCINA</p>
-                </div>
-              </MenuItem>
+              <div className='dataUser'>
+                <h4>NOMBRE</h4>
+                <p>JEFE DE COCINA</p>
+              </div>
               <MenuItem icon={
                 <Link to='/cocinero/pedidos-por-preparar'><h1 className="logoNames">NP</h1></Link>}>
                   <Link to='/cocinero/pedidos-por-preparar'>Nuevos Pedidos</Link>

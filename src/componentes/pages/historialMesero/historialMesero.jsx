@@ -18,12 +18,12 @@ const products = [
 
 const HistorialCocinero = () => {
   return  ( 
-    <div className='paddingFlex'>
+    <section className='paddingFlex'>
     <h2>HISTORIAL PEDIDOS</h2>
       <Encabezado/>
       <ProductsTable products={ products } />
       <DescargarPdf/>
-    </div>
+    </section>
   )
 } 
 
