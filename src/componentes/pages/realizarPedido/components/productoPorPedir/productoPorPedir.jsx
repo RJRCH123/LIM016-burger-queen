@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import { AiOutlinePlus, AiOutlineLine} from 'react-icons/ai'
 import './productoPorPedir.scss';
 import { images } from '../../constans/index';
 import Swal from 'sweetalert2';
@@ -7,7 +6,7 @@ import { UserContext } from '../../context/UserContext';
 
 const ProductoPorPedir = () => { 
 
-  const { plus, less, productData, agregarPedido } = useContext(UserContext)
+  const { productData, agregarPedido } = useContext(UserContext)
 
   return <section className='gridResponsivePPM'> 
     {productData.map((item, index) => {

@@ -13,7 +13,7 @@ import {
 } from "react-pro-sidebar";
 
 // import icons from react icons
-import { FiArrowLeftCircle, FiArrowRightCircle } from "react-icons/fi";
+import { FiList, FiMenu } from "react-icons/fi";
 
 import LogoAdmin from '../../img/iconos/trajeAdmin.png';
 import BH from '../../img/iconos/botton-home.png';
@@ -47,7 +47,7 @@ const HeaderAdmin = () => {
             </div>
             <div className="closemenu" onClick={menuIconClick}>
                 {/* changing menu collapse icon on click */}
-              {menuCollapse ? (<FiArrowRightCircle/>) : (<FiArrowLeftCircle/>)}
+              {menuCollapse ? (<FiMenu/>) : (<FiList/>)}
             </div>
           </SidebarHeader>
           <SidebarContent>
