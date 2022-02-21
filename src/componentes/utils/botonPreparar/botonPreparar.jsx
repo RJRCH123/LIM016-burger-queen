@@ -1,29 +1,37 @@
-import React, { useState } from "react";
+import React from "react";
+import { db } from "../../../firebase/firebase-config";
+import { deleteDoc, doc} from 'firebase/firestore';
 import './botonPreparar.scss';
 
-const listOptions = [
-  { text: "Preparando", className: "btnPreparando" },
-  { text: "Preparado", className: "btnPreparado" },
-  { text: "Cancelar", className: "btnCancelar" },  
-];
+
 
 const BotonPreparar = (props) => {
-  
-  const [activeLink, setActiveLink] = useState(null);
 
+  // método que elimina el pedido de la colección
+  const eliminarPedido = async (id) => { 
+    await deleteDoc(doc(db, 'pedidos', id)); 
+    props.loading(true);   
+      
+  }
+
+  const listOptions = [
+    { text: "Preparando", className: "btnPreparando" },
+    { text: "Preparado", className: "btnPreparado" },
+    { text: "Cancelar", className: "btnCancelar", operacion: eliminarPedido },  
+  ];
+  
   return listOptions.map((option, index) => {
     
     return  ( 
       <div className='botonPreparar' key={index}>
         <div className='botonSecPreparar'>
-          <button            
+          <button        
             key={`${index}botonPreparar${props.info.id}`}
             className={option.className}          
             type="onClick"
-            onClick={() => setActiveLink(index)           
-          }>
+            onClick= {() => option.operacion(props.info.id) }         
+          >
           {option.text}
-          {activeLink === index ? 'ACTIVO' : ""}
           </button>                    
         </div>
       </div>        

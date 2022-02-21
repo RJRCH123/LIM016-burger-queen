@@ -9,6 +9,7 @@ import { useEffect, useState } from 'react';
 
 const PedidosPorPreparar = () => {
 
+  const [isLoading, setIsLoading] = useState(true)
   const [orders, setOrders] = useState([]);
 
   const getOrders = async () => {
@@ -19,14 +20,24 @@ const PedidosPorPreparar = () => {
     pedidos.forEach(pedido => {      
       allOrders.push({...pedido.data(), id:pedido.id});
     })    
-		setOrders(allOrders);	
+		/* setOrders(allOrders); */	
+    return allOrders
   }
-  
-  useEffect(() => {
-    getOrders()
-  }, []);
 
+  useEffect(() => {
+    getOrders().then((allOrders) => {
+      setIsLoading(false);
+      setOrders(allOrders);
+    })    
+  },  [isLoading]);
   
+
+  if(isLoading){
+    return(
+      <div></div>
+    )
+  } 
+
   return  ( 
     <div className="contenedorPedidosPorPreparar">
       <h2>PEDIDOS POR PREPARAR</h2>
@@ -36,7 +47,7 @@ const PedidosPorPreparar = () => {
               <div className='contenedorPedido' key={index}> 
                 <Pedido key={order.id} orden={ order }/>
                 <div className='contenedorBotones'>
-                  <BotonPreparar info={order} key={`${index}-${order.id}`}/>
+                  <BotonPreparar info={order} key={`${index}-${order.id}`} loading={setIsLoading}/>
                 </div>
                 
               </div>
@@ -46,6 +57,8 @@ const PedidosPorPreparar = () => {
       </div>
     </div>
   )
+  
+ 
 } 
 
 export default PedidosPorPreparar
