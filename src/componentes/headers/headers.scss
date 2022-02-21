@@ -76,7 +76,7 @@
   }
 
   .logoNames {
-    font-size: xx-large;
+    font-size: x-large;
     font-weight: lighter;
     /* color: hsl(0deg 0% 100%); */
   }
@@ -86,19 +86,30 @@
     color: #d1d1d1;
     white-space: break-spaces;
     font-weight: 400;
+    color: hsl(0deg 0% 100%)
   }
 
   .pro-sidebar .pro-menu a:hover {
-    color: var(--color-mostazaOscuro);
+    color: hsl(43deg 51% 48%);;
   }
 
-  .pro-sidebar .pro-menu h1:hover {
+/*   .pro-sidebar .pro-menu h1:hover {
     color: var(--color-mostazaOscuro);
   }
 
   .pro-sidebar .pro-menu li:hover {
     color: var(--color-mostazaOscuro);
-  }
+  } */
+
+/*   .pro-sidebar .pro-menu a:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: transparent;
+} */
 
   .pro-sidebar .pro-menu .pro-menu-item > .pro-inner-item {
     position: relative;
