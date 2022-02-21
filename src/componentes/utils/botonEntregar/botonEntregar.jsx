@@ -1,30 +1,15 @@
 import { db } from "../../../firebase/firebase-config";
-import { doc, updateDoc, addDoc, collection} from 'firebase/firestore';
+import { doc, updateDoc } from 'firebase/firestore';
 import './botonEntregar.scss';
 
-const BotonEntegar = (props) => {
+const BotonEntregar = (props) => {
 
   const actualizarEstado = async (id) => {
     const pedidoDocRef = doc(db, 'pedidos', id)
     await updateDoc(pedidoDocRef, {
-      estado: "entregado/finalizado"        
+      estado: "finalizado"        
     });
-    createDoc(props);
     props.loading(true);    
-  }
-
-  const PedidoFinalizadoCollectionRef = collection(db, 'pedidosFinalizados')
-  const createDoc = async (props) => {
-    const data = props.info;
-    //console.log(data);
-    await addDoc(PedidoFinalizadoCollectionRef, {
-      cliente: data.cliente,
-      estado: "entregado/finalizado", 
-      mesa: data.mesa,
-      orden: data.orden,
-      timestamp: data.timestamp,
-      total: data.total      
-    })
   }
 
   return  ( 
@@ -40,4 +25,4 @@ const BotonEntegar = (props) => {
   )
 } 
 
-export default BotonEntegar
+export default BotonEntregar

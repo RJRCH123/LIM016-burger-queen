@@ -3,7 +3,7 @@ import Encabezado from '../../utils/encabezado/encabezado';
 import DescargarPdf from '../../utils/botonDescarga/botonDescarga';
 import ProductsTable from '../../utils/tablaPedidos/tablaPedidos';
 import { db } from '../../../firebase/firebase-config';
-import { collection, getDocs } from 'firebase/firestore';
+import { collection, getDocs, where, query } from 'firebase/firestore';
 import { useState, useEffect } from 'react';
 
 
@@ -19,8 +19,8 @@ const HistorialCocinero = () => {
 
   const getOrder = async () =>  {
     const allOrders = [];
-    const OrderCollecRef = collection(db, 'pedidosFinalizados');
-    const data = await getDocs(OrderCollecRef);
+    const orderCollecRef = query(collection(db, 'pedidos'), where("estado", "==", "finalizado"));
+    const data = await getDocs(orderCollecRef);
     
     data.docs.forEach(doc => {
       const values = doc.data();

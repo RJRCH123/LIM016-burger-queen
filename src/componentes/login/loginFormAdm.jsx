@@ -127,8 +127,8 @@ function FormAdmin() {
 			<input 
 				type="email" 
 				className="login-username" 
-				autofocus="true" 
-				required="true" 
+				autoFocus={true} 
+				required={true} 
 				placeholder="Usuario"
 				onChange={(event) => {
 					setUserName(event.target.value)
@@ -137,14 +137,15 @@ function FormAdmin() {
 			<input 
 				type="password" 
 				className="login-password" 
-				required="true" 
+				autoFocus={true}
+				required={true} 
 				placeholder="Contraseña"
 				onChange={(event) => {
 					setUserPassword(event.target.value)
 				}} 
 			/>
 			<a href="google.com" className="login-forgot-pass" onClick={forgotPwsd}> ¿Olvidaste tu contraseña? </a>
-			<Link to='/{admin}/'><input type="submit" name="Iniciar Sesión" value="Iniciar Sesión" class="login-submit" onClick={loginUser}/></Link> 
+			<Link to='/{admin}/'><input type="submit" name="Iniciar Sesión" value="Iniciar Sesión" className="login-submit" onClick={loginUser}/></Link> 
 		</form>            
 	);
 }
