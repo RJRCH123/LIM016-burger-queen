@@ -34,12 +34,8 @@ function FormAdmin() {
 			}		
 		}).catch(() => {
 			Swal.fire({
-				text: 'Usuario Inválido por favor Ingrese Usuario y contraseña correctamente',
-				showCancelButton: true,
-				confirmButtonColor: '#57a057',
-				cancelButtonColor: '#d33',
-				confirmButtonText: 'Confirmar',
-				cancelButtonText: 'Cancelar',
+				title: 'Usuario Inválido',
+				text: 'Por favor, revise que su usuario y/o contraseña se encuentren correctamente escritos.',
 				allowOutsideClick: false,
 				stopKeydownPropagation: false,
 				showCloseButton: true,
