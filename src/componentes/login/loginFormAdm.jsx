@@ -33,14 +33,14 @@ function FormAdmin() {
 				}
 			}		
 		}).catch(() => {
-			Swal.fire({
-				title: 'Usuario Inválido',
-				text: 'Por favor, revise que su usuario y/o contraseña se encuentren correctamente escritos.',
-				allowOutsideClick: false,
-				stopKeydownPropagation: false,
-				showCloseButton: true,
-				closeButtonAriaLabel: 'cerrar alerta'
-			});
+        Swal.fire({
+          title: 'Usuario Inválido',
+          text: 'Por favor, revise que su usuario y/o contraseña se encuentren correctamente escritos.',
+          allowOutsideClick: false,
+          stopKeydownPropagation: false,
+          showCloseButton: true,
+          closeButtonAriaLabel: 'cerrar alerta'
+        });
 		});
 	}
 
@@ -50,6 +50,86 @@ function FormAdmin() {
 		const user = dataDocs.docs[0].data();	
 		return user		
   	}
+
+  const getRol = async (userName, userRol, userMail) => {
+    const userCollectionRef = query(collection(db, "usuarios"), where("usuario", "==", userName), where("cargo", "==", userRol), where("correo", "==", userMail));
+    const dataDocs = await getDocs(userCollectionRef);
+    const user = dataDocs.docs[0].data();	
+    return user		
+    }
+
+	const forgotPwsd = (e) => {
+		e.preventDefault();
+		getRol(userName).then((user) => {
+			if (user.cargo){
+				if(user.cargo === "admin" ){
+          Swal.fire({
+            title: 'Recuperación de cuenta',
+            text: 'Ingresa tu correo electrónico para enviarle un enlace de recuperación',
+            input: 'email',
+            inputAttributes: {
+              autocapitalize: 'off'
+            },
+            showCancelButton: true,
+            confirmButtonText: 'Enviar',
+            showLoaderOnConfirm: true,  
+          }).then(function (email) {
+            Swal.fire({
+              icon: 'success',
+              html: 'Your email: ' + email
+            })
+          })
+				}
+				else if(user.cargo === "mesero" | user.cargo === "cocinero"){
+					Swal.fire({
+						title: 'Opción Incorrecta',
+						text: 'Solo el administrador tiene la opción de recuperar una cuenta. Por favor, acercarse al administrador para poder recuperar su cuenta.',
+						allowOutsideClick: false,
+						stopKeydownPropagation: false,
+						showCloseButton: true,
+						closeButtonAriaLabel: 'cerrar alerta'
+					});
+				}
+			}		
+		}).catch(() => {
+        /* Swal.fire({
+				title: 'Usuario Inválido',
+				text: 'Por favor, revise que su usuario se encuentre correctamente escrito.',
+				allowOutsideClick: false,
+				stopKeydownPropagation: false,
+				showCloseButton: true,
+				closeButtonAriaLabel: 'cerrar alerta'
+			  }); */
+        Swal.fire({
+          title: 'Recuperación de cuenta',
+          text: 'Ingresa tu correo electrónico para enviarle un enlace de recuperación',
+          input: 'email',
+          inputAttributes: {
+            autocapitalize: 'off'
+          },
+          showCancelButton: true,
+          confirmButtonText: 'Enviar',
+          showLoaderOnConfirm: true,  
+        }).then((result) => {
+          if (result.isConfirmed) {
+            Swal.fire({
+              title:`¡Correo enviado a ${result.value}!`,
+              text: 'Por favor, revise su bandeja de entrada',
+              icon: 'success',
+              showConfirmButton: false,
+              timer: 2000
+            })} else {
+              Swal.fire({
+                title:`¡El correo es incorrecto!`,
+                text: `El email ${result.value} no coincide con el registrado para este usuario`,
+                icon: 'error',
+                showConfirmButton: false,
+                timer: 2000
+              })}; 
+            /* cleanInputs() */         
+        })
+		});
+	} 
 
 	return (
 		<form className="login-form" >
@@ -78,7 +158,7 @@ function FormAdmin() {
 					setUserPassword(event.target.value)
 				}} 
 			/>
-			<a href="google.com" className="login-forgot-pass"> ¿Olvidaste tu contraseña? </a>
+			<a href="google.com" className="login-forgot-pass" onClick={forgotPwsd}> ¿Olvidaste tu contraseña? </a>
 			<Link to='/{admin}/'><input type="submit" name="Iniciar Sesión" value="Iniciar Sesión" class="login-submit" onClick={loginUser}/></Link> 
 		</form>            
 	);
