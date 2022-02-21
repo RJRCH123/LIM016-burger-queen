@@ -28,9 +28,9 @@ const HistorialCocinero = () => {
         id: doc.id,         
         timestamp: dateParser(values.timestamp.toDate()), 
         mesero:"M001",
-        cliente: values.cliente,
+        cliente: values.cliente.toUpperCase(),
         pedido:"Ver detalle",
-        total: values.total
+        total: values.total.toUpperCase()
       })
     });
     return allOrders;
