@@ -109,6 +109,7 @@ const AppRegistro = () => {
 				<Input
 					estado={usuario}
 					cambiarEstado={cambiarUsuario}
+					required="true"
 					tipo="text"
 					label="Usuario"
 					placeholder="Usuario"					
@@ -119,6 +120,7 @@ const AppRegistro = () => {
 				<Input
 					estado={nombre}
 					cambiarEstado={cambiarNombre}
+					required="true"
 					tipo="text"
 					label="Nombre"
 					placeholder="Nombre"
@@ -129,6 +131,7 @@ const AppRegistro = () => {
         		<Input
 					estado={apellido}
 					cambiarEstado={cambiarApellido}
+					required="true"
 					tipo="text"
 					label="Apellido"
 					placeholder="Apellido"
@@ -139,6 +142,7 @@ const AppRegistro = () => {
         		<Input
 					estado={codigo}
 					cambiarEstado={cambiarCodigo}
+					required="true"
 					tipo="text"
 					label="Codigo"
 					placeholder="codigo"
@@ -149,6 +153,7 @@ const AppRegistro = () => {
 				<Input
 					estado={contraseña}
 					cambiarEstado={cambiarContraseña}
+					required="true"
 					tipo="password"
 					label="Contraseña"
                     placeholder="**********"
@@ -159,6 +164,7 @@ const AppRegistro = () => {
 				<Input
 					estado={contraseña2}
 					cambiarEstado={cambiarContraseña2}
+					required="true"
 					tipo="password"
 					label="Repetir Contraseña"
                     placeholder="**********"
@@ -169,6 +175,7 @@ const AppRegistro = () => {
 				<Input
 					estado={correo}
 					cambiarEstado={cambiarCorreo}
+					required="true"
 					tipo="email"
 					label="Correo Electrónico"
 					placeholder="correo"
@@ -179,6 +186,7 @@ const AppRegistro = () => {
 				<Input
 					estado={celular}
 					cambiarEstado={cambiarCelular}
+					required="true"
 					tipo="text"
 					label="celular"
 					placeholder="celular"
@@ -189,6 +197,7 @@ const AppRegistro = () => {
         		<Input
 					estado={dni}
 					cambiarEstado={cambiarDni}
+					required="true"
 					tipo="text"
 					label="DNI"
 					placeholder="DNI"
@@ -199,6 +208,7 @@ const AppRegistro = () => {
         		<Input
 					estado={cargo}
 					cambiarEstado={cambiarCargo}
+					required="true"
 					tipo="text"
 					label="Cargo"
 					placeholder="cargo"
