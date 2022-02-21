@@ -10,21 +10,16 @@
   --color-white: #FFFFFF;
 }
 .inicio{
-  display: flex;
-  /* flex-direction: column; */
-  /* height: 86vh; */
   width: 90%;
-  text-align: center;
-  /* padding: 2rem 0; */
-  border: 3px solid var(--color-mostazaOscuro);
   padding: 20px;
+  /* height: 100vh; */
+  text-align: center;
+  border: 3px solid var(--color-mostazaOscuro);
+  margin: 5%;
   box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  /* padding: 2% 5%; */
-  /* margin: 0 0 20px 80px; */
   align-items: center;
-  align-content: center;
 }
 
 .gif{
