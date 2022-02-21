@@ -58,7 +58,7 @@ const HeaderCocinero = () => {
               </div>
               <div className='dataUser'>
                 <h4>NOMBRE</h4>
-                <p>JEFE DE COCINA</p>
+                <p>CHEF</p>
               </div>
               <MenuItem icon={
                 <Link to='/cocinero/pedidos-por-preparar'><h1 className="logoNames">NP</h1></Link>}>
