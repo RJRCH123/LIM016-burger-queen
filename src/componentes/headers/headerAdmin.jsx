@@ -1,8 +1,8 @@
-//import useState hook to create menu collapse state
+// import useState hook to create menu collapse state
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-//import react pro sidebar components
+// import react pro sidebar components
 import {
   ProSidebar,
   Menu,
@@ -12,27 +12,26 @@ import {
   SidebarContent,
 } from "react-pro-sidebar";
 
-//import icons from react icons
+// import icons from react icons
 import { FiArrowLeftCircle, FiArrowRightCircle } from "react-icons/fi";
 
 import LogoAdmin from '../../img/iconos/trajeAdmin.png';
 import BH from '../../img/iconos/botton-home.png';
 import BS from '../../img/iconos/botton-salir.png';
-import PuntoNegro from '../../img/iconos/puntoNegro.png';
 
-//import sidebar css from react-pro-sidebar module and our custom css 
+// import sidebar css from react-pro-sidebar module and our custom css 
 import "react-pro-sidebar/dist/css/styles.css";
 import "./headers.scss";
 
 
 const HeaderAdmin = () => {
   
-    //create initial menuCollapse state using useState hook
+    // create initial menuCollapse state using useState hook
     const [menuCollapse, setMenuCollapse] = useState(false)
 
-    //create a custom function that will change menucollapse state from false to true and true to false
+    // create a custom function that will change menucollapse state from false to true and true to false
   const menuIconClick = () => {
-    //condition checking to change state from true to false and vice versa
+    // condition checking to change state from true to false and vice versa
     menuCollapse ? setMenuCollapse(false) : setMenuCollapse(true);
   };
 
@@ -48,11 +47,7 @@ const HeaderAdmin = () => {
             </div>
             <div className="closemenu" onClick={menuIconClick}>
                 {/* changing menu collapse icon on click */}
-              {menuCollapse ? (
-                <FiArrowRightCircle/>
-              ) : (
-                <FiArrowLeftCircle/>
-              )}
+              {menuCollapse ? (<FiArrowRightCircle/>) : (<FiArrowLeftCircle/>)}
             </div>
           </SidebarHeader>
           <SidebarContent>
