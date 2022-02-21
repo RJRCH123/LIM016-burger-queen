@@ -19,12 +19,12 @@ const products = [
 const HistorialCocinero = () => {
   // usamos firestore para traer la data! 
   return  ( 
-    <div >
+    <section className='paddingFlex'>
       <h2>HISTORIAL PEDIDOS</h2>
       <Encabezado/>
       <ProductsTable products={ products } />
       <DescargarPdf/>
-    </div>
+    </section>
   )
 } 
 

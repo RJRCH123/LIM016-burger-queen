@@ -3,15 +3,12 @@ import { db } from "../../../firebase/firebase-config";
 import { deleteDoc, doc, updateDoc} from 'firebase/firestore';
 import './botonPreparar.scss';
 
-
-
 const BotonPreparar = (props) => {
 
   // método que elimina el pedido de la colección
   const eliminarPedido = async (id) => { 
     await deleteDoc(doc(db, 'pedidos', id)); 
-    props.loading(true);   
-      
+    props.loading(true);         
   }
 
   // método que actualiza el estado del pedido, y lo elimina de la colección 

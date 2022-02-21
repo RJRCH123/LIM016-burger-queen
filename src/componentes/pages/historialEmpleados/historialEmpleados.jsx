@@ -45,12 +45,12 @@ const HistorialEmpleados = () => {
   } 
 
   return  ( 
-    <div className='Historial'>
+    <section className='paddingFlex'>
       <h2>HISTORIAL EMPLEADOS</h2>
       <Encabezado/>
       <EmployeesTable employees={ employees } estado={setEmployees} loading={setIsLoading} />
       <DescargarPdf/>      
-    </div>
+    </section>
   )
 } 
 

@@ -1,8 +1,9 @@
 .botonPreparado {
   display: flex;
-  width: 30%;
+  /* width: 100%; */
   align-items: center;
-  justify-items:end;
+  justify-items: end;
+  justify-content: center;
   button {
     display: flex;
     cursor: pointer;

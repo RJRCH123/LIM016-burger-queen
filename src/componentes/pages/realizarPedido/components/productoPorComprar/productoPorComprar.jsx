@@ -7,7 +7,7 @@ import './productoPorComprar.scss';
 function ProductoPorComprar() { 
   const { pedido, eliminar, less, plus } = useContext(UserContext)
   return (
-  <div>
+  <section>
     {pedido.map((item, id) => (
     <div className="dataTablaResumenPedido" key={id}>
       <div className="dataProductoRP">
@@ -26,7 +26,7 @@ function ProductoPorComprar() {
       </button>
     </div>
   ))}               
-  </div>)
+  </section>)
 }
 
 export default ProductoPorComprar;

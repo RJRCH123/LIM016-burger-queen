@@ -8,7 +8,7 @@ import './realizarPedido.scss';
 const RealizarPedido = () => {
 
   return  ( 
-    <section>
+    <section className='marginFlex'>
       <div className="containerRP">
         <div className="navRealizarPedido">
           <NavRealizarPedido />
