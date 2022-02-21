@@ -7,9 +7,9 @@ const PrecioTotal = () => {
 
     return (
       <div className="TotalRP">
-      <p>Total:</p>
-      <p>S/ {total}</p>
-    </div>
+        <p>Total:</p>
+        <p>S/ {total}</p>
+      </div>
     )
 };
 

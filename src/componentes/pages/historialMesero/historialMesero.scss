@@ -1,7 +1,11 @@
-div {
-  width: 100%;
+section {
+  width: auto;
   h2 {
     text-align: center;
     margin-bottom: 2rem;
   }
+}
+
+.paddingFlex {
+  padding: 20px;
 }
