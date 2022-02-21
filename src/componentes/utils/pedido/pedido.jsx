@@ -16,7 +16,7 @@ const Pedido = ({orden}) =>{
           <div className='dataCliente'>
             <div className='dato1'>
               <h5>Cliente:</h5>
-              <p>{orden.cliente}</p>
+              <p>{orden.cliente.toUpperCase()}</p>
             </div>
             <div className='dato1'>
               <h5>Entrada:</h5>

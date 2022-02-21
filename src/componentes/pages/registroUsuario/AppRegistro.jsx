@@ -2,21 +2,21 @@ import React from 'react';
 import { useState } from 'react';
 import { db } from '../../../firebase/firebase-config'
 import { addDoc, collection } from 'firebase/firestore'; 
-import {Formulario, ContenedorBotonCentrado, Boton, MensajeExito, MensajeError} from './elementos';
+import { Formulario, ContenedorBotonCentrado, Boton, MensajeExito, MensajeError } from './elementos';
 import Input from './input';
 
 const AppRegistro = () => {
   // se estan estableciendo los valores iniciales para cada uno de nuestros inputs
-  const [usuario, cambiarUsuario] = useState({campo: '', valido: null});
+  	const [usuario, cambiarUsuario] = useState({campo: '', valido: null});
 	const [nombre, cambiarNombre] = useState({campo: '', valido: null});
-  const [apellido, cambiarApellido] = useState({campo: '', valido: null});
+  	const [apellido, cambiarApellido] = useState({campo: '', valido: null});
 	const [codigo, cambiarCodigo] = useState({campo: '', valido: null});
 	const [contraseña, cambiarContraseña] = useState({campo: '', valido: null});
 	const [contraseña2, cambiarContraseña2] = useState({campo: '', valido: null});
 	const [correo, cambiarCorreo] = useState({campo: '', valido: null});
 	const [celular, cambiarCelular] = useState({campo: '', valido: null});
 	const [dni, cambiarDni] = useState({campo: '', valido: null});
-  const [cargo, cambiarCargo] = useState({campo: '', valido: null});
+  	const [cargo, cambiarCargo] = useState({campo: '', valido: null});
 	const [formularioValido, cambiarFormularioValido] = useState(null);
 
   // se utilizan expresiones regulares para limitar al usuario a ingresar 
@@ -25,13 +25,13 @@ const AppRegistro = () => {
     const expresiones = {
 		usuario: /^[a-zA-Z0-9_-]{4,16}$/, // Letras, numeros, guion y guion_bajo
 		nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
-    apellido: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
+    	apellido: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
 		contraseña: /^.{4,12}$/, // 4 a 12 digitos.
 		correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
 		celular: /^\d{7,9}$/, // 7 a 9 numeros,
-    codigo: /^[a-zA-Z0-9]{4,6}$/, // Letras, numeros.
-    dni: /^\d{6,8}$/, // 6 a 8 numeros,
-    cargo: /^[a-zA-ÿ\s]{1,40}$/, // Letras y espacios.
+		codigo: /^[a-zA-Z0-9]{4,6}$/, // Letras, numeros.
+		dni: /^\d{6,8}$/, // 6 a 8 numeros,
+		cargo: /^[a-zA-ÿ\s]{1,40}$/, // Letras y espacios.
 	}
 
     //se esta validando que la contraseña se ingreso de manera correcta 
@@ -55,15 +55,15 @@ const AppRegistro = () => {
     const userCollectionRef = collection(db, 'usuarios')
 	    const createUser = async () => {
         await addDoc(userCollectionRef, {
-			    usuario: usuario.campo,
-			    nombres: nombre.campo, 
-			    apellidos: apellido.campo,
-			    cargo: cargo.campo,
-			    correo: correo.campo,
-			    dni: dni.campo,
-			    celular: celular.campo,
-			    contraseña: contraseña.campo,
-			    codigo: codigo.campo
+			usuario: usuario.campo,
+			nombres: nombre.campo, 
+			apellidos: apellido.campo,
+			cargo: cargo.campo,
+			correo: correo.campo,
+			dni: dni.campo,
+			celular: celular.campo,
+			contraseña: contraseña.campo,
+			codigo: codigo.campo
 	    })
     }
 

@@ -50,7 +50,7 @@ const ProductsTable = props => {
             <button type="button" onClick={() => requestSort("id")} className={getClassNamesFor("id")}>N°</button>
           </th>
           <th>
-            <button type="button" onClick={() => requestSort("codigo")} className={getClassNamesFor("codigo")}>CODIGO</button>
+            <button type="button" onClick={() => requestSort("codigo")} className={getClassNamesFor("fecha")}>FECHA</button>
               
           </th>
           <th>
@@ -58,7 +58,7 @@ const ProductsTable = props => {
               
           </th>
           <th>
-            <button type="button" onClick={() => requestSort("cocinero")} className={getClassNamesFor("cocinero")}>COCINERO</button>
+            <button type="button" onClick={() => requestSort("cocinero")} className={getClassNamesFor("cliente")}>CLIENTE</button>
           </th>
           <th>
             <button type="button" onClick={() => requestSort("pedido")} className={getClassNamesFor("pedido")}>PEDIDO</button>
@@ -69,14 +69,14 @@ const ProductsTable = props => {
         </tr>               
       </thead>
       <tbody>
-        {items.map(item => (
+        {items.map((item, index) => (
           <tr key={item.id}>
-            <td>{item.id}</td>
-            <td>{item.codigo}</td>
+            <td>{index+1}</td>
+            <td>{item.timestamp}</td>
             <td>{item.mesero}</td>
-            <td>{item.cocinero}</td>
+            <td>{item.cliente}</td>
             <td>{item.pedido}</td>
-            <td>{item.monto}</td>
+            <td>{`S/. `}{item.total}</td>
           </tr>
         ))}
       </tbody>

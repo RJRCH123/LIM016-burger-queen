@@ -1,5 +1,5 @@
 import { db } from "../../../firebase/firebase-config";
-import { doc, updateDoc} from 'firebase/firestore';
+import { doc, updateDoc, addDoc, collection} from 'firebase/firestore';
 import './botonEntregar.scss';
 
 const BotonEntegar = (props) => {
@@ -8,8 +8,23 @@ const BotonEntegar = (props) => {
     const pedidoDocRef = doc(db, 'pedidos', id)
     await updateDoc(pedidoDocRef, {
       estado: "entregado/finalizado"        
-    });    
-    props.loading(true); 
+    });
+    createDoc(props);
+    props.loading(true);    
+  }
+
+  const PedidoFinalizadoCollectionRef = collection(db, 'pedidosFinalizados')
+  const createDoc = async (props) => {
+    const data = props.info;
+    //console.log(data);
+    await addDoc(PedidoFinalizadoCollectionRef, {
+      cliente: data.cliente,
+      estado: "entregado/finalizado", 
+      mesa: data.mesa,
+      orden: data.orden,
+      timestamp: data.timestamp,
+      total: data.total      
+    })
   }
 
   return  ( 
