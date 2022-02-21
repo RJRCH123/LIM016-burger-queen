@@ -8,7 +8,6 @@ const BtnsCancelarYConfirmar = () => {
   
   const modalConfirmarOrden = () => {
     Swal.fire({
-      title: 'Detalle del Pedido',
       text: '¿Está seguro que desea enviar el pedido a cocina?',
       showCancelButton: true,
       confirmButtonColor: '#57a057',

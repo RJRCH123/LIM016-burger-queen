@@ -52,7 +52,7 @@ thead button {
   display: flex;
   justify-content: space-between;
   margin-top: 8px;    
-  padding: 0.3rem 3rem 0.3rem 3rem;
+  padding: 0.3rem 2.5rem 0.3rem 2.5rem;
   background-color: black;
   margin-bottom: 1.5rem;
   width: 100%;
@@ -82,9 +82,11 @@ thead button {
   justify-content: end;
   h5 {
     margin-right: 20px;
+    align-self: center;
   }
   p{
     font-size:14px;
+    align-self: center;
   }
 }
 

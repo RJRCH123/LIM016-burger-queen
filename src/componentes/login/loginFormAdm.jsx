@@ -51,9 +51,7 @@ function FormAdmin() {
 	const getUsers = async (userName, userPassword) => {
 		const userCollectionRef = query(collection(db, "usuarios"), where("usuario", "==", userName), where("contraseña", "==", userPassword));
 		const dataDocs = await getDocs(userCollectionRef);
-		//console.log(dataDocs);
-		const user = dataDocs.docs[0].data();
-		//console.log(user);		
+		const user = dataDocs.docs[0].data();	
 		return user		
   	}
 

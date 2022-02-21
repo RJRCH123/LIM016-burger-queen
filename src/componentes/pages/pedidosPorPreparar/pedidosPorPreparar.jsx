@@ -1,31 +1,62 @@
 import './pedidosPorPreparar.scss';
 import Pedido from '../../utils/pedido/pedido'
 import BotonPreparar from '../../utils/botonPreparar/botonPreparar'
+import { db } from '../../../firebase/firebase-config';
+import { collection, query, where, getDocs } from 'firebase/firestore';
+import { useEffect, useState } from 'react';
 
-const detallePedidos = [ 
-  {id: 1, cliente: "Andres Gómez", hora: "1:35 PM", mesa:"2"}, 
-  {id: 2, cliente: "Ana Martin", hora: "2:35 PM", mesa:"4"} 
-];
 
-const getCardOrder = (detallePedidos) => {
-  return detallePedidos.map(detallePedido => {
-    return <div className='contenedorPedido'> 
-      <Pedido key={detallePedido.id} orden={ detallePedido }/>
-      <BotonPreparar/>
-    </div>
-  }) 
-}
+
 const PedidosPorPreparar = () => {
 
-  const cardList = getCardOrder(detallePedidos);
+  const [isLoading, setIsLoading] = useState(true)
+  const [orders, setOrders] = useState([]);
+
+  const getOrders = async () => {
+		const ordersCollectionRef = query(collection(db, "pedidos"), where("estado", "==", "pendiente"));
+		const dataDocs = await getDocs(ordersCollectionRef);
+		const pedidos = dataDocs.docs;	
+    const allOrders = []
+    pedidos.forEach(pedido => {      
+      allOrders.push({...pedido.data(), id:pedido.id});
+    })    
+		/* setOrders(allOrders); */	
+    return allOrders
+  }
+
+  useEffect(() => {
+    getOrders().then((allOrders) => {
+      setIsLoading(false);
+      setOrders(allOrders);
+    })    
+  },  [isLoading]);
+  
+  if(isLoading){
+    return(
+      <div></div>
+    )
+  } 
+
   return  ( 
     <div className="contenedorPedidosPorPreparar">
       <h2>PEDIDOS POR PREPARAR</h2>
       <div className='gridResponsivePP'>
-        { cardList }
+        {orders.map((order, index) => {
+            return (
+              <div className='contenedorPedido' key={index}> 
+                <Pedido key={order.id} orden={ order }/>
+                <div className='contenedorBotones'>
+                  <BotonPreparar info={order} key={`${index}-${order.id}`} loading={setIsLoading}/>
+                </div>
+                
+              </div>
+            )          
+            })
+          }
       </div>
     </div>
   )
+ 
 } 
 
 export default PedidosPorPreparar

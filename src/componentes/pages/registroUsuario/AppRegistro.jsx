@@ -220,9 +220,9 @@ const AppRegistro = () => {
 					<Boton type="submit" onClick={createUser}>Registrar Personal</Boton>
 					{formularioValido === true && 
 						<MensajeExito>
-						<p>
+						
 							<b>¡Formulario enviado exitosamente! ✔️</b>
-						</p>
+						
 						</MensajeExito>
           			}   
 				</ContenedorBotonCentrado>

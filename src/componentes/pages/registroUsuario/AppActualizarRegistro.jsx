@@ -5,10 +5,17 @@ import { db } from '../../../firebase/firebase-config';
 import { doc, getDoc, updateDoc } from "firebase/firestore";
 import {Formulario, ContenedorBotonCentrado, Boton, MensajeExito, MensajeError} from './elementos';
 import Input from './input';
+import { useNavigate } from "react-router-dom";
 
 
 
 const AppActualizarRegistro = () => {
+
+	const navigate = useNavigate();
+
+	const handleClick = () => {    
+		navigate('/admin/historial-empleados/');
+	}
 	
 	let { id }  = useParams();
 
@@ -58,6 +65,8 @@ const AppActualizarRegistro = () => {
 
 	// método que actualiza los datos de la colección usuarios  
 
+	
+
     const userDocRef = doc(db, 'usuarios', id)	
 	const actualizarUser = async () => {
 		await updateDoc(userDocRef, {
@@ -71,6 +80,7 @@ const AppActualizarRegistro = () => {
 			contraseña: contraseña.campo,
 			codigo: codigo.campo
 		})
+		handleClick()
 	}
 
 	// método que busca los datos de del documento seleccionado
@@ -79,7 +89,7 @@ const AppActualizarRegistro = () => {
 		const docRef = doc(db, "usuarios", id);
 		const docSnap = await getDoc(docRef);
 		if (docSnap.exists()) {
-			console.log("data:", docSnap.data());
+			//console.log("data:", docSnap.data());
 		} else {	  
 			console.log("No existe el documento");
 		}
@@ -88,7 +98,6 @@ const AppActualizarRegistro = () => {
 	
 	useEffect(() => {
 		getUser().then((result) => {
-			console.log(result)
 			cambiarFormularioValido(null);
 			cambiarUsuario({campo: result.usuario, valido: null});
 			cambiarNombre({campo: result.nombres, valido: null});
@@ -257,9 +266,9 @@ const AppActualizarRegistro = () => {
 					<Boton type="submit" onClick={actualizarUser}>Actualizar Personal</Boton>
 					{formularioValido === true && 
 						<MensajeExito>
-							<p>
-								<b>¡Usuario Actualizado Exitosamente! ✔️</b>
-							</p>
+							
+							<b>¡Usuario Actualizado Exitosamente! ✔️</b>
+							
 						</MensajeExito>
 					}   
 				</ContenedorBotonCentrado>
