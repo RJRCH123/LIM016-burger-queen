@@ -31,7 +31,6 @@ const PedidosPorPreparar = () => {
     })    
   },  [isLoading]);
   
-
   if(isLoading){
     return(
       <div></div>
@@ -57,7 +56,6 @@ const PedidosPorPreparar = () => {
       </div>
     </div>
   )
-  
  
 } 
 

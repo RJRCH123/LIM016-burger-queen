@@ -1,6 +1,6 @@
 import React from "react";
 import { db } from "../../../firebase/firebase-config";
-import { deleteDoc, doc} from 'firebase/firestore';
+import { deleteDoc, doc, updateDoc} from 'firebase/firestore';
 import './botonPreparar.scss';
 
 
@@ -14,9 +14,19 @@ const BotonPreparar = (props) => {
       
   }
 
+  // método que actualiza el estado del pedido, y lo elimina de la colección 
+  	
+  const actualizarEstado = async (id) => {
+    const pedidoDocRef = doc(db, 'pedidos', id)
+    await updateDoc(pedidoDocRef, {
+      estado: "preparado"        
+    });    
+    props.loading(true); 
+  }
+	
   const listOptions = [
     { text: "Preparando", className: "btnPreparando" },
-    { text: "Preparado", className: "btnPreparado" },
+    { text: "Preparado", className: "btnPreparado", operacion: actualizarEstado},
     { text: "Cancelar", className: "btnCancelar", operacion: eliminarPedido },  
   ];
   

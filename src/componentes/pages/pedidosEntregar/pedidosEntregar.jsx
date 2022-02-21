@@ -9,6 +9,7 @@ import BotonEntegar from '../../utils/botonEntregar/botonEntregar'
 
 const PedidosEntregar = () => {  
 
+  const [isLoading, setIsLoading] = useState(true)
   const [orders, setOrders] = useState([]);
 
   const getOrders = async () => {
@@ -19,12 +20,22 @@ const PedidosEntregar = () => {
     pedidos.forEach(pedido => {      
       allOrders.push({...pedido.data(), id:pedido.id});
     })    
-		setOrders(allOrders);	
+		/* setOrders(allOrders); */	
+    return allOrders
   }
   
   useEffect(() => {
-    getOrders()
-  }, []);
+    getOrders().then((allOrders) => {
+      setIsLoading(false);
+      setOrders(allOrders);
+    })    
+  },  [isLoading]);
+  
+  if(isLoading){
+    return(
+      <div></div>
+    )
+  } 
   
   return  ( 
     <div className="contenedorPedidosEntregar">
@@ -35,7 +46,7 @@ const PedidosEntregar = () => {
             return (
               <div className='contenedorPedido' key={index}> 
                 <Pedido key={order.id} orden={ order }/>
-                <BotonEntegar /* key={order.id} *//>
+                <BotonEntegar info={order} loading={setIsLoading} /* key={order.id} *//>
               </div>
             )          
           })
