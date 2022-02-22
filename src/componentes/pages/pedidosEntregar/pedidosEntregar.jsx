@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { db } from '../../../firebase/firebase-config';
-import { getDocs, collection, query, where } from 'firebase/firestore';
+import { getDocs, collection, query, where, orderBy } from 'firebase/firestore';
 import './pedidosEntregar.scss';
 import Pedido from '../../utils/pedido/pedido'
 import BotonEntegar from '../../utils/botonEntregar/botonEntregar'
@@ -13,7 +13,7 @@ const PedidosEntregar = () => {
   const [orders, setOrders] = useState([]);
 
   const getOrders = async () => {
-		const ordersCollectionRef = query(collection(db, "pedidos"), where("estado", "==", "preparado"));
+		const ordersCollectionRef = query(collection(db, "pedidos"), orderBy("timestamp", "asc"), where("estado", "==", "preparado"));
 		const dataDocs = await getDocs(ordersCollectionRef);
 		const pedidos = dataDocs.docs;	
     const allOrders = []
