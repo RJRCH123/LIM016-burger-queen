@@ -54,7 +54,7 @@ const ProductsTable = props => {
               
           </th>
           <th>
-            <button type="button" onClick={() => requestSort("mesero")} className={getClassNamesFor("mesero")}>MESERO</button>
+            <button type="button" onClick={() => requestSort("hora")} className={getClassNamesFor("hora")}>HORA</button>
               
           </th>
           <th>
@@ -73,7 +73,7 @@ const ProductsTable = props => {
           <tr key={item.id}>
             <td>{index+1}</td>
             <td>{item.timestamp}</td>
-            <td>{item.mesero}</td>
+            <td>{item.hora}</td>
             <td>{item.cliente}</td>
             <td>{item.pedido}</td>
             <td>{`S/. `}{item.total}</td>
