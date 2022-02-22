@@ -1,0 +1,21 @@
+.contenedorPedidosPorPreparar {
+  width: 100%;
+  h2 {
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+}
+
+.gridResponsivePP {
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 1rem;
+  /* overflow-x: overlay; */
+}
+
+.contenedorBotones{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}

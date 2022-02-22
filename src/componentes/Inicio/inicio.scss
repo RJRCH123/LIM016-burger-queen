@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap');
+:root {
+  --font-base: 'Cormorant Upright', serif;
+  --font-alt: 'Open Sans', sans-serif;
+  --color-golden: #DCCA87;
+  --color-black: #0C0C0C;
+  --color-gray: #545454;
+  --color-crimson: #F5EFDB;
+  --color-grey: #AAAAAA;
+  --color-white: #FFFFFF;
+}
+.inicio{
+  width: 90%;
+  padding: 20px;
+  /* height: 100vh; */
+  text-align: center;
+  border: 3px solid var(--color-mostazaOscuro);
+  margin: 5%;
+  box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  align-items: center;
+}
+
+.gif{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  img {
+    width: 80%;
+    border: 3px solid var(--color-mostazaOscuro);
+    box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
+  }   
+}
+
+.boxFrase {
+  display: flex;
+  flex-direction: column;
+  article {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+  }
+  h1 {
+    font-family: var(--font-base);
+    background-color: var(--color-mostazaOscuro);
+    padding: 3% 5%;
+    box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
+    border-radius: 50px;
+    width: 80%;
+    margin: 5%;
+  }
+  h4 {
+    font-family: var(--font-base);
+    margin: 5%;
+  }
+  h6 {
+    font-family: var(--font-base);
+    text-align: end;
+    padding: 0 10%;
+  }
+}
+
+.boxLogoMR{
+  img{ 
+    width: 30%;
+  }
+}
