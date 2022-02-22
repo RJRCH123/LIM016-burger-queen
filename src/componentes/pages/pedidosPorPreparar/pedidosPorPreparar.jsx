@@ -2,7 +2,7 @@ import './pedidosPorPreparar.scss';
 import Pedido from '../../utils/pedido/pedido'
 import BotonPreparar from '../../utils/botonPreparar/botonPreparar'
 import { db } from '../../../firebase/firebase-config';
-import { collection, query, where, getDocs } from 'firebase/firestore';
+import { collection, query, where, getDocs, orderBy } from 'firebase/firestore';
 import { useEffect, useState } from 'react';
 
 
@@ -13,7 +13,7 @@ const PedidosPorPreparar = () => {
   const [orders, setOrders] = useState([]);
 
   const getOrders = async () => {
-		const ordersCollectionRef = query(collection(db, "pedidos"), where("estado", "==", "pendiente"));
+		const ordersCollectionRef = query(collection(db, "pedidos"), orderBy("timestamp", "asc"), where("estado", "==", "pendiente"));
 		const dataDocs = await getDocs(ordersCollectionRef);
 		const pedidos = dataDocs.docs;	
     const allOrders = []

@@ -3,9 +3,9 @@ import ProductosPedido from './productosPedido';
 
 
 const dateParser = (date) => {
-  return date.toLocaleTimeString(); // solo la hora
+  //return date.toLocaleTimeString(); // solo la hora
   //return `${date.toLocaleDateString()}  ${date.toLocaleTimeString()}`
-  //return date.toLocaleString(); // fecha y hora local
+  return date.toLocaleString(); // fecha y hora local
 }
 const Pedido = ({orden}) =>{
          

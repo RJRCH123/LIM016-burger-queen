@@ -1,7 +1,7 @@
 import './pedidosPreparados.scss';
 import Pedido from '../../utils/pedido/pedido'
 import { db } from '../../../firebase/firebase-config';
-import { collection, query, where, getDocs } from 'firebase/firestore';
+import { collection, query, where, getDocs, orderBy } from 'firebase/firestore';
 import { useEffect, useState } from 'react';
 
 const PedidosPreparados = () => {
@@ -9,7 +9,7 @@ const PedidosPreparados = () => {
   const [orders, setOrders] = useState([]);
 
   const getOrders = async () => {
-		const ordersCollectionRef = query(collection(db, "pedidos"), where("estado", "==", "preparado"));
+		const ordersCollectionRef = query(collection(db, "pedidos"), orderBy("timestamp", "asc"), where("estado", "==", "preparado"));
 		const dataDocs = await getDocs(ordersCollectionRef);
 		const pedidos = dataDocs.docs;	
     const allOrders = []

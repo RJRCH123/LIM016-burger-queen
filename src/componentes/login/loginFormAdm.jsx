@@ -18,7 +18,7 @@ function FormAdmin() {
 
 		//mensajes de alerta y validación de la Auth del rol
 		getUsers(userName, userPassword).then((user) => {
-			console.log(user);
+			
 			if (user.cargo){
 				console.log(user.cargo)
 				if(user.cargo === "admin" ){
