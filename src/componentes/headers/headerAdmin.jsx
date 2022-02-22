@@ -1,5 +1,5 @@
 // import useState hook to create menu collapse state
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 // import react pro sidebar components
@@ -25,15 +25,24 @@ import "./headers.scss";
 
 
 const HeaderAdmin = () => {
-  
-    // create initial menuCollapse state using useState hook
-    const [menuCollapse, setMenuCollapse] = useState(true)
 
-    // create a custom function that will change menucollapse state from false to true and true to false
+  const [userName, setUserName] = useState("");
+  const [userCargo, setUserCargo] = useState("");
+  
+  // create initial menuCollapse state using useState hook
+  const [menuCollapse, setMenuCollapse] = useState(true)
+
+  // create a custom function that will change menucollapse state from false to true and true to false
   const menuIconClick = () => {
     // condition checking to change state from true to false and vice versa
     menuCollapse ? setMenuCollapse(false) : setMenuCollapse(true);
   };
+
+  useEffect(() => {    
+    const userData = JSON.parse(localStorage.getItem('user'));
+    setUserName(userData.usuario);
+    setUserCargo(userData.cargo)
+  }, [])
 
   return (
     <>
@@ -56,8 +65,8 @@ const HeaderAdmin = () => {
                 <img className="logoRol" src={LogoAdmin} alt= "Logo Admin"/>
               </div>
               <div className='dataUser'>
-                <h4>NOMBRE</h4>
-                <p>ADMIN</p>
+                <h4>{userName}</h4>
+                <p>{userCargo}</p>
               </div>
               <MenuItem icon={
                 <Link to='/admin/registro-personal'><h1 className="logoNames">RP</h1></Link>}>
@@ -89,7 +98,11 @@ const HeaderAdmin = () => {
               </MenuItem>
               <MenuItem icon={
                 <Link to='/'><img src={BS} alt= "BS"/></Link>}>
-                  <Link to='/'>Cerrar Sesión</Link>
+                  <Link 
+                    to='/' 
+                    onClick={()=>{localStorage.clear()}}
+                    >Cerrar Sesión
+                  </Link>
               </MenuItem>
             </Menu>
           </SidebarFooter>

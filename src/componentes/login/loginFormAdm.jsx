@@ -18,7 +18,7 @@ function FormAdmin() {
 
 		//mensajes de alerta y validación de la Auth del rol
 		getUsers(userName, userPassword).then((user) => {
-			
+			storeUserData(user);
 			if (user.cargo){
 				console.log(user.cargo)
 				if(user.cargo === "admin" ){
@@ -44,6 +44,19 @@ function FormAdmin() {
 				closeButtonAriaLabel: 'cerrar alerta'
 			});
 		});
+	}
+
+	const storeUserData = (user) => {
+		const userData = {
+			apellidos: user.apellidos,
+			cargo: user.cargo, 
+			codigo: user.codigo,
+			correo: user.correo,
+			nombres: user.nombres,
+			usuario: user.usuario
+		}
+		localStorage.setItem('user', JSON.stringify(userData));
+		console.log('entro en localStorage');
 	}
 
 	const getUsers = async (userName, userPassword) => {
