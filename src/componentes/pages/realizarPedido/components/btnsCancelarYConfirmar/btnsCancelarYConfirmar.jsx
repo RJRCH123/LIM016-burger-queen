@@ -20,18 +20,18 @@ const BtnsCancelarYConfirmar = () => {
       closeButtonAriaLabel: 'cerrar alerta'
     }).then((result) => {
       if (result.isConfirmed) {
-        confirmarOrdenesF()
+        confirmarOrdenesF() 
         Swal.fire({
           title:'¡Pedido Confirmado!',
           text: 'El pedido fue enviado a cocina con éxito',
           icon: 'success',
           showConfirmButton: false,
-          timer: 1500}
-        ); 
+          timer: 1500
+        }); 
         limpiarOrden() 
       } 
-    })
-  }
+    }) 
+  } 
 
   const modalCancelarOrden = () => {
     Swal.fire({
@@ -55,7 +55,7 @@ const BtnsCancelarYConfirmar = () => {
           timer: 1500}
         ); 
         limpiarOrden()
-      }
+      } 
     })
   }
 
