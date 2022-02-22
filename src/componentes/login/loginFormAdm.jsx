@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { db } from '../../firebase/firebase-config'
-import { collection, getDocs, query, where, getAuth, sendPasswordResetEmail} from 'firebase/firestore'; 
+import { collection, getDocs, query, where } from 'firebase/firestore'; 
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Swal from 'sweetalert2';
