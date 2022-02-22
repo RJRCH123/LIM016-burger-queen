@@ -20,7 +20,7 @@ const Navbar = () => {
         <li className="p__opensans"><a href='/#contact'>Contáctanos</a></li>
       </ul>
       <div className="app__navbar-login">
-        <Link to='/login' className="p__opensans">Login</Link>
+        <Link to='/login' className="p__opensans">Iniciar Sesión</Link>
         {/* <div />
         <Link to='/employe' className="p__opensans">Personal</Link> */}
       </div>
@@ -35,6 +35,7 @@ const Navbar = () => {
               <li><a href='/#menu' onClick={() => setToggleMenu(false)}>La Carta</a></li>
               <li><a href='/#awards' onClick={() => setToggleMenu(false)}>Reconocimientos</a></li>
               <li><a href='/#contact' onClick={() => setToggleMenu(false)}>Contáctanos</a></li>
+              <li><Link to='/login'><a onClick={() => setToggleMenu(false)}>Iniciar Sesión</a></Link></li>
             </ul>
           </div>
         )}
