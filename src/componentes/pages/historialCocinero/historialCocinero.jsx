@@ -12,6 +12,10 @@ const dateParser = (date) => {
   //return date.toLocaleString(); // fecha y hora local
 }
 
+const hora = (data) => {
+  return data.toLocaleTimeString();
+}
+
 const HistorialCocinero = () => {
   
   const [isLoading, setIsLoading] = useState(true)
@@ -27,7 +31,7 @@ const HistorialCocinero = () => {
       allOrders.push({
         id: doc.id,         
         timestamp: dateParser(values.timestamp.toDate()), 
-        mesero:"C001",
+        hora: hora(values.timestamp.toDate()),
         cliente: values.cliente.toUpperCase(),
         pedido:"Ver detalle",
         total: values.total.toUpperCase()

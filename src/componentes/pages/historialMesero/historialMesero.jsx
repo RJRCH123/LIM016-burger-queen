@@ -7,9 +7,13 @@ import { collection, getDocs,  where, query, orderBy } from 'firebase/firestore'
 import { useState, useEffect } from 'react';
 
 
+
 const dateParser = (date) => {
   return date.toLocaleDateString();  
-  //return date.toLocaleString(); // fecha y hora local
+}
+
+const hora = (data) => {
+  return data.toLocaleTimeString();
 }
 
 const HistorialCocinero = () => {
@@ -27,9 +31,9 @@ const HistorialCocinero = () => {
       allOrders.push({
         id: doc.id,         
         timestamp: dateParser(values.timestamp.toDate()), 
-        mesero:"M001",
+        hora: hora(values.timestamp.toDate()),
         cliente: values.cliente.toUpperCase(),
-        pedido:"Ver detalle",
+        pedido:"ver detalle",
         total: values.total.toUpperCase()
       })
     });
@@ -51,6 +55,7 @@ const HistorialCocinero = () => {
 
   return  ( 
     <section className='paddingFlex'>
+
     <h2>HISTORIAL PEDIDOS</h2>
       <Encabezado/>
       <ProductsTable products={ orders } estado={setOrders} loading={setIsLoading} />
