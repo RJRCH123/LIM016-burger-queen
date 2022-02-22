@@ -15,6 +15,8 @@ function FormAdmin() {
 		e.preventDefault();
 		console.log('usuario: ' + userName)
 		console.log('clave: ' + userPassword)   
+
+		//mensajes de alerta y validación de la Auth del rol
 		getUsers(userName, userPassword).then((user) => {
 			console.log(user);
 			if (user.cargo){
@@ -33,14 +35,14 @@ function FormAdmin() {
 				}
 			}		
 		}).catch(() => {
-        Swal.fire({
-          title: 'Usuario Inválido',
-          text: 'Por favor, revise que su usuario y/o contraseña se encuentren correctamente escritos.',
-          allowOutsideClick: false,
-          stopKeydownPropagation: false,
-          showCloseButton: true,
-          closeButtonAriaLabel: 'cerrar alerta'
-        });
+			Swal.fire({
+				title: 'Usuario Inválido',
+				text: 'Por favor, revise que su usuario y/o contraseña se encuentren correctamente escritos.',
+				allowOutsideClick: false,
+				stopKeydownPropagation: false,
+				showCloseButton: true,
+				closeButtonAriaLabel: 'cerrar alerta'
+			});
 		});
 	}
 
@@ -51,49 +53,42 @@ function FormAdmin() {
 		return user		
   	}
 
-	const getRol = async (userName, userRol, userMail) => {
+	const getRol = async (userMail) => {
 		const userColRef = query(collection(db, "usuarios"), where("correo", "==", userMail));
 		const dataDocs = await getDocs(userColRef);
-		const user = dataDocs.docs[0].data();	
-		console.log(user);
+		const user = dataDocs.docs[0].data();
 		return user		
 	}
 
+	// mensajes de alerta y validación para la sección de Recuperar Contraseña
 	const forgotPwsd = (e) => {
 		e.preventDefault();
-		getRol(userName).then((user) => {
-			if (user.cargo){
-				if(user.cargo === "admin" ){
+		Swal.fire({
+			title: 'Recuperación de cuenta',
+			text: 'Ingresa tu correo electrónico para enviarle un enlace de recuperación',
+			input: 'email',
+			inputAttributes: {
+			  autocapitalize: 'off'
+			},
+			showCancelButton: true,
+			confirmButtonText: 'Enviar',
+			showLoaderOnConfirm: true,  
+		}).then((result) => {			
+			getRol(result.value).then((user) => {
+				console.log('el usuario es:',user.usuario);
+				if(user.cargo === "admin" && result.isConfirmed){
+					console.log('Tiene cargo de admin');
 					Swal.fire({
-						title: 'Recuperación de cuenta',
-						text: 'Ingresa tu correo electrónico para enviarle un enlace de recuperación',
-						input: 'email',
-						inputAttributes: {
-						  autocapitalize: 'off'
-						},
-						showCancelButton: true,
-						confirmButtonText: 'Enviar',
-						showLoaderOnConfirm: true,  
-					  }).then((result) => {
-						if (result.isConfirmed) {
-						  Swal.fire({
-							title:`¡Correo enviado a ${result.value}!`,
-							text: 'Por favor, revise su bandeja de entrada',
-							icon: 'success',
-							showConfirmButton: false,
-							timer: 2000
-						  })} else {
-							Swal.fire({
-							  title:`¡El correo es incorrecto!`,
-							  text: `El email ${result.value} no coincide con el registrado para este usuario`,
-							  icon: 'error',
-							  showConfirmButton: false,
-							  timer: 2000
-							})}; 
-						  /* cleanInputs() */         
-					  })
+						title:`¡Correo enviado a ${result.value}!`,
+						text: 'Por favor, revise su bandeja de entrada',
+						icon: 'success',
+						showConfirmButton: false,
+						timer: 2000
+					})
+					//aqui va el método de firebase para enviar correo solicitando cambio de contraseña
 				}
-				else if(user.cargo === "mesero" | user.cargo === "cocinero"){
+				else if(user.cargo === "mesero" || user.cargo === "cocinero"){
+					console.log('Tiene cargo de mesero o cocinero!');
 					Swal.fire({
 						title: 'Opción Incorrecta',
 						text: 'Solo el administrador tiene la opción de recuperar una cuenta. Por favor, acercarse al administrador para poder recuperar su cuenta.',
@@ -103,17 +98,27 @@ function FormAdmin() {
 						closeButtonAriaLabel: 'cerrar alerta'
 					});
 				}
-			}		
-		}).catch(() => {
-            Swal.fire({
-				title: 'Usuario Inválido',
-				text: 'Por favor, revise que su usuario se encuentre correctamente escrito.',
-				allowOutsideClick: false,
-				stopKeydownPropagation: false,
-				showCloseButton: true,
-				closeButtonAriaLabel: 'cerrar alerta'
-			}); 
-		});
+				else {
+					Swal.fire({
+						title:`¡El correo es incorrecto!`,
+						text: `El email ${result.value} no coincide con el registrado para este usuario`,
+						icon: 'error',
+						showConfirmButton: false,
+						timer: 2000
+					})
+				}						
+			}).catch(() => {
+				console.log('Datos de ingreso inválidos');
+				Swal.fire({
+					title: 'Usuario Inválido',
+					text: `Por favor, revise que el email ingresado ${result.value} corresponda a un usuario existente.`,
+					allowOutsideClick: false,
+					stopKeydownPropagation: false,
+					showCloseButton: true,
+					closeButtonAriaLabel: 'cerrar alerta'
+				}); 
+			})				 
+		})		
 	} 
 
 	return (
