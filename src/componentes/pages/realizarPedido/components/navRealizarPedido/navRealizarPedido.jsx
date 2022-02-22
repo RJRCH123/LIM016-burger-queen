@@ -5,7 +5,7 @@ import './navRealizarPedido.scss';
 
 function  NavRealizarPedido() {
   const { cliente, setCliente } = useContext(UserContext)
-
+  
   let date = new Date();
   const numerosMesa = [ {mesa: "1"}, {mesa: "2"}, {mesa: "3"}, {mesa: "4"}, {mesa: "5"}, {mesa: "6"}, {mesa: "7"}, {mesa: "8"}, {mesa: "9"} ]
 
@@ -21,7 +21,7 @@ function  NavRealizarPedido() {
       </div>
   
       <div className="inputMesa">
-        <label >
+        <label >          
           <p>Mesa:</p>
           <select 
           id="nMesa" 
