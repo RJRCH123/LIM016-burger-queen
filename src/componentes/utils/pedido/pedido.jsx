@@ -1,21 +1,20 @@
-import React, { useEffect, useState } from 'react';
+//import React, { useEffect, useState } from 'react';
 import './pedido.scss';
 import ProductosPedido from './productosPedido';
 
 
 const dateParser = (date) => {
-  //return date.toLocaleTimeString(); // solo la hora
-  //return `${date.toLocaleDateString()}  ${date.toLocaleTimeString()}`
   return date.toLocaleString(); // fecha y hora local
 }
-const Pedido = ({orden}) =>{
 
-  const [userCodigo, setUserCodigo] = useState("");
+const Pedido = ({orden}) =>{
+  // eslint-disable-next-line
+  /* const [userCodigo, setUserCodigo] = useState("");
 
   useEffect(() => {    
     const userData = JSON.parse(localStorage.getItem('user'));
     setUserCodigo(userData.codigo);    
-  }, [])
+  }, []) */
          
   return (
     <div className="boxPedido" id={orden.id}>
