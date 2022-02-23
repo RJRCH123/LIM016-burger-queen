@@ -53,18 +53,21 @@ const AppRegistro = () => {
 	// se establece la comunicación con db de firebase para crear la colección con los datos del usuario 
 
     const userCollectionRef = collection(db, 'usuarios')
-	    const createUser = async () => {
-        await addDoc(userCollectionRef, {
-			usuario: usuario.campo,
-			nombres: nombre.campo, 
-			apellidos: apellido.campo,
-			cargo: cargo.campo,
-			correo: correo.campo,
-			dni: dni.campo,
-			celular: celular.campo,
-			contraseña: contraseña.campo,
-			codigo: codigo.campo
-	    })
+
+	const createUser = async () => {
+		if(formularioValido === true){	 
+			await addDoc(userCollectionRef, {
+				usuario: usuario.campo,
+				nombres: nombre.campo, 
+				apellidos: apellido.campo,
+				cargo: cargo.campo,
+				correo: correo.campo,
+				dni: dni.campo,
+				celular: celular.campo,
+				contraseña: contraseña.campo,
+				codigo: codigo.campo
+			})
+		} 
     }
 
     // se define la estructura del formulario 
