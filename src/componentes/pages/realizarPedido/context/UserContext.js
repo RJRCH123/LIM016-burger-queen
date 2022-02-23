@@ -1,14 +1,9 @@
 import React, { createContext, useState, useEffect } from 'react';
 import { db } from '../../../../firebase/firebase-config';
 import { getDocs, collection, query, where, addDoc, onSnapshot } from 'firebase/firestore';
-import { BtnsCancelarYConfirmar, NavRealizarPedido, ProductoPorComprar, ProductoPorPedir } from '../components';
-import NavListadoProductosPorPedir from '../components/navListadoProductosPorPedir/navListadoProductosPorPedir';
-import NavTablaResumenPedido from '../components/navTablaResumenPedido/navTablaPedido';
-import PrecioTotal from '../components/precioTotal/precioTotal';
 import '../realizarPedido.scss';
 import { Children } from 'react/cjs/react.production.min';
 import RealizarPedido from '../RealizarPedido';
-import Swal from 'sweetalert2';
 
 export const UserContext = createContext();
 
