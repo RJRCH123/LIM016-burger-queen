@@ -46,7 +46,7 @@ const BotonPreparar = (props) => {
   }
 	
   const listOptions = [
-    { text: "Preparando", className: "btnPreparando" },
+    /* { text: "Preparando", className: "btnPreparando" }, */
     { text: "Preparado", className: "btnPreparado", operacion: actualizarEstado},
     { text: "Cancelar", className: "btnCancelar", operacion: ModalCancelar }
   ];

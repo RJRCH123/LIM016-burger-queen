@@ -55,7 +55,7 @@ a {
 }
 
 .section__padding {
-  padding: 4rem 6rem;
+  padding: 10rem 6rem 4rem 6rem;
 }
 
 .flex__center {
@@ -198,13 +198,13 @@ a {
 
 @media screen and (max-width: 850px) {
   .section__padding {
-    padding: 4rem;
+    padding: 8rem 6rem;
   }
 }
 
 @media screen and (max-width: 650px) {
   .section__padding {
-    padding: 4rem 2rem;
+    padding: 6rem 2rem;
   }
   
   .p__cormorant {

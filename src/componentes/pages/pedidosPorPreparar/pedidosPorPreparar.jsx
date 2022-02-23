@@ -47,8 +47,7 @@ const PedidosPorPreparar = () => {
                 <Pedido key={order.id} orden={ order }/>
                 <div className='contenedorBotones'>
                   <BotonPreparar info={order} key={`${index}-${order.id}`} loading={setIsLoading}/>
-                </div>
-                
+                </div>                
               </div>
             )          
             })
