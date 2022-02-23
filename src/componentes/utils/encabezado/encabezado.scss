@@ -7,12 +7,12 @@
   height: auto;
   font-size: 12px;
   font-weight: bold;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  img{
+/*   img{
     width: 90px;
     height: 60px;
-  }
+  } */
 }
 .datos{
   width: 60%;
@@ -22,5 +22,5 @@
 }
 .fecha{
   justify-self: end;
-  width: 80%;
+/*   width: 80%; */
 }

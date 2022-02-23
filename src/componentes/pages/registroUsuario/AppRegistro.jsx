@@ -148,7 +148,7 @@ const AppRegistro = () => {
 					required="true"
 					tipo="text"
 					label="Codigo"
-					placeholder="codigo"
+					placeholder="Codigo"
 					name="codigo"
 					leyendaError="El codigo debe tener la primera letra de su cargo y el número de usuario Ej: M001"
 					expresionRegular={expresiones.codigo}
@@ -159,7 +159,7 @@ const AppRegistro = () => {
 					required="true"
 					tipo="password"
 					label="Contraseña"
-                    placeholder="**********"
+                    placeholder="•••••••••"
 					name="contraseña1"
 					leyendaError="La contraseña tiene que ser de 4 a 12 dígitos."
 					expresionRegular={expresiones.contraseña}
@@ -181,7 +181,7 @@ const AppRegistro = () => {
 					required="true"
 					tipo="email"
 					label="Correo Electrónico"
-					placeholder="correo"
+					placeholder="Correo"
 					name="correo"
 					leyendaError="El correo solo puede contener letras, numeros, puntos, guiones y guion bajo."
 					expresionRegular={expresiones.correo}
@@ -192,7 +192,7 @@ const AppRegistro = () => {
 					required="true"
 					tipo="text"
 					label="celular"
-					placeholder="celular"
+					placeholder="Celular"
 					name="celular"
 					leyendaError="El telefono solo puede contener numeros y el maximo son 14 dígitos."
 					expresionRegular={expresiones.celular}
@@ -214,7 +214,7 @@ const AppRegistro = () => {
 					required="true"
 					tipo="text"
 					label="Cargo"
-					placeholder="cargo"
+					placeholder="Cargo"
 					name="cargo"
 					leyendaError="El cargo solo puede contener letras."
 					expresionRegular={expresiones.cargo}
