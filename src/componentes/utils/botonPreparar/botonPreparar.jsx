@@ -25,10 +25,6 @@ const BotonPreparar = (props) => {
     props.loading(true); 
   }
 
-  const deshabilitar = () => {
-    console.log('quiero cambiar el estilo del boton');
-  }
-
   // modal de confirmarión para editar un empleado registrado 
   const ModalCancelar = (id) => {
     Swal.fire({
@@ -50,9 +46,9 @@ const BotonPreparar = (props) => {
   }
 	
   const listOptions = [
-    { text: "Preparando", className: "btnPreparando", disabled:false, operacion: deshabilitar},
-    { text: "Preparado", className: "btnPreparado", disabled:false, operacion: actualizarEstado},
-    { text: "Cancelar", className: "btnCancelar", disabled:false, operacion: ModalCancelar }
+    /* { text: "Preparando", className: "btnPreparando" }, */
+    { text: "Preparado", className: "btnPreparado", operacion: actualizarEstado},
+    { text: "Cancelar", className: "btnCancelar", operacion: ModalCancelar }
   ];
   
   return listOptions.map((option, index) => {
@@ -65,7 +61,6 @@ const BotonPreparar = (props) => {
             className={option.className}          
             type="onClick"
             onClick= {() => option.operacion(props.info.id)} 
-            disabled={option.disabled}
           >
           {option.text}
           </button>                    
