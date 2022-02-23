@@ -46,9 +46,9 @@ const BotonPreparar = (props) => {
   }
 	
   const listOptions = [
-    { text: "Preparando", className: "btnPreparando" },
-    { text: "Preparado", className: "btnPreparado", operacion: actualizarEstado},
-    { text: "Cancelar", className: "btnCancelar", operacion: ModalCancelar }
+    { text: "Preparando", className: "btnPreparando", disabled:true },
+    { text: "Preparado", className: "btnPreparado", disabled:false, operacion: actualizarEstado},
+    { text: "Cancelar", className: "btnCancelar", disabled:false, operacion: ModalCancelar }
   ];
   
   return listOptions.map((option, index) => {
@@ -60,7 +60,8 @@ const BotonPreparar = (props) => {
             key={`${index}botonPreparar${props.info.id}`}
             className={option.className}          
             type="onClick"
-            onClick= {() => option.operacion(props.info.id) }         
+            onClick= {() => option.operacion(props.info.id)}  
+            disabled={option.disabled}
           >
           {option.text}
           </button>                    
