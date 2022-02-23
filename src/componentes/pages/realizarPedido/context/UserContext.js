@@ -8,6 +8,7 @@ import PrecioTotal from '../components/precioTotal/precioTotal';
 import '../realizarPedido.scss';
 import { Children } from 'react/cjs/react.production.min';
 import RealizarPedido from '../RealizarPedido';
+import Swal from 'sweetalert2';
 
 export const UserContext = createContext();
 
@@ -57,14 +58,14 @@ const UserProvider = () => {
         if (newCount <= 0) {
           return acc
         } else {
-          acc.push({ ...item, count: item.count - 1 }) 
+          acc.push({ ...item, count: item.count - 1 })
           return acc
         }
       } else {
         acc.push(item)
         return acc
       }
-    },[])
+    }, [])
     setPedido(arrayLess)
   }
 
@@ -104,20 +105,23 @@ const UserProvider = () => {
   }
 
   // agregar ordenes al firebase
-  const confirmarOrdenesF = () => {
-    const collectionOrder = addDoc(collection(db, "pedidos"), {
-      cliente: cliente.cliente,
-      estado: 'pendiente',
-      mesa: cliente.mesa,
-      orden: pedido,
-      timestamp: new Date(),
-      total: total
-    }).then(() => {
-      setPedido([]);
-      setCliente(clientes);
-    });
-    return collectionOrder
-  }
+    const confirmarOrdenesF = () => {
+      if(cliente.mesa !== '' && cliente.cliente !== '') {
+        const collectionOrder = addDoc(collection(db, "pedidos"), {
+          cliente: cliente.cliente,
+          estado: 'pendiente',
+          mesa: cliente.mesa,
+          orden: pedido,
+          timestamp: new Date(),
+          total: total
+        }).then(() => {
+          setPedido([]);
+          setCliente(clientes);
+        })
+        return collectionOrder
+      } 
+      return false
+    }
 
   useEffect(() => {
     onSnapshot(collection(db, 'pedidos'),
