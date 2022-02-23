@@ -100,7 +100,7 @@ const UserProvider = () => {
   }
 
   // agregar ordenes al firebase
-    const confirmarOrdenesF = () => {     
+    const confirmarOrdenesF = () => { 
       if(cliente.mesa !== '' && cliente.cliente !== '' && cliente.mesa !== undefined && cliente.cliente !== undefined) {
         const collectionOrder = addDoc(collection(db, "pedidos"), {
           cliente: cliente.cliente,
@@ -116,7 +116,6 @@ const UserProvider = () => {
         return collectionOrder
       } 
       else {
-        console.log('probamos el false')
       } return false
     }
 

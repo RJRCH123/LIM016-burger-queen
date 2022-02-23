@@ -30,7 +30,6 @@ const BtnsCancelarYConfirmar = () => {
           });
           limpiarOrden();
         } else if (confirmarOrdenesF() === false) {
-          console.log('entro aquí');
           Swal.fire({
             title: '¡Pedido Sin Confirmar!',
             text: 'No se pudo completar el pedido por falta de datos',
