@@ -1,10 +1,10 @@
 import './historialCocinero.scss';
 import Encabezado from '../../utils/encabezado/encabezado';
-import DescargarPdf from '../../utils/botonDescarga/botonDescarga';
 import ProductsTable from '../../utils/tablaPedidos/tablaPedidos';
 import { db } from '../../../firebase/firebase-config';
 import { collection, getDocs, where, query, orderBy } from 'firebase/firestore';
 import { useState, useEffect } from 'react';
+import ReactHtmlTableToExcel from 'react-html-table-to-excel';
 
 
 const dateParser = (date) => {
@@ -58,7 +58,16 @@ const HistorialCocinero = () => {
       <h2>HISTORIAL PEDIDOS</h2>
       <Encabezado/>
       <ProductsTable products={ orders } estado={setOrders} loading={setIsLoading} />
-      <DescargarPdf/>
+      <div className='boton'>
+          <ReactHtmlTableToExcel
+          id="test-table-xls-button"
+          className="botonDescarga"
+          table="historial-Ventas-Karma"
+          filename="historial-Ventas-Karma"
+          sheet="tablexls"
+          buttonText={"Descargar Excel"} 
+          type="onClick"/>
+        </div>
     </section>
   )
 } 
