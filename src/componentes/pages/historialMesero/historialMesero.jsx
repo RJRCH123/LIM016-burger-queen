@@ -2,14 +2,12 @@ import Encabezado from '../../utils/encabezado/encabezado';
 import './historialMesero.scss';
 import ProductsTable from '../../utils/tablaPedidos/tablaPedidos';
 import { db } from '../../../firebase/firebase-config';
-import { collection, getDocs,  where, query, orderBy } from 'firebase/firestore';
+import { collection, getDocs, where, query, orderBy } from 'firebase/firestore';
 import { useState, useEffect } from 'react';
-import ReactHtmlTableToExcel from 'react-html-table-to-excel';
-
-
+import Descarga from '../../utils/botonDescarga/botonDescarga';
 
 const dateParser = (date) => {
-  return date.toLocaleDateString();  
+  return date.toLocaleDateString();
 }
 
 const hora = (data) => {
@@ -21,19 +19,19 @@ const HistorialCocinero = () => {
   const [isLoading, setIsLoading] = useState(true)
   const [orders, setOrders] = useState([]);
 
-  const getOrder = async () =>  {
+  const getOrder = async () => {
     const allOrders = [];
     const orderCollecRef = query(collection(db, 'pedidos'), orderBy("timestamp", "asc"), where("estado", "==", "finalizado"));
     const data = await getDocs(orderCollecRef);
-    
+
     data.docs.forEach(doc => {
       const values = doc.data();
       allOrders.push({
-        id: doc.id,         
-        timestamp: dateParser(values.timestamp.toDate()), 
+        id: doc.id,
+        timestamp: dateParser(values.timestamp.toDate()),
         hora: hora(values.timestamp.toDate()),
         cliente: values.cliente.toUpperCase(),
-        pedido:"ver detalle",
+        pedido: "ver detalle",
         total: values.total.toUpperCase()
       })
     });
@@ -45,32 +43,23 @@ const HistorialCocinero = () => {
       setIsLoading(false);
       setOrders(allOrders);
     })
-  },  [isLoading]);
+  }, [isLoading]);
 
-  if(isLoading){
-    return(
+  if (isLoading) {
+    return (
       <div></div>
     )
   }
 
-  return  ( 
+  return (
     <section className='paddingFlex'>
 
-    <h2>HISTORIAL PEDIDOS</h2>
-      <Encabezado/>
-      <ProductsTable products={ orders } estado={setOrders} loading={setIsLoading} />
-      <div className='boton'>
-          <ReactHtmlTableToExcel
-          id="test-table-xls-button"
-          className="botonDescarga"
-          table="historial-Ventas-Karma"
-          filename="historial-Ventas-Karma"
-          sheet="tablexls"
-          buttonText={"Descargar Excel"} 
-          type="onClick"/>
-      </div>
+      <h2>HISTORIAL PEDIDOS</h2>
+      <Encabezado />
+      <ProductsTable products={orders} estado={setOrders} loading={setIsLoading} />
+      <Descarga/>
     </section>
   )
-} 
+}
 
 export default HistorialCocinero

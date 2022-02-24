@@ -4,7 +4,7 @@ import ProductsTable from '../../utils/tablaPedidos/tablaPedidos';
 import { db } from '../../../firebase/firebase-config';
 import { collection, getDocs, where, query, orderBy } from 'firebase/firestore';
 import { useState, useEffect } from 'react';
-import ReactHTMLTableToExcel from 'react-html-table-to-excel';
+import Descarga from '../../utils/botonDescarga/botonDescarga';
 
 const dateParser = (date) => {
   return date.toLocaleDateString();  
@@ -55,16 +55,7 @@ const HistorialVentas = () => {
       <h2>HISTORIAL VENTAS</h2>
         <Encabezado/>
         <ProductsTable products={ orders } estado={setOrders} loading={setIsLoading}/>
-        <div className='boton'>
-          <ReactHTMLTableToExcel
-          id="test-table-xls-button"
-          className="botonDescarga"
-          table="historial-Ventas-Karma"
-          filename="historial-Ventas-Karma"
-          sheet="tablexls"
-          buttonText={"Descargar Excel"} 
-          type="onClick"/>
-        </div>
+        <Descarga/>
     </section>
   )
 } 
