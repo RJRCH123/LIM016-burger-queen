@@ -93,7 +93,7 @@
   grid-area: btnsCancelarYConfirmar;
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 570px) {
   
   .containerRP {  display: grid;
     grid-template-columns: 1fr;
@@ -153,4 +153,77 @@
     grid-area: btnsCancelarYConfirmar; 
   }
   
+}
+
+@media screen and (min-width: 1150px) {
+  .marginFlex {
+    /* margin: 20px 20px 0 20px; */
+    margin: 2% 2% 0 2%;
+  }
+  
+  .containerRP {  
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 10vh 13vh 46vh 7vh 7vh;
+    grid-auto-columns: 1fr;
+    gap: 0% 5%;
+    grid-auto-flow: row;
+    justify-content: space-between;
+    align-content: space-evenly;
+    justify-items: stretch;
+    align-items: start;
+    grid-template-areas:
+      "navRealizarPedido navRealizarPedido"
+      "navListadoProductosPorPedir navTablaResumenPedido"
+      "listadoProductosPorPedir resumenPedidosPorComprar"
+      "listadoProductosPorPedir precioTotal"
+      "listadoProductosPorPedir btnsCancelarYConfirmar";
+  }
+  
+  .resumenPedidosPorComprar {
+    justify-self: stretch;
+    align-self: stretch;
+    grid-area: resumenPedidosPorComprar;
+    overflow-x: overlay;
+    background: var(--color-white);
+    border-radius: 3px;
+    padding: 3%;
+    -webkit-transition: .3s ease all;
+    transition: .3s ease all;
+    border: 3px solid transparent;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+  
+  .precioTotal {
+    justify-self: stretch;
+    align-self: start;
+    grid-area: precioTotal;
+  }
+  
+  .navListadoProductosPorPedir {
+    justify-self: stretch;
+    align-self: center;
+    grid-area: navListadoProductosPorPedir;
+    max-height: 57px;
+  }
+  
+  .navTablaResumenPedido {
+    justify-self: stretch;
+    grid-area: navTablaResumenPedido;
+    align-self: center;
+  }
+  
+  .navRealizarPedido {
+    justify-self: stretch;
+    align-self: center;
+    grid-area: navRealizarPedido;
+  }
+  
+  .listadoProductosPorPedir {
+    justify-self: stretch;
+    align-self: stretch;
+    grid-area: listadoProductosPorPedir;
+    overflow-x: overlay;
+    /* margin-top: 10px; */
+  }
 }
