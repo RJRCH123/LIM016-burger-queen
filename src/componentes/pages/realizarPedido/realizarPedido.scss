@@ -1,7 +1,7 @@
 
 .marginFlex {
   /* margin: 20px 20px 0 20px; */
-  margin: 2% 2% 0 2%;
+  margin: 2% 3% 0 3%;
 }
 
 .containerRP {  
@@ -93,6 +93,136 @@
   grid-area: btnsCancelarYConfirmar;
 }
 
-// {
-//   grid-template-rows: 7vh 8vh 51vh 7vh 13vh;
-// }
+@media screen and (max-width: 570px) {
+  
+  .containerRP {  display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 7vh 6vh 46vh 4vh 30vh 4vh 4vh;
+    gap: 10px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "navRealizarPedido"
+      "navListadoProductosPorPedir"
+      "listadoProductosPorPedir"
+      "navTablaResumenPedido"
+      "resumenPedidosPorComprar"
+      "precioTotal"
+      "btnsCancelarYConfirmar";
+    padding: 10px;
+  }
+  
+  .navRealizarPedido { 
+    justify-self: stretch;
+    align-self: stretch;
+    grid-area: navRealizarPedido; 
+  }
+  
+  .navListadoProductosPorPedir { 
+    justify-self: stretch;
+    align-self: stretch;
+    grid-area: navListadoProductosPorPedir; 
+  }
+  
+  .listadoProductosPorPedir { 
+    justify-self: stretch;
+    align-self: stretch;
+    grid-area: listadoProductosPorPedir; 
+  }
+  
+  .navTablaResumenPedido { 
+    justify-self: stretch;
+    align-self: stretch;
+    grid-area: navTablaResumenPedido; 
+  }
+  
+  .resumenPedidosPorComprar { 
+    justify-self: stretch;
+    align-self: stretch;
+    grid-area: resumenPedidosPorComprar; 
+  }
+  
+  .precioTotal { 
+    justify-self: stretch;
+    align-self: stretch;
+    grid-area: precioTotal; 
+  }
+  
+  .btnsCancelarYConfirmar { 
+    justify-self: stretch;
+    align-self: stretch;
+    grid-area: btnsCancelarYConfirmar; 
+  }
+  
+}
+
+@media screen and (min-width: 1150px) {
+  .marginFlex {
+    margin: 3% 6% 0 6%;
+  }
+  
+  .containerRP {  
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 10vh 13vh 46vh 7vh 7vh;
+    grid-auto-columns: 1fr;
+    gap: 0% 5%;
+    grid-auto-flow: row;
+    justify-content: space-between;
+    align-content: space-evenly;
+    justify-items: stretch;
+    align-items: start;
+    grid-template-areas:
+      "navRealizarPedido navRealizarPedido"
+      "navListadoProductosPorPedir navTablaResumenPedido"
+      "listadoProductosPorPedir resumenPedidosPorComprar"
+      "listadoProductosPorPedir precioTotal"
+      "listadoProductosPorPedir btnsCancelarYConfirmar";
+  }
+  
+  .resumenPedidosPorComprar {
+    justify-self: stretch;
+    align-self: stretch;
+    grid-area: resumenPedidosPorComprar;
+    overflow-x: overlay;
+    background: var(--color-white);
+    border-radius: 3px;
+    padding: 3%;
+    -webkit-transition: .3s ease all;
+    transition: .3s ease all;
+    border: 3px solid transparent;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+  
+  .precioTotal {
+    justify-self: stretch;
+    align-self: start;
+    grid-area: precioTotal;
+  }
+  
+  .navListadoProductosPorPedir {
+    justify-self: stretch;
+    align-self: center;
+    grid-area: navListadoProductosPorPedir;
+    max-height: 57px;
+  }
+  
+  .navTablaResumenPedido {
+    justify-self: stretch;
+    grid-area: navTablaResumenPedido;
+    align-self: center;
+  }
+  
+  .navRealizarPedido {
+    justify-self: stretch;
+    align-self: center;
+    grid-area: navRealizarPedido;
+  }
+  
+  .listadoProductosPorPedir {
+    justify-self: stretch;
+    align-self: stretch;
+    grid-area: listadoProductosPorPedir;
+    overflow-x: overlay;
+    /* margin-top: 10px; */
+  }
+}

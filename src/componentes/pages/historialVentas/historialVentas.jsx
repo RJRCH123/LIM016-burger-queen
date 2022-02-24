@@ -1,11 +1,10 @@
 import Encabezado from '../../utils/encabezado/encabezado';
 import './historialVentas.scss';
-import DescargarPdf from '../../utils/botonDescarga/botonDescarga'
 import ProductsTable from '../../utils/tablaPedidos/tablaPedidos';
 import { db } from '../../../firebase/firebase-config';
 import { collection, getDocs, where, query, orderBy } from 'firebase/firestore';
 import { useState, useEffect } from 'react';
-
+import Descarga from '../../utils/botonDescarga/botonDescarga';
 
 const dateParser = (date) => {
   return date.toLocaleDateString();  
@@ -51,13 +50,12 @@ const HistorialVentas = () => {
       <div></div>
     )
   }
-
   return  ( 
     <section className='paddingFlex'>
       <h2>HISTORIAL VENTAS</h2>
         <Encabezado/>
         <ProductsTable products={ orders } estado={setOrders} loading={setIsLoading}/>
-        <DescargarPdf/>
+        <Descarga/>
     </section>
   )
 } 

@@ -1,8 +1,9 @@
 import React from 'react';
-import { Link } from "react-router-dom";
+/* import { Link } from "react-router-dom" */
 import { SubHeading, MenuItem } from '../../components';
 import { data, images } from '../../constants';
 import './SpecialMenu.scss';
+import CartaCompleta from './Menu-Karma.pdf'
 
 const SpecialMenu = () => (
   <div className="app__specialMenu flex__center section__padding" id="menu">
@@ -36,12 +37,13 @@ const SpecialMenu = () => (
     </div>
 
     <div className='btnCarta' >
-     {/*  <button type="button" className="custom__button">Carta completa</button> */}
       <button type="button" className="custom__button">
-        <Link to='/carta'>
+          <a type="button" href={CartaCompleta} download="La-Carta-Karma" target="_blank" rel="noreferrer">Carta completa</a>
+      </button> 
+{/*         <Link to='/carta'>
           Carta completa
-        </Link>
-      </button>
+        </Link> */}
+      
     </div>
   </div>
 );
