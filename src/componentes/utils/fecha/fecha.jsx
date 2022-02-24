@@ -11,8 +11,8 @@ const Fecha = () => {
   let daym=mydate.getDate() 
   if (daym<10) 
   daym="0"+daym 
-  let dayarray = new Array("Dom,", "Lun,", "Mar,", "Mie,", "Jue,", "Vie,", "Sab,")
-  let montharray = new Array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre")
+  let dayarray = ["Dom,", "Lun,", "Mar,", "Mie,", "Jue,", "Vie,", "Sab,"]
+  let montharray = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]
   
     return  ( 
         <div>

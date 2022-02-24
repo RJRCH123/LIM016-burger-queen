@@ -111,7 +111,7 @@ const AppActualizarRegistro = () => {
 			cambiarCargo({campo: result.cargo, valido: null});
 
 	 	})
-	 
+	 // eslint-disable-next-line
 	}, []);
 
     // se define la estructura del formulario 

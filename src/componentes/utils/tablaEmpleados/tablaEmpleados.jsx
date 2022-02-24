@@ -1,11 +1,11 @@
-import React, { useState, useMemo} from "react";
+import React, { useState } from "react";
 import Botones from './botonesCRUD';
 import './tablaEmpleados.scss';
 
 const useSortableData = ((items, config = null) => {
    const [sortConfig, setSortConfig] = useState(config);
 
-    const sortedItems = useMemo(() => {
+    /* const sortedItems = useMemo(() => {
       let sortableItems = [...items];
       if (sortConfig !== null) {
           sortableItems.sort((a, b) => {
@@ -19,7 +19,7 @@ const useSortableData = ((items, config = null) => {
         });
       }
       return sortableItems;
-    }, [items, sortConfig]);
+    }, [items, sortConfig]); */
 
     const requestSort = key => {
       let direction = "descending";       
