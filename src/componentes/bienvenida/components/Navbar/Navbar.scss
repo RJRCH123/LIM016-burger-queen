@@ -5,6 +5,8 @@
     align-items: center;
     background: var(--color-black);
     padding: 1rem 2rem;
+    position: fixed;
+    z-index: 100;
 }
 .app__navbar-logo {
     display: flex;

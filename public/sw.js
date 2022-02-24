@@ -1,3 +1,5 @@
+/* eslint-disable array-callback-return */
+/* eslint-disable no-restricted-globals */
 const CACHE_NAME = 'Karma Burger';
 const urlsToCache = [
   './Logo-Letra.ico',

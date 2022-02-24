@@ -1,14 +1,17 @@
 import React from "react";
 import Swal from 'sweetalert2';
 import { db } from "../../../firebase/firebase-config";
-import { deleteDoc, doc, updateDoc} from 'firebase/firestore';
+import { doc, updateDoc} from 'firebase/firestore';
 import './botonPreparar.scss';
 
 const BotonPreparar = (props) => {
 
   // método que elimina el pedido de la colección
   const eliminarPedido = async (id) => { 
-    await deleteDoc(doc(db, 'pedidos', id)); 
+    const pedidoDocRef = doc(db, 'pedidos', id)
+    await updateDoc(pedidoDocRef, {
+      estado: "cancelado"        
+    });    
     props.loading(true);         
   }
 
@@ -43,7 +46,7 @@ const BotonPreparar = (props) => {
   }
 	
   const listOptions = [
-    { text: "Preparando", className: "btnPreparando" },
+    /* { text: "Preparando", className: "btnPreparando" }, */
     { text: "Preparado", className: "btnPreparado", operacion: actualizarEstado},
     { text: "Cancelar", className: "btnCancelar", operacion: ModalCancelar }
   ];
@@ -57,7 +60,7 @@ const BotonPreparar = (props) => {
             key={`${index}botonPreparar${props.info.id}`}
             className={option.className}          
             type="onClick"
-            onClick= {() => option.operacion(props.info.id) }         
+            onClick= {() => option.operacion(props.info.id)} 
           >
           {option.text}
           </button>                    

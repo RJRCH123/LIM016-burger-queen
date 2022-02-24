@@ -6,7 +6,7 @@
 
 #header {
     position: absolute;
-    width: 220px;
+    /* width: 220px; */
   }
   #header .pro-sidebar {
     height: 100vh;
@@ -50,6 +50,7 @@
 
   .dataUser {
     color: hsl(43deg 51% 48%);
+    text-transform: capitalize;
   }
 
   #header .pro-sidebar-inner .pro-sidebar-layout ul .pro-inner-item:hover {
