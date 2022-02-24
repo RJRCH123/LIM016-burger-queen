@@ -43,7 +43,7 @@ const ProductsTable = props => {
     return sortConfig.key === name ? sortConfig.direction : undefined;
   };
   return (
-    <table>
+    <table id="historial-Ventas-Karma">
       <thead>
         <tr>
           <th width= '5%' >
