@@ -1,3 +1,5 @@
+![](https://komarev.com/ghpvc/?username=Karma-Burger&color=yellow)
+
 # Burger Queen
 
 ## Índice
