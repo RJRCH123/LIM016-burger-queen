@@ -18,11 +18,12 @@
   - [4.2 Para el Testing](#4.2-Para-el-Testing)
   - [4.3 Para la funcionalidad](#4.3-Para-la-funcionalidad)
   - [4.4 Para el Despliegue del proyecto](#4.4-Para-el-Despliegue-del-proyecto)
+  - [4.5 Para la instalación de la App(PWA)](4.5-Para-la-instalación-de-la-App(PWA))
 * [5. Fuentes](#5-Fuentes)
 * [6. Autores](#6-Autores)
-* [7. Criterios de aceptación mínimos del proyecto](#5-criterios-de-aceptación-mínimos-del-proyecto)
 
 ***
+
 
 <div align="center">
 <img src="./src/img/logos/Logo-Circular.png" width="400">
@@ -259,6 +260,30 @@ A continuación se adjuntará una breve videodemostración del resultado final t
 para sitios web estáticos.
 Para usarlo primero necesitas crear una cuenta en
 Netlify y después puedes [conectar](https://www.netlify.com/blog/2016/07/22/deploy-react-apps-in-less-than-30-seconds/) tu repositorio.
+
+## 4.5 Para la instalación de la App(PWA):
+
+-[PWA:](https://www.iebschool.com/blog/progressive-web-apps-analitica-usabilidad/) Progressive web apps (PWA) o aplicación web progresiva es una solución basada en la web tradicional que todos conocemos, aunque incorpora algunas particularidades que la hacen parecerse a una app nativa para teléfonos móviles y tabletas. Cada proyecto es independiente y el nivel de adaptación de la web al formato app es progresivo, por lo que puede que visitemos un site con una PWA casi idéntica a una app o quizá sea una web con algunos avances.
+
+La aplicación desplegada debe tener 80% o más en las puntuaciones de Performance, Progressive Web App, Accessibility y Best Practices de Lighthouse.
+
+A continuación se muestran las estadísticas del performance:
+
+<div align="center">
+
+## 📌 Según Desktop
+
+<img src="./src/img/Readme/PWA-Desktop.png" width="400">
+</div>
+
+<div align="center">
+
+## 📌 Según Mobile
+
+<img src="./src/img/Readme/PWA-Mobile.png" width="400">
+</div>
+
+
 
 ***
 ## 5. Fuentes 📚

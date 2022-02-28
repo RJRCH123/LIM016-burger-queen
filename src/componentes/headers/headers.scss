@@ -35,12 +35,13 @@
   }
   #header .pro-sidebar-inner .pro-sidebar-layout .logotext p {
     font-size: 20px;
-    padding: 0 20px;
+    /* padding: 0 20px; */
     color: #000;
     font-weight: bold;
   }
   #header .pro-sidebar-inner .pro-sidebar-layout ul {
-    padding: 0 5px;
+    padding-right: 5px;
+    margin-left: 5px;
   }
   #header .pro-sidebar-inner .pro-sidebar-layout ul .pro-inner-item {
     color: #b9953c;
