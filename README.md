@@ -3,9 +3,9 @@
 ## ÍNDICE
 * [1. Karma Burger](#1-Karma-Burger)
   - [1.1 Descripción del Proyecto](#1.1-Descripción-del-Proyecto)
-  - [1.2 Secciones y Roles](#1-Secciones-y-Roles)
-  - [1.3 Vistas según cada sección](#1-Vistas-según-cada-sección)
-  - [1.4 Interación con la página](#1-Interación-con-la-página)
+  - [1.2 Secciones y Roles](#1.2-Secciones-y-Roles)
+  - [1.3 Vistas según cada sección](#1.3-Vistas-según-cada-sección)
+  - [1.4 Interacción con la página](#1.4-Interacción-con-la-página)
 * [2. Estudio de Usuario](#2-Estudio-de-Usuario)
   - [2.1 Descripción general](#2.1-Descripción-general)
   - [2.2 Flujograma de los estados para el Pedido](#2.2-Flujograma-de-los-estados-para-el-Pedido)
@@ -34,7 +34,9 @@
 
 ## 1.1  Descripción del Proyecto
 
-🍔 🍟 **Karma Burger**  Es una hamburguesería cuya temática es vender solo 🍔🍔🍔 mini hamburguesas. Esta página web es exclusiva para empleados donde brindará información general de la empresa y, en especial, habrá 3 secciones para cada rol (Administrador, 🤵 Mesero y 👩‍🍳Jefe de Cocina); donde, a través de un registro, mostrará  en tiempo real los detalles de sus actividades con los pedidos.
+🍔 🍟 **Karma Burger**  es una hamburguesería cuya temática es vender solo 🍔🍔🍔 mini hamburguesas. 
+
+Esta página web está enfocada para los empleados con los siguientes roles: Administrador, 🤵 Mesero y 👩‍🍳Jefe de Cocina. Brindará información general de la empresa y, en especial, habrá secciones para cada rol; donde, a través de un usuario y contraseña podrá acceder al flujo de actividades correspondientes hacia los pedidos.
 
 ## 1.2 Secciones y Roles
 
@@ -232,6 +234,8 @@ A continuación se adjuntará una breve videodemostración del resultado final t
 <img src="./src/img/Readme/Cocinero.gif" width="400">
 </div>
 
+***
+
 ## 4. Tecnologías empleadas 👩🏾‍💻
 
 ## 4.1 Para la estructura y diseño:
@@ -263,7 +267,7 @@ Netlify y después puedes [conectar](https://www.netlify.com/blog/2016/07/22/dep
 
 ## 4.5 Para la instalación de la App(PWA):
 
--[PWA:](https://www.iebschool.com/blog/progressive-web-apps-analitica-usabilidad/) Progressive web apps (PWA) o aplicación web progresiva es una solución basada en la web tradicional que todos conocemos, aunque incorpora algunas particularidades que la hacen parecerse a una app nativa para teléfonos móviles y tabletas. Cada proyecto es independiente y el nivel de adaptación de la web al formato app es progresivo, por lo que puede que visitemos un site con una PWA casi idéntica a una app o quizá sea una web con algunos avances.
+- [PWA:](https://www.iebschool.com/blog/progressive-web-apps-analitica-usabilidad/) Progressive web apps (PWA) o aplicación web progresiva es una solución basada en la web tradicional que todos conocemos, aunque incorpora algunas particularidades que la hacen parecerse a una app nativa para teléfonos móviles y tabletas. Cada proyecto es independiente y el nivel de adaptación de la web al formato app es progresivo, por lo que puede que visitemos un site con una PWA casi idéntica a una app o quizá sea una web con algunos avances.
 
 La aplicación desplegada debe tener 80% o más en las puntuaciones de Performance, Progressive Web App, Accessibility y Best Practices de Lighthouse.
 
@@ -288,6 +292,8 @@ A continuación se muestran las estadísticas del performance:
 ***
 ## 5. Fuentes 📚
 - [Repositorio de Laboratoria:](https://github.com/Laboratoria/LIM016-burger-queen) Se encuentran todas las condiciones y herramientas a trabajar para el proyecto.
+
+***
 
 ## 6. Autores 📍
 - [Marielena Aizaga](https://github.com/PandArtist93)
