@@ -14,7 +14,8 @@
   input {
     background: #fff;
     border-radius: 3px;
-    height: 100%;
+    padding: 0 5px;
+    height: 40px;
     line-height: 45px;
     -webkit-transition: .3s ease all;
     transition: .3s ease all;
@@ -27,6 +28,7 @@
     background: #fff;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     text-align: center;
+    height: 40px;
   }
 }
 
@@ -34,7 +36,7 @@
   align-self: stretch;
   grid-area: fechaYhora;
   p {
-    font-size: 15px;
+    font-size: small;
   }
   img {
     width: 10%;

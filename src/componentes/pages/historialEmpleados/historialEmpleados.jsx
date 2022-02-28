@@ -1,5 +1,4 @@
 import Encabezado from '../../utils/encabezado/encabezado';
-import DescargarPdf from '../../utils/botonDescarga/botonDescarga'
 import EmployeesTable from '../../utils/tablaEmpleados/tablaEmpleados';
 import { db } from '../../../firebase/firebase-config';
 import './historialEmpleados.scss';
@@ -48,8 +47,7 @@ const HistorialEmpleados = () => {
     <section className='paddingFlex'>
       <h2>HISTORIAL EMPLEADOS</h2>
       <Encabezado/>
-      <EmployeesTable employees={ employees } estado={setEmployees} loading={setIsLoading} />
-      <DescargarPdf/>      
+      <EmployeesTable employees={ employees } estado={setEmployees} loading={setIsLoading} />   
     </section>
   )
 } 

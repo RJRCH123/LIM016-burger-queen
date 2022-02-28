@@ -67,6 +67,8 @@
   align-items: flex-end;
   font-size: small;
   text-align: end;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .Agregar__button {
@@ -79,8 +81,11 @@
   border-radius: 30px;
   border: none;
   outline: none;
-  text-align: center;
   align-items: center;
+  width: 80%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
 .contador {
@@ -123,6 +128,7 @@
       color: var(--color-beige);
       text-align: center;
       border-radius: 50px;
+      font-size: medium;
     }
     h6 {
       background-color: black;
