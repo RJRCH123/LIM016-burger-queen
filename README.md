@@ -20,7 +20,7 @@
   - [4.4 Para el Despliegue del proyecto](#4.4-Para-el-Despliegue-del-proyecto)
 * [5. Fuentes](#5-Fuentes)
 * [6. Autores](#6-Autores)
-* [5. Criterios de aceptación mínimos del proyecto](#5-criterios-de-aceptación-mínimos-del-proyecto)
+* [7. Criterios de aceptación mínimos del proyecto](#5-criterios-de-aceptación-mínimos-del-proyecto)
 
 ***
 
@@ -192,7 +192,7 @@ A continuación, le mostraremos el proceso y algunas imágenes de referencia par
 ***
 
 ## 3.2 Resultado final: 💁🏼
-A continuación se adjuntará una breve videodemostración del resultado final tanto en diseño como en funcionalidad. Si desea verlo completo puede dar click:
+A continuación se adjuntará una breve videodemostración del resultado final tanto en diseño como en funcionalidad. 
 
 <div align="center">
 
@@ -212,7 +212,7 @@ A continuación se adjuntará una breve videodemostración del resultado final t
 
 ## 📌🤵 Mesero
 
-<img src="./src/img/Readme/Mesero.gif" width="800">
+<img src="./src/img/Readme/Mesero.gif" width="400">
 </div>
 
 
@@ -220,7 +220,7 @@ A continuación se adjuntará una breve videodemostración del resultado final t
 
 ## 📌🤵 Administrador 
 
-<img src="./src/img/Readme/Admin.gif" width="800">
+<img src="./src/img/Readme/Admin.gif" width="400">
 </div>
 
 
@@ -228,7 +228,7 @@ A continuación se adjuntará una breve videodemostración del resultado final t
 
 ## 📌 👩‍🍳 Jefe de Cocina 
 
-<img src="./src/img/Readme/Cocinero.gif" width="800">
+<img src="./src/img/Readme/Cocinero.gif" width="400">
 </div>
 
 ## 4. Tecnologías empleadas 👩🏾‍💻
