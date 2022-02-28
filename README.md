@@ -18,11 +18,12 @@
   - [4.2 Para el Testing](#4.2-Para-el-Testing)
   - [4.3 Para la funcionalidad](#4.3-Para-la-funcionalidad)
   - [4.4 Para el Despliegue del proyecto](#4.4-Para-el-Despliegue-del-proyecto)
+  - [4.5 Para la instalación de la App(PWA)](4.5-Para-la-instalación-de-la-App(PWA))
 * [5. Fuentes](#5-Fuentes)
 * [6. Autores](#6-Autores)
-* [7. Criterios de aceptación mínimos del proyecto](#5-criterios-de-aceptación-mínimos-del-proyecto)
 
 ***
+
 
 <div align="center">
 <img src="./src/img/logos/Logo-Circular.png" width="400">
