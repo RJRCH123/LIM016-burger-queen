@@ -54,20 +54,19 @@ const AppRegistro = () => {
 
     const userCollectionRef = collection(db, 'usuarios')
 
-	const createUser = async () => {
-		if(formularioValido === true){	 
-			await addDoc(userCollectionRef, {
-				usuario: usuario.campo,
-				nombres: nombre.campo, 
-				apellidos: apellido.campo,
-				cargo: cargo.campo,
-				correo: correo.campo,
-				dni: dni.campo,
-				celular: celular.campo,
-				contraseña: contraseña.campo,
-				codigo: codigo.campo
-			})
-		} 
+	const createUser = async () => {		
+		await addDoc(userCollectionRef, {
+			usuario: usuario.campo,
+			nombres: nombre.campo, 
+			apellidos: apellido.campo,
+			cargo: cargo.campo,
+			correo: correo.campo,
+			dni: dni.campo,
+			celular: celular.campo,
+			contraseña: contraseña.campo,
+			codigo: codigo.campo
+		})
+		 
     }
 
     // se define la estructura del formulario 
@@ -87,6 +86,7 @@ const AppRegistro = () => {
 			dni.valido === 'true' &&
 			cargo.valido === 'true'
 		){
+			createUser()
 			cambiarFormularioValido(true);
 			cambiarUsuario({campo: '', valido: null});
 			cambiarNombre({campo: '', valido: null});
@@ -230,7 +230,7 @@ const AppRegistro = () => {
         		}
 
 				<ContenedorBotonCentrado>
-					<Boton type="submit" onClick={createUser}>Registrar Personal</Boton>
+					<Boton type="submit" onClick={onSubmit}>Registrar Personal</Boton>
 					{formularioValido === true && 
 						<MensajeExito>
 						
