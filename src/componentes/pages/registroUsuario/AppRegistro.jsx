@@ -2,21 +2,21 @@ import React from 'react';
 import { useState } from 'react';
 import { db } from '../../../firebase/firebase-config'
 import { addDoc, collection } from 'firebase/firestore'; 
-import {Formulario, ContenedorBotonCentrado, Boton, MensajeExito, MensajeError} from './elementos';
+import { Formulario, ContenedorBotonCentrado, Boton, MensajeExito, MensajeError } from './elementos';
 import Input from './input';
 
 const AppRegistro = () => {
   // se estan estableciendo los valores iniciales para cada uno de nuestros inputs
-  const [usuario, cambiarUsuario] = useState({campo: '', valido: null});
+  	const [usuario, cambiarUsuario] = useState({campo: '', valido: null});
 	const [nombre, cambiarNombre] = useState({campo: '', valido: null});
-  const [apellido, cambiarApellido] = useState({campo: '', valido: null});
+  	const [apellido, cambiarApellido] = useState({campo: '', valido: null});
 	const [codigo, cambiarCodigo] = useState({campo: '', valido: null});
 	const [contraseña, cambiarContraseña] = useState({campo: '', valido: null});
 	const [contraseña2, cambiarContraseña2] = useState({campo: '', valido: null});
 	const [correo, cambiarCorreo] = useState({campo: '', valido: null});
 	const [celular, cambiarCelular] = useState({campo: '', valido: null});
 	const [dni, cambiarDni] = useState({campo: '', valido: null});
-  const [cargo, cambiarCargo] = useState({campo: '', valido: null});
+  	const [cargo, cambiarCargo] = useState({campo: '', valido: null});
 	const [formularioValido, cambiarFormularioValido] = useState(null);
 
   // se utilizan expresiones regulares para limitar al usuario a ingresar 
@@ -25,13 +25,13 @@ const AppRegistro = () => {
     const expresiones = {
 		usuario: /^[a-zA-Z0-9_-]{4,16}$/, // Letras, numeros, guion y guion_bajo
 		nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
-    apellido: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
+    	apellido: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
 		contraseña: /^.{4,12}$/, // 4 a 12 digitos.
 		correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
 		celular: /^\d{7,9}$/, // 7 a 9 numeros,
-    codigo: /^[a-zA-Z0-9]{4,6}$/, // Letras, numeros.
-    dni: /^\d{6,8}$/, // 6 a 8 numeros,
-    cargo: /^[a-zA-ÿ\s]{1,40}$/, // Letras y espacios.
+		codigo: /^[a-zA-Z0-9]{4,6}$/, // Letras, numeros.
+		dni: /^\d{6,8}$/, // 6 a 8 numeros,
+		cargo: /^[a-zA-ÿ\s]{1,40}$/, // Letras y espacios.
 	}
 
     //se esta validando que la contraseña se ingreso de manera correcta 
@@ -53,18 +53,20 @@ const AppRegistro = () => {
 	// se establece la comunicación con db de firebase para crear la colección con los datos del usuario 
 
     const userCollectionRef = collection(db, 'usuarios')
-	    const createUser = async () => {
-        await addDoc(userCollectionRef, {
-			    usuario: usuario.campo,
-			    nombres: nombre.campo, 
-			    apellidos: apellido.campo,
-			    cargo: cargo.campo,
-			    correo: correo.campo,
-			    dni: dni.campo,
-			    celular: celular.campo,
-			    contraseña: contraseña.campo,
-			    codigo: codigo.campo
-	    })
+
+	const createUser = async () => {		
+		await addDoc(userCollectionRef, {
+			usuario: usuario.campo,
+			nombres: nombre.campo, 
+			apellidos: apellido.campo,
+			cargo: cargo.campo,
+			correo: correo.campo,
+			dni: dni.campo,
+			celular: celular.campo,
+			contraseña: contraseña.campo,
+			codigo: codigo.campo
+		})
+		 
     }
 
     // se define la estructura del formulario 
@@ -84,6 +86,7 @@ const AppRegistro = () => {
 			dni.valido === 'true' &&
 			cargo.valido === 'true'
 		){
+			createUser()
 			cambiarFormularioValido(true);
 			cambiarUsuario({campo: '', valido: null});
 			cambiarNombre({campo: '', valido: null});
@@ -109,6 +112,7 @@ const AppRegistro = () => {
 				<Input
 					estado={usuario}
 					cambiarEstado={cambiarUsuario}
+					required="true"
 					tipo="text"
 					label="Usuario"
 					placeholder="Usuario"					
@@ -119,6 +123,7 @@ const AppRegistro = () => {
 				<Input
 					estado={nombre}
 					cambiarEstado={cambiarNombre}
+					required="true"
 					tipo="text"
 					label="Nombre"
 					placeholder="Nombre"
@@ -129,6 +134,7 @@ const AppRegistro = () => {
         		<Input
 					estado={apellido}
 					cambiarEstado={cambiarApellido}
+					required="true"
 					tipo="text"
 					label="Apellido"
 					placeholder="Apellido"
@@ -139,9 +145,10 @@ const AppRegistro = () => {
         		<Input
 					estado={codigo}
 					cambiarEstado={cambiarCodigo}
+					required="true"
 					tipo="text"
 					label="Codigo"
-					placeholder="codigo"
+					placeholder="Codigo"
 					name="codigo"
 					leyendaError="El codigo debe tener la primera letra de su cargo y el número de usuario Ej: M001"
 					expresionRegular={expresiones.codigo}
@@ -149,9 +156,10 @@ const AppRegistro = () => {
 				<Input
 					estado={contraseña}
 					cambiarEstado={cambiarContraseña}
+					required="true"
 					tipo="password"
 					label="Contraseña"
-                    placeholder="**********"
+                    placeholder="•••••••••"
 					name="contraseña1"
 					leyendaError="La contraseña tiene que ser de 4 a 12 dígitos."
 					expresionRegular={expresiones.contraseña}
@@ -159,6 +167,7 @@ const AppRegistro = () => {
 				<Input
 					estado={contraseña2}
 					cambiarEstado={cambiarContraseña2}
+					required="true"
 					tipo="password"
 					label="Repetir Contraseña"
                     placeholder="**********"
@@ -169,9 +178,10 @@ const AppRegistro = () => {
 				<Input
 					estado={correo}
 					cambiarEstado={cambiarCorreo}
+					required="true"
 					tipo="email"
 					label="Correo Electrónico"
-					placeholder="correo"
+					placeholder="Correo"
 					name="correo"
 					leyendaError="El correo solo puede contener letras, numeros, puntos, guiones y guion bajo."
 					expresionRegular={expresiones.correo}
@@ -179,9 +189,10 @@ const AppRegistro = () => {
 				<Input
 					estado={celular}
 					cambiarEstado={cambiarCelular}
+					required="true"
 					tipo="text"
 					label="celular"
-					placeholder="celular"
+					placeholder="Celular"
 					name="celular"
 					leyendaError="El telefono solo puede contener numeros y el maximo son 14 dígitos."
 					expresionRegular={expresiones.celular}
@@ -189,6 +200,7 @@ const AppRegistro = () => {
         		<Input
 					estado={dni}
 					cambiarEstado={cambiarDni}
+					required="true"
 					tipo="text"
 					label="DNI"
 					placeholder="DNI"
@@ -199,9 +211,10 @@ const AppRegistro = () => {
         		<Input
 					estado={cargo}
 					cambiarEstado={cambiarCargo}
+					required="true"
 					tipo="text"
 					label="Cargo"
-					placeholder="cargo"
+					placeholder="Cargo"
 					name="cargo"
 					leyendaError="El cargo solo puede contener letras."
 					expresionRegular={expresiones.cargo}
@@ -217,12 +230,12 @@ const AppRegistro = () => {
         		}
 
 				<ContenedorBotonCentrado>
-					<Boton type="submit" onClick={createUser}>Registrar Personal</Boton>
+					<Boton type="submit" onClick={onSubmit}>Registrar Personal</Boton>
 					{formularioValido === true && 
 						<MensajeExito>
-						<p>
+						
 							<b>¡Formulario enviado exitosamente! ✔️</b>
-						</p>
+						
 						</MensajeExito>
           			}   
 				</ContenedorBotonCentrado>

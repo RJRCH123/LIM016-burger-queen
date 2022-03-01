@@ -1,32 +1,41 @@
 import './pedidosPreparados.scss';
 import Pedido from '../../utils/pedido/pedido'
-import BotonPreparado from '../../utils/botonPreparado/botonPreparado'
-
-const detallePedidos = [ 
-    {id: 1, cliente: "Pablo Bernal", hora: "12:35 PM", mesa:"4", items: [{producto: "hamburguesa", precio: "12.00", cantidad: "1"}, {producto: "Agua", precio: "5.00", cantidad: "1"}]}, 
-    {id: 2, cliente: "Pablo Bernal", hora: "12:35 PM", mesa:"3", items: [{producto: "papas", precio: "10.00", cantidad: "1"}, {producto: "Agua", precio: "5.00", cantidad: "1"}]}, 
-    {id: 1, cliente: "Pablo Bernal", hora: "12:35 PM", mesa:"4", items: [{producto: "hamburguesa", precio: "12.00", cantidad: "1"}, {producto: "Agua", precio: "5.00", cantidad: "1"}]}, 
-    {id: 2, cliente: "Pablo Bernal", hora: "12:35 PM", mesa:"3", items: [{producto: "papas", precio: "10.00", cantidad: "1"}, {producto: "Agua", precio: "5.00", cantidad: "1"}]}, 
-    {id: 1, cliente: "Pablo Bernal", hora: "12:35 PM", mesa:"4", items: [{producto: "hamburguesa", precio: "12.00", cantidad: "1"}, {producto: "Agua", precio: "5.00", cantidad: "1"}]}, 
-    {id: 2, cliente: "Pablo Bernal", hora: "12:35 PM", mesa:"3", items: [{producto: "papas", precio: "10.00", cantidad: "1"}, {producto: "Agua", precio: "5.00", cantidad: "1"}]}, 
-];
-
-const getCardOrder = (detallePedidos) => {
-  return detallePedidos.map(detallePedido => {
-    return <div className='contenedorPedido'> 
-      <Pedido key={detallePedido.id} orden={ detallePedido }/>
-      <BotonPreparado key={detallePedido.id}/>
-    </div>
-  })   
-}
+import { db } from '../../../firebase/firebase-config';
+import { collection, query, where, getDocs, orderBy } from 'firebase/firestore';
+import { useEffect, useState } from 'react';
 
 const PedidosPreparados = () => {
-  const cardList = getCardOrder(detallePedidos);
+
+  const [orders, setOrders] = useState([]);
+
+  const getOrders = async () => {
+		const ordersCollectionRef = query(collection(db, "pedidos"), orderBy("timestamp", "asc"), where("estado", "==", "preparado"));
+		const dataDocs = await getDocs(ordersCollectionRef);
+		const pedidos = dataDocs.docs;	
+    const allOrders = []
+    pedidos.forEach(pedido => {      
+      allOrders.push({...pedido.data(), id:pedido.id});
+    })    
+		setOrders(allOrders);	
+  }
+  
+  useEffect(() => {
+    getOrders()
+  }, []);
+
   return  ( 
     <div className="contenedorPedidos">
       <h2>PEDIDOS PREPARADOS</h2>
       <div className='gridResponsivePP'>
-        { cardList }
+        {orders.map((order, index) => {
+            return (
+              <div className='contenedorPedido' key={index}> 
+                <Pedido key={order.id} orden={ order }/>
+              </div>
+            )          
+          })
+        }
+       
       </div>
     </div>
   )

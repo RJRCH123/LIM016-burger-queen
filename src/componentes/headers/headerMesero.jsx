@@ -1,5 +1,5 @@
 // import useState hook to create menu collapse state
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 // import react pro sidebar components
@@ -13,7 +13,7 @@ import {
 } from "react-pro-sidebar";
 
 // import icons from react icons
-import { FiArrowLeftCircle, FiArrowRightCircle } from "react-icons/fi";
+import { FiList, FiMenu } from "react-icons/fi";
 
 import LogoMesero from '../../img/iconos/mesero.png';
 import BH from '../../img/iconos/botton-home.png';
@@ -25,15 +25,24 @@ import "./headers.scss";
 
 
 const HeaderMesero = () => {
-  
-    // create initial menuCollapse state using useState hook
-    const [menuCollapse, setMenuCollapse] = useState(false)
 
-    // create a custom function that will change menucollapse state from false to true and true to false
+  const [userName, setUserName] = useState("");
+  const [userCargo, setUserCargo] = useState("");
+  
+  // create initial menuCollapse state using useState hook
+  const [menuCollapse, setMenuCollapse] = useState(true)
+
+  // create a custom function that will change menucollapse state from false to true and true to false
   const menuIconClick = () => {
     // condition checking to change state from true to false and vice versa
     menuCollapse ? setMenuCollapse(false) : setMenuCollapse(true);
   };
+
+  useEffect(() => {    
+    const userData = JSON.parse(localStorage.getItem('user'));
+    setUserName(userData.usuario);
+    setUserCargo(userData.cargo)
+  }, [])
 
   return (
     <>
@@ -47,7 +56,7 @@ const HeaderMesero = () => {
             </div>
             <div className="closemenu" onClick={menuIconClick}>
                 {/* changing menu collapse icon on click */}
-              {menuCollapse ? (<FiArrowRightCircle/>) : (<FiArrowLeftCircle/>)}
+              {menuCollapse ? (<FiMenu/>) : (<FiList/>)}
             </div>
           </SidebarHeader>
           <SidebarContent>
@@ -56,8 +65,8 @@ const HeaderMesero = () => {
                 <img className="logoRol" src={LogoMesero} alt= "logoMesero"/>
               </div>
               <div className='dataUser'>
-                <h4>NOMBRE</h4>
-                <p>MESERO</p>
+                <h4>{userName}</h4>
+                <p>{userCargo}</p>
               </div>
               <MenuItem icon={
                 <Link to='/mesero/realizar-pedido'><h1 className="logoNames">RP</h1></Link>}>
@@ -81,7 +90,11 @@ const HeaderMesero = () => {
               </MenuItem>
               <MenuItem icon={
                 <Link to='/'><img src={BS} alt= "BS"/></Link>}>
-                  <Link to='/'>Cerrar Sesión</Link>
+                  <Link 
+                    to='/' 
+                    onClick={()=>{localStorage.clear()}}
+                    >Cerrar Sesión
+                  </Link>
               </MenuItem>
             </Menu>
           </SidebarFooter>

@@ -17,13 +17,8 @@ const Navbar = () => {
         <li className="p__opensans"><a href='/#about'>Información</a></li>
         <li className="p__opensans"><a href='/#menu'>La Carta</a></li>
         <li className="p__opensans"><a href='/#awards'>Reconocimientos</a></li>
-        <li className="p__opensans"><a href='/#contact'>Contáctanos</a></li>
+        <li className="p__opensans"><Link to='/login'>Iniciar Sesión</Link></li>
       </ul>
-      <div className="app__navbar-login">
-        <Link to='/login' className="p__opensans">Login</Link>
-        {/* <div />
-        <Link to='/employe' className="p__opensans">Personal</Link> */}
-      </div>
       <div className="app__navbar-smallscreen">
         <GiHamburgerMenu color="#fff" fontSize={27} onClick={() => setToggleMenu(true)} />
         {toggleMenu && (
@@ -34,8 +29,8 @@ const Navbar = () => {
               <li><a href='/#about' onClick={() => setToggleMenu(false)}>Información</a></li>
               <li><a href='/#menu' onClick={() => setToggleMenu(false)}>La Carta</a></li>
               <li><a href='/#awards' onClick={() => setToggleMenu(false)}>Reconocimientos</a></li>
-              <li><a href='/#contact' onClick={() => setToggleMenu(false)}>Contáctanos</a></li>
-            </ul>
+              <li><Link to='/login' onClick={() => setToggleMenu(false)}>Iniciar Sesión</Link></li>
+            </ul>            
           </div>
         )}
       </div>

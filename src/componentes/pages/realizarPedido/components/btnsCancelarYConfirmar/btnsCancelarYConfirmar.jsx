@@ -4,11 +4,10 @@ import { UserContext } from '../../context/UserContext';
 import './btnsCancelarYConfirmar.scss';
 
 const BtnsCancelarYConfirmar = () => {
-  const {confirmarOrdenesF, limpiarOrden} = useContext(UserContext)
-  
+  const { confirmarOrdenesF, limpiarOrden } = useContext(UserContext)
+
   const modalConfirmarOrden = () => {
     Swal.fire({
-      title: 'Detalle del Pedido',
       text: '¿Está seguro que desea enviar el pedido a cocina?',
       showCancelButton: true,
       confirmButtonColor: '#57a057',
@@ -21,16 +20,25 @@ const BtnsCancelarYConfirmar = () => {
       closeButtonAriaLabel: 'cerrar alerta'
     }).then((result) => {
       if (result.isConfirmed) {
-        confirmarOrdenesF()
-        Swal.fire({
-          title:'¡Pedido Confirmado!',
-          text: 'El pedido fue enviado a cocina con éxito',
-          icon: 'success',
-          showConfirmButton: false,
-          timer: 1500}
-        ); 
-        limpiarOrden() 
-      } 
+        if (confirmarOrdenesF() !== false) {
+          Swal.fire({
+            title: '¡Pedido Confirmado!',
+            text: 'El pedido fue enviado a cocina con éxito',
+            icon: 'success',
+            showConfirmButton: false,
+            timer: 1500
+          });
+          limpiarOrden();
+        } else if (confirmarOrdenesF() === false) {
+          Swal.fire({
+            title: '¡Pedido Sin Confirmar!',
+            text: 'No se pudo completar el pedido por falta de datos',
+            icon: 'error',
+            showConfirmButton: false,
+            timer: 1500
+          });
+        }
+      }
     })
   }
 
@@ -49,12 +57,13 @@ const BtnsCancelarYConfirmar = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         Swal.fire({
-          title:'¡Pedido Cancelado!',
+          title: '¡Pedido Cancelado!',
           text: 'El pedido fue cancelado con éxito',
           icon: 'success',
           showConfirmButton: false,
-          timer: 1500}
-        ); 
+          timer: 1500
+        }
+        );
         limpiarOrden()
       }
     })
@@ -62,8 +71,8 @@ const BtnsCancelarYConfirmar = () => {
 
   return <div>
     <section className="btnsContainer gridResponsiveBtns">
-      <button type="button" onClick={() => modalConfirmarOrden()}  className="confirm__button">Confirmar</button>
-      <button type="button" onClick={() => modalCancelarOrden()}  className="cancel__button">Cancelar</button>
+      <button type="button" onClick={() => modalConfirmarOrden()} className="confirm__button">Confirmar</button>
+      <button type="button" onClick={() => modalCancelarOrden()} className="cancel__button">Cancelar</button>
     </section>
   </div>;
 };

@@ -8,8 +8,8 @@ const Encabezado = () => {
       <div className='descripcion'>
         <img src={Logo} alt= "logo"/>
         <div className='datos'>
-          <p>EMPRESA: Karma Burger</p>
-          <p>RUC: 0212124863342</p>
+          <p>Empresa: Karma Burger</p>
+          <p>RUC: 02121 2486 3342</p>
         </div>
       <div className='fecha'><Fecha/></div>
       </div>

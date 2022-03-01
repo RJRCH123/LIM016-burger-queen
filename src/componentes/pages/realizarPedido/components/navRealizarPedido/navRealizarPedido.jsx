@@ -5,9 +5,9 @@ import './navRealizarPedido.scss';
 
 function  NavRealizarPedido() {
   const { cliente, setCliente } = useContext(UserContext)
-
+  
   let date = new Date();
-  const numerosMesa = [ {mesa: "1"}, {mesa: "2"}, {mesa: "3"}, {mesa: "4"}, {mesa: "5"}, {mesa: "6"}, {mesa: "7"}, {mesa: "8"}, {mesa: "9"} ]
+  const numerosMesa = [ {mesa: "mesa"}, {mesa: "1"}, {mesa: "2"}, {mesa: "3"}, {mesa: "4"}, {mesa: "5"}, {mesa: "6"}, {mesa: "7"}, {mesa: "8"} ]
 
   return ( 
     <div className="navRP">
@@ -21,14 +21,13 @@ function  NavRealizarPedido() {
       </div>
   
       <div className="inputMesa">
-        <label >
+        <label >          
           <p>Mesa:</p>
           <select 
           id="nMesa" 
           name="nMesa" 
           value={cliente.mesa}
           onChange={(e) => setCliente({...cliente, mesa: e.target.value})}>
-            <option value={-1}>mesa</option>
             {numerosMesa.map((item, i) => (
               <option key={"numerosMesa" + i} value={i}> {item.mesa} </option>
               ))}
@@ -43,9 +42,11 @@ function  NavRealizarPedido() {
           id="nombreCliente" 
           name="nombreCliente" 
           type="text"
-          maxlength="20"
+          required={true} 
+          maxLength="25"
           value={cliente.cliente}
-          onChange={(e) => setCliente({...cliente, cliente: e.target.value.replace(/^\d$/g,'')})}/>
+          onChange={(e) => setCliente({...cliente, cliente: e.target.value.replace(/^\d$/g,'')})}
+          />
         </label>
       </div>
     </div>

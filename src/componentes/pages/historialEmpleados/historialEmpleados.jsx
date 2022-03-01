@@ -1,19 +1,18 @@
 import Encabezado from '../../utils/encabezado/encabezado';
-import DescargarPdf from '../../utils/botonDescarga/botonDescarga'
 import EmployeesTable from '../../utils/tablaEmpleados/tablaEmpleados';
 import { db } from '../../../firebase/firebase-config';
 import './historialEmpleados.scss';
-import { collection, getDocs } from 'firebase/firestore';
+import { collection, getDocs, orderBy, query} from 'firebase/firestore';
 import { useState, useEffect } from 'react';
 
 
 const HistorialEmpleados = () => {
-
+  const [isLoading, setIsLoading] = useState(true)
   const [employees, setEmployees] = useState([]);
    
   const getEmployees = async () =>  {
     const allEmployees = [];
-    const employeesRef = collection(db, 'usuarios');
+    const employeesRef = query(collection(db, 'usuarios'), orderBy("cargo"))
     const data = await getDocs(employeesRef);
     data.docs.forEach(doc => {
       const values = doc.data();
@@ -27,19 +26,28 @@ const HistorialEmpleados = () => {
         celular: values.celular
       })
     });
-    setEmployees(allEmployees);
+    return allEmployees;
   }
 
   useEffect(() => {
-    getEmployees();
-  },  []);
+    getEmployees().then((allEmployees) => {
+      setIsLoading(false);
+      setEmployees(allEmployees);
+    })
+  },  [isLoading]);
+
+
+  if(isLoading){
+    return(
+      <div></div>
+    )
+  } 
 
   return  ( 
     <section className='paddingFlex'>
       <h2>HISTORIAL EMPLEADOS</h2>
       <Encabezado/>
-      <EmployeesTable employees={ employees } estado={setEmployees} />
-      <DescargarPdf/>      
+      <EmployeesTable employees={ employees } estado={setEmployees} loading={setIsLoading} />   
     </section>
   )
 } 

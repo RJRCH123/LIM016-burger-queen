@@ -1,11 +1,11 @@
-import React, { useState, useMemo} from "react";
+import React, { useState } from "react";
 import Botones from './botonesCRUD';
 import './tablaEmpleados.scss';
 
 const useSortableData = ((items, config = null) => {
    const [sortConfig, setSortConfig] = useState(config);
 
-    const sortedItems = useMemo(() => {
+    /* const sortedItems = useMemo(() => {
       let sortableItems = [...items];
       if (sortConfig !== null) {
           sortableItems.sort((a, b) => {
@@ -19,7 +19,7 @@ const useSortableData = ((items, config = null) => {
         });
       }
       return sortableItems;
-    }, [items, sortConfig]);
+    }, [items, sortConfig]); */
 
     const requestSort = key => {
       let direction = "descending";       
@@ -64,10 +64,7 @@ const EmployeesTable = props => {
           </th>
           <th>
             <button type="button" onClick={() => requestSort("usuario")} className={getClassNamesFor("usuario")}>USUARIO</button>
-          </th>
-          {/* <th>
-            <button type="button" onClick={() => requestSort("correo")} className={getClassNamesFor("correo")}>Correo</button>
-          </th> */}
+          </th>          
           <th>
             <button type="button" onClick={() => requestSort("celular")} className={getClassNamesFor("celular")}>CELULAR</button>
           </th>
@@ -81,10 +78,9 @@ const EmployeesTable = props => {
             <td>{item.dni}</td>
             <td>{item.cargo}</td>
             <td>{item.name}</td>
-            <td>{item.usuario}</td>
-            {/* <td>{item.correo}</td> */}
+            <td>{item.usuario}</td>            
             <td>{item.celular}</td>
-            <td>{<Botones id={item.id} estado={props.estado}/>}</td>
+            <td>{<Botones id={item.id} estado={props.estado} loading={props.loading}/>}</td>
           </tr>
         ))}
       </tbody>
