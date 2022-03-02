@@ -2,13 +2,13 @@
 
 ## ÍNDICE
 * [1. Karma Burger](#1-Karma-Burger)
-  - [1.1 Descripción del Proyecto](#1.1-Descripción-del-Proyecto)
-  - [1.2 Secciones y Roles](#1.2-Secciones-y-Roles)
-  - [1.3 Vistas según cada sección](#1.3-Vistas-según-cada-sección)
-  - [1.4 Interacción con la página](#1.4-Interacción-con-la-página)
+  - [1.1 Descripción del Proyecto](##1.1-Descripción-del-Proyecto)
+  - [1.2 Secciones y Roles](##1.2-Secciones-y-Roles)
+  - [1.3 Vistas según cada sección](##1.3-Vistas-según-cada-sección)
+  - [1.4 Interacción con la página](##1.4-Interacción-con-la-página)
 * [2. Estudio de Usuario](#2-Estudio-de-Usuario)
-  - [2.1 Descripción general](#2.1-Descripción-general)
-  - [2.2 Flujograma de los estados para el Pedido](#2.2-Flujograma-de-los-estados-para-el-Pedido)
+  - [2.1 Descripción general](##2.1-Descripción-general)
+  - [2.2 Flujograma de los estados para el Pedido](##2.2-Flujograma-de-los-estados-para-el-Pedido)
   - [2.3 Historia de Usuario](#2.3-Historia-de-Usuario)
 * [3. Realización del Diseño](#3-Realizacion-del-Diseño)
   - [3.1 Diseño ](#3.1-Diseño)
@@ -34,60 +34,80 @@
 
 ## 1.1  Descripción del Proyecto
 
-🍔 🍟 **Karma Burger**  es una hamburguesería cuya temática es vender solo 🍔🍔🍔 mini hamburguesas. 
+🍔 🍟 **Karma Burger**  es una hamburguesería cuyo diferenciador es ofrecer platillos de mini hamburguesas. 🍔🍔🍔
 
-Esta página web está enfocada para los empleados con los siguientes roles: Administrador, 🤵 Mesero y 👩‍🍳Jefe de Cocina. Brindará información general de la empresa y, en especial, habrá secciones para cada rol; donde, a través de un usuario y contraseña podrá acceder al flujo de actividades correspondientes hacia los pedidos.
+Es una plataforma de gestión de pedidos, enfocada para los empleados con los siguientes roles: Administrador, 🤵 Mesero y 👩‍🍳Jefe de Cocina; con la finalidad de brindarles una herramienta que facilite sus actividades.
 
-## 1.2 Secciones y Roles
+Constará con una vista inicial que ofrece información general de la empresa; y desde la cual se puede acceder a la sección de 'login', donde podrá visualizar el flujo de actividades correspondientes al rol.
+
+## 1.2 Descripción de Roles
 
 <div align="center">
 
-| SECCIONES | ROLES | DESCRIPCIÓN | 
-|--|--|--|
-| Sección 1 | 🤵 Administrador | Personal encargado en el flujo de actividades con los empleados | 
-| Sección 2 | 🤵 Mesero | Personal encargado en la atención directa con los comensales| 
-| Sección 3 | 👩‍🍳 Jefe de Cocina | Personal encargado en la realización gastronómica de los platillos descritos en el menú |
+| ROLES | DESCRIPCIÓN | 
+|--|--|
+| 🤵 Administrador | Personal encargado en el flujo de actividades con los empleados | 
+| 🤵 Mesero | Personal encargado en la atención directa con los comensales| 
+| 👩‍🍳 Jefe de Cocina | Personal encargado en la realización gastronómica de los platillos descritos en el menú |
 
 </div>
 
 
 
-## 1.3  Vistas según cada sección
+## 1.3  Contenido según la vista y el rol
+
+## Vistas compartidas
 
 <div align="center">
 
-## 📌 Sección 1: 🤵 Administrador 
+| VISTA | SUB VISTAS | 
+|--|--|
+| Página Bienvenida | - Sobre Nosotros  - Informción - La Carta - Reconocimientos - Contáctanos |
+| Inicio de Sesión | -Formulario 'Login' - Recuperación de Contraseña|
 
-| N° VISTA | NOMBRE | SUB VISTAS | 
+</div>
+
+<div align="center">
+
+## 🤵 Administrador 
+
+| N° | SUB VISTAS | DESCRIPCIÓN |
 |--|--|--|
-| 1 | Página Bienvenida | - Sobre Nosotros  - Informción - La Carta - Reconocimientos - Contáctanos |
-| 2 | Inicio de Sesión | -Formulario - Recuperación de Contraseña|
-| 3 | Página principal de actividades| - Página de Inicio - Registrar Personal - Historial de Ventas - Pedidos Preparados - Pedidos Para Entregar |
+| 1 | Página Inicio | Contiene mensaje motivacional para el personal |
+| 2 | Registrar Personal | Formulario de registro para nuevos usuarios |
+| 3 | Historial de Ventas | Contiene datos básicos de la empresa y una tabla descargable en formato excel que contiene un resumen de los pedidos terminados |
+| 4 | Pedidos Preparados | Muestra los pedidos concluidos por el cocinero pero que no han sido entregados al comensal |
+| 5 | Pedidos Para Entregar | Muestra los pedidos listos para entregar al comensal |
+| 6 | Pedidos Cancelados | Muestra los pedidos cancelados por el cocinero |
+
 
 </div>
 
 
 <div align="center">
 
-## 📌 Sección 2: 🤵 Mesero 
+## 🤵 Mesero 
 
-| N° VISTA | NOMBRE | SUB VISTAS | 
+| N° | SUB VISTAS | DESCRIPCIÓN |
 |--|--|--|
-| 1 | Página Bienvenida | - Sobre Nosotros  - Informción - La Carta - Reconocimientos - Contáctanos |
-| 2 | Inicio de Sesión | -Formulario |
-| 3 | Página principal de actividades| - Página de Inicio - Realizar Pedido - Pedidos por Entregar - Historial de Pedidos |
+| 1 | Página Inicio | Contiene mensaje motivacional para el personal |
+| 2 | Realizar Pedido | |
+| 3 | Pedidos por Entregar | Muestra los pedidos concluidos por el cocinero pero que no han sido entregados al comensal |
+| 4 | Historial de Pedidos | Contiene datos básicos de la empresa y una tabla descargable en formato excel que contiene un resumen de los pedidos terminados |
+
 
 </div>
 
 <div align="center">
 
-## 📌 Sección 3: 👩‍🍳 Jefe de Cocina 
+## 👩‍🍳 Jefe de Cocina 
 
-| N° VISTA | NOMBRE | SUB VISTAS | 
+| N° | SUB VISTAS | DESCRIPCIÓN |
 |--|--|--|
-| 1 | Página Bienvenida | - Sobre Nosotros  - Informción - La Carta - Reconocimientos - Contáctanos |
-| 2 | Inicio de Sesión | -Formulario |
-| 3 | Página principal de actividades| - Página de Inicio - Nuevos Pedidos - Pedidos Preparados - Historial de Pedidos |
+| 1 | Página Inicio | Contiene mensaje motivacional para el personal |
+| 2 | Nuevos Pedidos | |
+| 3 | Pedidos Preparados | Muestra los pedidos concluidos por el cocinero pero que no han sido entregados al comensal |
+| 4 | Historial de Pedidos | Contiene datos básicos de la empresa y una tabla descargable en formato excel que contiene un resumen de los pedidos terminados |
 
 </div>
 
