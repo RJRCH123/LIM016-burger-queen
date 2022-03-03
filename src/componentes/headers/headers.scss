@@ -1,0 +1,108 @@
+:root {
+    --color-mostazaClaro: #C59826;
+    --color-mostazaOscuro: #BA973C;
+    --color-mostazaMasOscuro: #695625;
+  }  
+
+#header {
+    position: absolute;
+    /* width: 220px; */
+  }
+  #header .pro-sidebar {
+    height: 100vh;
+  }
+  #header .closemenu {
+    /* color: rgb(216, 216, 216); */
+    right: 0;
+    font-size: 22px;
+    cursor: pointer;
+    text-align: center;
+  }
+  #header .pro-sidebar {
+    width: 100%;
+    min-width: 100%;
+  }
+  #header .pro-sidebar.collapsed {
+    width: 80px;
+    min-width: 80px;
+  }
+  #header .pro-sidebar-inner {
+    background-color: hsl(0deg 0% 0%);
+    box-shadow: 2px 2px 10px 0px rgb(0 0 0 / 32%);
+  }
+  #header .pro-sidebar-inner .pro-sidebar-layout {
+    overflow-y: hidden;
+  }
+  #header .pro-sidebar-inner .pro-sidebar-layout .logotext p {
+    font-size: 20px;
+    /* padding: 0 20px; */
+    color: #000;
+    font-weight: bold;
+  }
+  #header .pro-sidebar-inner .pro-sidebar-layout ul {
+    padding-right: 5px;
+    margin-left: 5px;
+  }
+  #header .pro-sidebar-inner .pro-sidebar-layout ul .pro-inner-item {
+    color: #b9953c;
+   /*  margin: 17px 0px; */
+    font-weight: bold;
+  }
+
+  .dataUser {
+    color: #b9953c;
+    text-transform: capitalize;
+  }
+
+  #header .pro-sidebar-inner .pro-sidebar-layout ul .pro-inner-item:hover {
+  /*   margin: 17px 0px; */
+    border: 1px solid #b9953c;
+    cursor: pointer;
+  }
+
+  #header .pro-sidebar-inner .pro-sidebar-layout ul .pro-inner-item .pro-icon-wrapper {
+    background-color: hsl(0deg 0% 0%);
+    border-radius: 3px;
+  }
+  #header .pro-sidebar-inner .pro-sidebar-layout ul .pro-inner-item .pro-icon-wrapper .pro-item-content {
+    color: #000;
+  }
+
+  #header .logo {
+    padding: 20px;
+  }
+
+  .logoRol {
+    width: 40%;
+    margin-top: 20px;
+  }
+
+  .logoNames {
+    font-size: x-large;
+    font-weight: lighter;
+    /* color: hsl(0deg 0% 100%); */
+  }
+
+  .pro-sidebar .pro-menu a {
+    text-decoration: none;
+    color: #d1d1d1;
+    /* white-space: break-spaces; */
+    font-weight: 400;
+    /* color: hsl(0deg 0% 100%) */
+  }
+
+  .pro-sidebar .pro-menu a:hover {
+    color: #b9953c;;
+  }
+
+  .pro-sidebar .pro-menu .pro-menu-item > .pro-inner-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 8px 35px 8px 20px;
+    cursor: pointer;
+  }
+  
+  .pro-sidebar > .pro-sidebar-inner > .pro-sidebar-layout .pro-sidebar-header {
+    border-bottom: 0px solid rgba(173, 173, 173, 0.2);
+  }

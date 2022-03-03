@@ -1,0 +1,45 @@
+.datosEmpresa{
+  margin-bottom: 20px;
+}
+.descripcion{
+  display: flex;
+  width: 100%;
+  height: auto;
+  font-size: 12px;
+  font-weight: bold;
+  justify-content: space-around;
+  align-items: center;
+}
+.datos{
+  width: 60%;
+  height: auto;
+  margin: 0 1rem;
+  text-align: left;
+}
+.fecha{
+  justify-self: end;
+/*   width: 80%; */
+}
+
+
+@media screen and (max-width: 570px)  {
+  .descripcion {
+    display: flex;
+    width: 100%;
+    height: auto;
+    font-size: 12px;
+    font-weight: bold;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+.datos{
+  width: 60%;
+  height: auto;
+  margin: 0 1rem;
+  text-align: left;
+}
+.fecha{
+  justify-self: end;
+/*   width: 80%; */
+}
+}
