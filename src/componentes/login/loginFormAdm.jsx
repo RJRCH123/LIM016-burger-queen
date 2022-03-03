@@ -34,7 +34,8 @@ function FormAdmin() {
 					navigate("/cocinero/")			
 				}
 			}		
-		}).catch(() => {
+		}).catch((e) => {
+			console.log(e);
 			Swal.fire({
 				title: 'Usuario Inválido',
 				text: 'Por favor, revise que su usuario y/o contraseña se encuentren correctamente escritos.',
@@ -60,9 +61,10 @@ function FormAdmin() {
 	}
 
 	const getUsers = async (userName, userPassword) => {
+		console.log('veamos si entro en getUsers');
 		const userCollectionRef = query(collection(db, "usuarios"), where("usuario", "==", userName), where("contraseña", "==", userPassword));
 		const dataDocs = await getDocs(userCollectionRef);
-		const user = dataDocs.docs[0].data();	
+		const user = dataDocs.docs[0].data();		
 		return user		
   	}
 

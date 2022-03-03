@@ -8,13 +8,8 @@ const dateParser = (date) => {
 }
 
 const Pedido = ({orden}) =>{
-  // eslint-disable-next-line
-  /* const [userCodigo, setUserCodigo] = useState("");
-
-  useEffect(() => {    
-    const userData = JSON.parse(localStorage.getItem('user'));
-    setUserCodigo(userData.codigo);    
-  }, []) */
+  console.log(orden);
+  // eslint-disable-next-line 
          
   return (
     <div className="boxPedido" id={orden.id}>
@@ -29,11 +24,7 @@ const Pedido = ({orden}) =>{
               <h5>Entrada:</h5>
               <p>{dateParser(orden.timestamp.toDate())}</p>
             </div>
-          </div>
-          {/* <div className='dato2'>
-            <h5>Mesero:</h5>
-            <p>{userCodigo.toUpperCase()}</p>
-          </div> */}
+          </div>        
           <div className='dato2'>
             <h5>N° Mesa:</h5>
             <p>{orden.mesa}</p>
