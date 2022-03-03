@@ -1,5 +1,3 @@
-import './fecha.scss';
-
 const Fecha = () => {
   let mydate=new Date()
   let dateTime=mydate.toLocaleTimeString()
