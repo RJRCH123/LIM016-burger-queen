@@ -69,6 +69,7 @@ const ProductsTable = props => {
         </tr>               
       </thead>
       <tbody>
+        {console.log(items)}
         {items.map((item, index) => (
           <tr key={item.id}>
             <td>{index+1}</td>

@@ -8,7 +8,7 @@ const ProductoPorPedir = () => {
 
   const { productData, agregarPedido } = useContext(UserContext)
 
-  return <section className='gridResponsivePPM'> 
+  return <section className='gridResponsivePPM' data-testid="test-section-producto"> 
     {productData.map((item, index) => {
       return (
         <div className="DataPorProductoMenu" key={index}>
