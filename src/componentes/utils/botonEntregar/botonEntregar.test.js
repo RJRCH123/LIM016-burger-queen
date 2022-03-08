@@ -1,20 +1,14 @@
-import { cleanup, fireEvent, render, screen } from "@testing-library/react";
-import { BotonEntregar } from "./botonEntregar"
+import '@testing-library/jest-dom/extend-expect';
+import { render, screen } from '@testing-library/react';
+import BtnEntregar from './botonEntregar';
 
-
-describe('se debe renderizar el boton entregar', () => {
-    beforeAll((done) => {
-        document.body.innerHTML = '';
-        done();
-      });
-    afterEach(cleanup);  
-
-    
-    it('se espera que el boton Entregado este en la vista', () => {
-        render(<BotonEntregar />)
-        expect(screen.getByText('Entregado')).toBeInTheDocument()
-        fireEvent.click();
+describe('prueba en <BtnEntregar/>', () => {
+    it ('evalua si es una función', () => {
+      expect( typeof BtnEntregar).toBe('function')
     })
-   
-})
+    it('Deberiamos renderizar componente BtnEntregar' , () => {
+        const {container}=render(<BtnEntregar/>)
+        expect(container).toBeInTheDocument();
+    })    
+})   
 

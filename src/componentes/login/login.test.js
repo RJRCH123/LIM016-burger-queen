@@ -35,7 +35,8 @@ describe('prueba en <Login/>', () => {
       expect( typeof Login ).toBe('function')
     })
     it('Deberiamos renderizar el componente Login' , () => {
-        const {container}=render(<Login form={<Form/>}/>)
+        //const {container}=render(<Login form={<Form/>}/>)
+        const {container}=render(<Login/>)
         expect(container).toBeInTheDocument();
     })
     it('Deberian aparecer un elemento con la etiqueta img',() => {
