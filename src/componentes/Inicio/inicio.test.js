@@ -32,4 +32,5 @@ describe('prueba en <Inicio/>', () => {
         const imgLogoGif =  screen.queryByRole('img', {alt: /gif/i});
         expect(imgLogoGif).toBeInTheDocument();        
     })  */   
+    
 })

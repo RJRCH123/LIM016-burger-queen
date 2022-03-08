@@ -3,6 +3,7 @@ import { render, screen } from '@testing-library/react';
 import ProductoPorPedir from './productoPorPedir';
 
 describe('prueba en <ProductoPorPedir/>', () => {
+  
   it ('evalua si es una función', () => {
     expect( typeof ProductoPorPedir).toBe('function')
   }) 

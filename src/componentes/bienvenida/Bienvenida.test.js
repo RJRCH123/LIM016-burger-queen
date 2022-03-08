@@ -5,11 +5,11 @@ import Bienvenida from './Bienvenida';
 
 describe('prueba en <Bienvenid/>', () => {
 
-    it ('evalua si es una función', () => {
-      expect( typeof Bienvenida ).toBe('function')
-    })
-    it('renders RegistrarPersonal', () => {
-        render(<Bienvenida />)
-        expect(Bienvenida).toBeInTheDocument()
-    })      
+  it ('evalua si es una función', () => {
+    expect( typeof Bienvenida ).toBe('function')
+  })
+  it('renders RegistrarPersonal', () => {
+    render(<Bienvenida />)
+    expect(Bienvenida).toBeInTheDocument()
+  })      
 })

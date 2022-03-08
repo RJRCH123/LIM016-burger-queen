@@ -2,7 +2,9 @@ import '@testing-library/jest-dom/extend-expect';
 //import { render, screen } from '@testing-library/react';
 import BtnPreparado from './botonPreparado';
 
+
 describe('prueba en <BtnPreparado/>', () => {
+
     it ('evalua si es una función', () => {
       expect( typeof BtnPreparado).toBe('function')
     })
@@ -26,20 +28,3 @@ describe('prueba en <BtnPreparado/>', () => {
     }) */
 })   
 
-/* describe('se debe renderizar el boton entregar', () => {
-    beforeAll((done) => {
-        document.body.innerHTML = '';
-        done();
-      });
-    afterEach(cleanup);   
-
-    
-     
-    it('se espera que el boton Preparado este en la vista', () => {
-        render(<BotonPreparado/>)
-        expect(screen.getByText('Preparado')).toBeInTheDocument()
-        fireEvent.click();
-    })
-   
-})
- */

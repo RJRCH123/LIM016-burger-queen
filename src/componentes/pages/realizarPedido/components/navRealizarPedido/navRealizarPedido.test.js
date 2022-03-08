@@ -10,5 +10,6 @@ describe('prueba en <NavRealizarPedido/>', () => {
   it('renders NavRealizarPedido', () => {
     render(<NavRealizarPedido />)
     expect(screen.getAllByAltText('reloj')).toBeInTheDocument()
-  })   
+  })  
+   
 })

@@ -5,7 +5,7 @@ import Botones from './botonesCRUD';
 
 describe('prueba en <Botones/>', () => {
 
-    it ('evalua si es una función', () => {
-      expect( typeof Botones ).toBe('function')
-    })    
+  it ('evalua si es una función', () => {
+    expect( typeof Botones ).toBe('function')
+  })    
 })

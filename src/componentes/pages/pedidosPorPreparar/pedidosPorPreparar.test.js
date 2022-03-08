@@ -11,5 +11,6 @@ describe('prueba en <PedidosPorPreparar/>', () => {
   it('renders PedidosPorPreparar', () => {
     render(<PedidosPorPreparar />)
     expect(screen.getAllByText(/PEDIDOS POR PREPARAR/i)).toBeInTheDocument()
-  })      
+  }) 
+       
 })

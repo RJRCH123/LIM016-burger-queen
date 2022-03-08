@@ -7,6 +7,7 @@ import Inicio from '../../Inicio/inicio';
 
 
 describe('prueba en <VistaMesero/>', () => {
+    
     it ('evalua si es una función', () => {
       expect( typeof VistaMesero ).toBe('function')
     })

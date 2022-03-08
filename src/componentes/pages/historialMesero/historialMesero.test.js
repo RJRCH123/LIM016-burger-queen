@@ -5,11 +5,11 @@ import HistorialMesero from './historialMesero';
 
 describe('prueba en <HistorialMesero/>', () => {
 
-    it ('evalua si es una función', () => {
-      expect( typeof HistorialMesero ).toBe('function')
-    })
-    it('renders HistorialMesero', () => {
-        render(<HistorialMesero />)
-        expect(screen.getByText(/HISTORIAL PEDIDOS/i)).toBeInTheDocument()
-    })      
+  it ('evalua si es una función', () => {
+    expect( typeof HistorialMesero ).toBe('function')
+  })
+  it('renders HistorialMesero', () => {
+    render(<HistorialMesero />)
+    expect(screen.getByText(/HISTORIAL PEDIDOS/i)).toBeInTheDocument()
+  })      
 })

@@ -4,6 +4,7 @@ import '@testing-library/jest-dom';
 import BtnCancelarYConfirmar from './btnsCancelarYConfirmar';
 
 describe('prueba en <BtnCancelarYConfirmar/>', () => {
+  
   it ('evalua si es una función', () => {
     expect( typeof BtnCancelarYConfirmar).toBe('function')
   })  

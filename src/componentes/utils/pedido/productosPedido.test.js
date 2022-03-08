@@ -40,5 +40,6 @@ describe('prueba en <ProductosPedido/>', () => {
         render(<ProductosPedido orden={orden}/>);
         const imgLogo =  screen.queryByRole('button', {name: /Precio/i});
         expect(imgLogo).toBeInTheDocument();        
-    })       
+    })     
+      
 })

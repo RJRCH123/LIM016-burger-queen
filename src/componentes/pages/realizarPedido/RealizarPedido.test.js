@@ -4,6 +4,7 @@ import { render, screen } from '@testing-library/react';
 import RealizarPedido from './RealizarPedido';
 
 describe('prueba en <RealizarPedido/>', () => {
+  
   it ('evalua si es una función', () => {
     expect( typeof RealizarPedido).toBe('function')
   })  

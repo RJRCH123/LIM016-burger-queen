@@ -7,6 +7,7 @@ import Inicio from '../../Inicio/inicio';
 
 
 describe('prueba en <VistaAdmin/>', () => {
+    
     it ('evalua si es una función', () => {
       expect( typeof VistaAdmin ).toBe('function')
     })

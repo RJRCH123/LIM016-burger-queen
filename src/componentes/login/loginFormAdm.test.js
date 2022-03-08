@@ -19,5 +19,6 @@ describe('prueba en <LoginFormAdm/>', () => {
   it('renders text in the inputs Contraseña', () => {
     render(<LoginFormAdm />)
     expect(screen.getAllByPlaceholderText('Contraseña')).toBeInTheDocument()
-  })     
+  })   
+    
 })

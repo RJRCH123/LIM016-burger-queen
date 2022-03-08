@@ -5,11 +5,11 @@ import Registro from './AppRegistro';
 
 describe('prueba en <Registro/>', () => {
 
-    it ('evalua si es una función', () => {
-      expect( typeof Registro ).toBe('function')
-    })
-    it('renders Registro', () => {
-        render(<Registro />)
-        expect(screen.getByText(/FORMULARIO DE REGISTRO/i)).toBeInTheDocument()
-    })      
+  it ('evalua si es una función', () => {
+    expect( typeof Registro ).toBe('function')
+  })
+  it('renders Registro', () => {
+    render(<Registro />)
+    expect(screen.getByText(/FORMULARIO DE REGISTRO/i)).toBeInTheDocument()
+  })      
 })

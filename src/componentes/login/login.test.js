@@ -42,6 +42,5 @@ describe('prueba en <Login/>', () => {
     it('Deberian aparecer un elemento con la etiqueta img',() => {
         const imgLogo =  screen.queryByRole('img', {alt: /logo/i});
         expect(imgLogo).toBeInTheDocument();        
-    })
-          
+    })   
 })

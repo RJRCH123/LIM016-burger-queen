@@ -2,7 +2,6 @@ import '@testing-library/jest-dom/extend-expect';
 import { render, screen } from '@testing-library/react';
 import Navbar from './navBar';
 
-
 describe('prueba en <Navbar/>', () => {
     it ('evalua si es una función', () => {
       expect( typeof Navbar ).toBe('function')
@@ -15,5 +14,6 @@ describe('prueba en <Navbar/>', () => {
         render(<Navbar/>);
         const imgLogo =  screen.queryByRole('img', {alt: /logo/i});
         expect(imgLogo).toBeInTheDocument();        
-    })       
+    })    
+       
 })

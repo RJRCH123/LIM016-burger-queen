@@ -25,4 +25,5 @@ describe('prueba en <BotonDescargar/>', () => {
         const boton1 =  screen.queryByRole('button', {text:'Preparado'});
         expect(boton1).toBeInTheDocument();        
     }) */
+    
 })   

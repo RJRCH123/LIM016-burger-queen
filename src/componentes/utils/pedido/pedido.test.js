@@ -21,7 +21,6 @@ describe('prueba en <Pedido/>', () => {
         }
     }
     
-
     it ('evalua si es una función', () => {
       expect( typeof Pedido ).toBe('function')
     })

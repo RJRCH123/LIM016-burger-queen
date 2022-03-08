@@ -7,6 +7,7 @@ import Inicio from '../../Inicio/inicio';
 
 
 describe('prueba en <VistaCocinero/>', () => {
+    
     it ('evalua si es una función', () => {
       expect( typeof VistaCocinero ).toBe('function')
     })

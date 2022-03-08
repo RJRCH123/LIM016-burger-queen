@@ -1,8 +1,6 @@
 import '@testing-library/jest-dom/extend-expect';
 import { render, screen } from '@testing-library/react';
 import Encabezado from './encabezado';
-//import Fecha from '../../utils/fecha/fecha'
-
 
 describe('prueba en <Encabezado/>', () => {
     it ('evalua si es una función', () => {
@@ -22,9 +20,4 @@ describe('prueba en <Encabezado/>', () => {
         const textContent =  screen.getByText(/RUC: 02121 2486 3342/i);
         expect(textContent).toBeInTheDocument();        
     })
-    /* it('Deberian aparecer la fecha',() => {
-        render(<Encabezado/>)
-        const {fecha} = render(<Fecha/>)        
-        expect(fecha).toBeInTheDocument();        
-    })  */  
 })

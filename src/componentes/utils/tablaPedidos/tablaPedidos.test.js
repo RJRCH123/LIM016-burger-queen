@@ -16,5 +16,6 @@ describe('prueba en <TablaDePedidos/>', () => {
   it('renders appropriately TablaDePedidos', () => {
     render(<TablaDePedidos props={items}/>)
     expect(screen.getAllByRole('table', {id:'historial-Ventas-Karma'})).toBeInTheDocument()
-  })   
+  })  
+   
 })
