@@ -25,21 +25,23 @@ const Footer = () => (
       </div>
 
       <div className="app__footer-links_work">
+
         <h1 className="app__footer-headtext">Creadoras del Proyecto</h1>
+        
         <p className="p__opensans">Marielena Aizaga</p>
+        
         <div className="app__footer-links_icons">
-          <a type="button" target="_blank" rel="noreferrer" href="https://github.com/PandArtist93"> <FiGithub /> </a>
-          <a type="button" target="blank" rel="noreferrer" href="mailto:maizaga01@gmail.com"> <FiMessageSquare /> </a>
-          <a type="button" target="blank" rel="noreferrer" href="https://www.linkedin.com/in/rosamaria-rodriguez-6904a1191/"> <FiLinkedin /> </a>
+          <a type="button" href="https://github.com/PandArtist93" target="_blank" rel="noreferrer" > . <FiGithub /> </a>
+          <a type="button" href="mailto:maizaga01@gmail.com" target="_blank" rel="noreferrer" > . <FiMessageSquare /> </a>
+          <a type="button" href="https://www.linkedin.com/in/rosamaria-rodriguez-6904a1191/" target="_blank" rel="noreferrer"> . <FiLinkedin /> </a>
         </div>
+
         <p className="p__opensans">Rosamaria Rodriguez</p>
+
         <div className="app__footer-links_icons">
-        <a type="button" target="_blank" rel="noreferrer" href="https://github.com/RJRCH123"> <FiGithub /> </a>
-        <a type="button" target="blank" rel="noreferrer" href="mailto:rous9716@gmail.com"> <FiMessageSquare /> </a>
-        <a type="button" target="blank" rel="noreferrer" href="https://www.linkedin.com/in/rosamaria-rodriguez-6904a1191/"> <FiLinkedin /> </a>
-          
-          
-          
+          <a type="button" href="https://github.com/RJRCH123" target="_blank" rel="noreferrer">  . <FiGithub /> </a>
+          <a type="button" href="mailto:rous9716@gmail.com" target="_blank" rel="noreferrer">  . <FiMessageSquare /> </a>
+          <a type="button" href="https://www.linkedin.com/in/rosamaria-rodriguez-6904a1191/" target="_blank" rel="noreferrer">  . <FiLinkedin /> </a>    
         </div>
       </div>
     </div>

@@ -6,7 +6,7 @@ import complementos from "../assets/complementos.png" ;
 import hamburguesas from "../assets/hamburguesas.png" ;
 import informacion from "../assets/i.png" ;
 import eliminar from "../assets/eliminar.png" ;
-
+// eslint-disable-next-line
 export default {
   reloj,
   calendario,
