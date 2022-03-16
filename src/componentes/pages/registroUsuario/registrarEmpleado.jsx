@@ -6,7 +6,7 @@ import AppRegistro from './AppRegistro';
 
 const RegistroEmpleado = () => {   
   return  ( 
-    <div>
+    <div className="containerRegistro">
       <AppRegistro/>
     </div>
   )

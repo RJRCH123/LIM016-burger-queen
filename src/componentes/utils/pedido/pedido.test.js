@@ -5,34 +5,22 @@ import Pedido from './pedido';
 
 describe('prueba en <Pedido/>', () => {
 
-    const orden = [{
-        cliente: "Olivia Rodrigo", 
-        estado: "preparado", 
-        id: "aaupdkoSvx5EIOCX7G1e", 
-        mesa: "5",
-        orden: [{
-            id: 'producto02', 
-            count: 1, 
-            name: 'extra karma', 
-            codigoProducto: 'H002', 
-            precio: 14.9
-            }, 
-            {count: 2, 
-            precio: 18.9, 
-            codigoProducto: 'H007', 
-            id: 'producto07', 
-            name: 'la inocente'
-            }, 
-            {precio: 6.9, 
-            id: 'producto11', 
-            name: 'aros de cebolla', 
-            codigoProducto: 'C003', 
-            count: 3
-        }],
-        timestamp: '23/2/2022 13:45:13',
-        total: "96.10"     
-    }]
-
+    const orden = {
+        orden:{
+            cliente: "Olivia Rodrigo", 
+            estado: "preparado", 
+            id: "aaupdkoSvx5EIOCX7G1e", 
+            mesa: "5",
+            orden: [
+                {precio: 14.9, id: 'producto02', name: 'extra karma', codigoProducto: 'H002', count: 1}, 
+                {precio: 18.9, id: 'producto07', name: 'la inocente', codigoProducto: 'H007', count: 2}, 
+                {precio: 6.9, id: 'producto11', name: 'aros de cebolla', codigoProducto: 'C003', count: 3}
+            ],
+            timestamp: '23/2/2022 13:45:13',
+            total: "96.10"     
+        }
+    }
+    
     it ('evalua si es una función', () => {
       expect( typeof Pedido ).toBe('function')
     })
@@ -41,8 +29,8 @@ describe('prueba en <Pedido/>', () => {
         expect(container).toBeInTheDocument();
     })
     it('Deberian aparecer el nombre del cliente en el pedido',() => {
-        render(<Pedido orden={orden}/>);
+        const {container}=render(<Pedido orden={orden}/>)
         const textContent =  screen.getByText(orden.cliente);
-        expect(textContent).toBeInTheDocument();        
+        expect(textContent).toBeInTheDocument(container);        
     })
 })

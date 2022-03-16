@@ -13,29 +13,29 @@ function FormAdmin() {
 
 	const loginUser = (e) => {
 		e.preventDefault();
-		console.log('usuario: ' + userName)
-		console.log('clave: ' + userPassword)   
+		//console.log('usuario: ' + userName)
+		//console.log('clave: ' + userPassword)   
 
 		//mensajes de alerta y validación de la Auth del rol
 		getUsers(userName, userPassword).then((user) => {
 			storeUserData(user);
 			if (user.cargo){
-				console.log(user.cargo)
+				//console.log(user.cargo)
 				if(user.cargo === "admin" ){
-					console.log("entro en admin!");
+					//console.log("entro en admin!");
 					navigate("/admin/")
 				}
 				else if(user.cargo === "mesero" ){
-					console.log("entro en mesero!");
+					//console.log("entro en mesero!");
 					navigate("/mesero/")
 				}
 				else if(user.cargo === "cocinero" ){
-					console.log("entro en cocinero!");
+					//console.log("entro en cocinero!");
 					navigate("/cocinero/")			
 				}
 			}		
 		}).catch((e) => {
-			console.log(e);
+			//console.log(e);
 			Swal.fire({
 				title: 'Usuario Inválido',
 				text: 'Por favor, revise que su usuario y/o contraseña se encuentren correctamente escritos.',
@@ -57,11 +57,11 @@ function FormAdmin() {
 			usuario: user.usuario
 		}
 		localStorage.setItem('user', JSON.stringify(userData));
-		console.log('entro en localStorage');
+		//console.log('entro en localStorage');
 	}
 
 	const getUsers = async (userName, userPassword) => {
-		console.log('veamos si entro en getUsers');
+		//console.log('veamos si entro en getUsers');
 		const userCollectionRef = query(collection(db, "usuarios"), where("usuario", "==", userName), where("contraseña", "==", userPassword));
 		const dataDocs = await getDocs(userCollectionRef);
 		const user = dataDocs.docs[0].data();		
@@ -90,9 +90,9 @@ function FormAdmin() {
 			showLoaderOnConfirm: true,  
 		}).then((result) => {			
 			getRol(result.value).then((user) => {
-				console.log('el usuario es:',user.usuario);
+				//console.log('el usuario es:',user.usuario);
 				if(user.cargo === "admin" && result.isConfirmed){
-					console.log('Tiene cargo de admin');
+					//console.log('Tiene cargo de admin');
 					Swal.fire({
 						title:`¡Correo enviado a ${result.value}!`,
 						text: 'Por favor, revise su bandeja de entrada',
@@ -103,7 +103,7 @@ function FormAdmin() {
 					//aqui va el método de firebase para enviar correo solicitando cambio de contraseña
 				}
 				else if(user.cargo === "mesero" || user.cargo === "cocinero"){
-					console.log('Tiene cargo de mesero o cocinero!');
+					//console.log('Tiene cargo de mesero o cocinero!');
 					Swal.fire({
 						title: 'Opción Incorrecta',
 						text: 'Solo el administrador tiene la opción de recuperar una cuenta. Por favor, acercarse al administrador para poder recuperar su cuenta.',
@@ -123,7 +123,7 @@ function FormAdmin() {
 					})
 				}						
 			}).catch(() => {
-				console.log('Datos de ingreso inválidos');
+				//console.log('Datos de ingreso inválidos');
 				Swal.fire({
 					title: 'Usuario Inválido',
 					text: `Por favor, revise que el email ingresado ${result.value} corresponda a un usuario existente.`,

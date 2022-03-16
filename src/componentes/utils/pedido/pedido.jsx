@@ -8,7 +8,7 @@ const dateParser = (date) => {
 }
 
 const Pedido = ({orden}) =>{
-  console.log(orden);
+  console.log({orden});
   // eslint-disable-next-line 
          
   return (

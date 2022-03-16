@@ -5,6 +5,7 @@ import { doc, updateDoc} from 'firebase/firestore';
 import './botonPreparar.scss';
 
 const BotonPreparar = (props) => {
+  console.log(props);
 
   // método que elimina el pedido de la colección
   const eliminarPedido = async (id) => { 
@@ -46,7 +47,6 @@ const BotonPreparar = (props) => {
   }
 	
   const listOptions = [
-    /* { text: "Preparando", className: "btnPreparando" }, */
     { text: "Preparado", className: "btnPreparado", operacion: actualizarEstado},
     { text: "Cancelar", className: "btnCancelar", operacion: ModalCancelar }
   ];

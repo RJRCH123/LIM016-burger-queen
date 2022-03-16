@@ -43,4 +43,16 @@ describe('prueba en <Login/>', () => {
     expect(imgLogo).toBeInTheDocument();
   })
 
+    it ('evalua si es una función', () => {
+      expect( typeof Login ).toBe('function')
+    })
+    it('Deberiamos renderizar el componente Login' , () => {
+        //const {container}=render(<Login form={<Form/>}/>)
+        const {container}=render(<Login/>)
+        expect(container).toBeInTheDocument();
+    })
+    it('Deberian aparecer un elemento con la etiqueta img',() => {
+        const imgLogo =  screen.queryByRole('img', {alt: /logo/i});
+        expect(imgLogo).toBeInTheDocument();        
+    })   
 })
