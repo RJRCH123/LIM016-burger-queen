@@ -199,7 +199,7 @@ const AppActualizarRegistro = () => {
           cambiarEstado={cambiarContraseña}
           tipo="password"
           label="Contraseña"
-          placeholder="**********"
+          placeholder="•••••••••"
           name="contraseña1"
           leyendaError="La contraseña tiene que ser de 4 a 12 dígitos."
           expresionRegular={expresiones.contraseña}
@@ -209,7 +209,7 @@ const AppActualizarRegistro = () => {
           cambiarEstado={cambiarContraseña2}
           tipo="password"
           label="Repetir Contraseña"
-          placeholder="**********"
+          placeholder="•••••••••"
           name="contraseña2"
           leyendaError="Ambas contraseñas deben ser iguales."
           funcion={validarPassword2}
