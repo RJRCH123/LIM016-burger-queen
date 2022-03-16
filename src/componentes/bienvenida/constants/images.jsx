@@ -15,5 +15,5 @@ export default {
   welcome,
   laurels,
   gericht,
-  awards
+  awards,
 };

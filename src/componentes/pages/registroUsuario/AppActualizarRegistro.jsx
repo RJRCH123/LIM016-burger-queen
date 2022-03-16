@@ -1,41 +1,40 @@
-import React from "react";
-import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
-import { db } from "../../../firebase/firebase-config";
-import { doc, getDoc, updateDoc } from "firebase/firestore";
+import React, { useState, useEffect } from 'react';
+
+import { useParams, useNavigate } from 'react-router-dom';
+import { doc, getDoc, updateDoc } from 'firebase/firestore';
+import { db } from '../../../firebase/firebase-config';
 import {
   Formulario,
   ContenedorBotonCentrado,
   Boton,
   MensajeExito,
   MensajeError,
-} from "./elementos";
-import Input from "./input";
-import { useNavigate } from "react-router-dom";
+} from './elementos';
+import Input from './input';
 
-const AppActualizarRegistro = () => {
+function AppActualizarRegistro() {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate("/admin/historial-empleados/");
+    navigate('/admin/historial-empleados/');
   };
 
-  let { id } = useParams();
+  const { id } = useParams();
 
   // se estan estableciendo los valores iniciales para cada uno de nuestros inputs
-  const [usuario, cambiarUsuario] = useState({ campo: "", valido: null });
-  const [nombre, cambiarNombre] = useState({ campo: "", valido: null });
-  const [apellido, cambiarApellido] = useState({ campo: "", valido: null });
-  const [codigo, cambiarCodigo] = useState({ campo: "", valido: null });
-  const [contraseña, cambiarContraseña] = useState({ campo: "", valido: null });
+  const [usuario, cambiarUsuario] = useState({ campo: '', valido: null });
+  const [nombre, cambiarNombre] = useState({ campo: '', valido: null });
+  const [apellido, cambiarApellido] = useState({ campo: '', valido: null });
+  const [codigo, cambiarCodigo] = useState({ campo: '', valido: null });
+  const [contraseña, cambiarContraseña] = useState({ campo: '', valido: null });
   const [contraseña2, cambiarContraseña2] = useState({
-    campo: "",
+    campo: '',
     valido: null,
   });
-  const [correo, cambiarCorreo] = useState({ campo: "", valido: null });
-  const [celular, cambiarCelular] = useState({ campo: "", valido: null });
-  const [dni, cambiarDni] = useState({ campo: "", valido: null });
-  const [cargo, cambiarCargo] = useState({ campo: "", valido: null });
+  const [correo, cambiarCorreo] = useState({ campo: '', valido: null });
+  const [celular, cambiarCelular] = useState({ campo: '', valido: null });
+  const [dni, cambiarDni] = useState({ campo: '', valido: null });
+  const [cargo, cambiarCargo] = useState({ campo: '', valido: null });
   const [formularioValido, cambiarFormularioValido] = useState(null);
 
   // se utilizan expresiones regulares para limitar al usuario a ingresar
@@ -53,25 +52,21 @@ const AppActualizarRegistro = () => {
     cargo: /^[a-zA-ÿ\s]{1,40}$/, // Letras y espacios.
   };
 
-  //se esta validando que la contraseña se ingreso de manera correcta
+  // se esta validando que la contraseña se ingreso de manera correcta
 
   const validarPassword2 = () => {
     if (contraseña.campo.length > 0) {
       if (contraseña.campo !== contraseña2.campo) {
-        cambiarContraseña2((prevState) => {
-          return { ...prevState, valido: "false" };
-        });
+        cambiarContraseña2((prevState) => ({ ...prevState, valido: 'false' }));
       } else {
-        cambiarContraseña2((prevState) => {
-          return { ...prevState, valido: "true" };
-        });
+        cambiarContraseña2((prevState) => ({ ...prevState, valido: 'true' }));
       }
     }
   };
 
   // método que actualiza los datos de la colección usuarios
 
-  const userDocRef = doc(db, "usuarios", id);
+  const userDocRef = doc(db, 'usuarios', id);
   const actualizarUser = async () => {
     await updateDoc(userDocRef, {
       usuario: usuario.campo,
@@ -90,12 +85,12 @@ const AppActualizarRegistro = () => {
   // método que busca los datos de del documento seleccionado
 
   const getUser = async () => {
-    const docRef = doc(db, "usuarios", id);
+    const docRef = doc(db, 'usuarios', id);
     const docSnap = await getDoc(docRef);
     if (docSnap.exists()) {
-      //console.log("data:", docSnap.data());
+      // console.log("data:", docSnap.data());
     } else {
-      console.log("No existe el documento");
+      console.log('No existe el documento');
     }
     return docSnap.data();
   };
@@ -123,28 +118,28 @@ const AppActualizarRegistro = () => {
     e.preventDefault();
 
     if (
-      usuario.valido === "true" &&
-      nombre.valido === "true" &&
-      apellido.valido === "true" &&
-      codigo.valido === "true" &&
-      contraseña.valido === "true" &&
-      contraseña2.valido === "true" &&
-      correo.valido === "true" &&
-      celular.valido === "true" &&
-      dni.valido === "true" &&
-      cargo.valido === "true"
+      usuario.valido === 'true'
+      && nombre.valido === 'true'
+      && apellido.valido === 'true'
+      && codigo.valido === 'true'
+      && contraseña.valido === 'true'
+      && contraseña2.valido === 'true'
+      && correo.valido === 'true'
+      && celular.valido === 'true'
+      && dni.valido === 'true'
+      && cargo.valido === 'true'
     ) {
       cambiarFormularioValido(true);
-      cambiarUsuario({ campo: "", valido: null });
-      cambiarNombre({ campo: "", valido: null });
-      cambiarApellido({ campo: "", valido: null });
-      cambiarCodigo({ campo: "", valido: null });
-      cambiarContraseña({ campo: "", valido: null });
-      cambiarContraseña2({ campo: "", valido: null });
-      cambiarCorreo({ campo: "", valido: null });
-      cambiarCelular({ campo: "", valido: null });
-      cambiarDni({ campo: "", valido: null });
-      cambiarCargo({ campo: "", valido: null });
+      cambiarUsuario({ campo: '', valido: null });
+      cambiarNombre({ campo: '', valido: null });
+      cambiarApellido({ campo: '', valido: null });
+      cambiarCodigo({ campo: '', valido: null });
+      cambiarContraseña({ campo: '', valido: null });
+      cambiarContraseña2({ campo: '', valido: null });
+      cambiarCorreo({ campo: '', valido: null });
+      cambiarCelular({ campo: '', valido: null });
+      cambiarDni({ campo: '', valido: null });
+      cambiarCargo({ campo: '', valido: null });
     } else {
       cambiarFormularioValido(true);
     }
@@ -271,7 +266,9 @@ const AppActualizarRegistro = () => {
           {formularioValido === false && (
             <MensajeError>
               <p>
-                <b>Error:</b> Por favor, rellena el formulario correctamente.
+                <b>Error:</b>
+                {' '}
+                Por favor, rellena el formulario correctamente.
               </p>
             </MensajeError>
           )}
@@ -279,6 +276,6 @@ const AppActualizarRegistro = () => {
       </Formulario>
     </main>
   );
-};
+}
 
 export default AppActualizarRegistro;

@@ -1,7 +1,7 @@
-import gif from "../../img/extra/Burgers-Gif.gif";
-import MR from "../../img/logos/Logo-MR-Amarillo.png";
-import "./inicio.scss";
-import CartaCompleta from "../bienvenida/container/Menu/Menu-Karma.pdf";
+import gif from '../../img/extra/Burgers-Gif.gif';
+import MR from '../../img/logos/Logo-MR-Amarillo.png';
+import './inicio.scss';
+import CartaCompleta from '../bienvenida/container/Menu/Menu-Karma.pdf';
 
 function landing() {
   return (

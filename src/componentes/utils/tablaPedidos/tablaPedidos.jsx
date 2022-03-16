@@ -1,42 +1,39 @@
-import React, { useState, useEffect} from "react";
+import React, { useState, useEffect } from 'react';
 import './tablaPedidos.scss';
 
-
-
 const useSortableData = ((items, config = null) => {
-   const [sortConfig, setSortConfig] = useState(config);
+  const [sortConfig, setSortConfig] = useState(config);
 
   const sortedItems = useEffect(() => {
-    let sortableItems = [...items];
+    const sortableItems = [...items];
     if (sortConfig !== null) {
       sortableItems.sort((a, b) => {
-      if (a[sortConfig.key] < b[sortConfig.key]) {
-        return sortConfig.direction === 'ascending' ? -1 : 1;
-      }
-      if (a[sortConfig.key] > b[sortConfig.key]) {
-        return sortConfig.direction === 'ascending' ? 1 : -1;
-      }
-      return 0;
-    });
-  }
-  return sortableItems;
+        if (a[sortConfig.key] < b[sortConfig.key]) {
+          return sortConfig.direction === 'ascending' ? -1 : 1;
+        }
+        if (a[sortConfig.key] > b[sortConfig.key]) {
+          return sortConfig.direction === 'ascending' ? 1 : -1;
+        }
+        return 0;
+      });
+    }
+    return sortableItems;
   }, [items, sortConfig]);
 
-  const requestSort = key => {
-    let direction = "descending";       
-    if ( sortConfig !== null && sortConfig.key === key && sortConfig.direction === "descending" ) {
+  const requestSort = (key) => {
+    let direction = 'descending';
+    if (sortConfig !== null && sortConfig.key === key && sortConfig.direction === 'descending') {
       sortedItems(key);
-      direction = "ascending";
-    }        
-    setSortConfig({ key, direction });  
+      direction = 'ascending';
+    }
+    setSortConfig({ key, direction });
   };
   return { items, requestSort };
 });
 
-const ProductsTable = props => {
-    
+function ProductsTable(props) {
   const { items, requestSort, sortConfig } = useSortableData(props.products);
-  const getClassNamesFor = name => {
+  const getClassNamesFor = (name) => {
     if (!sortConfig) {
       return;
     }
@@ -46,37 +43,40 @@ const ProductsTable = props => {
     <table id="historial-Ventas-Karma">
       <thead>
         <tr>
-          <th width= '5%' >
-            <button type="button" onClick={() => requestSort("id")} className={getClassNamesFor("id")}>N°</button>
+          <th width="5%">
+            <button type="button" onClick={() => requestSort('id')} className={getClassNamesFor('id')}>N°</button>
           </th>
           <th>
-            <button type="button" onClick={() => requestSort("codigo")} className={getClassNamesFor("fecha")}>FECHA</button>
-              
+            <button type="button" onClick={() => requestSort('codigo')} className={getClassNamesFor('fecha')}>FECHA</button>
+
           </th>
           <th>
-            <button type="button" onClick={() => requestSort("hora")} className={getClassNamesFor("hora")}>HORA</button>
-              
+            <button type="button" onClick={() => requestSort('hora')} className={getClassNamesFor('hora')}>HORA</button>
+
           </th>
           <th>
-            <button type="button" onClick={() => requestSort("cocinero")} className={getClassNamesFor("cliente")}>CLIENTE</button>
+            <button type="button" onClick={() => requestSort('cocinero')} className={getClassNamesFor('cliente')}>CLIENTE</button>
           </th>
           <th>
-            <button type="button" onClick={() => requestSort("pedido")} className={getClassNamesFor("pedido")}>PEDIDO</button>
+            <button type="button" onClick={() => requestSort('pedido')} className={getClassNamesFor('pedido')}>PEDIDO</button>
           </th>
           <th>
-            <button type="button" onClick={() => requestSort("monto")} className={getClassNamesFor("monto")}>MONTO</button>
+            <button type="button" onClick={() => requestSort('monto')} className={getClassNamesFor('monto')}>MONTO</button>
           </th>
-        </tr>               
+        </tr>
       </thead>
       <tbody>
         {items.map((item, index) => (
           <tr key={item.id}>
-            <td>{index+1}</td>
+            <td>{index + 1}</td>
             <td>{item.timestamp}</td>
             <td>{item.hora}</td>
             <td>{item.cliente}</td>
             <td>{item.pedido}</td>
-            <td>{`S/. `}{item.total}</td>
+            <td>
+              {'S/. '}
+              {item.total}
+            </td>
           </tr>
         ))}
       </tbody>
@@ -84,4 +84,4 @@ const ProductsTable = props => {
   );
 }
 
-export default ProductsTable
+export default ProductsTable;
