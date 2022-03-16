@@ -170,7 +170,7 @@ const AppRegistro = () => {
 					required="true"
 					tipo="password"
 					label="Repetir Contraseña"
-                    placeholder="**********"
+                    placeholder="•••••••••"
 					name="contraseña2"
 					leyendaError="Ambas contraseñas deben ser iguales."
 					funcion={validarPassword2}
@@ -221,23 +221,26 @@ const AppRegistro = () => {
 				/>
 
 
-				{formularioValido === false && 
-            		<MensajeError>
-              			<p>
-                			<b>Error:</b> Por favor rellena el formulario correctamente.
-			        	</p>
-				    </MensajeError>
-        		}
+
 
 				<ContenedorBotonCentrado>
 					<Boton type="submit" onClick={onSubmit}>Registrar Personal</Boton>
-					{formularioValido === true && 
-						<MensajeExito>
-						
-							<b>¡Formulario enviado exitosamente! ✔️</b>
-						
-						</MensajeExito>
-          			}   
+
+          {formularioValido === true && (
+            <MensajeExito>
+              <p>
+                <b>¡Usuario Actualizado Exitosamente! ✔️</b>
+              </p>
+            </MensajeExito>
+          )}
+
+          {formularioValido === false && (
+            <MensajeError>
+              <p>
+                <b>Error:</b> Por favor, rellena el formulario correctamente.
+              </p>
+            </MensajeError>
+          )}  
 				</ContenedorBotonCentrado>
 
 			</Formulario>

@@ -4,12 +4,12 @@ import { getStorage } from 'firebase/storage';
 import { getAuth } from 'firebase/auth';
 
 const firebaseConfig = {
-    apiKey: "AIzaSyAznpwdMl-5qy1VPHc2YNbv62rRZ1VkJVk",
-    authDomain: "burger-queen-karma.firebaseapp.com",
-    projectId: "burger-queen-karma",
-    storageBucket: "burger-queen-karma.appspot.com",
-    messagingSenderId: "602431561617",
-    appId: "1:602431561617:web:053735a5891830c4424430"
+    apiKey: process.env.REACT_APP_API_KEY,
+    authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+    projectId: process.env.REACT_APP_PROJECT_ID,
+    storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+    messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+    appId: process.env.REACT_APP_ID
 };
 
 const app = initializeApp(firebaseConfig);

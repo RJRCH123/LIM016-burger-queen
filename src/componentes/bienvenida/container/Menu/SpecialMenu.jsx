@@ -1,5 +1,4 @@
 import React from 'react';
-/* import { Link } from "react-router-dom" */
 import { SubHeading, MenuItem } from '../../components';
 import { data, images } from '../../constants';
 import './SpecialMenu.scss';
@@ -39,11 +38,7 @@ const SpecialMenu = () => (
     <div className='btnCarta' >
       <button type="button" className="custom__button">
           <a type="button" href={CartaCompleta} download="La-Carta-Karma" target="_blank" rel="noreferrer">Carta completa</a>
-      </button> 
-{/*         <Link to='/carta'>
-          Carta completa
-        </Link> */}
-      
+      </button>       
     </div>
   </div>
 );

@@ -28,7 +28,7 @@ const HeaderCocinero = () => {
 
   const [userName, setUserName] = useState("");
   const [userCargo, setUserCargo] = useState("");
-  
+
   // create initial menuCollapse state using useState hook
   const [menuCollapse, setMenuCollapse] = useState(true)
 
@@ -38,7 +38,7 @@ const HeaderCocinero = () => {
     menuCollapse ? setMenuCollapse(false) : setMenuCollapse(true);
   };
 
-  useEffect(() => {    
+  useEffect(() => {
     const userData = JSON.parse(localStorage.getItem('user'));
     setUserName(userData.usuario);
     setUserCargo(userData.cargo)
@@ -47,22 +47,22 @@ const HeaderCocinero = () => {
   return (
     <>
       <div id="header">
-          {/* collapsed props to change menu size using menucollapse state */}
+        {/* collapsed props to change menu size using menucollapse state */}
         <ProSidebar collapsed={menuCollapse}>
           <SidebarHeader>
-          <div className="logotext">
+            <div className="logotext">
               {/* small and big change using menucollapse state */}
               <p>{menuCollapse ? "Logo" : "Big Logo"}</p>
             </div>
             <div className="closemenu" onClick={menuIconClick}>
-                {/* changing menu collapse icon on click */}
-              {menuCollapse ? (<FiMenu/>) : (<FiList/>)}
+              {/* changing menu collapse icon on click */}
+              {menuCollapse ? (<FiMenu />) : (<FiList />)}
             </div>
           </SidebarHeader>
           <SidebarContent>
             <Menu iconShape="square">
               <div className='dataUser'>
-                <img className="logoRol" src={LogoCocinero} alt= "logoCocinero"/>
+                <img className="logoRol" src={LogoCocinero} alt="logoCocinero" />
               </div>
               <div className='dataUser'>
                 <h4>{userName}</h4>
@@ -70,31 +70,31 @@ const HeaderCocinero = () => {
               </div>
               <MenuItem icon={
                 <Link to='/cocinero/pedidos-por-preparar'><h1 className="logoNames">NP</h1></Link>}>
-                  <Link to='/cocinero/pedidos-por-preparar'>Nuevos Pedidos</Link>
+                <Link to='/cocinero/pedidos-por-preparar'>Nuevos Pedidos</Link>
               </MenuItem>
               <MenuItem icon={
                 <Link to='/cocinero/pedidos-preparados'><h1 className="logoNames">PP</h1></Link>}>
-                  <Link to='/cocinero/pedidos-preparados'>Pedidos Preparados</Link>
+                <Link to='/cocinero/pedidos-preparados'>Pedidos Preparados</Link>
               </MenuItem>
               <MenuItem icon={
                 <Link to='/cocinero/historial-pedidos'><h1 className="logoNames">HP</h1></Link>}>
-                  <Link to='/cocinero/historial-pedidos'>Historial de pedidos</Link>
+                <Link to='/cocinero/historial-pedidos'>Historial de pedidos</Link>
               </MenuItem>
             </Menu>
           </SidebarContent>
           <SidebarFooter>
             <Menu iconShape="square">
               <MenuItem active={true} icon={
-                <Link to='/cocinero/registro'><img src={BH} alt= "BH"/></Link>}>
-                  <Link to='/cocinero/registro'>Inicio</Link>
+                <Link to='/cocinero/registro'><img src={BH} alt="BH" /></Link>}>
+                <Link to='/cocinero/registro'>Inicio</Link>
               </MenuItem>
               <MenuItem icon={
-                <Link to='/'><img src={BS} alt= "BS"/></Link>}>
-                  <Link 
-                    to='/' 
-                    onClick={()=>{localStorage.clear()}}
-                    >Cerrar Sesión
-                  </Link>
+                <Link to='/'><img src={BS} alt="BS" /></Link>}>
+                <Link
+                  to='/'
+                  onClick={() => { localStorage.clear() }}
+                >Cerrar Sesión
+                </Link>
               </MenuItem>
             </Menu>
           </SidebarFooter>
