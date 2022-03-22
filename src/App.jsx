@@ -14,6 +14,7 @@ import FormAdmin from './componentes/login/loginFormAdm';
 import RegistroEmpleado from './componentes/pages/registroUsuario/registrarEmpleado';
 import PedidosPorPreparar from './componentes/pages/pedidosPorPreparar/pedidosPorPreparar';
 import PedidosPreparados from './componentes/pages/pedidosPreparados/pedidosPreparados';
+import RegistroProductos from './componentes/pages/registroProductos/registroProductos';
 import PedidosEntregar from './componentes/pages/pedidosEntregar/pedidosEntregar';
 import HistorialVentas from './componentes/pages/historialVentas/historialVentas';
 import HistorialEmpleados from './componentes/pages/historialEmpleados/historialEmpleados';
@@ -29,7 +30,7 @@ function App() {
       <Routes>
 
         <Route path="/admin/registro-personal" element={<VistaAdmin content={<RegistroEmpleado />} />} />
-        <Route path="/admin/pedidos-preparados" element={<VistaAdmin content={<PedidosPreparados />} />} />
+        <Route path="/admin/productos-registrados" element={<VistaAdmin content={<RegistroProductos />} />} />
         <Route path="/admin/historial-ventas" element={<VistaAdmin content={<HistorialVentas />} />} />
         <Route path="/admin/historial-empleados" element={<VistaAdmin content={<HistorialEmpleados />} />} />
         <Route path="/admin/historial-empleados/actualizar-datos/:id" element={<VistaAdmin content={<ActualizarDatosEmpleado />} />} />

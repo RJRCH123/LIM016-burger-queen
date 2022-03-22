@@ -84,10 +84,10 @@ function HeaderAdmin() {
               <Link to="/admin/historial-ventas">Historial de Ventas</Link>
             </MenuItem>
             <MenuItem icon={
-              <Link to="/admin/pedidos-preparados"><h1 className="logoNames">PP</h1></Link>
+              <Link to="/admin/pedidos-preparados"><h1 className="logoNames">PR</h1></Link>
 }
             >
-              <Link to="/admin/pedidos-preparados">Pedidos Preparados</Link>
+              <Link to="/admin/productos-registrados">Productos Registrados</Link>
             </MenuItem>
             <MenuItem icon={
               <Link to="/admin/pedidos-entregar"><h1 className="logoNames">PE</h1></Link>

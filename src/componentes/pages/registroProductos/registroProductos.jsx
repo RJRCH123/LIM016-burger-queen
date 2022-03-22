@@ -1,4 +1,4 @@
-import './pedidosPreparados.scss';
+import './registroProductos.scss';
 import {
   collection, query, where, getDocs, orderBy,
 } from 'firebase/firestore';
@@ -28,11 +28,12 @@ function PedidosPreparados() {
     <div className="contenedorPedidos">
       <h2>REGISTRO DE PRODUCTOS</h2>
       <div className="gridResponsivePP">
-        {orders.map((order, index) => (
+        {/* {orders.map((order, index) => (
           <div className="contenedorPedido" key={index}>
             <Pedido key={order.id} orden={order} />
           </div>
-        ))}
+        ))} */}
+
       </div>
     </div>
   );
