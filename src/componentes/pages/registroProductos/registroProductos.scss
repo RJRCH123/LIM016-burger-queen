@@ -1,37 +1,51 @@
-.contenedorPedidos {
+.contenedorProductos {
   width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 0.75fr 1fr;
+  column-gap: 2rem;
+  padding-top: 1rem;
   h2 {
     text-align: center;
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
   }
+  input {
+    width: 100%;
+    background: #fff;
+    border-radius: 3px;
+    padding: 0 5px;
+    height: 30px;
+    line-height: 45px;
+    transition: 0.3s ease all;
+    border: 3px solid transparent;
+    box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
+  }
+  select {
+    width: 100%;
+    border: 3px solid transparent;
+    border-radius: 3px;
+    background: #fff;
+    box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
+    text-align: center;
+    height: 30px;
+  }
+  label {
+    margin: 0.5rem 0;
+  }
+  p {
+    margin: 0.5rem 0;
+  }
 }
 
-.navListadoProductosPorPedir {
-  justify-self: stretch;
-  align-self: center;
-  grid-area: navListadoProductosPorPedir;
-  max-height: 57px;
+.title {
+  h1{
+    text-align: center;
+  }
 }
 
-.listadoProductosPorPedir {
-  justify-self: stretch;
-  align-self: stretch;
-  grid-area: listadoProductosPorPedir;
-  overflow-x: overlay;
-  /* margin-top: 10px; */
-}
-
-.listadoProductosPorPedir::-webkit-scrollbar {
-  width: 5px;
-  height: 5px;
-}
-
-.listadoProductosPorPedir::-webkit-scrollbar-thumb {
-  background: gray;
-  border-radius: 10px;
-}
-
-.listadoProductosPorPedir::-webkit-scrollbar {
-  background: rgba(128, 128, 128, 0);
+.contenedorProductosInterno{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 2rem;
 }
