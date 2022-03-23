@@ -1,10 +1,14 @@
 .contenedorProductos {
-  width: 100%;
-  height: 100vh;
   display: grid;
-  grid-template-columns: 0.75fr 1fr;
-  column-gap: 2rem;
-  padding-top: 1rem;
+  grid-template-columns: 0.8fr 1.2fr;
+  grid-template-rows: 7ch 30vh 45vh 10vh;
+  gap: 0% 5%;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "navFiltradoProductos formProductos"
+    "listaProductosCrud formProductos"
+    "listaProductosCrud vistaPreviaProducto"
+    "listaProductosCrud btnsConfirmarYCancelar";
   h2 {
     text-align: center;
     margin-top: 1.5rem;
@@ -31,20 +35,51 @@
     height: 30px;
   }
   label {
-    margin: 0.5rem 0;
+    margin: 0.3rem 0;
   }
   p {
-    margin: 0.5rem 0;
+    margin: 0.3rem 0;
   }
 }
 
+.navFiltradoProductos {
+  justify-self: stretch;
+  align-self: center;
+  grid-area: navFiltradoProductos;  
+}
+
+.listaProductosCrud {
+  justify-self: stretch;
+  align-self: stretch;
+  grid-area: listaProductosCrud;
+  overflow-x: overlay;
+}
+
+.formProductos {
+  justify-self: stretch;
+  align-self: stretch;
+  grid-area: formProductos;
+}
+
+.vistaPreviaProducto {
+  justify-self: stretch;
+  align-self: stretch;
+  grid-area: vistaPreviaProducto;
+}
+
+.btnsConfirmarYCancelar {
+  justify-self: stretch;
+  align-self: stretch;
+  grid-area: btnsConfirmarYCancelar;
+}
+
 .title {
-  h1{
+  h1 {
     text-align: center;
   }
 }
 
-.contenedorProductosInterno{
+.contenedorProductosInterno {
   display: grid;
   grid-template-columns: 1fr 1fr;
   column-gap: 2rem;
