@@ -10,8 +10,8 @@ function RegistroProductos() {
     <section className="marginFlex">
       <div class="contenedorProductos">
         <div class="navFiltradoProductos">
-          {" "}
-          <NavListProducts />
+          <NavListProducts /> 
+          <br/>
         </div>
         <div class="listaProductosCrud">
           <ListProducts />
@@ -20,12 +20,10 @@ function RegistroProductos() {
           <FormProducto />
         </div>
         <div class="vistaPreviaProducto">
-          {" "}
-          <VistaPrevia />{" "}
+          <VistaPrevia />
         </div>
         <div class="btnsConfirmarYCancelar">
-          {" "}
-          <BtnsConfirmarYCancelar />{" "}
+          <BtnsConfirmarYCancelar />
         </div>
       </div>
     </section>

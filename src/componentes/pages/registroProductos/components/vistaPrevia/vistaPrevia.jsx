@@ -4,8 +4,6 @@ import { images } from "../../constans/index";
 
 function VistaPrevia() {
   return (
-    <section>
-      <p>Vista Previa</p>
       <div className="containerPreview">
         <article class="modalDescripcion">
           <section class="imgInfo product">
@@ -29,26 +27,21 @@ function VistaPrevia() {
           </section>
           <section class="detailsInfo">
             <p>
-              {" "}
-              <strong> Código: </strong> H001{" "}
+              <strong> Código: </strong> H001
             </p>
             <p>
-              {" "}
               <strong> Categoría: </strong> Hamburguesa
             </p>
             <p>
-              {" "}
               <strong> Descripción: </strong>Hamburguesas de Carne + Papas +
               Ensalada + Salsas Clásicas
             </p>
             <p>
-              {" "}
-              <strong> Unds. por Plato: </strong> 4{" "}
+              <strong> Unds. por Plato: </strong> 4
             </p>
           </section>
         </article>
       </div>
-    </section>
   );
 }
 
