@@ -12,7 +12,7 @@ function RealizarPedido() {
     <section className="marginFlex">
       <div className="containerRP">
         <div className="navRealizarPedido">
-          <NavRealizarPedido />
+          <NavRealizarPedido />          
         </div>
         <div className="navListadoProductosPorPedir">
           <NavListadoProductosPorPedir />
@@ -20,7 +20,8 @@ function RealizarPedido() {
         <div className="navTablaResumenPedido">
           <NavTablaResumenPedido />
         </div>
-        <div className="listadoProductosPorPedir">
+        <br />
+        <div className="listadoProductosPorPedir">          
           <ProductoPorPedir />
         </div>
         <div className="resumenPedidosPorComprar">

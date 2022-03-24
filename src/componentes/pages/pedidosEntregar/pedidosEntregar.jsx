@@ -6,6 +6,7 @@ import { db } from '../../../firebase/firebase-config';
 import './pedidosEntregar.scss';
 import Pedido from '../../utils/pedido/pedido';
 import BotonEntegar from '../../utils/botonEntregar/botonEntregar';
+import LoadingSpinner from '../../utils/loading-spinner/loading-spinner';
 
 function PedidosEntregar() {
   const [isLoading, setIsLoading] = useState(true);
@@ -32,7 +33,7 @@ function PedidosEntregar() {
 
   if (isLoading) {
     return (
-      <div />
+      <LoadingSpinner />
     );
   }
 

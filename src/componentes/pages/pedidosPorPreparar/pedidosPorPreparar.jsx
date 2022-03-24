@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 import Pedido from '../../utils/pedido/pedido';
 import BotonPreparar from '../../utils/botonPreparar/botonPreparar';
 import { db } from '../../../firebase/firebase-config';
+import LoadingSpinner from '../../utils/loading-spinner/loading-spinner';
 
 function PedidosPorPreparar() {
   const [isLoading, setIsLoading] = useState(true);
@@ -32,7 +33,7 @@ function PedidosPorPreparar() {
 
   if (isLoading) {
     return (
-      <div />
+      <LoadingSpinner />
     );
   }
 

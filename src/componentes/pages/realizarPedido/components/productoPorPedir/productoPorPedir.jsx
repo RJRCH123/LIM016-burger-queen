@@ -3,9 +3,11 @@ import './productoPorPedir.scss';
 import Swal from 'sweetalert2';
 import { images } from '../../constans/index';
 import { UserContext } from '../../context/UserContext';
+/* import LoadingSpinner from '../../utils/loading-spinner/loading-spinner'; */
 
 function ProductoPorPedir() {
   const { productData, agregarPedido } = useContext(UserContext);
+  /* const {isLoading, setIsLoading} = useContext(UserContext); */
 
   return (
     <section className="gridResponsivePPM">
@@ -51,8 +53,9 @@ function ProductoPorPedir() {
               })}
               type="button"
             >
-              <img src={images.informacion} alt="" />
+            <img src={images.informacion} alt="" />
             </button>
+            {/* {((isLoading) ? <LoadingSpinner /> : <img src={item.img} alt="producto" />)} */}
             <img src={item.img} alt="producto" />
           </div>
           <div className="nombrePrecio">

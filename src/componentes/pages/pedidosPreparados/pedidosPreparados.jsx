@@ -5,8 +5,10 @@ import {
 import { useEffect, useState } from 'react';
 import Pedido from '../../utils/pedido/pedido';
 import { db } from '../../../firebase/firebase-config';
+import LoadingSpinner from '../../utils/loading-spinner/loading-spinner';
 
 function PedidosPreparados() {
+  const [isLoading, setIsLoading] = useState(true);
   const [orders, setOrders] = useState([]);
 
   const getOrders = async () => {
@@ -17,16 +19,26 @@ function PedidosPreparados() {
     pedidos.forEach((pedido) => {
       allOrders.push({ ...pedido.data(), id: pedido.id });
     });
-    setOrders(allOrders);
+    /* setOrders(allOrders); */
+    return allOrders;
   };
 
   useEffect(() => {
-    getOrders();
-  }, []);
+    getOrders().then((allOrders) => {
+      setIsLoading(false);
+      setOrders(allOrders);
+    });
+  }, [isLoading]);
+
+  if (isLoading) {
+    return (
+      <LoadingSpinner />
+    );
+  }
 
   return (
     <div className="contenedorPedidos">
-      <h2>REGISTRO DE PRODUCTOS</h2>
+      <h2>PEDIDOS PREPARADOS</h2>
       <div className="gridResponsivePP">
         {orders.map((order, index) => (
           <div className="contenedorPedido" key={index}>

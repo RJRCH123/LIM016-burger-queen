@@ -18,6 +18,7 @@ function UserProvider() {
   const [cliente, setCliente] = useState('clientes');
   const [pedido, setPedido] = useState([]);
   const [datos, setDatos] = useState([]);
+  /* const [isLoading, setIsLoading] = useState(true); */
 
   // filtro por tipo de producto
   const [productData, setProductData] = useState([]);
@@ -36,7 +37,8 @@ function UserProvider() {
   useEffect(() => {
     async function fetchList() {
       const listMenu = await getProduct(tipo);
-      setProductData(listMenu);
+      /* setIsLoading(false); */
+      setProductData(listMenu);      
     }
     fetchList();
   }, [tipo]);
