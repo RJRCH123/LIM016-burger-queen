@@ -19,7 +19,7 @@ function HistorialVentas() {
 
   const getOrder = async () => {
     const allOrders = [];
-    const orderCollecRef = query(collection(db, 'pedidos'), orderBy('timestamp', 'asc'), where('estado', '==', 'finalizado'));
+    const orderCollecRef = query(collection(db, 'pedidos'), orderBy('timestamp', 'asc'), where('estado', 'in', ['finalizado', 'cancelado']));
     const data = await getDocs(orderCollecRef);
 
     data.docs.forEach((doc) => {
@@ -30,6 +30,7 @@ function HistorialVentas() {
         hora: hora(values.timestamp.toDate()),
         cliente: values.cliente.toUpperCase(),
         pedido: 'Ver detalle',
+        estado: values.estado,
         total: values.total.toUpperCase(),
       });
     });

@@ -4,8 +4,7 @@ import ProductosPedido from './productosPedido';
 
 const dateParser = (date) => date.toLocaleString(); // fecha y hora local
 
-function Pedido({ orden }) {
-  console.log(orden);
+function Pedido({ orden }) {  
   // eslint-disable-next-line
          
   return (
