@@ -3,7 +3,7 @@ import './listProducts.scss';
 import { images } from '../../constans/index';
 import { db } from '../../../../../firebase/firebase-config';
 import {
-  getDocs, collection, query, orderBy
+  getDocs, collection, query, orderBy, doc, deleteDoc
 } from 'firebase/firestore';
 import { useState, useEffect } from 'react';
 import Swal from 'sweetalert2';
@@ -45,10 +45,64 @@ function ListProducts() {
     );
   }
 
+   // modal de confirmarión para editar un producto existente
+   const ModalConfirmacionEditar = () => {
+    Swal.fire({
+      text: '¿Está seguro que editar este producto?',
+      showCancelButton: true,
+      confirmButtonColor: '#57a057',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Confirmar',
+      cancelButtonText: 'Cancelar',
+      allowOutsideClick: false,
+      stopKeydownPropagation: false,
+      showCloseButton: true,
+      closeButtonAriaLabel: 'cerrar alerta',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        //handleClick(props);
+      }
+    });
+  };
+
+  // modal de confirmarión para eliminar un producto existente
+  const ModalConfirmacionCancelar = () => {
+    Swal.fire({
+      text: '¿Está seguro que desea borrar este producto?',
+      showCancelButton: true,
+      confirmButtonColor: '#57a057',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Confirmar',
+      cancelButtonText: 'Cancelar',
+      allowOutsideClick: false,
+      stopKeydownPropagation: false,
+      showCloseButton: true,
+      closeButtonAriaLabel: 'cerrar alerta',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire({
+          title: '¡Producto Borrado!',
+          text: 'El producto fue borrado con éxito',
+          icon: 'success',
+          showConfirmButton: false,
+          timer: 1500,
+        });
+        //eliminarProducto(props);
+      }
+    });
+  };
+
+  const eliminarProducto = async (props) => {
+    await deleteDoc(doc(db, 'productos', props.id));
+    //props.loading(true); // setIsLoading state on the grandfather
+  };
+
+
 	return (
 		<section className="gridResponsivePPM">
 			{products.map((product, index) => (
 				<div className="DataPorProductoMenu" key={index}>
+          {console.log(product)}
 					<div className="imagenProducto">
           <button
               className="btnInfo"
@@ -106,8 +160,8 @@ function ListProducts() {
 						</p>
 					</div>
 					<div className="containerButton">
-            <button type="button" className="buttonDelete"><img src={images.editarProductCard} alt='editar'/></button>
-						<button type="button" className="buttonEdit"><img src={images.eliminar} alt='eliminar'/></button>
+            <button type="button" className="buttonEdit" onClick={ModalConfirmacionEditar}><img src={images.editarProductCard} alt='editar'/></button>
+						<button type="button" className=" buttonDelete" onClick={ModalConfirmacionCancelar}><img src={images.eliminar} alt='eliminar'/></button>
           </div>					
 				</div>
 			))}
