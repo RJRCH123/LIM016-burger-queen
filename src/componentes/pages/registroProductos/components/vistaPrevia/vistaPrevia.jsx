@@ -5,8 +5,8 @@ import { images } from "../../constans/index";
 function VistaPrevia() {
   return (
       <div className="containerPreview">
-        <article class="modalDescripcion">
-          <section class="imgInfo product">
+        <article className="modalDescripcion">
+          <section className="imgInfo product">
             <img src={images.camara} alt="imagen" />
             <button>
               <img
@@ -16,16 +16,16 @@ function VistaPrevia() {
               />
             </button>
           </section>
-          <section class="tittleInfo">
+          <section className="tittleInfo">
             <h3>DESTALLES DEL PRODUCTO</h3>
           </section>
-          <section class="nameInfo">
+          <section className="nameInfo">
             <h5>KARMA CLÁSICA</h5>
           </section>
-          <section class="precioInfo">
+          <section className="precioInfo">
             <h6>S/. 12.90</h6>
           </section>
-          <section class="detailsInfo">
+          <section className="detailsInfo">
             <p>
               <strong> Código: </strong> H001
             </p>

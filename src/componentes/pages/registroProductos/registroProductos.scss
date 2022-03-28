@@ -55,6 +55,20 @@
   overflow-x: overlay;
 }
 
+.listaProductosCrud::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+.listaProductosCrud::-webkit-scrollbar-thumb {
+  background: gray;
+  border-radius: 10px;
+}
+
+.listaProductosCrud::-webkit-scrollbar {
+  background: rgba(128, 128, 128, 0);
+}
+
 .formProductos {
   justify-self: stretch;
   align-self: stretch;

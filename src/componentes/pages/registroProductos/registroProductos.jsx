@@ -8,21 +8,21 @@ import BtnsConfirmarYCancelar from "./components/btnsConfirmarYCancelar/btnsConf
 function RegistroProductos() {
   return (
     <section className="marginFlex">
-      <div class="contenedorProductos">
-        <div class="navFiltradoProductos">
+      <div className="contenedorProductos">
+        <div className="navFiltradoProductos">
           <NavListProducts /> 
           <br/>
         </div>
-        <div class="listaProductosCrud">
+        <div className="listaProductosCrud">
           <ListProducts />
         </div>
-        <div class="formProductos">
+        <div className="formProductos">
           <FormProducto />
         </div>
-        <div class="vistaPreviaProducto">
+        <div className="vistaPreviaProducto">
           <VistaPrevia />
         </div>
-        <div class="btnsConfirmarYCancelar">
+        <div className="btnsConfirmarYCancelar">
           <BtnsConfirmarYCancelar />
         </div>
       </div>

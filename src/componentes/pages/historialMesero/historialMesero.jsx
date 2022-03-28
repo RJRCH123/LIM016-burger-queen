@@ -30,6 +30,7 @@ function HistorialCocinero() {
         hora: hora(values.timestamp.toDate()),
         cliente: values.cliente.toUpperCase(),
         pedido: 'ver detalle',
+        estado: values.estado,
         total: values.total.toUpperCase(),
       });
     });

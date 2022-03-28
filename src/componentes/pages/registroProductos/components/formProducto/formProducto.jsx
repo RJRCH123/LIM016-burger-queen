@@ -5,7 +5,7 @@ function FormProducto() {
   return (
     <div className="title">
     <h1>REGISTRO DE PRODUCTOS</h1>
-    <from>
+    <form>
       <label>
         <p>Nombre</p>
         <input
@@ -73,7 +73,7 @@ function FormProducto() {
           maxLength="25"
         />
       </label>
-    </from>
+    </form>
   </div>
   )
 }
