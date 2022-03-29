@@ -155,14 +155,14 @@ A continuación, mostraremos algunas de las historias de Usuario según el rol:
 
 <div align="center">
 
-## 📌🤵 Administrador 
+## 📌🤵 Jefe Administrador 
 
 <img src="./src/img/Readme/HU-Admin.png" width="800">
 </div>
 
 <div align="center">
 
-## 📌🤵 Mesero
+## 📌🤵 Jefe Mesero
 
 <img src="./src/img/Readme/HU-Mesero.png" width="800">
 </div>
