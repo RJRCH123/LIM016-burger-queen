@@ -4,8 +4,11 @@ import ListProducts from "./components/listProducts/listProducts";
 import FormProducto from "./components/formProducto/formProducto";
 import VistaPrevia from "./components/vistaPrevia/vistaPrevia";
 import BtnsConfirmarYCancelar from "./components/btnsConfirmarYCancelar/btnsConfirmarYCancelar";
+import { useState } from "react";
 
 function RegistroProductos() {
+  const [editMode, setEditMode] = useState(false);
+
   return (
     <section className="marginFlex">
       <div className="contenedorProductos">

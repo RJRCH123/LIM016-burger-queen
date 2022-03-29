@@ -22,9 +22,7 @@ function VistaPrevia() {
           <section className="nameInfo">
             <h5>KARMA CLÁSICA</h5>
           </section>
-          <section className="precioInfo">
-            <h6>S/. 12.90</h6>
-          </section>
+         
           <section className="detailsInfo">
             <p>
               <strong> Código: </strong> H001
@@ -39,6 +37,10 @@ function VistaPrevia() {
             <p>
               <strong> Unds. por Plato: </strong> 4
             </p>
+            <br />
+            <section className="precioInfo">
+              <h6>S/. 12.90</h6>
+            </section>
           </section>
         </article>
       </div>

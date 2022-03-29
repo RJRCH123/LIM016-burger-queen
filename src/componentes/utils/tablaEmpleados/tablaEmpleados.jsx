@@ -71,16 +71,18 @@ function EmployeesTable(props) {
       </thead>
       <tbody>
         {items.map((item, index) => (
-          <tr key={item.id}>
-            <td>{index + 1}</td>
-            <td>{item.codigo}</td>
-            <td>{item.dni}</td>
-            <td>{item.cargo}</td>
-            <td>{item.name}</td>
-            <td>{item.usuario}</td>
-            <td>{item.celular}</td>
-            <td><Botones id={item.id} estado={props.estado} loading={props.loading} /></td>
-          </tr>
+        <tr key={item.id}>
+          <td>{index + 1}</td>
+          <td>{item.codigo}</td>
+          <td>{item.dni}</td>
+          <td>{item.cargo}</td>
+          <td>{item.name}</td>
+          <td>{item.usuario}</td>
+          <td>{item.celular}</td>
+          {item.cargo === 'JEFE-ADMIN' ? '' : 
+          item.cargo === 'JEFE-COCINERO' ? '' : 
+          item.cargo === 'JEFE-MESERO' ? '' : <td><Botones id={item.id} estado={props.estado} loading={props.loading} /></td>}         
+        </tr>
         ))}
       </tbody>
     </table>

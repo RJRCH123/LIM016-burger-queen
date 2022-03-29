@@ -23,13 +23,13 @@ function FormAdmin() {
       storeUserData(user);
       if (user.cargo) {
         console.log(user.cargo);
-        if (user.cargo === 'admin') {
+        if (user.cargo === 'admin'|| user.cargo === 'jefe-admin') {
           console.log('entro en admin!');
           navigate('/admin/');
-        } else if (user.cargo === 'mesero') {
+        } else if (user.cargo === 'mesero' || user.cargo === 'jefe-mesero') {
           console.log('entro en mesero!');
           navigate('/mesero/');
-        } else if (user.cargo === 'cocinero') {
+        } else if (user.cargo === 'cocinero' || user.cargo === 'jefe-cocinero') {
           console.log('entro en cocinero!');
           navigate('/cocinero/');
         }

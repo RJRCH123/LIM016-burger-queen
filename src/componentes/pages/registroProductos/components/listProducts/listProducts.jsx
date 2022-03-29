@@ -60,7 +60,8 @@ function ListProducts() {
       closeButtonAriaLabel: 'cerrar alerta',
     }).then((result) => {
       if (result.isConfirmed) {
-        //handleClick(props);
+        //editProduct();
+
       }
     });
   };
@@ -94,15 +95,18 @@ function ListProducts() {
 
   const eliminarProducto = async (props) => {
     await deleteDoc(doc(db, 'productos', props.id));
-    //props.loading(true); // setIsLoading state on the grandfather
   };
+
+  const editProduct = () => {
+    
+  }
 
 
 	return (
 		<section className="gridResponsivePPM">
 			{products.map((product, index) => (
 				<div className="DataPorProductoMenu" key={index}>
-          {console.log(product)}
+
 					<div className="imagenProducto">
           <button
               className="btnInfo"
