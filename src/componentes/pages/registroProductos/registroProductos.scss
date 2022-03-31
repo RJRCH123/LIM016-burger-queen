@@ -1,7 +1,7 @@
 .contenedorProductos {
   display: grid;
-  grid-template-columns: 0.8fr 1.2fr;
-  grid-template-rows: 8vh 26vh 48vh 6vh;
+  grid-template-columns: 0.8fr 1fr;  
+  grid-template-rows: 8vh 33vh 55vh 6vh;
   gap: 0% 5%;
   grid-auto-flow: row;
   grid-template-areas:
@@ -37,9 +37,9 @@
   label {
     margin: 0.3rem 0;
   }
-  p {
+/*   p {
     margin: 0.3rem 0;
-  }
+  } */
 }
 
 .navFiltradoProductos {
@@ -76,8 +76,8 @@
 }
 
 .vistaPreviaProducto {
-  justify-self: stretch;
-  align-self: stretch;
+  justify-self: center;
+  align-self: center;
   grid-area: vistaPreviaProducto;
   max-height: 450px;
 }

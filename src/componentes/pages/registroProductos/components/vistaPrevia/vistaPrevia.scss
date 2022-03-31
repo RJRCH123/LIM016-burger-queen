@@ -5,7 +5,7 @@
     border-radius: 3px;    
     border: 3px solid transparent;
     box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
-    max-height: 420px;
+    /* max-height: 420px; */
 }
 
 .product {
@@ -32,8 +32,20 @@
             height: 100%;
             padding: 0.3rem;
         }
-    }
-    
+    }   
+}
+
+.productB {
+    text-align: center;
+}
+
+.tittleInfoB {
+    background-color: var(--color-mostazaClaro);
+    padding: 2%;
+    color: var(--color-beige);
+    text-align: center;
+    border-radius: 50px;
+    font-size: medium;
 }
 
 
