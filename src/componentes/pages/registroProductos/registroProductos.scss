@@ -71,7 +71,7 @@
 
 .formProductos {
   justify-self: stretch;
-  align-self: stretch;
+  align-self: center;
   grid-area: formProductos;
 }
 
@@ -99,17 +99,4 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   column-gap: 2rem;
-}
-
-@media screen and (max-width: 570px) {
-  .contenedorProductos {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .listaProductosCrud {
-    height: 500px;
-    overflow-x: overlay;
-  }
 }
