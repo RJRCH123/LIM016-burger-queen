@@ -1,15 +1,14 @@
-import React  from 'react';
+import React, { useContext }  from 'react';
 import './listProducts.scss';
 import { images } from '../../constans/index';
-import { db } from '../../../../../firebase/firebase-config';
-import {
-  getDocs, collection, query, orderBy, doc, deleteDoc
-} from 'firebase/firestore';
-import { useState, useEffect } from 'react';
 import Swal from 'sweetalert2';
+import { UserProductContext } from '../../context/useProductContext';
 
 function ListProducts() {
-	const [isLoading, setIsLoading] = useState(true);
+  console.log('Entra a la funcion')
+  const { productosData } = useContext(UserProductContext);
+  console.log('productosData:', productosData)
+/* 	const [isLoading, setIsLoading] = useState(true);
   const [products, setProducts] = useState([]);
 
   const getProducts = async () => {
@@ -43,7 +42,7 @@ function ListProducts() {
     return (
       <div />
     );
-  }
+  } */
 
    // modal de confirmarión para editar un producto existente
    const ModalConfirmacionEditar = () => {
@@ -93,18 +92,18 @@ function ListProducts() {
     });
   };
 
-  const eliminarProducto = async (props) => {
+/*   const eliminarProducto = async (props) => {
     await deleteDoc(doc(db, 'productos', props.id));
   };
 
   const editProduct = () => {
     
-  }
+  } */
 
 
 	return (
 		<section className="gridResponsivePPM">
-			{products.map((product, index) => (
+			{productosData.map((product, index) => (
 				<div className="DataPorProductoMenu" key={index}>
 
 					<div className="imagenProducto">

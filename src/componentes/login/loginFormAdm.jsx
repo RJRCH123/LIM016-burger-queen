@@ -24,13 +24,10 @@ function FormAdmin() {
       if (user.cargo) {
         console.log(user.cargo);
         if (user.cargo === 'admin'|| user.cargo === 'jefe-admin') {
-          console.log('entro en admin!');
           navigate('/admin/');
         } else if (user.cargo === 'mesero' || user.cargo === 'jefe-mesero') {
-          console.log('entro en mesero!');
           navigate('/mesero/');
         } else if (user.cargo === 'cocinero' || user.cargo === 'jefe-cocinero') {
-          console.log('entro en cocinero!');
           navigate('/cocinero/');
         }
       }
@@ -57,11 +54,9 @@ function FormAdmin() {
       usuario: user.usuario,
     };
     localStorage.setItem('user', JSON.stringify(userData));
-    console.log('entro en localStorage');
   };
 
   const getUsers = async (userName, userPassword) => {
-    console.log('veamos si entro en getUsers');
     const userCollectionRef = query(collection(db, 'usuarios'), where('usuario', '==', userName), where('contraseña', '==', userPassword));
     const dataDocs = await getDocs(userCollectionRef);
     const user = dataDocs.docs[0].data();
