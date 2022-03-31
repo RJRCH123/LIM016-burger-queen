@@ -23,6 +23,7 @@ import HistorialMesero from './componentes/pages/historialMesero/historialMesero
 import ActualizarDatosEmpleado from './componentes/pages/registroUsuario/ActualizarEmpleado';
 import Carta from './componentes/bienvenida/container/Menu/carta';
 import UserProvider from './componentes/pages/realizarPedido/context/UserContext';
+import ProductProvider from './componentes/pages/registroProductos/context/useProductContext';
 
 function App() {
   return (
@@ -30,7 +31,7 @@ function App() {
       <Routes>
 
         <Route path="/admin/registro-personal" element={<VistaAdmin content={<RegistroEmpleado />} />} />
-        <Route path="/admin/productos-registrados" element={<VistaAdmin content={<RegistroProductos />} />} />
+        <Route path="/admin/productos-registrados" element={<VistaAdmin content={<ProductProvider />} />} />
         <Route path="/admin/historial-ventas" element={<VistaAdmin content={<HistorialVentas />} />} />
         <Route path="/admin/historial-empleados" element={<VistaAdmin content={<HistorialEmpleados />} />} />
         <Route path="/admin/historial-empleados/actualizar-datos/:id" element={<VistaAdmin content={<ActualizarDatosEmpleado />} />} />
