@@ -8,6 +8,9 @@ import {
 import { useState, useEffect } from 'react';
 import Descarga from '../../utils/botonDescarga/botonDescarga';
 import LoadingSpinner from '../../utils/loading-spinner/loading-spinner';
+import 'react-date-range/dist/styles.css';
+import 'react-date-range/dist/theme/default.css';
+//import { Calendar } from 'react-date-range';
 
 const dateParser = (date) => date.toLocaleDateString();
 
@@ -49,10 +52,16 @@ function HistorialVentas() {
       <LoadingSpinner />  
     );
   }
+
+  /* handleSelect(this) { 
+    console.log(date); 
+  } */
+  
   return (
     <section className="paddingFlex">
       <h2>HISTORIAL VENTAS</h2>
       <Encabezado />
+      {/* <Calendar date={new Date()} onChange={this.handleSelect} /> */}
       <ProductsTable products={orders} estado={setOrders} loading={setIsLoading} />
       <Descarga />
     </section>

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import './tablaPedidos.scss';
 
-
 function ProductsTable(props) {
   
   const items = props.products;
@@ -63,7 +62,6 @@ function ProductsTable(props) {
             <td>{item.timestamp}</td>
             <td>{item.hora}</td>
             <td>{item.cliente}</td>
-            {console.log(item.timestamp)}
             <td>{item.estado}</td>
             <td>              
               {'S/. '}

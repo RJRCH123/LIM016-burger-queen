@@ -9,16 +9,16 @@ import Input from './input';
 
 function AppRegistro() {
   // se estan estableciendo los valores iniciales para cada uno de nuestros inputs
-  	const [usuario, cambiarUsuario] = useState({ campo: '', valido: null });
+  const [usuario, cambiarUsuario] = useState({ campo: '', valido: null });
   const [nombre, cambiarNombre] = useState({ campo: '', valido: null });
-  	const [apellido, cambiarApellido] = useState({ campo: '', valido: null });
+  const [apellido, cambiarApellido] = useState({ campo: '', valido: null });
   const [codigo, cambiarCodigo] = useState({ campo: '', valido: null });
   const [contraseña, cambiarContraseña] = useState({ campo: '', valido: null });
   const [contraseña2, cambiarContraseña2] = useState({ campo: '', valido: null });
   const [correo, cambiarCorreo] = useState({ campo: '', valido: null });
   const [celular, cambiarCelular] = useState({ campo: '', valido: null });
   const [dni, cambiarDni] = useState({ campo: '', valido: null });
-  	const [cargo, cambiarCargo] = useState({ campo: '', valido: null });
+  const [cargo, cambiarCargo] = useState({ campo: '', valido: null });
   const [formularioValido, cambiarFormularioValido] = useState(null);
 
   // se utilizan expresiones regulares para limitar al usuario a ingresar
@@ -27,7 +27,7 @@ function AppRegistro() {
   const expresiones = {
     usuario: /^[a-zA-Z0-9_-]{4,16}$/, // Letras, numeros, guion y guion_bajo
     nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
-    	apellido: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
+    apellido: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
     contraseña: /^.{4,12}$/, // 4 a 12 digitos.
     correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
     celular: /^\d{7,9}$/, // 7 a 9 numeros,

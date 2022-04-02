@@ -1,7 +1,7 @@
 import React, { createContext, useState, useEffect } from 'react';
 import { db } from '../../../../firebase/firebase-config';
 import {
-  getDocs, collection, query, where,
+  getDocs, collection, query, where, deleteDoc, doc
 } from 'firebase/firestore';
 import '../registroProductos.scss';
 import { Children } from 'react/cjs/react.production.min';
@@ -9,19 +9,10 @@ import RegistroProductos from '../registroProductos';
 
 export const UserProductContext = createContext();
 
-function ProductProvider() {
-/*   const productosData = {
-    name: '',
-    tipos: '',
-    precio: 0,
-    imagen: '',
-    codigo: '',
-    undsPorPlato: 0,
-    descripcion: ''
-  }; */
-
+function ProductProvider() { 
   const [productosData, setproductosData] = useState([]);
   const [tipos, setTipos] = useState('hamburguesas');
+  const [isLoading, setIsLoading] = useState(true);
 
   // Obtener datos de Firebase por tipo
   const getProductos = async (tipo) => {
@@ -33,31 +24,40 @@ function ProductProvider() {
     return getDataProduct;
   };
 
-/*   useEffect(() => {
-    getProduct().then((getDataProduct) => {
-      setproductosData(getDataProduct)
-    })
-  }, [tipo]); */
-
   useEffect(() => {
+    getProductos(tipos).then((getDataProduct) => {
+      setproductosData(getDataProduct)
+    });
+    setIsLoading(false);
+  }, [tipos, isLoading]);
+
+  /* useEffect(() => {
     async function fetchList() {
       const listMenu = await getProductos(tipos);
       setproductosData(listMenu);      
     }
     fetchList();
-  }, [tipos]);
+  }, [tipos]); */
+
+  // método que elimina un producto de la colección
+  const eliminarProducto = async (id) => {
+    console.log('el producto que voy a eliminar es:', id)
+    await deleteDoc(doc(db, 'productos', id));
+    setIsLoading(true);
+  };
 
   const totalesProps = {
     productosData, 
     setproductosData,
     tipos, 
     setTipos,
+    eliminarProducto
   };
     return (
-        <UserProductContext.Provider value={totalesProps}>
-          <RegistroProductos element={Children} />
-        </UserProductContext.Provider>
-      );
+      <UserProductContext.Provider value={totalesProps}>
+        <RegistroProductos element={Children} />
+      </UserProductContext.Provider>
+    );
 }
 
 export default ProductProvider;

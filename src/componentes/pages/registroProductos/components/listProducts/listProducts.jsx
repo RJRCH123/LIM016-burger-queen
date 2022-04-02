@@ -1,3 +1,4 @@
+//import React  from 'react';
 import React, { useContext }  from 'react';
 import './listProducts.scss';
 import { images } from '../../constans/index';
@@ -5,47 +6,13 @@ import Swal from 'sweetalert2';
 import { UserProductContext } from '../../context/useProductContext';
 
 function ListProducts() {
-  console.log('Entra a la funcion')
-  const { productosData } = useContext(UserProductContext);
-  console.log('productosData:', productosData)
-/* 	const [isLoading, setIsLoading] = useState(true);
-  const [products, setProducts] = useState([]);
+  const { productosData, eliminarProducto } = useContext(UserProductContext);
+  
+  // modal de confirmarión para editar un producto existente
+  const ModalConfirmacionEditar = (e) => {
+    const productTargetEdit = e.target.parentNode.parentNode;
+    console.log(productTargetEdit);
 
-  const getProducts = async () => {
-    const allProducts = [];
-    const productsRef = query(collection(db, 'productos'), orderBy('tipo'));
-    const data = await getDocs(productsRef);
-    data.docs.forEach((doc) => {
-      const values = doc.data();
-      allProducts.push({
-        id: doc.id,
-        name: values.name.toUpperCase(),
-        codigo: values.codigo.toUpperCase(),
-        descripcion: values.descripcion,
-        tipo: values.tipo,        
-        precio: values.precio,
-				img: values.img, 
-				undsPorPlato: values.undsPorPlato
-      });
-    });
-    return allProducts;
-  };
-
-  useEffect(() => {
-    getProducts().then((allProducts) => {
-      setIsLoading(false);
-      setProducts(allProducts);
-    });
-  }, [isLoading]);
-
-  if (isLoading) {
-    return (
-      <div />
-    );
-  } */
-
-   // modal de confirmarión para editar un producto existente
-   const ModalConfirmacionEditar = () => {
     Swal.fire({
       text: '¿Está seguro que editar este producto?',
       showCancelButton: true,
@@ -60,13 +27,16 @@ function ListProducts() {
     }).then((result) => {
       if (result.isConfirmed) {
         //editProduct();
+        console.log(productTargetEdit.id);
 
       }
     });
   };
 
   // modal de confirmarión para eliminar un producto existente
-  const ModalConfirmacionCancelar = () => {
+  const ModalConfirmacionCancelar = (e) => {  
+    const productTargetDelete = e.target.parentNode.parentNode;
+    
     Swal.fire({
       text: '¿Está seguro que desea borrar este producto?',
       showCancelButton: true,
@@ -86,28 +56,19 @@ function ListProducts() {
           icon: 'success',
           showConfirmButton: false,
           timer: 1500,
-        });
-        //eliminarProducto(props);
+        });    
+        eliminarProducto(productTargetDelete.id);
+        
       }
     });
   };
 
-/*   const eliminarProducto = async (props) => {
-    await deleteDoc(doc(db, 'productos', props.id));
-  };
-
-  const editProduct = () => {
-    
-  } */
-
-
 	return (
-		<section className="gridResponsivePPM">
+		<section className="gridResponsivePPM">      
 			{productosData.map((product, index) => (
-				<div className="DataPorProductoMenu" key={index}>
-
+				<div className="DataPorProductoMenu" key={index} id={product.id}>          
 					<div className="imagenProducto">
-          <button
+            <button
               className="btnInfo"
               onClick={() => Swal.fire({
                 html:
@@ -162,7 +123,7 @@ function ListProducts() {
 							0
 						</p>
 					</div>
-					<div className="containerButton">
+					<div className="containerButton" id={product.id}>
             <button type="button" className="buttonEdit" onClick={ModalConfirmacionEditar}><img src={images.editarProductCard} alt='editar'/></button>
 						<button type="button" className=" buttonDelete" onClick={ModalConfirmacionCancelar}><img src={images.eliminar} alt='eliminar'/></button>
           </div>					
