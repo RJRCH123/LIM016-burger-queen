@@ -1,7 +1,8 @@
 import React, { createContext, useState, useEffect } from 'react';
 import { db } from '../../../../firebase/firebase-config';
 import {
-  getDocs, collection, query, where, deleteDoc, doc, addDoc
+  getDocs, collection, query, where, deleteDoc, doc, addDoc,
+  getDoc
 } from 'firebase/firestore';
 import '../registroProductos.scss';
 import { Children } from 'react/cjs/react.production.min';
@@ -11,6 +12,8 @@ export const UserProductContext = createContext();
 
 function ProductProvider() { 
   const [productosData, setproductosData] = useState([]);
+  const [editedProductData, setEditedProductData] = useState({});
+  const [renderEditForm, setRenderEditForm] = useState(false);
   const [tipos, setTipos] = useState('hamburguesas');
   const [isLoading, setIsLoading] = useState(true);
 
@@ -33,14 +36,20 @@ function ProductProvider() {
 
   // método que elimina un producto de la colección
   const eliminarProducto = async (id) => {
-    console.log('el producto que voy a eliminar es:', id)
     await deleteDoc(doc(db, 'productos', id));
     setIsLoading(true);
   };
 
+  const obtenerById =  (id) => {
+    const docRef = doc(db, 'productos', id);
+    const productPromise = getDoc(docRef);
+    return productPromise
+  };
+
+
   // método que edita un producto de la colección
-  const editProduct = (producto) => {
-    console.log(producto.id);
+  const editProduct = (productNode) => {
+   return obtenerById(productNode.id);
   }
 
   // ------------------------------------------------------------------------
@@ -52,6 +61,7 @@ function ProductProvider() {
     precio: '',
     undsPorPlato: '',
     categoria: '',
+    img: 'https://raw.githubusercontent.com/RJRCH123/LIM016-burger-queen/main/src/componentes/pages/registroProductos/assets/addProduct.png',
   };
 
   // agregar ordenes al firebase
@@ -76,6 +86,7 @@ function ProductProvider() {
       precio: newProduct.precio, 
       undsPorPlato: newProduct.undsPorPlato, 
       tipo: newProduct.categoria, 
+      img: newProduct.img, 
     }).then(() => {
       setNewProduct(newProducts);
     });
@@ -100,13 +111,17 @@ function ProductProvider() {
     newProduct,
     setNewProduct,
     confirmarNuevoProducto,
-    limpiarForm
+    limpiarForm,
+    setEditedProductData,
+    editedProductData,
+    renderEditForm,
+    setRenderEditForm
   };
-    return (
-      <UserProductContext.Provider value={totalesProps}>
-        <RegistroProductos element={Children} />
-      </UserProductContext.Provider>
-    );
+  return (
+    <UserProductContext.Provider value={totalesProps}>
+      <RegistroProductos element={Children} />
+    </UserProductContext.Provider>
+  );
 }
 
 export default ProductProvider;

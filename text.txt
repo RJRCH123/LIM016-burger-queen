@@ -25,21 +25,22 @@ function FormProducto({productData}) {
 
   const setFormValues = () => {
     if (productData) {
+
       codigo.current.value = productData.codigo
       descripcion.current.value = productData.descripcion
       nombre.current.value = productData.name
       precio.current.value = productData.precio
       undsPorPlato.current.value = productData.undsPorPlato
       categoria.current.value = productData.tipo
-      img.current.value = productData.img
+      /* img.current.value = productData.img */
       setRenderEditForm(true)
     } 
   }
 
-/*   const valueVistaPrevia = (e) => {
+  const valueVistaPrevia = (e) => {
     e.preventDefault();
     setRenderPreview(true);
-  }; */
+  };
 
   const getPreviewValues = () => {
     return {
@@ -49,7 +50,6 @@ function FormProducto({productData}) {
       precio: precio.current.value ?? "",
       undsPorPlato: undsPorPlato.current.value ?? "",
       tipo: categoria.current.value ?? "",
-      img: img.current.value ?? ""
     };
   };
   useEffect(() => {
@@ -59,7 +59,6 @@ function FormProducto({productData}) {
       setRenderEditForm(false);
     }
     
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [renderPreview, renderEditForm]);
 
   // -------------------------------------------------------------
@@ -75,6 +74,7 @@ function FormProducto({productData}) {
             id="nombreProducto"
             name="nombreProducto"
             type="text"
+            required
             maxLength="25"
             ref={nombre}
             value={newProduct.nombre}
@@ -90,6 +90,7 @@ function FormProducto({productData}) {
               id="precioProducto"
               name="precioProducto"
               type="text"
+              required
               maxLength="10"
               ref={precio}
               value={newProduct.precio}
@@ -127,6 +128,7 @@ function FormProducto({productData}) {
               id="unidadesPorPlato"
               name="unidadesPorPlato"
               type="text"
+              required
               maxLength="25"
               ref={undsPorPlato}
               value={newProduct.undsPorPlato}
@@ -141,6 +143,7 @@ function FormProducto({productData}) {
               id="codigoProducto"
               name="codigoProducto"
               type="text"
+              required
               maxLength="25"
               ref={codigo}
               value={newProduct.codigo}
@@ -156,7 +159,8 @@ function FormProducto({productData}) {
             id="descripcionProducto"
             name="descripcionProducto"
             type="text"
-            maxLength="100"
+            required
+            maxLength="25"
             ref={descripcion}
             value={newProduct.descripcion}
             onChange={(e) =>
@@ -170,14 +174,12 @@ function FormProducto({productData}) {
             id="imgProducto"
             name="imgProducto"
             type="text"
-            ref={img}
-            value={newProduct.img}
-            onChange={(e) =>
-              setNewProduct({ ...newProduct, img: e.target.value })
-            }                        
+            required
+            maxLength="25"
+            ref={img}            
           />
         </label>
-        {/* <button onClick={valueVistaPrevia}>Cargar vista previa</button> */}
+        <button onClick={valueVistaPrevia}>Cargar vista previa</button>
       </form>
       <VistaPrevia values={getPreviewValues()} />
     </div>
