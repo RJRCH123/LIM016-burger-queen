@@ -4,7 +4,7 @@ import { db } from '../../../../../firebase/firebase-config';
 import VistaPrevia from "../vistaPrevia/vistaPrevia";
 import BtnsConfirmarYCancelar from "../btnsConfirmarYCancelar/btnsConfirmarYCancelar";
 import { UserProductContext } from '../../context/useProductContext';
-import { subirFileStorage } from '../../../../../firebase/firebaseStorage';
+//import { subirFileStorage } from '../../../../../firebase/firebaseStorage';
 //import imgCamara from "../../assets/addProduct.png";
 
 function FormProducto({productData}) {
@@ -102,7 +102,7 @@ function FormProducto({productData}) {
   return (
     <div className="title">
       <h1>REGISTRO DE PRODUCTOS</h1>
-      <form>
+      <form style={{display:'flex', flexDirection:'column', justifyContent:'center'}}>
         <label>
           <p>Nombre</p>
           <input
@@ -188,10 +188,15 @@ function FormProducto({productData}) {
             ref={img}
           />
         </label>
-        <button onClick={valueVistaPrevia}>Cargar vista previa</button>
+        <button 
+          onClick={valueVistaPrevia}
+          style={{ backgroundColor:'black', color:'var(--color-beige)', borderRadius:'50px', display:'flex', justifyContent: 'center', alignItems:'center', justifyItems:'center', margin:'1rem 0', padding:'0.5rem 1rem', alignText:'center', cursor:'pointer', width:'auto', alignSelf:'center'}}
+        >
+          Cargar vista previa
+        </button>
       </form>
       <VistaPrevia values={getPreviewValues()} />
-      <BtnsConfirmarYCancelar submit={onSubmit} />
+      <BtnsConfirmarYCancelar submit={onSubmit} clear={cleanInputs}/>
     </div>
   )
 }
