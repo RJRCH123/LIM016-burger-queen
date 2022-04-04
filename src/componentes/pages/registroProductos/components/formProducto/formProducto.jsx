@@ -1,11 +1,15 @@
-import React, { useRef, useState, useEffect } from 'react'
+import React, { useRef, useState, useEffect, useContext } from 'react'
 import { addDoc, collection } from 'firebase/firestore';
 import { db } from '../../../../../firebase/firebase-config';
 import VistaPrevia from "../vistaPrevia/vistaPrevia";
 import BtnsConfirmarYCancelar from "../btnsConfirmarYCancelar/btnsConfirmarYCancelar";
+import { UserProductContext } from '../../context/useProductContext';
 
-function FormProducto() {
+function FormProducto({productData}) {
   const categorias = [{ categoria: 'Bebidas Frías', }, { categoria: 'Bebidas Calientes' }, { categoria: 'Complementos' }, { categoria: 'Hamburguesas' }];
+
+  const { renderEditForm, setRenderEditForm } = useContext(UserProductContext);
+
 
   const nombre = useRef('');
   const precio = useRef('');
@@ -13,8 +17,10 @@ function FormProducto() {
   const undsPorPlato = useRef('');
   const codigo = useRef('');
   const descripcion = useRef('');
+  const img = useRef('');
 
   const [renderPreview, setRenderPreview] = useState(false);
+
   const createProduct = async () => {
 
     const productCollectionRef = collection(db, 'productos');
@@ -25,9 +31,24 @@ function FormProducto() {
       name: nombre.current.value,
       precio: precio.current.value,
       undsPorPlato: undsPorPlato.current.value,
-      tipo: categoria.current.value
+      tipo: categoria.current.value,
+      img: img.current.value
     });
   };
+
+  const setFormValues = () => {
+    if (productData) {
+
+      codigo.current.value = productData.codigo
+      descripcion.current.value = productData.descripcion
+      nombre.current.value = productData.name
+      precio.current.value = productData.precio
+      undsPorPlato.current.value = productData.undsPorPlato
+      categoria.current.value = productData.tipo
+      /* img.current.value = productData.img */
+      setRenderEditForm(true)
+    } 
+  }
 
   const cleanInputs = () => {
     codigo.current.value = ""
@@ -36,6 +57,7 @@ function FormProducto() {
     precio.current.value = ""
     undsPorPlato.current.value = ""
     categoria.current.value = ""
+    img.current.value = ""
   }
 
   const onSubmit = async (e) => {
@@ -51,6 +73,7 @@ function FormProducto() {
 
   const cleanAll = () => {
     cleanInputs();
+
   }
 
   const getPreviewValues = () => {
@@ -61,15 +84,24 @@ function FormProducto() {
       name: nombre.current.value ?? '',
       precio: precio.current.value ?? '',
       undsPorPlato: undsPorPlato.current.value ?? '',
-      tipo: categoria.current.value ?? ''
+      tipo: categoria.current.value ?? '',
+      img: img.current.value ?? ''
     }
   }
+
+
   useEffect(() => {
     setRenderPreview(false);
-  }, [renderPreview]);
+    if (renderEditForm) {
+      setFormValues();
+      setRenderEditForm(false);
+    }
+    
+  }, [renderPreview, renderEditForm]);
 
   return (
     <div className="title">
+      {console.log(productData)}
       <h1>REGISTRO DE PRODUCTOS</h1>
       <form>
         <label>
@@ -144,6 +176,23 @@ function FormProducto() {
             required
             maxLength="25"
             ref={descripcion}
+          />
+        </label>
+        <label>
+          <p>Imagen </p>
+          {console.log(img)}
+          <input 
+            id="imgProducto"
+            name="imgProducto"
+            type="text"
+            required
+            maxLength="80"
+            ref={img}            
+            /* type="file"
+            id="img"
+            name="img"
+            accept="image/*"
+            ref={img} */
           />
         </label>
         <button onClick={valueVistaPrevia}>Cargar vista previa</button>

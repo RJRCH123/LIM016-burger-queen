@@ -6,7 +6,7 @@ import Swal from 'sweetalert2';
 import { UserProductContext } from '../../context/useProductContext';
 
 function ListProducts() {
-  const { productosData, eliminarProducto, editProduct } = useContext(UserProductContext);
+  const { productosData, eliminarProducto, editProduct, setEditedProductData, setRenderEditForm } = useContext(UserProductContext);
   
   // modal de confirmarión para editar un producto existente
   const ModalConfirmacionEditar = (e) => {
@@ -26,7 +26,10 @@ function ListProducts() {
       closeButtonAriaLabel: 'cerrar alerta',
     }).then((result) => {
       if (result.isConfirmed) {
-        editProduct(productTargetEdit);
+        editProduct(productTargetEdit).then( result => {
+          setEditedProductData(result.data());
+          setRenderEditForm(true);
+        });
       }
     });
   };

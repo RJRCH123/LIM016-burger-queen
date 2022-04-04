@@ -1,12 +1,12 @@
 import React from "react";
 import "./vistaPrevia.scss";
-import { images } from "../../constans/index";
+import imgCamara from "../../assets/addProduct.png";
 
 function VistaPrevia({values}) {
 
   return (
     <section className="containerPreviewB">
-      
+
       <section className="tittleInfoB">
         <h3>VISTA PREVIA</h3>
       </section>
@@ -31,19 +31,22 @@ function VistaPrevia({values}) {
             </p>
             <br />
             <section className="precioInfoB">
+              
               <h6>S/. {values.precio ?? ''}</h6>
             </section>
           </div>
         </div>
         <div className="productB">
-          <img src={images.camara} alt="imagen" />
-          <button>
+          {console.log(imgCamara)}
+          {console.log('img:', values.img)}
+          <img src= {values.img} alt="imagen" />
+          {/* <button>
             <img
               src={images.editarImagen}
               alt="imgIcon"
               className="editProduct"
             />
-          </button>
+          </button> */}
         </div>
       </article>
     </section>
