@@ -1,3 +1,10 @@
+.listaProductosPorPedirGrid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  height: 80vh;
+}
+
 .contenedorProductos {
   display: grid;
   /* grid-template-columns: 0.8fr 1fr;  

@@ -7,7 +7,7 @@ function BtnsConfirmarYCancelar({submit, clear}) {
         <button type="button" onClick={submit} className="confirm__button">
           Confirmar
         </button>
-        <button type="button" onClick={clear} className="cancel__button">
+        <button type="button"  onClick={clear} className="cancel__button">
           Cancelar
         </button>
       </section>

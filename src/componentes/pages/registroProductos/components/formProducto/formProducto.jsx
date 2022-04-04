@@ -104,7 +104,7 @@ return {
   return (
     <div className="title">
       <h1>REGISTRO DE PRODUCTOS</h1>
-      <form>
+      <form style={{display:'flex', flexDirection:'column', justifyContent:'center'}}>
         <label>
           <p>Nombre</p>
           <input
@@ -190,10 +190,15 @@ return {
             ref={img}
           />
         </label>
-        <button onClick={valueVistaPrevia}>Cargar vista previa</button>
+        <button 
+          onClick={valueVistaPrevia}
+          style={{ backgroundColor:'black', color:'var(--color-beige)', borderRadius:'50px', display:'flex', justifyContent: 'center', alignItems:'center', justifyItems:'center', margin:'1rem 0', padding:'0.5rem 1rem', alignText:'center', cursor:'pointer', width:'auto', alignSelf:'center'}}
+        >
+          Cargar vista previa
+        </button>
       </form>
       <VistaPrevia values={getPreviewValues()} />
-      <BtnsConfirmarYCancelar submit={onSubmit} clear={cleanInputs} />
+      <BtnsConfirmarYCancelar submit={onSubmit} clear={cleanInputs}/>
     </div>
   )
 }

@@ -65,7 +65,7 @@ function ListProducts() {
   };
 
 	return (
-		<section className="gridResponsivePPM">      
+		<section className="gridResponsivePPM listaProductosPorPedirGrid">      
 			{productosData.map((product, index) => (
 				<div className="DataPorProductoMenu" key={index} id={product.id}>          
 					<div className="imagenProducto">
