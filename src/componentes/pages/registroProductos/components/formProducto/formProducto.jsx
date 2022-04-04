@@ -4,12 +4,14 @@ import { db } from '../../../../../firebase/firebase-config';
 import VistaPrevia from "../vistaPrevia/vistaPrevia";
 import BtnsConfirmarYCancelar from "../btnsConfirmarYCancelar/btnsConfirmarYCancelar";
 import { UserProductContext } from '../../context/useProductContext';
+import { subirFileStorage } from '../../../../../firebase/firebaseStorage';
+//import imgCamara from "../../assets/addProduct.png";
 
 function FormProducto({productData}) {
   const categorias = [{ categoria: 'Bebidas Frías', }, { categoria: 'Bebidas Calientes' }, { categoria: 'Complementos' }, { categoria: 'Hamburguesas' }];
 
   const { renderEditForm, setRenderEditForm } = useContext(UserProductContext);
-
+  const [renderPreview, setRenderPreview] = useState(false);
 
   const nombre = useRef('');
   const precio = useRef('');
@@ -18,8 +20,6 @@ function FormProducto({productData}) {
   const codigo = useRef('');
   const descripcion = useRef('');
   const img = useRef('');
-
-  const [renderPreview, setRenderPreview] = useState(false);
 
   const createProduct = async () => {
 
@@ -45,7 +45,7 @@ function FormProducto({productData}) {
       precio.current.value = productData.precio
       undsPorPlato.current.value = productData.undsPorPlato
       categoria.current.value = productData.tipo
-      /* img.current.value = productData.img */
+      img.current.value = productData.img
       setRenderEditForm(true)
     } 
   }
@@ -77,7 +77,7 @@ function FormProducto({productData}) {
   }
 
   const getPreviewValues = () => {
-
+    
     return {
       codigo: codigo.current.value ?? '',
       descripcion: descripcion.current.value ?? '',
@@ -101,7 +101,6 @@ function FormProducto({productData}) {
 
   return (
     <div className="title">
-      {console.log(productData)}
       <h1>REGISTRO DE PRODUCTOS</h1>
       <form>
         <label>
@@ -180,19 +179,13 @@ function FormProducto({productData}) {
         </label>
         <label>
           <p>Imagen </p>
-          {console.log(img)}
           <input 
             id="imgProducto"
             name="imgProducto"
             type="text"
             required
-            maxLength="80"
-            ref={img}            
-            /* type="file"
-            id="img"
-            name="img"
-            accept="image/*"
-            ref={img} */
+            //maxLength="25"
+            ref={img}
           />
         </label>
         <button onClick={valueVistaPrevia}>Cargar vista previa</button>

@@ -37,16 +37,11 @@ function VistaPrevia({values}) {
           </div>
         </div>
         <div className="productB">
-          {console.log(imgCamara)}
-          {console.log('img:', values.img)}
-          <img src= {values.img} alt="imagen" />
-          {/* <button>
-            <img
-              src={images.editarImagen}
-              alt="imgIcon"
-              className="editProduct"
-            />
-          </button> */}
+          <img             
+            src=  {values.img ?? 'https://raw.githubusercontent.com/RJRCH123/LIM016-burger-queen/main/src/componentes/pages/registroProductos/assets/addProduct.png'}
+            alt="imagen" 
+            style={{width:"100%"}}
+          />          
         </div>
       </article>
     </section>

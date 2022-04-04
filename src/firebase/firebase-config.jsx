@@ -1,6 +1,6 @@
 import { initializeApp } from 'firebase/app';
 import { getFirestore, enableIndexedDbPersistence } from 'firebase/firestore';
-import { getStorage } from 'firebase/storage';
+import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { getAuth } from 'firebase/auth';
 
 const firebaseConfig = {
@@ -31,3 +31,10 @@ enableIndexedDbPersistence(db)
 export const auth = getAuth();
 export { db };
 export const storage = getStorage(app);
+export { 
+  getStorage, 
+  ref, 
+  uploadBytes,
+  getDownloadURL 
+};
+

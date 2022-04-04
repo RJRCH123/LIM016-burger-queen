@@ -11,7 +11,7 @@ function ListProducts() {
   // modal de confirmarión para editar un producto existente
   const ModalConfirmacionEditar = (e) => {
     const productTargetEdit = e.target.parentNode.parentNode;
-    console.log(productTargetEdit);
+    //console.log(productTargetEdit);
 
     Swal.fire({
       text: '¿Está seguro que desea editar este producto?',
