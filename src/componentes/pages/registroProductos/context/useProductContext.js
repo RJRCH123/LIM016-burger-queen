@@ -1,7 +1,7 @@
 import React, { createContext, useState, useEffect } from 'react';
 import { db } from '../../../../firebase/firebase-config';
 import {
-  getDocs, collection, query, where, deleteDoc, doc
+  getDocs, collection, query, where, deleteDoc, doc, addDoc
 } from 'firebase/firestore';
 import '../registroProductos.scss';
 import { Children } from 'react/cjs/react.production.min';
@@ -31,14 +31,6 @@ function ProductProvider() {
     setIsLoading(false);
   }, [tipos, isLoading]);
 
-  /* useEffect(() => {
-    async function fetchList() {
-      const listMenu = await getProductos(tipos);
-      setproductosData(listMenu);      
-    }
-    fetchList();
-  }, [tipos]); */
-
   // método que elimina un producto de la colección
   const eliminarProducto = async (id) => {
     console.log('el producto que voy a eliminar es:', id)
@@ -51,13 +43,64 @@ function ProductProvider() {
     console.log(producto.id);
   }
 
+  // ------------------------------------------------------------------------
+  const [newProduct, setNewProduct] = useState('newProducts');
+  const newProducts = {
+    codigo: '',
+    descripcion: '',
+    nombre: '',
+    precio: '',
+    undsPorPlato: '',
+    categoria: '',
+  };
+
+  // agregar ordenes al firebase
+  const confirmarNuevoProducto = () => {
+    if (
+      newProduct.codigo !== '' &&
+      newProduct.descripcion !== '' &&
+      newProduct.nombre !== '' &&
+      newProduct.precio !== '' &&
+      newProduct.undsPorPlato !== '' &&
+      newProduct.categoria !== '' &&
+      newProduct.codigo !== undefined &&
+      newProduct.descripcion !== undefined &&
+      newProduct.nombre !== undefined &&
+      newProduct.precio !== undefined &&
+      newProduct.undsPorPlato !== undefined &&
+      newProduct.categoria !== undefined
+    ) { const collectionProducts = addDoc(collection(db, 'productos'), {
+      codigo: newProduct.codigo,
+      descripcion: newProduct.descripcion,
+      name: newProduct.nombre,
+      precio: newProduct.precio, 
+      undsPorPlato: newProduct.undsPorPlato, 
+      tipo: newProduct.categoria, 
+    }).then(() => {
+      setNewProduct(newProducts);
+    });
+    return collectionProducts;
+  }
+    return false;
+  };
+
+  // limpiar orden con boton cancelar
+  const limpiarForm = () => {
+    setNewProduct(newProducts);
+  };
+
+
   const totalesProps = {
     productosData, 
     setproductosData,
     tipos, 
     setTipos,
     eliminarProducto,
-    editProduct
+    editProduct,
+    newProduct,
+    setNewProduct,
+    confirmarNuevoProducto,
+    limpiarForm
   };
     return (
       <UserProductContext.Provider value={totalesProps}>

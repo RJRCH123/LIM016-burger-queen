@@ -1,23 +1,39 @@
-import React, { useRef, useState, useEffect } from 'react'
-import { addDoc, collection } from 'firebase/firestore';
-import { db } from '../../../../../firebase/firebase-config';
+import React, { useRef, useState, useEffect, useContext } from "react";
+/* import { addDoc, collection } from "firebase/firestore";
+import { db } from "../../../../../firebase/firebase-config"; */
 import VistaPrevia from "../vistaPrevia/vistaPrevia";
-import BtnsConfirmarYCancelar from "../btnsConfirmarYCancelar/btnsConfirmarYCancelar";
+import { UserProductContext } from "../../context/useProductContext";
 
 function FormProducto() {
-  const categorias = [{ categoria: 'Bebidas Frías', }, { categoria: 'Bebidas Calientes' }, { categoria: 'Complementos' }, { categoria: 'Hamburguesas' }];
+  const { newProduct, setNewProduct } = useContext(UserProductContext);
 
-  const nombre = useRef('');
-  const precio = useRef('');
-  const categoria = useRef('');
-  const undsPorPlato = useRef('');
-  const codigo = useRef('');
-  const descripcion = useRef('');
+  const categorias = [
+    { categoria: "Bebidas Frías" },
+    { categoria: "Bebidas Calientes" },
+    { categoria: "Complementos" },
+    { categoria: "Hamburguesas" },
+  ];
+
+  const nombre = useRef("");
+  const precio = useRef("");
+  const categoria = useRef("");
+  const undsPorPlato = useRef("");
+  const codigo = useRef("");
+  const descripcion = useRef("");
 
   const [renderPreview, setRenderPreview] = useState(false);
-  const createProduct = async () => {
 
-    const productCollectionRef = collection(db, 'productos');
+  /*   const cleanInputs = () => {
+    codigo.current.value = "";
+    descripcion.current.value = "";
+    nombre.current.value = "";
+    precio.current.value = "";
+    undsPorPlato.current.value = "";
+    categoria.current.value = "";
+  }; */
+
+  /*   const createProduct = async () => {
+    const productCollectionRef = collection(db, "productos");
 
     await addDoc(productCollectionRef, {
       codigo: codigo.current.value,
@@ -25,48 +41,40 @@ function FormProducto() {
       name: nombre.current.value,
       precio: precio.current.value,
       undsPorPlato: undsPorPlato.current.value,
-      tipo: categoria.current.value
+      tipo: categoria.current.value,
     });
-  };
+  }; */
 
-  const cleanInputs = () => {
-    codigo.current.value = ""
-    descripcion.current.value = ""
-    nombre.current.value = ""
-    precio.current.value = ""
-    undsPorPlato.current.value = ""
-    categoria.current.value = ""
-  }
-
-  const onSubmit = async (e) => {
+  /*   const onSubmit = async (e) => {
     e.preventDefault();
     await createProduct();
     cleanInputs();
-  }
+  }; */
 
   const valueVistaPrevia = (e) => {
     e.preventDefault();
     setRenderPreview(true);
-  }
+  };
 
-  const cleanAll = () => {
+  /*   const cleanAll = () => {
     cleanInputs();
-  }
+  }; */
 
   const getPreviewValues = () => {
-
     return {
-      codigo: codigo.current.value ?? '',
-      descripcion: descripcion.current.value ?? '',
-      name: nombre.current.value ?? '',
-      precio: precio.current.value ?? '',
-      undsPorPlato: undsPorPlato.current.value ?? '',
-      tipo: categoria.current.value ?? ''
-    }
-  }
+      codigo: codigo.current.value ?? "",
+      descripcion: descripcion.current.value ?? "",
+      name: nombre.current.value ?? "",
+      precio: precio.current.value ?? "",
+      undsPorPlato: undsPorPlato.current.value ?? "",
+      tipo: categoria.current.value ?? "",
+    };
+  };
   useEffect(() => {
     setRenderPreview(false);
   }, [renderPreview]);
+
+  // -------------------------------------------------------------
 
   return (
     <div className="title">
@@ -81,6 +89,10 @@ function FormProducto() {
             required
             maxLength="25"
             ref={nombre}
+            value={newProduct.nombre}
+            onChange={(e) =>
+              setNewProduct({ ...newProduct, nombre: e.target.value })
+            }
           />
         </label>
         <div className="contenedorProductosInterno">
@@ -91,23 +103,53 @@ function FormProducto() {
               name="precioProducto"
               type="text"
               required
-              maxLength="25"
+              maxLength="10"
               ref={precio}
+              value={newProduct.precio}
+              onChange={(e) =>
+                setNewProduct({ ...newProduct, precio: e.target.value })
+              }
             />
           </label>
+
+          {/*           <div className="inputMesa">
+        <label>
+          <p>Mesa:</p>
+          <select
+            id="nMesa"
+            name="nMesa"
+            value={cliente.mesa}
+            onChange={(e) => setCliente({ ...cliente, mesa: e.target.value })}
+          >
+            {numerosMesa.map((item, i) => (
+              <option key={`numerosMesa${i}`} value={i}>
+                {' '}
+                {item.mesa}
+                {' '}
+              </option>
+            ))}
+          </select>
+        </label>
+      </div> */}
+
           <label>
             <p>Categoría</p>
             <select
               id="categoria"
-              name={"categoria"}
+              name="categoria"
+              value={newProduct.categoria}
+              onChange={(e) =>
+                setNewProduct({ ...newProduct, categoria: e.target.value })
+              }
               ref={categoria}
             >
               {categorias.map((item, i) => (
-
-                <option key={`categoria${i}`} value={item.categoria.toLowerCase()}>
-                  {' '}
-                  {item.categoria}
-                  {' '}
+                <option
+                  key={`categoria${i}`}
+                  value={item.categoria.toLowerCase()}
+                >
+                  {" "}
+                  {item.categoria}{" "}
                 </option>
               ))}
             </select>
@@ -121,6 +163,10 @@ function FormProducto() {
               required
               maxLength="25"
               ref={undsPorPlato}
+              value={newProduct.undsPorPlato}
+              onChange={(e) =>
+                setNewProduct({ ...newProduct, undsPorPlato: e.target.value })
+              }
             />
           </label>
           <label>
@@ -132,6 +178,10 @@ function FormProducto() {
               required
               maxLength="25"
               ref={codigo}
+              value={newProduct.codigo}
+              onChange={(e) =>
+                setNewProduct({ ...newProduct, codigo: e.target.value })
+              }
             />
           </label>
         </div>
@@ -144,14 +194,17 @@ function FormProducto() {
             required
             maxLength="25"
             ref={descripcion}
+            value={newProduct.descripcion}
+            onChange={(e) =>
+              setNewProduct({ ...newProduct, descripcion: e.target.value })
+            }
           />
         </label>
         <button onClick={valueVistaPrevia}>Cargar vista previa</button>
       </form>
       <VistaPrevia values={getPreviewValues()} />
-      <BtnsConfirmarYCancelar submit={onSubmit} />
     </div>
-  )
+  );
 }
 
-export default FormProducto
+export default FormProducto;
