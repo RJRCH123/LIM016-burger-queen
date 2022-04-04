@@ -6,7 +6,7 @@ import Swal from 'sweetalert2';
 import { UserProductContext } from '../../context/useProductContext';
 
 function ListProducts() {
-  const { productosData, eliminarProducto } = useContext(UserProductContext);
+  const { productosData, eliminarProducto, editProduct } = useContext(UserProductContext);
   
   // modal de confirmarión para editar un producto existente
   const ModalConfirmacionEditar = (e) => {
@@ -14,7 +14,7 @@ function ListProducts() {
     console.log(productTargetEdit);
 
     Swal.fire({
-      text: '¿Está seguro que editar este producto?',
+      text: '¿Está seguro que desea editar este producto?',
       showCancelButton: true,
       confirmButtonColor: '#57a057',
       cancelButtonColor: '#d33',
@@ -26,9 +26,7 @@ function ListProducts() {
       closeButtonAriaLabel: 'cerrar alerta',
     }).then((result) => {
       if (result.isConfirmed) {
-        //editProduct();
-        console.log(productTargetEdit.id);
-
+        editProduct(productTargetEdit);
       }
     });
   };
