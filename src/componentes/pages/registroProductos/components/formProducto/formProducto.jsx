@@ -4,7 +4,7 @@ import { db } from '../../../../../firebase/firebase-config';
 import VistaPrevia from "../vistaPrevia/vistaPrevia";
 import BtnsConfirmarYCancelar from "../btnsConfirmarYCancelar/btnsConfirmarYCancelar";
 import { UserProductContext } from '../../context/useProductContext';
-import { subirFileStorage } from '../../../../../firebase/firebaseStorage';
+/* import { subirFileStorage } from '../../../../../firebase/firebaseStorage'; */
 //import imgCamara from "../../assets/addProduct.png";
 
 function FormProducto({productData}) {
@@ -51,13 +51,15 @@ function FormProducto({productData}) {
   }
 
   const cleanInputs = () => {
-    codigo.current.value = ""
-    descripcion.current.value = ""
-    nombre.current.value = ""
-    precio.current.value = ""
-    undsPorPlato.current.value = ""
-    categoria.current.value = ""
-    img.current.value = ""
+return {    
+  
+  codigo: codigo.current.value = "",
+  descripcion: descripcion.current.value = "",
+  nombre: nombre.current.value = "",
+  precio: precio.current.value = "",
+  undsPorPlato: undsPorPlato.current.value = "",
+  tipo: categoria.current.value = "",
+  img: img.current.value = ""}
   }
 
   const onSubmit = async (e) => {
@@ -191,7 +193,7 @@ function FormProducto({productData}) {
         <button onClick={valueVistaPrevia}>Cargar vista previa</button>
       </form>
       <VistaPrevia values={getPreviewValues()} />
-      <BtnsConfirmarYCancelar submit={onSubmit} />
+      <BtnsConfirmarYCancelar submit={onSubmit} clear={cleanInputs} />
     </div>
   )
 }

@@ -1,13 +1,13 @@
-import React from "react";
+import React from 'react';
 
-function BtnsConfirmarYCancelar({submit}) {
+function BtnsConfirmarYCancelar({submit, clear}) {
 
   return (
       <section className="btnsContainer gridResponsiveBtns">
         <button type="button" onClick={submit} className="confirm__button">
           Confirmar
         </button>
-        <button type="button" className="cancel__button">
+        <button type="button" onClick={clear} className="cancel__button">
           Cancelar
         </button>
       </section>
@@ -15,3 +15,5 @@ function BtnsConfirmarYCancelar({submit}) {
 }
 
 export default BtnsConfirmarYCancelar;
+
+
