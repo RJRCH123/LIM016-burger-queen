@@ -1,9 +1,10 @@
 import React from "react";
 
-function BtnsConfirmarYCancelar() {
+function BtnsConfirmarYCancelar({submit}) {
+
   return (
       <section className="btnsContainer gridResponsiveBtns">
-        <button type="button" className="confirm__button">
+        <button type="button" onClick={submit} className="confirm__button">
           Confirmar
         </button>
         <button type="button" className="cancel__button">
