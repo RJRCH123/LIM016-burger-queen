@@ -3,8 +3,8 @@ import "./registroProductos.scss";
 import NavListProducts from "./components/navListProducts/navListProducts";
 import ListProducts from "./components/listProducts/listProducts";
 import FormProducto from "./components/formProducto/formProducto";
-import VistaPrevia from "./components/vistaPrevia/vistaPrevia";
-import BtnsConfirmarYCancelar from "./components/btnsConfirmarYCancelar/btnsConfirmarYCancelar";
+//import VistaPrevia from "./components/vistaPrevia/vistaPrevia";
+//import BtnsConfirmarYCancelar from "./components/btnsConfirmarYCancelar/btnsConfirmarYCancelar";
 
 function RegistroProductos() {
     
@@ -21,12 +21,12 @@ function RegistroProductos() {
         <div className="formProductos">
           <FormProducto />
         </div>
-        <div className="vistaPreviaProducto">
+        {/* <div className="vistaPreviaProducto">
           <VistaPrevia />
         </div>
         <div className="btnsConfirmarYCancelar">
           <BtnsConfirmarYCancelar />
-        </div>
+        </div> */}
       </div>
     </section>
   );
