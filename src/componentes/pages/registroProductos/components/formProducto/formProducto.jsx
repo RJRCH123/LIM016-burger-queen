@@ -8,7 +8,7 @@ import { UserProductContext } from '../../context/useProductContext';
 //import imgCamara from "../../assets/addProduct.png";
 
 function FormProducto({productData}) {
-  const categorias = [{ categoria: 'Bebidas Frías', }, { categoria: 'Bebidas Calientes' }, { categoria: 'Complementos' }, { categoria: 'Hamburguesas' }];
+  const categorias = [{ categoria: '' }, { categoria: 'Bebidas Frias' }, { categoria: 'Bebidas Calientes' }, { categoria: 'Complementos' }, { categoria: 'Hamburguesas' }];
 
   const { renderEditForm, setRenderEditForm } = useContext(UserProductContext);
   const [renderPreview, setRenderPreview] = useState(false);
@@ -110,7 +110,8 @@ function FormProducto({productData}) {
             name="nombreProducto"
             type="text"
             required
-            maxLength="25"
+            maxLength="15"
+            placeholder='Nombre del producto'
             ref={nombre}
           />
         </label>
@@ -123,6 +124,7 @@ function FormProducto({productData}) {
               type="text"
               required
               maxLength="25"
+              placeholder='0.00'
               ref={precio}
             />
           </label>
@@ -151,6 +153,7 @@ function FormProducto({productData}) {
               type="text"
               required
               maxLength="25"
+              placeholder='Min 1 und'
               ref={undsPorPlato}
             />
           </label>
@@ -162,6 +165,7 @@ function FormProducto({productData}) {
               type="text"
               required
               maxLength="25"
+              placeholder='P000'
               ref={codigo}
             />
           </label>
@@ -174,6 +178,7 @@ function FormProducto({productData}) {
             type="text"
             required
             maxLength="25"
+            placeholder='Descripción del producto'
             ref={descripcion}
           />
         </label>
@@ -186,6 +191,7 @@ function FormProducto({productData}) {
             required
             //maxLength="25"
             ref={img}
+            placeholder='Ingrese el URL de la imagen'
           />
         </label>
         <button 
