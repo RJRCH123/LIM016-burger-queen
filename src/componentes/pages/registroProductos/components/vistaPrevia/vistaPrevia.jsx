@@ -2,34 +2,36 @@ import React from "react";
 import "./vistaPrevia.scss";
 import { images } from "../../constans/index";
 
-function VistaPrevia() {
+function VistaPrevia({values}) {
+
   return (
     <section className="containerPreviewB">
+      
       <section className="tittleInfoB">
         <h3>VISTA PREVIA</h3>
       </section>
+
       <article className="modalDescripcionB">
         <div>
           <div className="nameInfoB">
-            <h5>KARMA CLÁSICA</h5>
+            <h5>{values.name ?? ''}</h5>
           </div>
           <div className="detailsInfoB">
             <p>
-              <strong> Código: </strong> H001
+              <strong> Código: </strong> {values.codigo ?? ''}
             </p>
             <p>
-              <strong> Categoría: </strong> Hamburguesa
+              <strong> Categoría: </strong> {values.tipo ?? ''}
             </p>
             <p>
-              <strong> Descripción: </strong>Hamburguesas de Carne + Papas +
-              Ensalada + Salsas Clásicas
+              <strong> Descripción: </strong>{values.descripcion ?? ''}
             </p>
             <p>
-              <strong> Unds. por Plato: </strong> 4
+              <strong> Unds. por Plato: </strong>{values.undsPorPlato ?? ''}
             </p>
             <br />
             <section className="precioInfoB">
-              <h6>S/. 12.90</h6>
+              <h6>S/. {values.precio ?? ''}</h6>
             </section>
           </div>
         </div>
