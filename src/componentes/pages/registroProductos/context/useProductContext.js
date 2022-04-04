@@ -46,12 +46,18 @@ function ProductProvider() {
     setIsLoading(true);
   };
 
+  // método que edita un producto de la colección
+  const editProduct = (producto) => {
+    console.log(producto.id);
+  }
+
   const totalesProps = {
     productosData, 
     setproductosData,
     tipos, 
     setTipos,
-    eliminarProducto
+    eliminarProducto,
+    editProduct
   };
     return (
       <UserProductContext.Provider value={totalesProps}>
