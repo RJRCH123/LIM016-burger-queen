@@ -1,6 +1,5 @@
 import React from "react";
 import "./vistaPrevia.scss";
-import imgCamara from "../../assets/addProduct.png";
 
 function VistaPrevia({values}) {
 
@@ -36,12 +35,12 @@ function VistaPrevia({values}) {
             </section>
           </div>
         </div>
-        <div className="productB">
-          <img             
-            src=  {values.img ?? 'https://raw.githubusercontent.com/RJRCH123/LIM016-burger-queen/main/src/componentes/pages/registroProductos/assets/addProduct.png'}
+        <div className="productB">                  
+          <img                    
+            src=  {values.img !== '' ? values.img : 'https://raw.githubusercontent.com/RJRCH123/LIM016-burger-queen/main/src/componentes/pages/registroProductos/assets/addProduct.png' }
             alt="imagen" 
             style={{width:"100%"}}
-          />          
+          />           
         </div>
       </article>
     </section>
